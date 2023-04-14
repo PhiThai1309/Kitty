@@ -1,24 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jwL-Us-JY4">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Kitty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5jC-4e-bqM">
+                                <rect key="frame" x="0.0" y="244.66666666666663" width="393" height="363"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Kitty-Logo" translatesAutoresizingMaskIntoConstraints="NO" id="7Uu-fm-hpM">
+                                        <rect key="frame" x="137" y="0.0" width="119" height="86"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="119" id="HhN-OL-tkH"/>
+                                            <constraint firstAttribute="height" constant="86" id="mud-yW-9l9"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kitty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzD-yt-y1v">
+                                        <rect key="frame" x="170" y="98.000000000000028" width="53.333333333333343" height="27.666666666666671"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRx-dB-I8a">
+                                        <rect key="frame" x="116.33333333333333" y="169.66666666666666" width="160.33333333333337" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get started by creating your account to secure your data &amp; manage on multiple devices anytime! " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqM-vJ-nLW">
+                                        <rect key="frame" x="20" y="201.66666666666666" width="353" height="60.999999999999972"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.25961297750000001" green="0.25961297750000001" blue="0.25961297750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ixz-Sm-D3w">
+                                        <rect key="frame" x="91.333333333333329" y="318.66666666666674" width="210.66666666666669" height="44.333333333333314"/>
+                                        <color key="tintColor" red="0.25961297750000001" green="0.25961297750000001" blue="0.25961297750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="Google" title="Sign up with Google" imagePadding="16">
+                                            <backgroundConfiguration key="background">
+                                                <color key="strokeColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <directionalEdgeInsets key="contentInsets" top="12" leading="12" bottom="12" trailing="12"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="signUpOnClickHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jCT-56-bch"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="XRx-dB-I8a" firstAttribute="centerX" secondItem="5jC-4e-bqM" secondAttribute="centerX" id="4zS-No-oa9"/>
+                                    <constraint firstItem="XRx-dB-I8a" firstAttribute="top" secondItem="xzD-yt-y1v" secondAttribute="bottom" constant="44" id="6u2-wL-71V"/>
+                                    <constraint firstItem="eqM-vJ-nLW" firstAttribute="top" secondItem="XRx-dB-I8a" secondAttribute="bottom" constant="8" id="M1n-sg-gdG"/>
+                                    <constraint firstItem="Ixz-Sm-D3w" firstAttribute="centerX" secondItem="5jC-4e-bqM" secondAttribute="centerX" id="Mgl-up-6Z8"/>
+                                    <constraint firstItem="Ixz-Sm-D3w" firstAttribute="top" secondItem="eqM-vJ-nLW" secondAttribute="bottom" constant="56" id="R4t-qi-hA1"/>
+                                    <constraint firstItem="7Uu-fm-hpM" firstAttribute="centerX" secondItem="5jC-4e-bqM" secondAttribute="centerX" id="U5q-XS-2NC"/>
+                                    <constraint firstItem="7Uu-fm-hpM" firstAttribute="top" secondItem="5jC-4e-bqM" secondAttribute="top" id="YkU-Wu-8x8"/>
+                                    <constraint firstItem="xzD-yt-y1v" firstAttribute="top" secondItem="7Uu-fm-hpM" secondAttribute="bottom" constant="12" id="ay7-0G-g5q"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ixz-Sm-D3w" secondAttribute="bottom" id="ezE-TU-e6E"/>
+                                    <constraint firstItem="xzD-yt-y1v" firstAttribute="centerX" secondItem="5jC-4e-bqM" secondAttribute="centerX" id="kfx-p1-bD8"/>
+                                    <constraint firstItem="eqM-vJ-nLW" firstAttribute="leading" secondItem="5jC-4e-bqM" secondAttribute="leading" constant="20" id="mCs-tT-XKU"/>
+                                    <constraint firstItem="eqM-vJ-nLW" firstAttribute="centerX" secondItem="5jC-4e-bqM" secondAttribute="centerX" id="vu4-b9-CI1"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5jC-4e-bqM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3Nh-YZ-wiL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5jC-4e-bqM" secondAttribute="trailing" id="EPQ-Bb-o0p"/>
+                            <constraint firstItem="5jC-4e-bqM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ehx-jF-arT"/>
+                            <constraint firstItem="5jC-4e-bqM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PUi-Ig-5RE"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="3FX-px-29K"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="977.86259541984725" y="-27.464788732394368"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="y7j-ln-RRi">
+            <objects>
+                <viewController storyboardIdentifier="homeView" id="18S-Id-kgb" customClass="HomeViewController" customModule="Kitty" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="s8v-xN-R1G">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="fJs-lg-Whv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S3Z-9h-Yfc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1796" y="-27"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="y57-3W-SF5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="jwL-Us-JY4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hPM-1y-SRE">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="abf-rj-5Dz">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="KE6-zJ-gyZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4pp-f9-Rrt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Google" width="18" height="18"/>
+        <image name="Kitty-Logo" width="86" height="86"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
