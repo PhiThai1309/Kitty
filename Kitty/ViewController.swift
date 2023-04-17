@@ -12,6 +12,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.backgroundColor = .white
+        UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
     }
     
     @IBAction func signUpOnClickHandler(_ sender: Any) {

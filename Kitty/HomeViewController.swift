@@ -9,6 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var addNewBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
     lazy var viewModel:HomeViewModel = {
@@ -21,10 +22,6 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
         let cellNib = UINib(nibName: "CardTableViewCell", bundle: nil)
         self.tableView.register(cellNib, forCellReuseIdentifier: "CardViewCell")
-        
-        let tabBarAppearance = UITabBarAppearance()
-        tabBarAppearance.backgroundColor = .white
-        UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
     }
 
 }

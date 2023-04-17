@@ -21,13 +21,13 @@
                         <rect key="frame" x="16" y="9" width="288" height="182"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5f-bh-Ei7">
-                                <rect key="frame" x="16" y="16" width="288" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="16" y="16" width="288" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="fyv-Yd-ASd">
-                                <rect key="frame" x="0.0" y="53" width="288" height="129"/>
+                                <rect key="frame" x="0.0" y="36" width="288" height="146"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="len-9X-Sut">
                                     <size key="itemSize" width="128" height="200"/>
@@ -48,7 +48,7 @@
                             <constraint firstItem="fyv-Yd-ASd" firstAttribute="leading" secondItem="GLV-qG-N1Q" secondAttribute="leading" id="KYX-NW-ufs"/>
                             <constraint firstItem="F5f-bh-Ei7" firstAttribute="leading" secondItem="GLV-qG-N1Q" secondAttribute="leading" constant="16" id="S2N-Vl-0Op"/>
                             <constraint firstAttribute="bottom" secondItem="fyv-Yd-ASd" secondAttribute="bottom" id="arD-TX-VQg"/>
-                            <constraint firstItem="fyv-Yd-ASd" firstAttribute="top" secondItem="F5f-bh-Ei7" secondAttribute="bottom" constant="16" id="eLS-Ia-0Bz"/>
+                            <constraint firstItem="fyv-Yd-ASd" firstAttribute="top" secondItem="F5f-bh-Ei7" secondAttribute="bottom" constant="8" id="eLS-Ia-0Bz"/>
                             <constraint firstItem="F5f-bh-Ei7" firstAttribute="trailing" secondItem="GLV-qG-N1Q" secondAttribute="trailing" constant="16" id="qXd-db-mTF"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
