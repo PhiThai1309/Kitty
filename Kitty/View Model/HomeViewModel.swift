@@ -21,10 +21,13 @@ class HomeViewModel {
         let item2 = Item(category: "cat2", amount: 22.0, description: "Example description2")
         let item3 = Item(category: "cat3", amount: 32.0, description: "Example description3")
         
-        let hisroty1 = History(date: "Today", amount: 20.0, items: [item1, item2, item3])
-        let hisroty2 = History(date: "Today", amount: 20.0, items: [item1, item2, item3])
+        let hisroty1 = History(date: "hisroty1", amount: 20.0, items: [item1, item2, item3, item1, item1])
+        let hisroty2 = History(date: "hisroty2", amount: 20.0, items: [item1, item2, item3])
+        let hisroty3 = History(date: "hisroty3", amount: 20.0, items: [])
         history.append(hisroty1)
         history.append(hisroty2)
+        history.append(hisroty3)
+
     }
     
     func getAllItems() -> [Item] {

@@ -92,7 +92,7 @@
             </objects>
             <point key="canvasLocation" x="977.86259541984725" y="-27.464788732394368"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Home-->
         <scene sceneID="y7j-ln-RRi">
             <objects>
                 <viewController storyboardIdentifier="homeView" id="18S-Id-kgb" customClass="HomeViewController" customModule="Kitty" customModuleProvider="target" sceneMemberID="viewController">
@@ -341,7 +341,24 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Lbh-4P-euU" customClass="CardTableViewCell" customModule="Kitty" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="94" width="393" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lbh-4P-euU" id="UfX-5d-Wvs">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="k5B-ZK-r9C" customClass="CardTableViewCell" customModule="Kitty" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="138" width="393" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="k5B-ZK-r9C" id="DHH-d5-Beq">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </prototypes>
+                                <sections/>
                                 <connections>
                                     <outlet property="dataSource" destination="18S-Id-kgb" id="Ey1-i5-scx"/>
                                     <outlet property="delegate" destination="18S-Id-kgb" id="9gp-1q-sTE"/>
@@ -367,13 +384,30 @@
                             <constraint firstItem="piF-No-Lis" firstAttribute="top" secondItem="e0R-id-OYq" secondAttribute="bottom" constant="8" id="yU5-xO-CUQ"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="Home" id="jfZ-8Q-U65"/>
                     <connections>
                         <outlet property="tableView" destination="ins-fp-NLU" id="jtv-on-6o4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S3Z-9h-Yfc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1794.6564885496182" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="2721.3740458015268" y="-27.464788732394368"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="3BH-Ob-DVv">
+            <objects>
+                <viewController id="phL-Gk-1xp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ohi-0S-z3Z">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="in8-Ad-crf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" image="Setting" id="rQg-bX-jzu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vf7-Co-80U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1795" y="663"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="y57-3W-SF5">
@@ -395,13 +429,34 @@
             </objects>
             <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ByH-AH-Jgx">
+            <objects>
+                <tabBarController storyboardIdentifier="tabBarController" automaticallyAdjustsScrollViewInsets="NO" id="Zzl-ZY-bRY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="GZi-0L-rk1">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <tabBarAppearance key="standardAppearance"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="18S-Id-kgb" kind="relationship" relationship="viewControllers" id="SHo-Rh-YMJ"/>
+                        <segue destination="phL-Gk-1xp" kind="relationship" relationship="viewControllers" id="QoS-Oh-d2B"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dKv-lT-hyX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1794.6564885496182" y="-27.464788732394368"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Avtaar" width="32" height="32"/>
         <image name="Bank" width="19" height="20"/>
         <image name="Google" width="18" height="18"/>
+        <image name="Home" width="20" height="17"/>
         <image name="Kitty-Logo" width="86" height="86"/>
         <image name="Money" width="22" height="16"/>
+        <image name="Setting" width="20" height="20"/>
         <image name="Wallet" width="19" height="18"/>
         <image name="calendar" catalog="system" width="128" height="107"/>
         <image name="chevron.left" catalog="system" width="97" height="128"/>

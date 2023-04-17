@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     @IBAction func signUpOnClickHandler(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "homeView") as! HomeViewController
+        let vc = storyboard.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
         self.navigationController?.pushViewController(vc, animated: true)
 
         self.navigationController?.interactivePopGestureRecognizer!.delegate = nil
