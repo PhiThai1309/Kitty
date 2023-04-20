@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddNewViewController" customModule="Kitty" customModuleProvider="target">
             <connections>
+                <outlet property="expenseTypeDropDown" destination="wx9-dZ-EDN" id="UZD-U3-uL8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,6 +23,86 @@
                     <rect key="frame" x="0.0" y="0.0" width="393" height="107"/>
                     <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oGT-Eg-ylM">
+                    <rect key="frame" x="16" y="271.33333333333331" width="361" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="e4M-MM-rlF"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description (Optional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LOi-X4-doj">
+                    <rect key="frame" x="16" y="343.33333333333331" width="361" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="Z59-Zv-fIF"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MY1-bt-c0N">
+                    <rect key="frame" x="16" y="199.33333333333334" width="361" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="3oc-ee-oNe"/>
+                    </constraints>
+                    <color key="tintColor" systemColor="labelColor"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Category Name">
+                        <directionalEdgeInsets key="contentInsets" top="12" leading="8" bottom="12" trailing="12"/>
+                    </buttonConfiguration>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" red="0.94217187170000005" green="0.94217187170000005" blue="0.94217187170000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="categoryClickHandler:" destination="-1" eventType="touchUpInside" id="6CH-hV-q6N"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wx9-dZ-EDN">
+                    <rect key="frame" x="16" y="131" width="361" height="44.333333333333343"/>
+                    <color key="tintColor" systemColor="labelColor"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Choose expense type">
+                        <directionalEdgeInsets key="contentInsets" top="12" leading="8" bottom="12" trailing="12"/>
+                    </buttonConfiguration>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" red="0.94217187170000005" green="0.94217187170000005" blue="0.94217187170000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOY-XJ-wtq">
+                    <rect key="frame" x="16" y="415.33333333333331" width="361" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="KKK-6C-DHE"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Add an income" cornerStyle="capsule">
+                        <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                    </buttonConfiguration>
+                </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NoS-KR-XmP">
                     <rect key="frame" x="0.0" y="59" width="393" height="48"/>
                     <subviews>
@@ -43,58 +124,28 @@
                         <constraint firstItem="KBf-sb-b4O" firstAttribute="leading" secondItem="NoS-KR-XmP" secondAttribute="leading" constant="10" id="kDc-Uz-jpH"/>
                     </constraints>
                 </view>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oGT-Eg-ylM">
-                    <rect key="frame" x="16" y="203" width="361" height="48"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="48" id="e4M-MM-rlF"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <textInputTraits key="textInputTraits"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                            <real key="value" value="0.0"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </textField>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description (Optional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LOi-X4-doj">
-                    <rect key="frame" x="16" y="275" width="361" height="48"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="48" id="Z59-Zv-fIF"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <textInputTraits key="textInputTraits"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                            <real key="value" value="0.0"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MY1-bt-c0N">
-                    <rect key="frame" x="16" y="131" width="361" height="48"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="48" id="3oc-ee-oNe"/>
-                    </constraints>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                    <connections>
-                        <action selector="categoryClickHandler:" destination="-1" eventType="touchUpInside" id="6CH-hV-q6N"/>
-                    </connections>
-                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="LOi-X4-doj" firstAttribute="leading" secondItem="oGT-Eg-ylM" secondAttribute="leading" id="2Km-6W-iNq"/>
+                <constraint firstItem="wx9-dZ-EDN" firstAttribute="leading" secondItem="MY1-bt-c0N" secondAttribute="leading" id="7yL-sy-rmJ"/>
                 <constraint firstItem="NoS-KR-XmP" firstAttribute="bottom" secondItem="spV-t4-nst" secondAttribute="bottom" id="8gb-0T-YVO"/>
                 <constraint firstItem="LOi-X4-doj" firstAttribute="top" secondItem="oGT-Eg-ylM" secondAttribute="bottom" constant="24" id="BRt-g0-aSK"/>
+                <constraint firstItem="BOY-XJ-wtq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="C3W-5I-wIl"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BOY-XJ-wtq" secondAttribute="trailing" constant="16" id="CJW-yX-GCl"/>
                 <constraint firstItem="oGT-Eg-ylM" firstAttribute="top" secondItem="MY1-bt-c0N" secondAttribute="bottom" constant="24" id="CM7-tf-xZH"/>
                 <constraint firstItem="oGT-Eg-ylM" firstAttribute="leading" secondItem="MY1-bt-c0N" secondAttribute="leading" id="Dc8-kZ-cEr"/>
                 <constraint firstAttribute="trailing" secondItem="spV-t4-nst" secondAttribute="trailing" id="Llp-LK-Snf"/>
+                <constraint firstItem="BOY-XJ-wtq" firstAttribute="top" secondItem="LOi-X4-doj" secondAttribute="bottom" constant="24" id="NpG-cb-aYe"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NoS-KR-XmP" secondAttribute="trailing" id="OFP-SU-8o2"/>
+                <constraint firstItem="MY1-bt-c0N" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="QbX-I9-PPU"/>
                 <constraint firstItem="LOi-X4-doj" firstAttribute="leading" secondItem="MY1-bt-c0N" secondAttribute="leading" id="Qbx-om-ROn"/>
                 <constraint firstItem="oGT-Eg-ylM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="WTk-Wa-fHp"/>
+                <constraint firstItem="wx9-dZ-EDN" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Whc-vh-rPe"/>
                 <constraint firstItem="spV-t4-nst" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ZAb-Py-lEy"/>
-                <constraint firstItem="MY1-bt-c0N" firstAttribute="top" secondItem="spV-t4-nst" secondAttribute="bottom" constant="24" id="apZ-Yf-nfm"/>
+                <constraint firstItem="wx9-dZ-EDN" firstAttribute="top" secondItem="spV-t4-nst" secondAttribute="bottom" constant="24" id="ad6-Fl-05R"/>
+                <constraint firstItem="MY1-bt-c0N" firstAttribute="top" secondItem="wx9-dZ-EDN" secondAttribute="bottom" constant="24" id="apZ-Yf-nfm"/>
                 <constraint firstItem="NoS-KR-XmP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="fZz-9G-ehp"/>
                 <constraint firstItem="MY1-bt-c0N" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="mNt-f8-Wht"/>
                 <constraint firstItem="NoS-KR-XmP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tei-d1-nxL"/>
@@ -107,6 +158,9 @@
     </objects>
     <resources>
         <image name="arrow.left" catalog="system" width="128" height="95"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
