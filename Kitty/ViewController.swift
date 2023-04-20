@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let tabBarAppearance = UITabBarAppearance()
-        tabBarAppearance.backgroundColor = .white
+        tabBarAppearance.backgroundColor = .systemBackground
         UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
     }
     
