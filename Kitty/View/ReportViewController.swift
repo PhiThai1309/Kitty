@@ -11,6 +11,12 @@ import Charts
 class ReportViewController: UIViewController, ChartViewDelegate {
     
     @IBOutlet weak var chartView: BarChartView!
+    @IBOutlet weak var reportCollectionView: UICollectionView!
+    
+    lazy var viewModel: HomeViewModel = {
+        return HomeViewModel()
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,6 +41,31 @@ class ReportViewController: UIViewController, ChartViewDelegate {
         chartView.legend.form = .none
         self.chartView.legend.enabled = false
         chartView.barData?.setValueTextColor(.clear)
+        
+        let cellNib = UINib(nibName: "ItemCollectionViewCell", bundle: nil)
+        self.reportCollectionView.register(cellNib, forCellWithReuseIdentifier: "ItemCellView")
+    }
+}
+
+extension ReportViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.getAllHistory().count
     }
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let history = viewModel.getAllHistory()[indexPath.row]
+        // Fetch a cell of the appropriate type.
+        if let cell = reportCollectionView.dequeueReusableCell(withReuseIdentifier: "ItemCellView", for: indexPath) as? ItemCollectionViewCell {
+            cell.descLabel.text = String(history.amount)
+            cell.amountLabel.text = String(history.amount)
+            return cell
+        }
+        return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let _: CGFloat = 1
+            let cellWidth = UIScreen.main.bounds.size.width
+                return CGSizeMake(cellWidth, 50)
+        }
 }

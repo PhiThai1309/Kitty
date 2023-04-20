@@ -6,6 +6,7 @@
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -802,39 +803,49 @@
                                 <color key="textColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dve-3r-heR">
-                                <rect key="frame" x="0.0" y="289" width="393" height="480"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NqF-OS-yI7">
+                                <rect key="frame" x="0.0" y="281" width="393" height="488"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="P4G-BM-JI7">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P4G-BM-JI7" id="GEd-SY-XSx">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sZh-WY-9Xn">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="0Lg-bi-Xds">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="PQb-Y2-ZBB">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="sEI-rx-lwd" id="199-xJ-cQZ"/>
+                                    <outlet property="delegate" destination="sEI-rx-lwd" id="6mB-z5-cmB"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eXN-eV-yWK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="dve-3r-heR" firstAttribute="top" secondItem="jtV-jF-MON" secondAttribute="bottom" constant="8" id="0tP-or-Qce"/>
-                            <constraint firstItem="eXN-eV-yWK" firstAttribute="bottom" secondItem="dve-3r-heR" secondAttribute="bottom" id="3RF-UW-CcN"/>
+                            <constraint firstItem="NqF-OS-yI7" firstAttribute="top" secondItem="jtV-jF-MON" secondAttribute="bottom" id="1Gw-sK-L71"/>
                             <constraint firstItem="Tcs-Uv-VvI" firstAttribute="leading" secondItem="eXN-eV-yWK" secondAttribute="leading" id="4DF-2s-DFJ"/>
                             <constraint firstItem="Q9S-jH-QIj" firstAttribute="leading" secondItem="eXN-eV-yWK" secondAttribute="leading" id="Foe-of-s11"/>
                             <constraint firstItem="jtV-jF-MON" firstAttribute="top" secondItem="7Iv-vt-cbT" secondAttribute="bottom" id="GAh-Vf-30H"/>
                             <constraint firstItem="Tcs-Uv-VvI" firstAttribute="top" secondItem="Q9S-jH-QIj" secondAttribute="bottom" id="GxC-vP-WLH"/>
+                            <constraint firstItem="eXN-eV-yWK" firstAttribute="bottom" secondItem="NqF-OS-yI7" secondAttribute="bottom" id="JBe-Ns-zCm"/>
                             <constraint firstItem="jtV-jF-MON" firstAttribute="leading" secondItem="eXN-eV-yWK" secondAttribute="leading" constant="16" id="OLj-K8-eNW"/>
                             <constraint firstItem="eXN-eV-yWK" firstAttribute="trailing" secondItem="7Iv-vt-cbT" secondAttribute="trailing" constant="-40" id="PGQ-Ap-K3o"/>
-                            <constraint firstItem="eXN-eV-yWK" firstAttribute="trailing" secondItem="dve-3r-heR" secondAttribute="trailing" id="QAC-4p-r1I"/>
-                            <constraint firstItem="dve-3r-heR" firstAttribute="leading" secondItem="eXN-eV-yWK" secondAttribute="leading" id="Vum-1Q-aCa"/>
                             <constraint firstItem="7Iv-vt-cbT" firstAttribute="leading" secondItem="eXN-eV-yWK" secondAttribute="leading" constant="-20" id="Xhq-VL-kvi"/>
                             <constraint firstItem="YIH-YB-UeT" firstAttribute="top" secondItem="Tcs-Uv-VvI" secondAttribute="bottom" constant="12" id="Xhu-aa-Jij"/>
                             <constraint firstItem="Q9S-jH-QIj" firstAttribute="trailing" secondItem="eXN-eV-yWK" secondAttribute="trailing" id="agG-jy-geC"/>
                             <constraint firstItem="Tcs-Uv-VvI" firstAttribute="trailing" secondItem="eXN-eV-yWK" secondAttribute="trailing" id="up6-cI-ibf"/>
                             <constraint firstItem="YIH-YB-UeT" firstAttribute="leading" secondItem="eXN-eV-yWK" secondAttribute="leading" constant="16" id="w4S-kl-vm9"/>
+                            <constraint firstItem="eXN-eV-yWK" firstAttribute="trailing" secondItem="NqF-OS-yI7" secondAttribute="trailing" id="wvk-TG-K6A"/>
+                            <constraint firstItem="NqF-OS-yI7" firstAttribute="leading" secondItem="eXN-eV-yWK" secondAttribute="leading" id="yry-BK-z4s"/>
                             <constraint firstItem="Q9S-jH-QIj" firstAttribute="top" secondItem="eXN-eV-yWK" secondAttribute="top" id="zYC-eC-gNX"/>
                             <constraint firstItem="7Iv-vt-cbT" firstAttribute="top" secondItem="YIH-YB-UeT" secondAttribute="bottom" id="zb4-bY-yuW"/>
                         </constraints>
@@ -842,6 +853,7 @@
                     <tabBarItem key="tabBarItem" title="Report" image="Report" id="fbt-bQ-9cD"/>
                     <connections>
                         <outlet property="chartView" destination="7Iv-vt-cbT" id="2ka-BU-KLK"/>
+                        <outlet property="reportCollectionView" destination="NqF-OS-yI7" id="i0m-m3-taH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Av-1R-95i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
