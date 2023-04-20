@@ -372,7 +372,8 @@
                                     <constraint firstAttribute="width" constant="130" id="V0f-Cg-6kf"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" image="plus.circle.fill" catalog="system" title="Add new" imagePadding="7.6699999999999999" cornerStyle="capsule">
+                                <buttonConfiguration key="configuration" style="filled" title="Add new" imagePadding="7.6699999999999999" cornerStyle="capsule">
+                                    <imageReference key="image" image="plus.circle.fill" catalog="system" symbolScale="medium"/>
                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="14"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
