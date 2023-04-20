@@ -388,6 +388,9 @@
                                         <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.12079609649860311" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addNewButtonClickHandler:" destination="18S-Id-kgb" eventType="touchUpInside" id="IGo-0O-E1b"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fJs-lg-Whv"/>
@@ -430,11 +433,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QHB-zB-cCo">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="130"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="195"/>
                                 <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="130" id="sMx-r0-iMq"/>
-                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ch5-dN-rvD">
                                 <rect key="frame" x="0.0" y="59" width="393" height="136"/>
@@ -492,48 +492,26 @@
                                     <constraint firstAttribute="bottom" secondItem="noA-ib-wWS" secondAttribute="bottom" constant="24" id="4mj-8w-YTR"/>
                                     <constraint firstItem="f1x-T3-Sen" firstAttribute="leading" secondItem="Ch5-dN-rvD" secondAttribute="leading" constant="16" id="GnA-V8-wBL"/>
                                     <constraint firstItem="f1x-T3-Sen" firstAttribute="top" secondItem="Ch5-dN-rvD" secondAttribute="top" constant="12" id="HbC-VU-BQV"/>
+                                    <constraint firstItem="noA-ib-wWS" firstAttribute="top" secondItem="f1x-T3-Sen" secondAttribute="bottom" constant="28" id="NyF-J9-gKK"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="f1x-T3-Sen" secondAttribute="trailing" constant="20" symbolic="YES" id="YHu-B5-slJ"/>
                                     <constraint firstAttribute="trailing" secondItem="noA-ib-wWS" secondAttribute="trailing" constant="16" id="ZsR-sV-mZh"/>
-                                    <constraint firstAttribute="height" constant="136" id="bjM-Sd-etn"/>
                                     <constraint firstItem="noA-ib-wWS" firstAttribute="leading" secondItem="Ch5-dN-rvD" secondAttribute="leading" constant="16" id="iXm-E7-5M9"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c1R-ij-x6L">
-                                <rect key="frame" x="0.0" y="217" width="393" height="406"/>
+                                <rect key="frame" x="0.0" y="195" width="393" height="574"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Eh0-Nh-HHo">
-                                        <rect key="frame" x="19" y="0.0" width="353" height="406"/>
+                                        <rect key="frame" x="19" y="0.0" width="355" height="400"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="GJd-BX-jV0">
-                                                <rect key="frame" x="0.0" y="0.0" width="353" height="406"/>
+                                                <rect key="frame" x="0.0" y="22" width="355" height="340"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vQn-yc-Qex">
-                                                        <rect key="frame" x="0.0" y="0.0" width="353" height="34"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3P-ep-K0Q">
-                                                                <rect key="frame" x="0.0" y="0.0" width="323" height="34"/>
-                                                                <color key="tintColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" image="Vector" title="Manage categories" imagePadding="10">
-                                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
-                                                                    <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
-                                                                </buttonConfiguration>
-                                                            </button>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="c0Z-kX-xIa">
-                                                                <rect key="frame" x="323" y="3.6666666666666679" width="30" height="27.333333333333336"/>
-                                                                <color key="tintColor" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="30" id="s5i-lW-ggh"/>
-                                                                </constraints>
-                                                                <imageReference key="image" image="chevron.right" catalog="system" symbolScale="small"/>
-                                                            </imageView>
-                                                        </subviews>
-                                                    </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6oj-BN-hwz">
-                                                        <rect key="frame" x="0.0" y="62" width="353" height="34"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="355" height="34"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ua5-hP-FPx">
-                                                                <rect key="frame" x="0.0" y="0.0" width="323" height="34"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="325" height="34"/>
                                                                 <color key="tintColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" image="Vector" title="Manage categories" imagePadding="10">
@@ -542,7 +520,7 @@
                                                                 </buttonConfiguration>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="XMw-YE-wji">
-                                                                <rect key="frame" x="323" y="3.6666666666666679" width="30" height="27.333333333333336"/>
+                                                                <rect key="frame" x="325" y="3.6666666666666679" width="30" height="27.333333333333336"/>
                                                                 <color key="tintColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="30" id="oNu-0w-yDd"/>
@@ -552,19 +530,19 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="faY-x6-WBc">
-                                                        <rect key="frame" x="0.0" y="124" width="353" height="34"/>
+                                                        <rect key="frame" x="0.0" y="62" width="355" height="34"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nqc-n2-xi9">
-                                                                <rect key="frame" x="0.0" y="0.0" width="323" height="34"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="325" height="34"/>
                                                                 <color key="tintColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" image="Vector" title="Manage categories" imagePadding="10">
+                                                                <buttonConfiguration key="configuration" style="plain" image="Vector-1" title="Export to PDF" imagePadding="10">
                                                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
                                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                                                 </buttonConfiguration>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="25R-jD-P1z">
-                                                                <rect key="frame" x="323" y="3.6666666666666679" width="30" height="27.333333333333336"/>
+                                                                <rect key="frame" x="325" y="3.6666666666666679" width="30" height="27.333333333333336"/>
                                                                 <color key="tintColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="30" id="3O0-gq-iSj"/>
@@ -574,19 +552,19 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zIY-7l-CQW">
-                                                        <rect key="frame" x="0.0" y="186" width="353" height="34"/>
+                                                        <rect key="frame" x="0.0" y="124" width="355" height="32"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOd-xC-cRc">
-                                                                <rect key="frame" x="0.0" y="0.0" width="323" height="34"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="325" height="32"/>
                                                                 <color key="tintColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" image="Vector" title="Manage categories" imagePadding="10">
+                                                                <buttonConfiguration key="configuration" style="plain" image="Vector-2" title="Choose currency" imagePadding="10">
                                                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
                                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                                                 </buttonConfiguration>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="JLi-5v-hU1">
-                                                                <rect key="frame" x="323" y="3.6666666666666679" width="30" height="27.333333333333336"/>
+                                                                <rect key="frame" x="325" y="3.6666666666666679" width="30" height="25.333333333333336"/>
                                                                 <color key="tintColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="30" id="rCY-GY-sSo"/>
@@ -596,19 +574,19 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="afr-Q6-S73">
-                                                        <rect key="frame" x="0.0" y="248" width="353" height="34"/>
+                                                        <rect key="frame" x="0.0" y="184" width="355" height="34"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8s-rC-VZa">
-                                                                <rect key="frame" x="0.0" y="0.0" width="323" height="34"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="325" height="34"/>
                                                                 <color key="tintColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" image="Vector" title="Manage categories" imagePadding="10">
+                                                                <buttonConfiguration key="configuration" style="plain" image="Vector-3" title="Choose language" imagePadding="10">
                                                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
                                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                                                 </buttonConfiguration>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="vBJ-fR-8P0">
-                                                                <rect key="frame" x="323" y="3.6666666666666679" width="30" height="27.333333333333336"/>
+                                                                <rect key="frame" x="325" y="3.6666666666666679" width="30" height="27.333333333333336"/>
                                                                 <color key="tintColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="30" id="grj-wZ-hGG"/>
@@ -618,19 +596,19 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m1w-0g-sKD">
-                                                        <rect key="frame" x="0.0" y="310" width="353" height="34"/>
+                                                        <rect key="frame" x="0.0" y="246" width="355" height="34"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ua-QR-v6r">
-                                                                <rect key="frame" x="0.0" y="0.0" width="323" height="34"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="325" height="34"/>
                                                                 <color key="tintColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" image="Vector" title="Manage categories" imagePadding="10">
+                                                                <buttonConfiguration key="configuration" style="plain" image="Vector-4" title="Frequently asked questions" imagePadding="10">
                                                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
                                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                                                 </buttonConfiguration>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="N2w-8E-yHc">
-                                                                <rect key="frame" x="323" y="3.6666666666666679" width="30" height="27.333333333333336"/>
+                                                                <rect key="frame" x="325" y="3.6666666666666679" width="30" height="27.333333333333336"/>
                                                                 <color key="tintColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="30" id="Efg-HX-rD9"/>
@@ -640,13 +618,13 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ocG-Yo-lzK">
-                                                        <rect key="frame" x="0.0" y="372" width="353" height="34"/>
+                                                        <rect key="frame" x="0.0" y="308" width="355" height="32"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5f-AW-b2O">
-                                                                <rect key="frame" x="0.0" y="0.0" width="353" height="34"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="355" height="32"/>
                                                                 <color key="tintColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" image="Vector" title="Manage categories" imagePadding="10">
+                                                                <buttonConfiguration key="configuration" style="plain" image="Vector-5" title="Logout" imagePadding="10">
                                                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
                                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                                                 </buttonConfiguration>
@@ -658,19 +636,18 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="GJd-BX-jV0" firstAttribute="top" secondItem="Eh0-Nh-HHo" secondAttribute="top" id="CTp-gE-sRP"/>
+                                            <constraint firstAttribute="height" constant="400" id="1pk-R9-o1V"/>
+                                            <constraint firstItem="GJd-BX-jV0" firstAttribute="top" secondItem="Eh0-Nh-HHo" secondAttribute="top" constant="22" id="CTp-gE-sRP"/>
                                             <constraint firstAttribute="trailing" secondItem="GJd-BX-jV0" secondAttribute="trailing" id="Jmp-ks-PSf"/>
                                             <constraint firstItem="GJd-BX-jV0" firstAttribute="leading" secondItem="Eh0-Nh-HHo" secondAttribute="leading" id="XvJ-Ue-WxR"/>
-                                            <constraint firstAttribute="height" constant="406" id="tMH-Fs-eVF"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Eh0-Nh-HHo" firstAttribute="trailing" secondItem="0bA-Ck-kan" secondAttribute="trailing" constant="19" id="F45-8t-08P"/>
-                                    <constraint firstItem="Eh0-Nh-HHo" firstAttribute="bottom" secondItem="0bA-Ck-kan" secondAttribute="bottom" constant="406" id="H8G-Gi-GwM"/>
+                                    <constraint firstItem="Eh0-Nh-HHo" firstAttribute="bottom" secondItem="0bA-Ck-kan" secondAttribute="bottom" id="H8G-Gi-GwM"/>
+                                    <constraint firstItem="Eh0-Nh-HHo" firstAttribute="centerX" secondItem="c1R-ij-x6L" secondAttribute="centerX" id="He4-RG-849"/>
                                     <constraint firstItem="Eh0-Nh-HHo" firstAttribute="leading" secondItem="0bA-Ck-kan" secondAttribute="leading" constant="19" id="WQd-NL-Kzf"/>
-                                    <constraint firstItem="Eh0-Nh-HHo" firstAttribute="width" secondItem="fT0-z1-HOU" secondAttribute="width" constant="-40" id="c8p-cJ-diT"/>
-                                    <constraint firstItem="Eh0-Nh-HHo" firstAttribute="height" secondItem="fT0-z1-HOU" secondAttribute="height" id="w6T-lm-Iat"/>
                                     <constraint firstItem="Eh0-Nh-HHo" firstAttribute="top" secondItem="0bA-Ck-kan" secondAttribute="top" id="z7Q-yJ-Mfw"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="0bA-Ck-kan"/>
@@ -682,12 +659,14 @@
                         <constraints>
                             <constraint firstItem="Ch5-dN-rvD" firstAttribute="top" secondItem="in8-Ad-crf" secondAttribute="top" id="996-Pl-Gg2"/>
                             <constraint firstItem="c1R-ij-x6L" firstAttribute="leading" secondItem="in8-Ad-crf" secondAttribute="leading" id="9ZE-aY-C5r"/>
-                            <constraint firstItem="QHB-zB-cCo" firstAttribute="leading" secondItem="in8-Ad-crf" secondAttribute="leading" id="P3W-Rb-01w"/>
+                            <constraint firstItem="QHB-zB-cCo" firstAttribute="leading" secondItem="Ohi-0S-z3Z" secondAttribute="leading" id="P3W-Rb-01w"/>
                             <constraint firstItem="Ch5-dN-rvD" firstAttribute="leading" secondItem="in8-Ad-crf" secondAttribute="leading" id="PKn-kf-ZOh"/>
-                            <constraint firstItem="in8-Ad-crf" firstAttribute="trailing" secondItem="QHB-zB-cCo" secondAttribute="trailing" id="Rp6-e3-nAB"/>
+                            <constraint firstAttribute="trailing" secondItem="QHB-zB-cCo" secondAttribute="trailing" id="Rp6-e3-nAB"/>
+                            <constraint firstItem="in8-Ad-crf" firstAttribute="bottom" secondItem="c1R-ij-x6L" secondAttribute="bottom" id="Sne-Vh-MAI"/>
                             <constraint firstItem="in8-Ad-crf" firstAttribute="trailing" secondItem="c1R-ij-x6L" secondAttribute="trailing" id="cCS-T4-PlB"/>
                             <constraint firstItem="in8-Ad-crf" firstAttribute="trailing" secondItem="Ch5-dN-rvD" secondAttribute="trailing" id="iMc-p3-ntn"/>
-                            <constraint firstItem="c1R-ij-x6L" firstAttribute="top" secondItem="Ch5-dN-rvD" secondAttribute="bottom" constant="22" id="ufq-VB-8tk"/>
+                            <constraint firstItem="Ch5-dN-rvD" firstAttribute="bottom" secondItem="QHB-zB-cCo" secondAttribute="bottom" id="sWu-lk-gWc"/>
+                            <constraint firstItem="c1R-ij-x6L" firstAttribute="top" secondItem="Ch5-dN-rvD" secondAttribute="bottom" id="ufq-VB-8tk"/>
                             <constraint firstItem="QHB-zB-cCo" firstAttribute="top" secondItem="Ohi-0S-z3Z" secondAttribute="top" id="zhR-ii-bHT"/>
                         </constraints>
                     </view>
@@ -870,6 +849,11 @@
         <image name="Report" width="20" height="20"/>
         <image name="Setting" width="20" height="20"/>
         <image name="Vector" width="19" height="20"/>
+        <image name="Vector-1" width="20" height="20"/>
+        <image name="Vector-2" width="10.666666984558105" height="18"/>
+        <image name="Vector-3" width="22" height="20"/>
+        <image name="Vector-4" width="20" height="20"/>
+        <image name="Vector-5" width="18" height="18"/>
         <image name="Wallet" width="19" height="18"/>
         <image name="calendar" catalog="system" width="128" height="107"/>
         <image name="chevron.left" catalog="system" width="97" height="128"/>

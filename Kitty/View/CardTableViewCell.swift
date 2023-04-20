@@ -55,8 +55,8 @@ extension CardTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let item = items![indexPath.row]
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCellView", for: indexPath) as? ItemCollectionViewCell {
-            cell.typeLabel.text = item.category
-            cell.descLabel.text = item.category
+            cell.typeLabel.text = item.category.name
+            cell.descLabel.text = item.category.name
             cell.amountLabel.text = String(item.amount)
             return cell
         }
@@ -66,7 +66,7 @@ extension CardTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let _: CGFloat = 1
             let cellWidth = UIScreen.main.bounds.size.width
-                return CGSizeMake(cellWidth, 56)
+                return CGSizeMake(cellWidth, 50)
         }
     
 }

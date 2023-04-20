@@ -10,6 +10,7 @@ import Foundation
 class HomeViewModel {
     private var items: [Item] = []
     private var history: [History] = []
+    private var category: [Category] = []
     
     init(items: [Item], history: [History]) {
         self.items = items
@@ -17,9 +18,13 @@ class HomeViewModel {
     }
     
     init() {
-        let item1 = Item(category: "cat1", amount: 12.0, description: "Example description")
-        let item2 = Item(category: "cat2", amount: 22.0, description: "Example description2")
-        let item3 = Item(category: "cat3", amount: 32.0, description: "Example description3")
+        let category  = Category(name: "Grocery")
+        let category2 = Category(name: "Gifts")
+        let category3  = Category(name: "Bar & Cafe")
+        
+        let item1 = Item(category: category, amount: 12.0, description: "Example description")
+        let item2 = Item(category: category2, amount: 22.0, description: "Example description2")
+        let item3 = Item(category: category3, amount: 32.0, description: "Example description3")
         
         let hisroty1 = History(date: "hisroty1", amount: 20.0, items: [item1, item2, item3, item1, item1])
         let hisroty2 = History(date: "hisroty2", amount: 20.0, items: [item1, item2, item3])
@@ -36,5 +41,9 @@ class HomeViewModel {
     
     func getAllHistory() -> [History] {
         return self.history
+    }
+    
+    func getAllCategory() -> [Category] {
+        return category
     }
 }
