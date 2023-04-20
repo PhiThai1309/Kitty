@@ -53,7 +53,8 @@ extension SheetViewController: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let category = viewModel?.getAllCategory()[indexPath.row]
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCellView", for: indexPath) as? CategoryCollectionViewCell {
-            cell.categoryLabel.text = "Grocery. Grocery Grocery"
+            cell.categoryLabel.text = "Grocery"
+            cell.categoryImg.image = UIImage(named: "Groceries")
             return cell
         }
         return UICollectionViewCell()
@@ -62,7 +63,6 @@ extension SheetViewController: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let numberOfCell: CGFloat = 3
         let cellWidth = (UIScreen.main.bounds.size.width) / numberOfCell - 24
-        print(cellWidth)
         return CGSizeMake(cellWidth, cellWidth)
         
     }

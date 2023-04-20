@@ -43,7 +43,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Od0-OU-dXH">
-                                            <rect key="frame" x="24" y="62" width="345" height="296"/>
+                                            <rect key="frame" x="24" y="50" width="345" height="308"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9Kz-8P-8ZV">
                                                 <size key="itemSize" width="128" height="128"/>
@@ -71,7 +71,7 @@
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="Od0-OU-dXH" secondAttribute="bottom" constant="92" id="7Re-DX-P9J"/>
-                                        <constraint firstItem="Od0-OU-dXH" firstAttribute="top" secondItem="Wsa-3m-67l" secondAttribute="bottom" constant="20" id="ERj-Yd-BdH"/>
+                                        <constraint firstItem="Od0-OU-dXH" firstAttribute="top" secondItem="Wsa-3m-67l" secondAttribute="bottom" constant="8" id="ERj-Yd-BdH"/>
                                         <constraint firstItem="Wsa-3m-67l" firstAttribute="centerX" secondItem="4Z8-DL-UfV" secondAttribute="centerX" id="Py3-dQ-KJF"/>
                                         <constraint firstItem="VbY-3i-Mtn" firstAttribute="top" secondItem="4Z8-DL-UfV" secondAttribute="top" constant="8" id="T82-7V-7Ms"/>
                                         <constraint firstItem="Od0-OU-dXH" firstAttribute="centerX" secondItem="4Z8-DL-UfV" secondAttribute="centerX" id="UuM-uM-hSQ"/>
