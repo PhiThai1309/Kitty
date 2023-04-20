@@ -18,14 +18,14 @@ class CardTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-//        // TODO: need to setup collection view flow layout
-//        let flowLayout = UICollectionViewFlowLayout()
-//        flowLayout.scrollDirection = .vertical
-//        flowLayout.itemSize = CGSize(width: 150, height: 180)
-//        flowLayout.minimumLineSpacing = 2.0
-//        flowLayout.minimumInteritemSpacing = 5.0
-//        self.cardCollectionView.collectionViewLayout = flowLayout
-//        self.cardCollectionView.showsHorizontalScrollIndicator = false
+        //        // TODO: need to setup collection view flow layout
+        //        let flowLayout = UICollectionViewFlowLayout()
+        //        flowLayout.scrollDirection = .vertical
+        //        flowLayout.itemSize = CGSize(width: 150, height: 180)
+        //        flowLayout.minimumLineSpacing = 2.0
+        //        flowLayout.minimumInteritemSpacing = 5.0
+        //        self.cardCollectionView.collectionViewLayout = flowLayout
+        //        self.cardCollectionView.showsHorizontalScrollIndicator = false
         
         self.cardCollectionView.dataSource = self
         self.cardCollectionView.delegate = self
@@ -62,12 +62,12 @@ extension CardTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
         }
         return UICollectionViewCell()
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let _: CGFloat = 1
-            let cellWidth = UIScreen.main.bounds.size.width
-                return CGSizeMake(cellWidth, 50)
-        }
+        let cellWidth = UIScreen.main.bounds.size.width
+        return CGSizeMake(cellWidth, 50)
+    }
     
 }
 

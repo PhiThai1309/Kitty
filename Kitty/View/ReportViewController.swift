@@ -47,7 +47,7 @@ class ReportViewController: UIViewController, ChartViewDelegate {
     }
 }
 
-extension ReportViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension ReportViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.getAllHistory().count
     }
@@ -65,7 +65,7 @@ extension ReportViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let _: CGFloat = 1
-            let cellWidth = UIScreen.main.bounds.size.width
-                return CGSizeMake(cellWidth, 50)
-        }
+        let cellWidth = UIScreen.main.bounds.size.width
+        return CGSizeMake(cellWidth + 16*2, 50)
+    }
 }

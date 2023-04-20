@@ -803,10 +803,10 @@
                                 <color key="textColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NqF-OS-yI7">
-                                <rect key="frame" x="0.0" y="281" width="393" height="488"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NqF-OS-yI7">
+                                <rect key="frame" x="0.0" y="297" width="393" height="472"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sZh-WY-9Xn">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="16" minimumInteritemSpacing="16" id="sZh-WY-9Xn">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -831,7 +831,7 @@
                         <viewLayoutGuide key="safeArea" id="eXN-eV-yWK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="NqF-OS-yI7" firstAttribute="top" secondItem="jtV-jF-MON" secondAttribute="bottom" id="1Gw-sK-L71"/>
+                            <constraint firstItem="NqF-OS-yI7" firstAttribute="top" secondItem="jtV-jF-MON" secondAttribute="bottom" constant="16" id="1Gw-sK-L71"/>
                             <constraint firstItem="Tcs-Uv-VvI" firstAttribute="leading" secondItem="eXN-eV-yWK" secondAttribute="leading" id="4DF-2s-DFJ"/>
                             <constraint firstItem="Q9S-jH-QIj" firstAttribute="leading" secondItem="eXN-eV-yWK" secondAttribute="leading" id="Foe-of-s11"/>
                             <constraint firstItem="jtV-jF-MON" firstAttribute="top" secondItem="7Iv-vt-cbT" secondAttribute="bottom" id="GAh-Vf-30H"/>
@@ -852,7 +852,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Report" image="Report" id="fbt-bQ-9cD"/>
                     <connections>
-                        <outlet property="chartView" destination="7Iv-vt-cbT" id="2ka-BU-KLK"/>
+                        <outlet property="chartView" destination="7Iv-vt-cbT" id="caz-AM-Lmd"/>
                         <outlet property="reportCollectionView" destination="NqF-OS-yI7" id="i0m-m3-taH"/>
                     </connections>
                 </viewController>
