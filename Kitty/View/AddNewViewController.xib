@@ -101,6 +101,7 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="filled" title="Add an income" cornerStyle="capsule">
                         <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                        <directionalEdgeInsets key="contentInsets" top="12" leading="12" bottom="12" trailing="12"/>
                     </buttonConfiguration>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NoS-KR-XmP">
