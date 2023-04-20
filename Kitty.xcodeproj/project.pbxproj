@@ -31,6 +31,7 @@
 		3FEFBAA929ECF8040085641B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEFBAA829ECF8040085641B /* Item.swift */; };
 		3FEFBAAB29ECFBE40085641B /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEFBAAA29ECFBE40085641B /* History.swift */; };
 		3FEFBAAE29ECFD410085641B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEFBAAD29ECFD410085641B /* HomeViewModel.swift */; };
+		3FF9E16C29F11CBE00FFDDE9 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF9E16B29F11CBE00FFDDE9 /* ReportViewController.swift */; };
 		81F3DE7A7E4BF91F6F29295D /* Pods_Kitty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 932AB51646B8E5E529DBB01E /* Pods_Kitty.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		3FEFBAA829ECF8040085641B /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		3FEFBAAA29ECFBE40085641B /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		3FEFBAAD29ECFD410085641B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		3FF9E16B29F11CBE00FFDDE9 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		7E3FD0B8C8890138E1290C7E /* Pods-Kitty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kitty.release.xcconfig"; path = "Target Support Files/Pods-Kitty/Pods-Kitty.release.xcconfig"; sourceTree = "<group>"; };
 		932AB51646B8E5E529DBB01E /* Pods_Kitty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kitty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1BCAF7D4C0A74E460F5F02F /* Pods-Kitty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kitty.debug.xcconfig"; path = "Target Support Files/Pods-Kitty/Pods-Kitty.debug.xcconfig"; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				3F0E3CB029F0E880009BF311 /* SheetViewController.xib */,
 				3F0E3CB329F0EC29009BF311 /* CategoryCollectionViewCell.swift */,
 				3F0E3CB429F0EC29009BF311 /* CategoryCollectionViewCell.xib */,
+				3FF9E16B29F11CBE00FFDDE9 /* ReportViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				3F16DE1329F0DC1500AE7C83 /* AddNewViewController.swift in Sources */,
 				3F0E3CB129F0E880009BF311 /* SheetViewController.swift in Sources */,
 				3FEFBAAB29ECFBE40085641B /* History.swift in Sources */,
+				3FF9E16C29F11CBE00FFDDE9 /* ReportViewController.swift in Sources */,
 				3F0E3CB829F0EF39009BF311 /* Category.swift in Sources */,
 				3FA9E65C29E93F6200D8D7C1 /* HomeViewController.swift in Sources */,
 				3FEFBAA629ECF6210085641B /* ItemCollectionViewCell.swift in Sources */,
