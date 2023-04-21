@@ -12,6 +12,8 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     @IBOutlet weak var addNewBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var expenseLabel: UILabel!
+    
     var viewModel: HomeViewModel?
     
     override func viewDidLoad() {
@@ -25,7 +27,10 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     @IBAction func addNewButtonClickHandler(_ sender: Any) {
         let newViewController = AddNewViewController()
         self.navigationController?.pushViewController(newViewController, animated: true)
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        expenseLabel.text = String(viewModel!.getExpense())
     }
     
 }
@@ -39,13 +44,10 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         // Fetch a cell of the appropriate type.
         let cell =  tableView.dequeueReusableCell(withIdentifier: "CardViewCell", for: indexPath) as! CardTableViewCell
         
-        //         Configure the cell’s contents.
+        // Configure the cell’s contents.
         cell.cardLabel.text = history.date
-        //        cell.items = history.items
-        
         cell.set(value: history.items)
-        
-        //        cell.delegate = self
+
         return cell
     }
     

@@ -419,6 +419,7 @@
                     <tabBarItem key="tabBarItem" title="Home" image="Home" id="jfZ-8Q-U65"/>
                     <connections>
                         <outlet property="addNewBtn" destination="93o-T9-gzd" id="Pjf-1E-Bcy"/>
+                        <outlet property="expenseLabel" destination="D4U-r1-ovb" id="rQo-f6-PUi"/>
                         <outlet property="tableView" destination="ins-fp-NLU" id="jtv-on-6o4"/>
                     </connections>
                 </viewController>

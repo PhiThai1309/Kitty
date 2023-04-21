@@ -81,4 +81,12 @@ class HomeViewModel {
         }
         return result
     }
+    
+    func getExpense() -> Double {
+        var sum: Double = 0
+        for item in items {
+            sum += item.amount
+        }
+        return sum
+    }
 }
