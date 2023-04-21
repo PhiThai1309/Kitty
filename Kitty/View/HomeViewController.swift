@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UITabBarControllerDelegate {
     
     @IBOutlet weak var addNewBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!

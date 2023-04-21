@@ -16,6 +16,7 @@
 		3F16DE1429F0DC1500AE7C83 /* AddNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F16DE1229F0DC1500AE7C83 /* AddNewViewController.xib */; };
 		3F3064CD29ECE6C100EF5485 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3064CC29ECE6C100EF5485 /* UIViewExtension.swift */; };
 		3F3064CF29ECE6F900EF5485 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3064CE29ECE6F900EF5485 /* UIColorExtension.swift */; };
+		3F64B3B429F23E190008A4D9 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F64B3B329F23E180008A4D9 /* TabBarViewController.swift */; };
 		3FA9E64529E9346E00D8D7C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9E64429E9346E00D8D7C1 /* AppDelegate.swift */; };
 		3FA9E64729E9346E00D8D7C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9E64629E9346E00D8D7C1 /* SceneDelegate.swift */; };
 		3FA9E64929E9346E00D8D7C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9E64829E9346E00D8D7C1 /* ViewController.swift */; };
@@ -45,6 +46,7 @@
 		3F16DE1229F0DC1500AE7C83 /* AddNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewViewController.xib; sourceTree = "<group>"; };
 		3F3064CC29ECE6C100EF5485 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		3F3064CE29ECE6F900EF5485 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		3F64B3B329F23E180008A4D9 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		3FA9E64129E9346E00D8D7C1 /* Kitty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kitty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FA9E64429E9346E00D8D7C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FA9E64629E9346E00D8D7C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				3F0E3CB329F0EC29009BF311 /* CategoryCollectionViewCell.swift */,
 				3F0E3CB429F0EC29009BF311 /* CategoryCollectionViewCell.xib */,
 				3FF9E16B29F11CBE00FFDDE9 /* ReportViewController.swift */,
+				3F64B3B329F23E180008A4D9 /* TabBarViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				3F0E3CB529F0EC29009BF311 /* CategoryCollectionViewCell.swift in Sources */,
 				3F3064CD29ECE6C100EF5485 /* UIViewExtension.swift in Sources */,
 				3F3064CF29ECE6F900EF5485 /* UIColorExtension.swift in Sources */,
+				3F64B3B429F23E190008A4D9 /* TabBarViewController.swift in Sources */,
 				3F16DE1329F0DC1500AE7C83 /* AddNewViewController.swift in Sources */,
 				3F0E3CB129F0E880009BF311 /* SheetViewController.swift in Sources */,
 				3FEFBAAB29ECFBE40085641B /* History.swift in Sources */,
