@@ -11,6 +11,8 @@ class AddNewViewController: UIViewController {
     
     @IBOutlet weak var expenseTypeDropDown: UIButton!
     
+    var viewModel: HomeViewModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,6 +27,7 @@ class AddNewViewController: UIViewController {
     
     @IBAction func categoryClickHandler(_ sender: Any) {
         let detailViewController = SheetViewController()
+        detailViewController.viewModel = viewModel
         let nav = UINavigationController(rootViewController: detailViewController)
         // 1
         nav.modalPresentationStyle = .pageSheet

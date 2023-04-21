@@ -36,14 +36,15 @@ class SheetViewController: UIViewController {
 extension SheetViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+//        print(viewModel)
+        return (viewModel!.getAllCategory().count)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let category = viewModel?.getAllCategory()[indexPath.row]
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCellView", for: indexPath) as? CategoryCollectionViewCell {
-            cell.categoryLabel.text = "Grocery"
-            cell.categoryImg.image = UIImage(named: "Grocery")
+            cell.categoryLabel.text = category?.name
+            cell.categoryImg.image = UIImage(named: category!.name)
             return cell
         }
         return UICollectionViewCell()

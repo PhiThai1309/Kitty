@@ -26,6 +26,7 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     
     @IBAction func addNewButtonClickHandler(_ sender: Any) {
         let newViewController = AddNewViewController()
+        newViewController.viewModel = viewModel
         self.navigationController?.pushViewController(newViewController, animated: true)
     }
     
