@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Z8-DL-UfV">
-                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <rect key="frame" x="0.0" y="59" width="393" height="793"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Drag" translatesAutoresizingMaskIntoConstraints="NO" id="VbY-3i-Mtn">
                             <rect key="frame" x="186.66666666666666" y="8" width="20" height="2"/>
@@ -71,7 +71,7 @@
                         <constraint firstItem="GJi-po-JrN" firstAttribute="centerX" secondItem="4Z8-DL-UfV" secondAttribute="centerX" id="fOE-KW-plO"/>
                         <constraint firstItem="GJi-po-JrN" firstAttribute="top" secondItem="Od0-OU-dXH" secondAttribute="bottom" constant="24" id="p9u-ay-oNN"/>
                         <constraint firstItem="VbY-3i-Mtn" firstAttribute="centerX" secondItem="4Z8-DL-UfV" secondAttribute="centerX" id="qhf-h3-LsK"/>
-                        <constraint firstAttribute="bottom" secondItem="GJi-po-JrN" secondAttribute="bottom" constant="24" id="tOd-0K-M0O"/>
+                        <constraint firstAttribute="bottom" secondItem="GJi-po-JrN" secondAttribute="bottom" constant="58" id="tOd-0K-M0O"/>
                         <constraint firstItem="Od0-OU-dXH" firstAttribute="leading" secondItem="4Z8-DL-UfV" secondAttribute="leading" constant="24" id="v37-bw-VpN"/>
                         <constraint firstItem="Wsa-3m-67l" firstAttribute="top" secondItem="4Z8-DL-UfV" secondAttribute="top" constant="28" id="y0B-sm-OZj"/>
                     </constraints>
@@ -94,7 +94,7 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4Z8-DL-UfV" secondAttribute="bottom" id="0tk-CN-PbG"/>
+                <constraint firstAttribute="bottom" secondItem="4Z8-DL-UfV" secondAttribute="bottom" id="0tk-CN-PbG"/>
                 <constraint firstItem="4Z8-DL-UfV" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="AAa-99-u18"/>
                 <constraint firstItem="4Z8-DL-UfV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="aDa-De-lrw"/>
                 <constraint firstItem="4Z8-DL-UfV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="cLR-do-nyx"/>
