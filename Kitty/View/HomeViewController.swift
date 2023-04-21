@@ -12,9 +12,7 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     @IBOutlet weak var addNewBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
-    lazy var viewModel:HomeViewModel = {
-        return HomeViewModel()
-    }()
+    var viewModel: HomeViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,10 +32,10 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.getAllHistory().count
+        return viewModel!.getAllHistory().count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let history = viewModel.getAllHistory()[indexPath.row]
+        let history = viewModel!.getAllHistory()[indexPath.row]
         // Fetch a cell of the appropriate type.
         let cell =  tableView.dequeueReusableCell(withIdentifier: "CardViewCell", for: indexPath) as! CardTableViewCell
         
@@ -52,8 +50,8 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if CGFloat(viewModel.getAllHistory()[indexPath.row].items.count * 56) > 0 {
-            return CGFloat(viewModel.getAllHistory()[indexPath.row].items.count * 50 + 70 + 10*viewModel.getAllHistory()[indexPath.row].items.count)
+        if CGFloat(viewModel!.getAllHistory()[indexPath.row].items.count * 56) > 0 {
+            return CGFloat(viewModel!.getAllHistory()[indexPath.row].items.count * 50 + 70 + 10*viewModel!.getAllHistory()[indexPath.row].items.count)
         }
         return 60
     }

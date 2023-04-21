@@ -1,3 +1,4 @@
+
 //
 //  ReportViewController.swift
 //  Kitty
@@ -5,7 +6,7 @@
 //  Created by phi.thai on 4/20/23.
 //
 
-import UIKit
+import Foundation
 import Charts
 
 class ReportViewController: UIViewController, ChartViewDelegate {
@@ -13,9 +14,8 @@ class ReportViewController: UIViewController, ChartViewDelegate {
     @IBOutlet weak var chartView: BarChartView!
     @IBOutlet weak var reportCollectionView: UICollectionView!
     
-    lazy var viewModel: HomeViewModel = {
-        return HomeViewModel()
-    }()
+    var viewModel: HomeViewModel?
+    var sum: [Double] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +23,17 @@ class ReportViewController: UIViewController, ChartViewDelegate {
         // Do any additional setup after loading the view.
         chartView.delegate = self
         var entries = [BarChartDataEntry]()
+        var categories = viewModel?.getArrayOfEachCategory()
+        
+        for (index, category) in categories!.enumerated() {
+            for item in category {
+                sum.append(0)
+                sum[index] += item.amount
+                print(item)
+            }
+        }
         entries.append (BarChartDataEntry (x: Double(0.1),
-                                           yValues: [Double(10), Double(23),Double(99)]))
+                                           yValues: sum))
         let set = BarChartDataSet (entries: entries)
         set.colors = [UIColor.red,UIColor.orange,UIColor.green,UIColor.black,UIColor.blue]
         chartView.animate(yAxisDuration: 0.5)
@@ -49,15 +58,17 @@ class ReportViewController: UIViewController, ChartViewDelegate {
 
 extension ReportViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.getAllHistory().count
+        return viewModel!.getAllHistory().count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let history = viewModel.getAllHistory()[indexPath.row]
+        let amount = viewModel?.getAllCategory()[indexPath.row]
+
         // Fetch a cell of the appropriate type.
         if let cell = reportCollectionView.dequeueReusableCell(withReuseIdentifier: "ItemCellView", for: indexPath) as? ItemCollectionViewCell {
-            cell.descLabel.text = String(history.amount)
-            cell.amountLabel.text = String(history.amount)
+//            cell.descLabel.text = String(history.amount)
+            cell.typeLabel.text = amount?.name
+            cell.amountLabel.text = String(sum[indexPath.row])
             return cell
         }
         return UICollectionViewCell()
@@ -66,6 +77,6 @@ extension ReportViewController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let _: CGFloat = 1
         let cellWidth = UIScreen.main.bounds.size.width
-        return CGSizeMake(cellWidth + 16*2, 50)
+        return CGSizeMake(cellWidth, 50)
     }
 }
