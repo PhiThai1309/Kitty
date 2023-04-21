@@ -12,20 +12,13 @@ class CardTableViewCell: UITableViewCell {
     
     @IBOutlet weak var cardCollectionView: UICollectionView!
     @IBOutlet weak var cardLabel: UILabel!
+    @IBOutlet weak var totalLabel: UILabel!
     
     var items: [Item]?
+    var sum: Double = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        //        // TODO: need to setup collection view flow layout
-        //        let flowLayout = UICollectionViewFlowLayout()
-        //        flowLayout.scrollDirection = .vertical
-        //        flowLayout.itemSize = CGSize(width: 150, height: 180)
-        //        flowLayout.minimumLineSpacing = 2.0
-        //        flowLayout.minimumInteritemSpacing = 5.0
-        //        self.cardCollectionView.collectionViewLayout = flowLayout
-        //        self.cardCollectionView.showsHorizontalScrollIndicator = false
         
         self.cardCollectionView.dataSource = self
         self.cardCollectionView.delegate = self
@@ -46,6 +39,11 @@ extension CardTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
     func set(value: [Item]){
         self.items = value
         self.cardCollectionView.reloadData()
+        for item in items! {
+            sum += item.amount
+        }
+        
+        totalLabel.text = String(sum)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -58,6 +56,7 @@ extension CardTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
             cell.typeLabel.text = item.category.name
             cell.descLabel.text = item.category.name
             cell.amountLabel.text = String(item.amount)
+            cell.iconImg.image = UIImage(named: item.category.name)
             return cell
         }
         return UICollectionViewCell()

@@ -26,6 +26,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Dg-4f-sAB">
+                                <rect key="frame" x="245.66666666666671" y="16" width="26.333333333333343" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="fyv-Yd-ASd">
                                 <rect key="frame" x="0.0" y="44" width="288" height="138"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -45,6 +51,8 @@
                         <constraints>
                             <constraint firstItem="F5f-bh-Ei7" firstAttribute="top" secondItem="GLV-qG-N1Q" secondAttribute="top" constant="16" id="0tH-AL-HrC"/>
                             <constraint firstAttribute="trailing" secondItem="fyv-Yd-ASd" secondAttribute="trailing" id="2hh-Mo-0eR"/>
+                            <constraint firstItem="2Dg-4f-sAB" firstAttribute="centerY" secondItem="F5f-bh-Ei7" secondAttribute="centerY" id="4H5-6e-Thg"/>
+                            <constraint firstAttribute="trailing" secondItem="2Dg-4f-sAB" secondAttribute="trailing" constant="16" id="Hso-1u-CaF"/>
                             <constraint firstItem="fyv-Yd-ASd" firstAttribute="leading" secondItem="GLV-qG-N1Q" secondAttribute="leading" id="KYX-NW-ufs"/>
                             <constraint firstItem="F5f-bh-Ei7" firstAttribute="leading" secondItem="GLV-qG-N1Q" secondAttribute="leading" constant="16" id="S2N-Vl-0Op"/>
                             <constraint firstAttribute="bottom" secondItem="fyv-Yd-ASd" secondAttribute="bottom" id="arD-TX-VQg"/>
@@ -82,6 +90,7 @@
             <connections>
                 <outlet property="cardCollectionView" destination="fyv-Yd-ASd" id="ntp-LJ-JSY"/>
                 <outlet property="cardLabel" destination="F5f-bh-Ei7" id="a8R-JA-nnw"/>
+                <outlet property="totalLabel" destination="2Dg-4f-sAB" id="hRO-tt-pwr"/>
             </connections>
             <point key="canvasLocation" x="74.809160305343511" y="48.591549295774648"/>
         </tableViewCell>

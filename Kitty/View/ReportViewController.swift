@@ -23,7 +23,7 @@ class ReportViewController: UIViewController, ChartViewDelegate {
         // Do any additional setup after loading the view.
         chartView.delegate = self
         var entries = [BarChartDataEntry]()
-        var categories = viewModel?.getArrayOfEachCategory()
+        let categories = viewModel?.getArrayOfEachCategory()
         
         for (index, category) in categories!.enumerated() {
             for item in category {
@@ -66,9 +66,13 @@ extension ReportViewController: UICollectionViewDataSource, UICollectionViewDele
 
         // Fetch a cell of the appropriate type.
         if let cell = reportCollectionView.dequeueReusableCell(withReuseIdentifier: "ItemCellView", for: indexPath) as? ItemCollectionViewCell {
-//            cell.descLabel.text = String(history.amount)
+
             cell.typeLabel.text = amount?.name
             cell.amountLabel.text = String(sum[indexPath.row])
+            cell.iconImg.image = UIImage(named: amount!.name)
+            let categories = viewModel?.getArrayOfEachCategory()
+
+            cell.descLabel.text = String(categories![indexPath.row].count) + " transactions"
             return cell
         }
         return UICollectionViewCell()

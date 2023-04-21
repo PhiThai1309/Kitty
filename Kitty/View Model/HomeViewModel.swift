@@ -20,7 +20,7 @@ class HomeViewModel {
     init() {
         let category1  = Category(name: "Grocery")
         let category2 = Category(name: "Gifts")
-        let category3  = Category(name: "Bar & Cafe")
+        let category3  = Category(name: "Cafe")
         categories.append(category3)
         categories.append(category2)
         categories.append(category1)
@@ -53,6 +53,17 @@ class HomeViewModel {
     
     func getAllCategory() -> [Category] {
         return categories
+    }
+    
+    func getHistoryAmount() -> [Double] {
+        var sum: [Double] = []
+        for (index, object) in history.enumerated() {
+            for amount in object.items {
+                sum.append(0)
+                sum[index] = sum[index] + amount.amount
+            }
+        }
+        return sum
     }
     
     func getArrayOfEachCategory() -> [[Item]] {
