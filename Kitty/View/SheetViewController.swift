@@ -15,8 +15,6 @@ class SheetViewController: UIViewController {
     
     init() {
         super.init(nibName: "SheetViewController", bundle: Bundle(for: SheetViewController.self))
-        self.modalPresentationStyle = .overCurrentContext
-        self.modalTransitionStyle = .crossDissolve
     }
     
     required init?(coder: NSCoder) {
@@ -33,18 +31,9 @@ class SheetViewController: UIViewController {
         let cellNib = UINib(nibName: "CategoryCollectionViewCell", bundle: nil)
         self.collectionView.register(cellNib, forCellWithReuseIdentifier: "CategoryCellView")
     }
-    @IBAction func dismissClickHandler(_ sender: Any) {
-        self.dismiss(animated: true)
-    }
-    
 }
 
 extension SheetViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-    //    func set(value: [Item]){
-    //        self.items = value
-    //        self.collectionView.reloadData()
-    //    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 8
@@ -54,7 +43,7 @@ extension SheetViewController: UICollectionViewDelegate, UICollectionViewDataSou
         let category = viewModel?.getAllCategory()[indexPath.row]
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCellView", for: indexPath) as? CategoryCollectionViewCell {
             cell.categoryLabel.text = "Grocery"
-            cell.categoryImg.image = UIImage(named: "Groceries")
+            cell.categoryImg.image = UIImage(named: "Grocery")
             return cell
         }
         return UICollectionViewCell()
