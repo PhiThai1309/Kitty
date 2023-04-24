@@ -41,6 +41,7 @@ class SheetViewController: UIViewController {
     
     @IBAction func addNewOnClickHanlder(_ sender: Any) {
         let vc = AddNewCategoryViewController()
+        vc.viewModel = viewModel
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
 //        self.navigationController?.pushViewController(nav, animated: true)
