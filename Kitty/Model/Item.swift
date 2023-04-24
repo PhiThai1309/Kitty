@@ -15,6 +15,6 @@ enum type {
 struct Item {
     var category: Category
     var amount: Double
-    var description: String
+    var description: String?
     var categoryType: type
 }

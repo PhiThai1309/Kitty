@@ -119,6 +119,9 @@
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avtaar" translatesAutoresizingMaskIntoConstraints="NO" id="p8Y-K2-Jq4">
                                         <rect key="frame" x="345" y="8" width="32" height="32"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" button="YES" image="YES"/>
+                                        </accessibility>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="32" id="pdx-st-h2B"/>
                                             <constraint firstAttribute="width" secondItem="p8Y-K2-Jq4" secondAttribute="height" multiplier="1:1" id="sRs-DF-TR5"/>
@@ -134,14 +137,28 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system"/>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TAz-c2-nHg">
+                                        <rect key="frame" x="345" y="8" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="32" id="ShV-nE-pGq"/>
+                                            <constraint firstAttribute="width" secondItem="TAz-c2-nHg" secondAttribute="height" multiplier="1:1" id="TMp-2o-1V6"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <connections>
+                                            <action selector="settingOnClickButton:" destination="18S-Id-kgb" eventType="touchUpInside" id="t1L-iH-2mE"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="TAz-c2-nHg" secondAttribute="trailing" constant="16" id="4HC-Ee-iJi"/>
                                     <constraint firstItem="Ml9-GE-SJe" firstAttribute="centerY" secondItem="3Zl-eY-f3V" secondAttribute="centerY" id="6SM-Yc-IuC"/>
                                     <constraint firstItem="vqA-Vj-lzd" firstAttribute="centerY" secondItem="3Zl-eY-f3V" secondAttribute="centerY" id="AHK-7z-JuW"/>
                                     <constraint firstItem="23a-gK-QSw" firstAttribute="leading" secondItem="3Zl-eY-f3V" secondAttribute="leading" constant="20" id="B3z-DD-rem"/>
                                     <constraint firstAttribute="trailing" secondItem="p8Y-K2-Jq4" secondAttribute="trailing" constant="16" id="NJp-8e-ORb"/>
                                     <constraint firstAttribute="height" constant="48" id="c1v-NG-6JS"/>
+                                    <constraint firstItem="TAz-c2-nHg" firstAttribute="centerY" secondItem="3Zl-eY-f3V" secondAttribute="centerY" id="fQC-bb-Kht"/>
                                     <constraint firstItem="23a-gK-QSw" firstAttribute="centerY" secondItem="3Zl-eY-f3V" secondAttribute="centerY" id="lLI-79-LUY"/>
                                     <constraint firstItem="p8Y-K2-Jq4" firstAttribute="centerY" secondItem="3Zl-eY-f3V" secondAttribute="centerY" id="pUL-MA-w3l"/>
                                     <constraint firstItem="vqA-Vj-lzd" firstAttribute="leading" secondItem="23a-gK-QSw" secondAttribute="trailing" constant="8" id="uzO-tK-v7j"/>

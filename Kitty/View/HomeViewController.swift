@@ -35,6 +35,10 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
         expenseLabel.text = String(viewModel!.getExpense())
     }
     
+    @IBAction func settingOnClickButton(_ sender: Any) {
+        tabBarController!.selectedIndex = 2
+    }
+    
 }
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
@@ -59,6 +63,8 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         }
         return 60
     }
+    
+    
 }
 
 extension HomeViewController: AddNewDelegate {

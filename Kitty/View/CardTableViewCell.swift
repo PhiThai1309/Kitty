@@ -53,7 +53,7 @@ extension CardTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let item = items![indexPath.row]
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCellView", for: indexPath) as? ItemCollectionViewCell {
-            cell.typeLabel.text = item.category.name
+            cell.typeLabel.text = item.description
             cell.descLabel.text = item.category.name
             cell.amountLabel.text = String(item.amount)
             cell.iconImg.image = UIImage(named: item.category.name)

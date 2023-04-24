@@ -58,8 +58,9 @@ class AddNewViewController: UIViewController {
             print(action.title)
         }
         expenseTypeDropDown.menu = UIMenu(title: "Choose your category", children :[
-            UIAction(title: "Income", state: .on, handler: optionClosure),
-            UIAction(title: "Expense", state: .off, handler: optionClosure)])
+            UIAction(title: "Expense", state: .on, handler: optionClosure),
+            UIAction(title: "Income", state: .off, handler: optionClosure)
+            ])
         
         
         expenseTypeDropDown.showsMenuAsPrimaryAction = true
@@ -67,10 +68,20 @@ class AddNewViewController: UIViewController {
     }
     
     @IBAction func addIncomeOnClickHandler(_ sender: Any) {
-        let newItem = Item(category: (viewModel?.findCategory(name: choosenCategory.name))!, amount: Double(amountInput.text!)!, description: descInput.text!, categoryType: type.Expenses)
-        if (viewModel?.addHistory(newItem: newItem, historyName: "today")) == true {
-            delegate?.addNewItem()
-            self.navigationController?.popViewController(animated: true)
+        if let inputAmount = amountInput.text , !inputAmount.isEmpty, !choosenCategory.name.isEmpty{
+            let newItem = Item(category: (viewModel?.findCategory(name: choosenCategory.name))!, amount: Double(inputAmount)!, description: descInput.text!, categoryType: type.Expenses)
+            if (viewModel?.addHistory(newItem: newItem, historyName: "today")) == true {
+                delegate?.addNewItem()
+                self.navigationController?.popViewController(animated: true)
+            }
+        } else {
+            let alert = UIAlertController(title: "Please check your input",
+                                          message: "The inputed amount have to be in Integer format and have selected a category",
+                                          preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                return
+            }))
+            self.present(alert, animated: true, completion: nil)
         }
     }
 }

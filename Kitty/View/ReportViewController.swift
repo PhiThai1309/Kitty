@@ -61,7 +61,6 @@ class ReportViewController: UIViewController, ChartViewDelegate {
     }
     
     func countAmountInCategories() {
-        print(categories)
         for (index, category) in categories.enumerated() {
             sum = 0
             for item in category {
