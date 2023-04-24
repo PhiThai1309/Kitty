@@ -15,7 +15,6 @@ class CardTableViewCell: UITableViewCell {
     @IBOutlet weak var totalLabel: UILabel!
     
     var items: [Item]?
-    var sum: Double = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,6 +38,7 @@ extension CardTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
     func set(value: [Item]){
         self.items = value
         self.cardCollectionView.reloadData()
+        var sum: Double = 0
         for item in items! {
             sum += item.amount
         }

@@ -63,6 +63,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension HomeViewController: AddNewDelegate {
     func addNewItem() {
+        expenseLabel.text = String(viewModel!.getExpense())
         tableView.reloadData()
     }
 }
