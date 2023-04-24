@@ -14,6 +14,7 @@ protocol sheetViewDelegate {
 class SheetViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var addNewCategoryButton: UIButton!
     
     var viewModel: HomeViewModel?
     var delegate: sheetViewDelegate?
@@ -35,6 +36,15 @@ class SheetViewController: UIViewController {
         
         let cellNib = UINib(nibName: "CategoryCollectionViewCell", bundle: nil)
         self.collectionView.register(cellNib, forCellWithReuseIdentifier: "CategoryCellView")
+    }
+    
+    
+    @IBAction func addNewOnClickHanlder(_ sender: Any) {
+        let vc = AddNewCategoryViewController()
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen
+//        self.navigationController?.pushViewController(nav, animated: true)
+        self.present(nav, animated: true)
     }
 }
 
@@ -67,6 +77,6 @@ extension SheetViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
 }
-    
-    
-    
+
+
+

@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SheetViewController" customModule="Kitty" customModuleProvider="target">
             <connections>
+                <outlet property="addNewCategoryButton" destination="GJi-po-JrN" id="Fiw-Ff-YsR"/>
                 <outlet property="collectionView" destination="Od0-OU-dXH" id="9F5-BE-Lm2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -60,6 +61,9 @@
                                 </backgroundConfiguration>
                                 <directionalEdgeInsets key="contentInsets" top="8" leading="12" bottom="8" trailing="12"/>
                             </buttonConfiguration>
+                            <connections>
+                                <action selector="addNewOnClickHanlder:" destination="-1" eventType="touchUpInside" id="2NB-If-IhZ"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>

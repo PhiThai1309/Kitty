@@ -113,7 +113,7 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="48"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBf-sb-b4O">
-                            <rect key="frame" x="10" y="16" width="138.66666666666666" height="16"/>
+                            <rect key="frame" x="4" y="16" width="138.66666666666666" height="16"/>
                             <color key="tintColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" image="arrow.left" catalog="system" title="Add New" imagePadding="20"/>
@@ -127,7 +127,7 @@
                         <constraint firstItem="KBf-sb-b4O" firstAttribute="centerY" secondItem="NoS-KR-XmP" secondAttribute="centerY" id="9ft-E0-VhB"/>
                         <constraint firstItem="KBf-sb-b4O" firstAttribute="top" secondItem="NoS-KR-XmP" secondAttribute="top" constant="16" id="Ku6-O9-awb"/>
                         <constraint firstAttribute="height" constant="48" id="WJG-ql-Zuf"/>
-                        <constraint firstItem="KBf-sb-b4O" firstAttribute="leading" secondItem="NoS-KR-XmP" secondAttribute="leading" constant="10" id="kDc-Uz-jpH"/>
+                        <constraint firstItem="KBf-sb-b4O" firstAttribute="leading" secondItem="NoS-KR-XmP" secondAttribute="leading" constant="4" id="kDc-Uz-jpH"/>
                     </constraints>
                 </view>
             </subviews>
