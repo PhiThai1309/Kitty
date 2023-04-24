@@ -9,7 +9,7 @@ import Foundation
 
 enum type {
     case Expenses
-    case Incom
+    case Income
 }
 
 struct Item {

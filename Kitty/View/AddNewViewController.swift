@@ -7,11 +7,20 @@
 
 import UIKit
 
+protocol AddNewDelegate {
+    func addNewItem()
+}
+
 class AddNewViewController: UIViewController {
     
     @IBOutlet weak var expenseTypeDropDown: UIButton!
     
+    @IBOutlet weak var descInput: UITextField!
+    @IBOutlet weak var amountInput: UITextField!
+    
     var viewModel: HomeViewModel?
+    
+    var delegate: AddNewDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +52,6 @@ class AddNewViewController: UIViewController {
     
     func setCategoryButton() {
         let optionClosure = {(action : UIAction) in
-            //            self.category = action.title
             print(action.title)
         }
         expenseTypeDropDown.menu = UIMenu(title: "Choose your category", children :[
@@ -53,5 +61,13 @@ class AddNewViewController: UIViewController {
         
         expenseTypeDropDown.showsMenuAsPrimaryAction = true
         expenseTypeDropDown.changesSelectionAsPrimaryAction = true
+    }
+    
+    @IBAction func addIncomeOnClickHandler(_ sender: Any) {
+        let newItem = Item(category: (viewModel?.findCategory(name: "Grocery"))!, amount: Double(amountInput.text!)!, description: descInput.text!, categoryType: type.Expenses)
+        if (viewModel?.addHistory(newItem: newItem, historyName: "today")) == true {
+            delegate?.addNewItem()
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 }

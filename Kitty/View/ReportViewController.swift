@@ -29,7 +29,6 @@ class ReportViewController: UIViewController, ChartViewDelegate {
             for item in category {
                 sum.append(0)
                 sum[index] += item.amount
-                print(item)
             }
         }
         entries.append (BarChartDataEntry (x: Double(0.1),

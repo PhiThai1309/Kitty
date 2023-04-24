@@ -36,7 +36,6 @@ class SheetViewController: UIViewController {
 extension SheetViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        print(viewModel)
         return (viewModel!.getAllCategory().count)
     }
     

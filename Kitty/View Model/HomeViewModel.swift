@@ -49,6 +49,21 @@ class HomeViewModel {
         
     }
     
+    func addHistory(newItem: Item, historyName: String) -> Bool {
+        if let found = history.firstIndex(where: {$0.date == historyName}) {
+            history[found].items.append(newItem)
+            return true
+        } else {
+            let newHistory = History(date: historyName, amount: 0, items: [newItem])
+            self.history.append(newHistory)
+            return true
+        }
+    }
+    
+    func findCategory(name: String) -> Category {
+        return categories.first(where: {$0.name == name})!
+    }
+    
     func getAllItems() -> [Item] {
         return self.items
     }

@@ -27,6 +27,7 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     @IBAction func addNewButtonClickHandler(_ sender: Any) {
         let newViewController = AddNewViewController()
         newViewController.viewModel = viewModel
+        newViewController.delegate = self
         self.navigationController?.pushViewController(newViewController, animated: true)
     }
     
@@ -38,10 +39,10 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel!.getAllHistory().count
+        return viewModel!.getAllHistory().reversed().count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let history = viewModel!.getAllHistory()[indexPath.row]
+        let history = viewModel!.getAllHistory().reversed()[indexPath.row]
         // Fetch a cell of the appropriate type.
         let cell =  tableView.dequeueReusableCell(withIdentifier: "CardViewCell", for: indexPath) as! CardTableViewCell
         
@@ -53,9 +54,15 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if CGFloat(viewModel!.getAllHistory()[indexPath.row].items.count * 56) > 0 {
-            return CGFloat(viewModel!.getAllHistory()[indexPath.row].items.count * 50 + 70 + 10*viewModel!.getAllHistory()[indexPath.row].items.count)
+        if CGFloat(viewModel!.getAllHistory().reversed()[indexPath.row].items.count * 56) > 0 {
+            return CGFloat(viewModel!.getAllHistory().reversed()[indexPath.row].items.count * 50 + 70 + 10*viewModel!.getAllHistory().reversed()[indexPath.row].items.count)
         }
         return 60
+    }
+}
+
+extension HomeViewController: AddNewDelegate {
+    func addNewItem() {
+        tableView.reloadData()
     }
 }
