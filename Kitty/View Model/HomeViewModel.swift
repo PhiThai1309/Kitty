@@ -143,4 +143,8 @@ class HomeViewModel {
         }
         return sum
     }
+    
+    func addNewCategory(new: Category) {
+        categories.append(new)
+    }
 }

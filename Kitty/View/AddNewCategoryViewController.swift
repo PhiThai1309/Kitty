@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class AddNewCategoryViewController: UIViewController {
     
     @IBOutlet weak var categoryLabel: UITextField!
@@ -21,6 +22,13 @@ class AddNewCategoryViewController: UIViewController {
     }
     
     @IBAction func dismissOnClickHandler(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    
+    @IBAction func addNewCategoryOnClickHandler(_ sender: Any) {
+        let newCategory = Category(name: categoryLabel.text!)
+        viewModel?.addNewCategory(new: newCategory)
+        viewModel?.filterIcon()
         self.dismiss(animated: true)
     }
     
