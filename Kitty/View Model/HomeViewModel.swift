@@ -13,6 +13,7 @@ class HomeViewModel {
     private var categories: [Category] = []
     private var income: Double = 500
     private var iconArray: [String] = []
+    private var remainIconArray: [String] = []
     
     init(items: [Item], history: [History]) {
         self.items = items
@@ -21,6 +22,7 @@ class HomeViewModel {
     
     init() {
         iconArray = ["Grocery","Gifts","Cafe","Health","Electronics", "Commute", "Donate", "Education", "Self development", "Fuel", "Institute", "Laundry", "Liquor", "Maintenance", "Cash", "Party", "Restaurant", "Savings", "Sport"]
+        
         let category1  = Category(name: "Grocery")
         let category2 = Category(name: "Gifts")
         let category3  = Category(name: "Cafe")
@@ -50,6 +52,16 @@ class HomeViewModel {
         history.append(hisroty2)
         history.append(hisroty3)
         
+        filterIcon()
+        
+    }
+    
+    func filterIcon() {
+        remainIconArray = iconArray.filter { icon in
+            return !categories.contains { category in
+                return category.name == icon
+            }
+        }
     }
     
     func addHistory(newItem: Item, historyName: String) -> Bool {
@@ -69,7 +81,7 @@ class HomeViewModel {
     }
     
     func getAllIcon() -> [String] {
-        return iconArray
+        return remainIconArray
     }
     
     func getIncome() -> Double {

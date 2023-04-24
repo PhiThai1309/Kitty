@@ -57,6 +57,11 @@
                         <constraint firstItem="EaL-UC-uL6" firstAttribute="centerX" secondItem="5K4-Us-bFP" secondAttribute="centerX" id="xm9-CM-G1m"/>
                         <constraint firstItem="Jg0-JF-OfD" firstAttribute="centerX" secondItem="5K4-Us-bFP" secondAttribute="centerX" id="yx7-LW-f21"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="8SS-sb-jX0"/>

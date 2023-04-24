@@ -7,12 +7,16 @@
 
 import UIKit
 
-
+protocol CategorySheetDelegate {
+    func chooseIcon(category: String)
+}
 
 class CategorySheetViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     var viewModel: HomeViewModel?
+    
+    var delegate: CategorySheetDelegate?
     
     init() {
         super.init(nibName: "CategorySheetViewController", bundle: Bundle(for: CategorySheetViewController.self))
@@ -55,12 +59,12 @@ extension CategorySheetViewController: UICollectionViewDelegate, UICollectionVie
         let cellWidth = (UIScreen.main.bounds.size.width) / numberOfCell - 24
         return CGSizeMake(cellWidth, cellWidth - 5)
     }
-//
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//
-//        delegate?.categoryOnClick(category: (viewModel?.getAllCategory()[indexPath.row])!)
-//        self.dismiss(animated: true)
-//    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+        delegate?.chooseIcon(category: (viewModel?.getAllIcon()[indexPath.row])!)
+        self.dismiss(animated: true)
+    }
     
 }
 
