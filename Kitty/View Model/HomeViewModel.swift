@@ -11,6 +11,7 @@ class HomeViewModel {
     private var items: [Item] = []
     private var history: [History] = []
     private var categories: [Category] = []
+    private var income: Double = 500
     
     init(items: [Item], history: [History]) {
         self.items = items
@@ -63,6 +64,10 @@ class HomeViewModel {
     
     func findCategory(name: String) -> Category {
         return categories.first(where: {$0.name == name})!
+    }
+    
+    func getIncome() -> Double {
+        return income
     }
     
     func getAllItems() -> [Item] {

@@ -61,13 +61,12 @@ class ReportViewController: UIViewController, ChartViewDelegate {
     }
     
     func countAmountInCategories() {
-        for (index, category) in categories.enumerated() {
+        for category in categories {
             sum = 0
             for item in category {
                 sum += item.amount
                 categoryWithAmount[item.category.name] = sum
             }
-            
         }
     }
     

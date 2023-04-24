@@ -43,7 +43,7 @@ extension CardTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
             sum += item.amount
         }
         
-        totalLabel.text = String(sum)
+        totalLabel.text = "- " + String(sum)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -55,7 +55,7 @@ extension CardTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCellView", for: indexPath) as? ItemCollectionViewCell {
             cell.typeLabel.text = item.description
             cell.descLabel.text = item.category.name
-            cell.amountLabel.text = String(item.amount)
+            cell.amountLabel.text = "- " + String(item.amount)
             cell.iconImg.image = UIImage(named: item.category.name)
             return cell
         }

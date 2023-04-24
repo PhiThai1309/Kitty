@@ -12,6 +12,8 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     @IBOutlet weak var addNewBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var balanceLabel: UILabel!
+    @IBOutlet weak var incomeLabel: UILabel!
     @IBOutlet weak var expenseLabel: UILabel!
     
     var viewModel: HomeViewModel?
@@ -32,7 +34,13 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        expenseLabel.text = String(viewModel!.getExpense())
+        var income: Double = (viewModel?.getIncome())!
+        var expense: Double = (viewModel?.getExpense())!
+        
+        expenseLabel.text = "- " + String(expense)
+        incomeLabel.text = String(income)
+        var balance = income - expense
+        balanceLabel.text = String(balance)
     }
     
     @IBAction func settingOnClickButton(_ sender: Any) {
