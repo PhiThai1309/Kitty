@@ -25,6 +25,9 @@ class TabBarViewController: UITabBarController {
         let secondVC = self.viewControllers![1] as! HomeViewController //first view controller in the tabbar
         secondVC.viewModel = viewModel
         
+        _ = self.viewControllers![2] as! SettingsViewController //first view controller in the tabbar
+
+        
         
     }
 }

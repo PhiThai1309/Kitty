@@ -15,12 +15,14 @@ class AddNewViewController: UIViewController {
     
     @IBOutlet weak var expenseTypeDropDown: UIButton!
     
+    @IBOutlet weak var categorySheet: UIButton!
     @IBOutlet weak var descInput: UITextField!
     @IBOutlet weak var amountInput: UITextField!
     
     var viewModel: HomeViewModel?
-    
     var delegate: AddNewDelegate?
+    
+    var choosenCategory: Category = Category(name: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +39,7 @@ class AddNewViewController: UIViewController {
     @IBAction func categoryClickHandler(_ sender: Any) {
         let detailViewController = SheetViewController()
         detailViewController.viewModel = viewModel
+        detailViewController.delegate = self
         let nav = UINavigationController(rootViewController: detailViewController)
         // 1
         nav.modalPresentationStyle = .pageSheet
@@ -64,10 +67,18 @@ class AddNewViewController: UIViewController {
     }
     
     @IBAction func addIncomeOnClickHandler(_ sender: Any) {
-        let newItem = Item(category: (viewModel?.findCategory(name: "Grocery"))!, amount: Double(amountInput.text!)!, description: descInput.text!, categoryType: type.Expenses)
+        let newItem = Item(category: (viewModel?.findCategory(name: choosenCategory.name))!, amount: Double(amountInput.text!)!, description: descInput.text!, categoryType: type.Expenses)
         if (viewModel?.addHistory(newItem: newItem, historyName: "today")) == true {
             delegate?.addNewItem()
             self.navigationController?.popViewController(animated: true)
         }
+    }
+}
+
+extension AddNewViewController: sheetViewDelegate {
+    func categoryOnClick(category: Category) {
+        choosenCategory = category
+        categorySheet.setTitle(category.name, for: .normal)
+        categorySheet.setTitleColor(.label, for: .normal)
     }
 }

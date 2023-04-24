@@ -77,6 +77,16 @@ class HomeViewModel {
         return categories
     }
     
+    func getCategoryWithAmount() -> [Category] {
+        var amountCategory: [Category] = []
+        for item in items {
+            if !amountCategory.contains(where: {$0.name == item.category.name}) {
+                amountCategory.append(item.category)
+            }
+        }
+        return amountCategory
+    }
+    
     func getHistoryAmount() -> [Double] {
         var sum: [Double] = []
         for (index, object) in history.enumerated() {
@@ -89,16 +99,15 @@ class HomeViewModel {
     }
     
     func getArrayOfEachCategory() -> [[Item]] {
-        var result = [[Item]]()
+        var result: [[Item]] = []
         for item in items {
-            for (index, category) in categories.enumerated() {
-//                if (result[index] == nil) {
-//                    result.append([])
-//                }
+            if (result.contains(where: {$0.contains(where: {$0.category.name == item.category.name})})) {
+                let index = result.firstIndex(where: {$0.contains(where: {$0.category.name == item.category.name})})!
+                result[index].append(item)
+            } else {
+                let index = result.count
                 result.append([])
-                if (item.category.name == category.name) {
-                    result[index].append(item)
-                }
+                result[index].append(item)
             }
         }
         return result

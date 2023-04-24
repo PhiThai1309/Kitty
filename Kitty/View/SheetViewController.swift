@@ -7,11 +7,16 @@
 
 import UIKit
 
+protocol sheetViewDelegate {
+    func categoryOnClick(category: Category)
+}
+
 class SheetViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     var viewModel: HomeViewModel?
+    var delegate: sheetViewDelegate?
     
     init() {
         super.init(nibName: "SheetViewController", bundle: Bundle(for: SheetViewController.self))
@@ -53,7 +58,12 @@ extension SheetViewController: UICollectionViewDelegate, UICollectionViewDataSou
         let numberOfCell: CGFloat = 3
         let cellWidth = (UIScreen.main.bounds.size.width) / numberOfCell - 24
         return CGSizeMake(cellWidth, cellWidth)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        delegate?.categoryOnClick(category: (viewModel?.getAllCategory()[indexPath.row])!)
+        self.dismiss(animated: true)
     }
     
 }
