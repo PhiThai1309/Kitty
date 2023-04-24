@@ -16,8 +16,9 @@
 		3F16DE1429F0DC1500AE7C83 /* AddNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F16DE1229F0DC1500AE7C83 /* AddNewViewController.xib */; };
 		3F1D5BD729F65E5600618D7A /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 3F1D5BD629F65E5600618D7A /* OrderedCollections */; };
 		3F3064CD29ECE6C100EF5485 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3064CC29ECE6C100EF5485 /* UIViewExtension.swift */; };
-		3F3064CF29ECE6F900EF5485 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3064CE29ECE6F900EF5485 /* UIColorExtension.swift */; };
 		3F64B3B429F23E190008A4D9 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F64B3B329F23E180008A4D9 /* TabBarViewController.swift */; };
+		3F770BFB29F68220009FDA26 /* CategorySheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F770BF929F68220009FDA26 /* CategorySheetViewController.swift */; };
+		3F770BFC29F68220009FDA26 /* CategorySheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F770BFA29F68220009FDA26 /* CategorySheetViewController.xib */; };
 		3FA9E64529E9346E00D8D7C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9E64429E9346E00D8D7C1 /* AppDelegate.swift */; };
 		3FA9E64729E9346E00D8D7C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9E64629E9346E00D8D7C1 /* SceneDelegate.swift */; };
 		3FA9E64929E9346E00D8D7C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9E64829E9346E00D8D7C1 /* ViewController.swift */; };
@@ -49,8 +50,9 @@
 		3F16DE1129F0DC1500AE7C83 /* AddNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewViewController.swift; sourceTree = "<group>"; };
 		3F16DE1229F0DC1500AE7C83 /* AddNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewViewController.xib; sourceTree = "<group>"; };
 		3F3064CC29ECE6C100EF5485 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
-		3F3064CE29ECE6F900EF5485 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		3F64B3B329F23E180008A4D9 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		3F770BF929F68220009FDA26 /* CategorySheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySheetViewController.swift; sourceTree = "<group>"; };
+		3F770BFA29F68220009FDA26 /* CategorySheetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategorySheetViewController.xib; sourceTree = "<group>"; };
 		3FA9E64129E9346E00D8D7C1 /* Kitty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kitty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FA9E64429E9346E00D8D7C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FA9E64629E9346E00D8D7C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,7 +113,6 @@
 			isa = PBXGroup;
 			children = (
 				3F3064CC29ECE6C100EF5485 /* UIViewExtension.swift */,
-				3F3064CE29ECE6F900EF5485 /* UIColorExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -190,6 +191,8 @@
 				3FE3848029F62BF4007884A8 /* SettingsViewController.swift */,
 				3FB6CCDA29F6705000C3CBE2 /* AddNewCategoryViewController.swift */,
 				3FB6CCDB29F6705000C3CBE2 /* AddNewCategoryViewController.xib */,
+				3F770BF929F68220009FDA26 /* CategorySheetViewController.swift */,
+				3F770BFA29F68220009FDA26 /* CategorySheetViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				3FA9E64C29E9346E00D8D7C1 /* Main.storyboard in Resources */,
 				3F0E3CB629F0EC29009BF311 /* CategoryCollectionViewCell.xib in Resources */,
 				3FEFBAA329ECF4B50085641B /* CardTableViewCell.xib in Resources */,
+				3F770BFC29F68220009FDA26 /* CategorySheetViewController.xib in Resources */,
 				3F0E3CB229F0E880009BF311 /* SheetViewController.xib in Resources */,
 				3F16DE1429F0DC1500AE7C83 /* AddNewViewController.xib in Resources */,
 				3FB6CCDD29F6705000C3CBE2 /* AddNewCategoryViewController.xib in Resources */,
@@ -321,10 +325,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F770BFB29F68220009FDA26 /* CategorySheetViewController.swift in Sources */,
 				3FEFBAA929ECF8040085641B /* Item.swift in Sources */,
 				3F0E3CB529F0EC29009BF311 /* CategoryCollectionViewCell.swift in Sources */,
 				3F3064CD29ECE6C100EF5485 /* UIViewExtension.swift in Sources */,
-				3F3064CF29ECE6F900EF5485 /* UIColorExtension.swift in Sources */,
 				3F64B3B429F23E190008A4D9 /* TabBarViewController.swift in Sources */,
 				3FB6CCDC29F6705000C3CBE2 /* AddNewCategoryViewController.swift in Sources */,
 				3FE3848129F62BF4007884A8 /* SettingsViewController.swift in Sources */,

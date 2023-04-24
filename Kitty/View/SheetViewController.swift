@@ -47,6 +47,10 @@ class SheetViewController: UIViewController {
 //        self.navigationController?.pushViewController(nav, animated: true)
         self.present(nav, animated: true)
     }
+    
+    func prepareforCategory() {
+        addNewCategoryButton.isHidden = true
+    }
 }
 
 extension SheetViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

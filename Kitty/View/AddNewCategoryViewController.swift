@@ -23,9 +23,9 @@ class AddNewCategoryViewController: UIViewController {
     }
     
     @IBAction func addIconOnClickHandler(_ sender: Any) {
-        let detailViewController = SheetViewController()
-        detailViewController.viewModel = viewModel
-        let nav = UINavigationController(rootViewController: detailViewController)
+        let categorySheetViewController = CategorySheetViewController()
+        categorySheetViewController.viewModel = viewModel
+        let nav = UINavigationController(rootViewController: categorySheetViewController)
         // 1
         nav.modalPresentationStyle = .pageSheet
         
