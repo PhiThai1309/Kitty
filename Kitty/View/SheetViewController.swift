@@ -42,6 +42,7 @@ class SheetViewController: UIViewController {
     @IBAction func addNewOnClickHanlder(_ sender: Any) {
         let vc = AddNewCategoryViewController()
         vc.viewModel = viewModel
+        vc.delegate = self
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
 //        self.navigationController?.pushViewController(nav, animated: true)
@@ -80,7 +81,11 @@ extension SheetViewController: UICollectionViewDelegate, UICollectionViewDataSou
         delegate?.categoryOnClick(category: (viewModel?.getAllCategory()[indexPath.row])!)
         self.dismiss(animated: true)
     }
-    
+}
+extension SheetViewController: AddNewCategoryDelegate {
+    func newCategory() {
+        collectionView.reloadData()
+    }
 }
 
 
