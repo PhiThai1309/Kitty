@@ -20,6 +20,8 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     
     let dtFormatter = DateFormatter()
     
+    let filteredMonth = Date()
+    
     var viewModel: HomeViewModel?
     
     override func viewDidLoad() {
@@ -28,10 +30,9 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
         dtFormatter.dateStyle = .short
         dtFormatter.timeStyle = .none
         
+        let calendarDate = Calendar.current.dateComponents([.day, .year, .month], from: filteredMonth)
         
-        let calendarDate = Calendar.current.dateComponents([.day, .year, .month], from: Date())
-        
-        monthBtn.setTitle(Date().month + ", " + String(calendarDate.year!), for: .normal)
+        monthBtn.setTitle(filteredMonth.month + ", " + String(calendarDate.year!), for: .normal)
         
         // Do any additional setup after loading the view.
         let cellNib = UINib(nibName: "CardTableViewCell", bundle: nil)
@@ -65,10 +66,10 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel!.getAllHistory().reversed().count
+        return viewModel!.getFilteredHistory(date: filteredMonth).reversed().count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let history = viewModel!.getAllHistory().reversed()[indexPath.row]
+        let history = viewModel!.getFilteredHistory(date: filteredMonth).reversed()[indexPath.row]
         // Fetch a cell of the appropriate type.
         let cell =  tableView.dequeueReusableCell(withIdentifier: "CardViewCell", for: indexPath) as! CardTableViewCell
         
@@ -80,8 +81,8 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if CGFloat(viewModel!.getAllHistory().reversed()[indexPath.row].items.count * 56) > 0 {
-            return CGFloat(viewModel!.getAllHistory().reversed()[indexPath.row].items.count * 50 + 70 + 10*viewModel!.getAllHistory().reversed()[indexPath.row].items.count)
+        if CGFloat(viewModel!.getFilteredHistory(date: filteredMonth).reversed()[indexPath.row].items.count * 56) > 0 {
+            return CGFloat(viewModel!.getFilteredHistory(date: filteredMonth).reversed()[indexPath.row].items.count * 50 + 70 + 10*viewModel!.getAllHistory().reversed()[indexPath.row].items.count)
         }
         return 60
     }

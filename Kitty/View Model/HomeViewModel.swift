@@ -91,7 +91,7 @@ class HomeViewModel {
     }
     
     func addHistory(newItem: Item, historyName: Date) -> Bool {
-        if let found = history.firstIndex(where: {$0.date == historyName}) {
+        if let found = history.firstIndex(where: {$0.date.month == historyName.month}) {
             history[found].items.append(newItem)
         } else {
             let newHistory = History(date: historyName, amount: 0, items: [newItem])
@@ -124,6 +124,15 @@ class HomeViewModel {
         return self.history
     }
     
+    func getFilteredHistory(date: Date) -> [History] {
+        var result: [History] = []
+        for item in history {
+            if item.date.month == date.month {
+                result.append(item)
+            }
+        }
+        return result
+    }
 
     func getAllCategory() -> [Category] {
         return categories
