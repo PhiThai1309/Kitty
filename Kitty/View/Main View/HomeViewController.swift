@@ -81,8 +81,9 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if CGFloat(viewModel!.getFilteredHistory(date: filteredMonth).reversed()[indexPath.row].items.count * 56) > 0 {
-            return CGFloat(viewModel!.getFilteredHistory(date: filteredMonth).reversed()[indexPath.row].items.count * 50 + 70 + 10*viewModel!.getAllHistory().reversed()[indexPath.row].items.count)
+        let array = viewModel!.getFilteredHistory(date: filteredMonth)
+        if CGFloat(array.reversed()[indexPath.row].items.count * 56) > 0 {
+            return CGFloat(array.reversed()[indexPath.row].items.count * 50 + 70 + 10*array.reversed()[indexPath.row].items.count)
         }
         return 60
     }

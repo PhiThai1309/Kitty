@@ -58,7 +58,6 @@ class AddNewViewController: UIViewController {
     func setCategoryButton() {
         let optionClosure = {(action : UIAction) in
             self.option = action.title
-            print(self.option)
         }
         expenseTypeDropDown.menu = UIMenu(title: "Choose your category", children :[
             UIAction(title: "Expenses", state: .on, handler: optionClosure),

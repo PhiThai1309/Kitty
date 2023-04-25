@@ -60,6 +60,7 @@ extension CardTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
             cell.descLabel.text = item.category.name
             if item.categoryType == Option.Expenses {
                 cell.amountLabel.text = "- " + String(item.amount)
+                cell.amountLabel.textColor = .red
             } else {
                 cell.amountLabel.text = String(item.amount)
                 cell.amountLabel.textColor = .label
