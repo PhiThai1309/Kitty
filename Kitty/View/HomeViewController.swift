@@ -26,6 +26,7 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
         self.tableView.register(cellNib, forCellReuseIdentifier: "CardViewCell")
     }
     
+    
     @IBAction func addNewButtonClickHandler(_ sender: Any) {
         let newViewController = AddNewViewController()
         newViewController.viewModel = viewModel
@@ -34,13 +35,9 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        var income: Double = (viewModel?.getIncome())!
-        var expense: Double = (viewModel?.getExpense())!
-        
-        expenseLabel.text = "- " + String(expense)
-        incomeLabel.text = String(income)
-        var balance = income - expense
-        balanceLabel.text = String(balance)
+        expenseLabel.text = "- " + String(viewModel!.getExpense())
+        incomeLabel.text = String(viewModel!.getIncome())
+        balanceLabel.text = String(viewModel!.getBalance())
     }
     
     @IBAction func settingOnClickButton(_ sender: Any) {
@@ -77,7 +74,9 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension HomeViewController: AddNewDelegate {
     func addNewItem() {
-        expenseLabel.text = String(viewModel!.getExpense())
+//        expenseLabel.text = "- " + String(viewModel!.getExpense())
+//        incomeLabel.text = String(viewModel!.getIncome())
+//        balanceLabel.text = String(viewModel!.getBalance())
         tableView.reloadData()
     }
 }

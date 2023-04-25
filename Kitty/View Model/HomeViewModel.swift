@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import OrderedCollections
 
 class HomeViewModel {
     private var items: [Item] = []
@@ -14,6 +15,8 @@ class HomeViewModel {
     private var income: Double = 500
     private var iconArray: [String] = []
     private var remainIconArray: [String] = []
+    
+    private var categoryWithAmount: OrderedDictionary<String, Double> = [:]
     
     init(items: [Item], history: [History]) {
         self.items = items
@@ -36,10 +39,10 @@ class HomeViewModel {
         categories.append(category5)
         categories.append(category6)
         
-        let item1 = Item(category: category1, amount: 120.0, description: "Example description", categoryType: type.Expenses)
-        let item2 = Item(category: category2, amount: 22.0, description: "Example description2", categoryType: type.Expenses)
-        let item3 = Item(category: category3, amount: 32.0, description: "Example description3", categoryType: type.Expenses)
-        let item4 = Item(category: category3, amount: 32.0, description: "Example description3", categoryType: type.Expenses)
+        let item1 = Item(category: category1, amount: 120.0, description: "Example description", categoryType: Option.Expenses)
+        let item2 = Item(category: category2, amount: 22.0, description: "Example description2", categoryType: Option.Expenses)
+        let item3 = Item(category: category3, amount: 32.0, description: "Example description3", categoryType: Option.Expenses)
+        let item4 = Item(category: category3, amount: 32.0, description: "Example description3", categoryType: Option.Expenses)
         items.append(item1)
         items.append(item2)
         items.append(item3)
@@ -54,6 +57,17 @@ class HomeViewModel {
         
         filterIcon()
         
+    }
+    
+    //MARK: Filter
+    func filterExpense(item: [Item]) -> [Item] {
+        var result: [Item] = []
+        for value in item {
+            if(value.categoryType == Option.Expenses) {
+                result.append(value)
+            }
+        }
+        return result
     }
     
     func filterIcon() {
@@ -80,12 +94,10 @@ class HomeViewModel {
         return categories.first(where: {$0.name == name})!
     }
     
+    
+    //MARK: Getter, Setter
     func getAllIcon() -> [String] {
         return remainIconArray
-    }
-    
-    func getIncome() -> Double {
-        return income
     }
     
     func getAllItems() -> [Item] {
@@ -96,6 +108,7 @@ class HomeViewModel {
         return self.history
     }
     
+
     func getAllCategory() -> [Category] {
         return categories
     }
@@ -121,9 +134,59 @@ class HomeViewModel {
         return sum
     }
     
+
+    
+    //MARK: Money manage logic
+    func getExpense() -> Double {
+        var sum: Double = 0
+        for item in items {
+            if item.categoryType == Option.Expenses{
+                sum += item.amount
+            }
+        }
+        return sum
+    }
+    
+    func getIncome() -> Double {
+        var result = income
+        for item in items {
+            if item.categoryType == Option.Income {
+                result += item.amount
+                print(item)
+            }
+        }
+        return result
+    }
+    
+    func getBalance() -> Double {
+        return getIncome() - getExpense()
+    }
+    
+    func addNewCategory(new: Category) {
+        categories.append(new)
+    }
+    
+    //MARK: Other
+    func countExpenseAmountInCategories() -> OrderedDictionary<String, Double>{
+        let array = getArrayOfEachCategory()
+        for category in array {
+            var sum: Double = 0
+            for item in category {
+                if item.categoryType == Option.Expenses {
+                    sum += item.amount
+                    categoryWithAmount[item.category.name] = sum
+                }
+            }
+        }
+        return categoryWithAmount
+    }
+    
     func getArrayOfEachCategory() -> [[Item]] {
         var result: [[Item]] = []
         for item in items {
+            if item.categoryType == Option.Income {
+                continue
+            }
             if (result.contains(where: {$0.contains(where: {$0.category.name == item.category.name})})) {
                 let index = result.firstIndex(where: {$0.contains(where: {$0.category.name == item.category.name})})!
                 result[index].append(item)
@@ -134,17 +197,5 @@ class HomeViewModel {
             }
         }
         return result
-    }
-    
-    func getExpense() -> Double {
-        var sum: Double = 0
-        for item in items {
-            sum += item.amount
-        }
-        return sum
-    }
-    
-    func addNewCategory(new: Category) {
-        categories.append(new)
     }
 }

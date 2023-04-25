@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum type {
+enum Option: String {
     case Expenses
     case Income
 }
@@ -16,5 +16,5 @@ struct Item {
     var category: Category
     var amount: Double
     var description: String?
-    var categoryType: type
+    var categoryType: Option
 }

@@ -17,18 +17,21 @@ class ReportViewController: UIViewController, ChartViewDelegate {
     
     var viewModel: HomeViewModel?
     var sum: Double = 0
-    var categoryWithAmount: OrderedDictionary<String, Double> = [:]
-    var categories = [[Item]]()
+
+    lazy var categories = {
+        return viewModel?.getArrayOfEachCategory()
+    }()
+    
+    lazy var categoryWithAmount = {
+        return viewModel?.countExpenseAmountInCategories()
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        categories = (viewModel?.getArrayOfEachCategory())!
-        // Do any additional setup after loading the view.
+
         chartView.delegate = self
         var entries = [BarChartDataEntry]()
-        countAmountInCategories()
-        let value = Array(categoryWithAmount.values)
+        let value = Array(categoryWithAmount!.values)
         entries.append (BarChartDataEntry (x: Double(0.1),
                                            yValues: value))
         let set = BarChartDataSet (entries: entries)
@@ -45,29 +48,24 @@ class ReportViewController: UIViewController, ChartViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         
         categories = (viewModel?.getArrayOfEachCategory())!
-        countAmountInCategories()
+        categoryWithAmount = viewModel?.countExpenseAmountInCategories()
         var entries = [BarChartDataEntry]()
-        let value = Array(categoryWithAmount.values)
+        let value = Array(categoryWithAmount!.values)
         entries.append (BarChartDataEntry (x: Double(0.1),
                                            yValues: value))
         let set = BarChartDataSet (entries: entries)
-        set.colors = [UIColor.red,UIColor.orange,UIColor.green,UIColor.black,UIColor.blue]
+        set.colors = [UIColor(red: 0.80, green:0.32, blue:0.32, alpha:1.0),
+                      UIColor(red: 0, green: 0.4902, blue: 0.9176, alpha: 1.0),
+                      UIColor(red: 0, green: 0.6784, blue: 0.5647, alpha: 1.0),
+                      UIColor(red: 0.7686, green: 0.4471, blue: 0, alpha: 1.0),
+                      UIColor(red: 0.6667, green: 0, blue: 0.2667, alpha: 1.0),
+                      UIColor(red: 0, green: 0.8, blue: 0.6392, alpha: 1.0)]
         chartView.animate(yAxisDuration: 0.5)
         let data = BarChartData (dataSet: set)
         chartView.data = data
         chartView.animate(yAxisDuration: 0.5)
         reportCollectionView.reloadData()
         chartTheme() 
-    }
-    
-    func countAmountInCategories() {
-        for category in categories {
-            sum = 0
-            for item in category {
-                sum += item.amount
-                categoryWithAmount[item.category.name] = sum
-            }
-        }
     }
     
     func chartTheme() {
@@ -86,17 +84,17 @@ class ReportViewController: UIViewController, ChartViewDelegate {
 
 extension ReportViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categories.count
+        return categories!.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let amount = categories[indexPath.row]
+        let amount = categories![indexPath.row]
 
         // Fetch a cell of the appropriate type.
         if let cell = reportCollectionView.dequeueReusableCell(withReuseIdentifier: "ItemCellView", for: indexPath) as? ItemCollectionViewCell {
 
             cell.typeLabel.text = amount[0].category.name
-            cell.amountLabel.text = String(Array(categoryWithAmount)[indexPath.row].value)
+            cell.amountLabel.text = String(Array(categoryWithAmount!)[indexPath.row].value)
             cell.iconImg.image = UIImage(named: amount[0].category.name)
             let categories = viewModel?.getArrayOfEachCategory()
 

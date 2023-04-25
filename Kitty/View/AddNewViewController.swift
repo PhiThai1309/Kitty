@@ -22,6 +22,8 @@ class AddNewViewController: UIViewController {
     var viewModel: HomeViewModel?
     var delegate: AddNewDelegate?
     
+    var option: String = "Expenses"
+    
     var choosenCategory: Category = Category(name: "")
     
     override func viewDidLoad() {
@@ -55,10 +57,11 @@ class AddNewViewController: UIViewController {
     
     func setCategoryButton() {
         let optionClosure = {(action : UIAction) in
-            print(action.title)
+            self.option = action.title
+            print(self.option)
         }
         expenseTypeDropDown.menu = UIMenu(title: "Choose your category", children :[
-            UIAction(title: "Expense", state: .on, handler: optionClosure),
+            UIAction(title: "Expenses", state: .on, handler: optionClosure),
             UIAction(title: "Income", state: .off, handler: optionClosure)
             ])
         
@@ -69,7 +72,7 @@ class AddNewViewController: UIViewController {
     
     @IBAction func addIncomeOnClickHandler(_ sender: Any) {
         if let inputAmount = amountInput.text , !inputAmount.isEmpty, !choosenCategory.name.isEmpty{
-            let newItem = Item(category: (viewModel?.findCategory(name: choosenCategory.name))!, amount: Double(inputAmount)!, description: descInput.text!, categoryType: type.Expenses)
+            let newItem = Item(category: (viewModel?.findCategory(name: choosenCategory.name))!, amount: Double(inputAmount)!, description: descInput.text!, categoryType: Option(rawValue: option)!)
             if (viewModel?.addHistory(newItem: newItem, historyName: "today")) == true {
                 delegate?.addNewItem()
                 self.navigationController?.popViewController(animated: true)
