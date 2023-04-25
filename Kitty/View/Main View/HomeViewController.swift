@@ -106,12 +106,13 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         }
         return 60
     }
-    
-    
 }
 
 extension HomeViewController: AddNewDelegate {
     func addNewItem() {
+        filteredMonth = Date()
+        let calendarDate = Calendar.current.dateComponents([.day, .year, .month], from: filteredMonth)
+        monthBtn.setTitle(filteredMonth.month + ", " + String(calendarDate.year!), for: .normal)
         tableView.reloadData()
     }
 }
