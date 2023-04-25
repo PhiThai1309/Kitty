@@ -8,7 +8,7 @@
 import Foundation
 
 struct History  {
-    var date: String
+    var date: Date
     var amount: Double
     var items: [Item]
 }

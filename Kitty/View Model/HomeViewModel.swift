@@ -48,9 +48,18 @@ class HomeViewModel {
         items.append(item3)
         items.append(item4)
         
-        let hisroty1 = History(date: "hisroty1", amount: 20.0, items: [item1, item3])
-        let hisroty2 = History(date: "hisroty2", amount: 20.0, items: [item2])
-        let hisroty3 = History(date: "hisroty3", amount: 20.0, items: [item4])
+        let components = DateComponents (calendar: Calendar.current, year: 2021, month: 3, day: 1)
+        let date = NSCalendar.current.date(from: components)
+        
+        let components2 = DateComponents (calendar: Calendar.current, year: 2022, month: 3, day: 1)
+        let date2 = NSCalendar.current.date(from: components2)
+        
+        let components3 = DateComponents (calendar: Calendar.current, year: 2023, month: 3, day: 1)
+        let date3 = NSCalendar.current.date(from: components3)
+        
+        let hisroty1 = History(date: date!, amount: 20.0, items: [item1, item3])
+        let hisroty2 = History(date: date2!, amount: 20.0, items: [item2])
+        let hisroty3 = History(date: date3!, amount: 20.0, items: [item4])
         history.append(hisroty1)
         history.append(hisroty2)
         history.append(hisroty3)
@@ -78,7 +87,7 @@ class HomeViewModel {
         }
     }
     
-    func addHistory(newItem: Item, historyName: String) -> Bool {
+    func addHistory(newItem: Item, historyName: Date) -> Bool {
         if let found = history.firstIndex(where: {$0.date == historyName}) {
             history[found].items.append(newItem)
         } else {

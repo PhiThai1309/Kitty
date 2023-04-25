@@ -39,8 +39,11 @@ extension CardTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
         self.items = value
         self.cardCollectionView.reloadData()
         var sum: Double = 0
+        
         for item in items! {
-            sum += item.amount
+            if item.categoryType != Option.Income {
+                sum += item.amount
+            }
         }
         
         totalLabel.text = "- " + String(sum)

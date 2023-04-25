@@ -56,7 +56,13 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         let cell =  tableView.dequeueReusableCell(withIdentifier: "CardViewCell", for: indexPath) as! CardTableViewCell
         
         // Configure the cell’s contents.
-        cell.cardLabel.text = history.date
+        
+        let dtFormatter = DateFormatter()
+        dtFormatter.dateStyle = .short
+        dtFormatter.timeStyle = .none
+        
+        print(dtFormatter.string(from: history.date))
+        cell.cardLabel.text = dtFormatter.string(from: history.date)
         cell.set(value: history.items)
 
         return cell
