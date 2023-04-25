@@ -19,7 +19,7 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     @IBOutlet weak var monthBtn: UIButton!
     
     let dtFormatter = DateFormatter()
-    var filteredMonth = Date()
+//    var filteredMonth = Date()
     
     var viewModel: HomeViewModel?
     
@@ -28,10 +28,6 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
         
         dtFormatter.dateStyle = .short
         dtFormatter.timeStyle = .none
-        
-        let calendarDate = Calendar.current.dateComponents([.day, .year, .month], from: filteredMonth)
-        
-        monthBtn.setTitle(filteredMonth.month + ", " + String(calendarDate.year!), for: .normal)
         
         // Do any additional setup after loading the view.
         let cellNib = UINib(nibName: "CardTableViewCell", bundle: nil)
@@ -47,9 +43,13 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        let calendarDate = Calendar.current.dateComponents([.day, .year, .month], from: viewModel!.getCurrentMonth())
+        
+        monthBtn.setTitle(viewModel!.getCurrentMonth().month + ", " + String(calendarDate.year!), for: .normal)
         expenseLabel.text = "- " + String(viewModel!.getExpense())
         incomeLabel.text = String(viewModel!.getIncome())
         balanceLabel.text = String(viewModel!.getBalance())
+        tableView.reloadData()
     }
     
     @IBAction func settingOnClickButton(_ sender: Any) {
@@ -63,20 +63,20 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     }
     
     @IBAction func rightDateOnClickHandler(_ sender: Any) {
-        let monthInt = Calendar.current.component(.month, from: filteredMonth)
+        let monthInt = Calendar.current.component(.month, from: viewModel!.getCurrentMonth())
         let components = DateComponents (calendar: Calendar.current, year: 2023, month: monthInt + 1, day: 14)
         let date = NSCalendar.current.date(from: components)
-        filteredMonth = date!
-        monthBtn.setTitle(filteredMonth.month + ", " + String(components.year!), for: .normal)
+        viewModel!.setCurrentMonth(month: date!)
+        monthBtn.setTitle(viewModel!.getCurrentMonth().month + ", " + String(components.year!), for: .normal)
         tableView.reloadData()
     }
     
     @IBAction func leftDateOnClickhandler(_ sender: Any) {
-        let monthInt = Calendar.current.component(.month, from: filteredMonth)
+        let monthInt = Calendar.current.component(.month, from: viewModel!.getCurrentMonth())
         let components = DateComponents (calendar: Calendar.current, year: 2023, month: monthInt - 1, day: 14)
         let date = NSCalendar.current.date(from: components)
-        filteredMonth = date!
-        monthBtn.setTitle(filteredMonth.month + ", " + String(components.year!), for: .normal)
+        viewModel!.setCurrentMonth(month: date!)
+        monthBtn.setTitle(viewModel!.getCurrentMonth().month + ", " + String(components.year!), for: .normal)
         tableView.reloadData()
     }
     
@@ -85,10 +85,10 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel!.getFilteredHistory(date: filteredMonth).reversed().count
+        return viewModel!.getFilteredHistory(date: viewModel!.getCurrentMonth()).reversed().count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let history = viewModel!.getFilteredHistory(date: filteredMonth).reversed()[indexPath.row]
+        let history = viewModel!.getFilteredHistory(date: viewModel!.getCurrentMonth()).reversed()[indexPath.row]
         // Fetch a cell of the appropriate type.
         let cell =  tableView.dequeueReusableCell(withIdentifier: "CardViewCell", for: indexPath) as! CardTableViewCell
         
@@ -100,7 +100,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let array = viewModel!.getFilteredHistory(date: filteredMonth)
+        let array = viewModel!.getFilteredHistory(date: viewModel!.getCurrentMonth())
         if CGFloat(array.reversed()[indexPath.row].items.count * 56) > 0 {
             return CGFloat(array.reversed()[indexPath.row].items.count * 50 + 70 + 10*array.reversed()[indexPath.row].items.count)
         }
@@ -110,9 +110,9 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension HomeViewController: AddNewDelegate {
     func addNewItem() {
-        filteredMonth = Date()
-        let calendarDate = Calendar.current.dateComponents([.day, .year, .month], from: filteredMonth)
-        monthBtn.setTitle(filteredMonth.month + ", " + String(calendarDate.year!), for: .normal)
+        viewModel!.setCurrentMonth(month: Date())
+        let calendarDate = Calendar.current.dateComponents([.day, .year, .month], from: viewModel!.getCurrentMonth())
+        monthBtn.setTitle(viewModel!.getCurrentMonth().month + ", " + String(calendarDate.year!), for: .normal)
         tableView.reloadData()
     }
 }
@@ -126,8 +126,8 @@ extension HomeViewController: MonthViewDelegate {
             let monthInt = Calendar.current.component(.month, from: date)
             let components = DateComponents (calendar: Calendar.current, year: 2023, month: monthInt, day: 14)
             let date = NSCalendar.current.date(from: components)
-            filteredMonth = date!
-            monthBtn.setTitle(filteredMonth.month + ", " + String(components.year!), for: .normal)
+            viewModel!.setCurrentMonth(month: date!)
+            monthBtn.setTitle(viewModel!.getCurrentMonth().month + ", " + String(components.year!), for: .normal)
         }
         tableView.reloadData()
     }

@@ -13,6 +13,7 @@ import OrderedCollections
 class ReportViewController: UIViewController, ChartViewDelegate {
     
     @IBOutlet weak var chartView: BarChartView!
+    @IBOutlet weak var monthBtn: UIButton!
     @IBOutlet weak var reportCollectionView: UICollectionView!
     
     var viewModel: HomeViewModel?
@@ -46,6 +47,9 @@ class ReportViewController: UIViewController, ChartViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        let calendarDate = Calendar.current.dateComponents([.day, .year, .month], from: viewModel!.getCurrentMonth())
+        
+        monthBtn.setTitle(viewModel!.getCurrentMonth().month + ", " + String(calendarDate.year!), for: .normal)
         
         categories = (viewModel?.getArrayOfEachCategory())!
         categoryWithAmount = viewModel?.countExpenseAmountInCategories()
@@ -80,6 +84,30 @@ class ReportViewController: UIViewController, ChartViewDelegate {
         self.chartView.legend.enabled = false
         chartView.barData?.setValueTextColor(.clear)
     }
+    
+    @IBAction func showCalendar(_ sender: Any) {
+        let datePicker = MonthViewController()
+        datePicker.delegate = self
+        self.present(datePicker, animated: true)
+    }
+    
+    @IBAction func rightOnClickHandler(_ sender: Any) {
+        let monthInt = Calendar.current.component(.month, from: viewModel!.getCurrentMonth())
+        let components = DateComponents (calendar: Calendar.current, year: 2023, month: monthInt + 1, day: 14)
+        let date = NSCalendar.current.date(from: components)
+        viewModel!.setCurrentMonth(month: date!)
+        monthBtn.setTitle(viewModel!.getCurrentMonth().month + ", " + String(components.year!), for: .normal)
+        reportCollectionView.reloadData()
+    }
+    
+    @IBAction func leftOnClickHandler(_ sender: Any) {
+        let monthInt = Calendar.current.component(.month, from: viewModel!.getCurrentMonth())
+        let components = DateComponents (calendar: Calendar.current, year: 2023, month: monthInt - 1, day: 14)
+        let date = NSCalendar.current.date(from: components)
+        viewModel!.setCurrentMonth(month: date!)
+        monthBtn.setTitle(viewModel!.getCurrentMonth().month + ", " + String(components.year!), for: .normal)
+        reportCollectionView.reloadData()
+    }
 }
 
 extension ReportViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -108,5 +136,21 @@ extension ReportViewController: UICollectionViewDataSource, UICollectionViewDele
         let _: CGFloat = 1
         let cellWidth = UIScreen.main.bounds.size.width
         return CGSizeMake(cellWidth, 50)
+    }
+}
+
+extension ReportViewController: MonthViewDelegate {
+    func returnMonth(month: String) {
+        let df = DateFormatter()
+        df.locale = Locale(identifier: "en_US_POSIX")
+        df.dateFormat = "LLLL"  // if you need 3 letter month just use "LLL"
+        if let date = df.date(from: month) {
+            let monthInt = Calendar.current.component(.month, from: date)
+            let components = DateComponents (calendar: Calendar.current, year: 2023, month: monthInt, day: 14)
+            let date = NSCalendar.current.date(from: components)
+            viewModel!.setCurrentMonth(month: date!)
+            monthBtn.setTitle(viewModel!.getCurrentMonth().month + ", " + String(components.year!), for: .normal)
+        }
+        reportCollectionView.reloadData()
     }
 }

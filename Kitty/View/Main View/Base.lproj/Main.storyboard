@@ -788,6 +788,9 @@
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.54000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="chevron.left" catalog="system"/>
+                                        <connections>
+                                            <action selector="leftOnClickHandler:" destination="sEI-rx-lwd" eventType="touchUpInside" id="0Vr-gl-JAk"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qmc-Vr-cNu">
                                         <rect key="frame" x="351.33333333333331" y="14" width="11.666666666666686" height="20"/>
@@ -798,27 +801,45 @@
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.54000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="chevron.right" catalog="system"/>
+                                        <connections>
+                                            <action selector="rightOnClickHandler:" destination="sEI-rx-lwd" eventType="touchUpInside" id="jiD-xi-JaR"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUN-Au-20p">
-                                        <rect key="frame" x="135.66666666666666" y="5.3333333333333286" width="121.66666666666666" height="37.666666666666664"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFY-z8-F4H">
+                                        <rect key="frame" x="111.66666666666669" y="5.6666666666666714" width="170" height="37"/>
+                                        <color key="backgroundColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="170" id="2v1-GE-mgh"/>
+                                            <constraint firstAttribute="height" constant="37" id="ncX-6r-9W4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="tintColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="gray" title="May, 2021" imagePadding="9.3300000000000001" cornerStyle="capsule">
+                                        <inset key="contentEdgeInsets" minX="12" minY="8" maxX="12" maxY="8"/>
+                                        <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="4" maxY="0.0"/>
+                                        <state key="normal" title="May, 2021">
                                             <imageReference key="image" image="calendar" catalog="system" symbolScale="medium"/>
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
-                                            <directionalEdgeInsets key="contentInsets" top="8.6699999999999999" leading="13.33" bottom="8.6699999999999999" trailing="13"/>
-                                        </buttonConfiguration>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="18"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="showCalendar:" destination="sEI-rx-lwd" eventType="touchUpInside" id="ShV-od-Lyp"/>
+                                            <action selector="showCalendar:" destination="18S-Id-kgb" eventType="touchUpInside" id="V3O-ME-uVy"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="7Jn-G8-Ygi"/>
-                                    <constraint firstItem="oUN-Au-20p" firstAttribute="centerY" secondItem="Tcs-Uv-VvI" secondAttribute="centerY" id="EeC-at-GwC"/>
+                                    <constraint firstItem="oFY-z8-F4H" firstAttribute="centerY" secondItem="Tcs-Uv-VvI" secondAttribute="centerY" id="APv-nF-iMk"/>
                                     <constraint firstAttribute="trailing" secondItem="Qmc-Vr-cNu" secondAttribute="trailing" constant="29.84" id="IlY-J6-Yfo"/>
                                     <constraint firstItem="rkc-xH-gs8" firstAttribute="centerY" secondItem="Tcs-Uv-VvI" secondAttribute="centerY" id="RUC-CA-9p5"/>
                                     <constraint firstItem="rkc-xH-gs8" firstAttribute="leading" secondItem="Tcs-Uv-VvI" secondAttribute="leading" constant="29.84" id="cEO-kG-Kvi"/>
                                     <constraint firstItem="Qmc-Vr-cNu" firstAttribute="centerY" secondItem="Tcs-Uv-VvI" secondAttribute="centerY" id="csk-MF-BCz"/>
-                                    <constraint firstItem="oUN-Au-20p" firstAttribute="centerX" secondItem="Tcs-Uv-VvI" secondAttribute="centerX" id="se7-ip-mxT"/>
+                                    <constraint firstItem="oFY-z8-F4H" firstAttribute="centerX" secondItem="Tcs-Uv-VvI" secondAttribute="centerX" id="l8r-JC-wth"/>
                                 </constraints>
                             </view>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Iv-vt-cbT" customClass="HorizontalBarChartView" customModule="Charts">
@@ -926,6 +947,7 @@
                     <tabBarItem key="tabBarItem" title="Report" image="Report" id="fbt-bQ-9cD"/>
                     <connections>
                         <outlet property="chartView" destination="7Iv-vt-cbT" id="caz-AM-Lmd"/>
+                        <outlet property="monthBtn" destination="oFY-z8-F4H" id="88L-8P-p6X"/>
                         <outlet property="reportCollectionView" destination="NqF-OS-yI7" id="i0m-m3-taH"/>
                     </connections>
                 </viewController>

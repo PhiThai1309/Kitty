@@ -17,6 +17,8 @@ class HomeViewModel {
     private var remainIconArray: [String] = []
     private var month: [String] = []
     
+    private var filteredMonth = Date()
+    
     private var categoryWithAmount: OrderedDictionary<String, Double> = [:]
     
     init(items: [Item], history: [History]) {
@@ -108,6 +110,14 @@ class HomeViewModel {
     
     
     //MARK: Getter, Setter
+    func getCurrentMonth() -> Date {
+        return filteredMonth
+    }
+    
+    func setCurrentMonth(month: Date) {
+        filteredMonth = month
+    }
+    
     func getAllMonth() -> [String] {
         return month
     }
