@@ -137,6 +137,16 @@ extension ReportViewController: UICollectionViewDataSource, UICollectionViewDele
         let cellWidth = UIScreen.main.bounds.size.width
         return CGSizeMake(cellWidth, 50)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+
+        cell.alpha = 0
+        UIView.animate(withDuration: 0.2, delay: 0.2*Double(indexPath.row),animations: { () -> Void in
+        cell.alpha = 1
+
+            cell.layer.transform = CATransform3DScale(CATransform3DIdentity, 1, 1, 1)
+        })
+    }
 }
 
 extension ReportViewController: MonthViewDelegate {
