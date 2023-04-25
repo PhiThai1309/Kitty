@@ -7,11 +7,17 @@
 
 import UIKit
 
+protocol MonthViewDelegate {
+    func returnMonth(month: String)
+}
+
 class MonthViewController: UIViewController {
     
     lazy var viewModel = {
         return HomeViewModel()
     }()
+    
+    var delegate: MonthViewDelegate?
     
     init() {
         super.init(nibName: "MonthViewController", bundle: Bundle(for: MonthViewController.self))
@@ -31,7 +37,8 @@ class MonthViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         self.collectionView.dataSource = self
-//        self.collectionView.delegate = self
+        self.collectionView.delegate = self
+
         
         let cellNib = UINib(nibName: "ButtonCollectionViewCell", bundle: nil)
         self.collectionView.register(cellNib, forCellWithReuseIdentifier: "ButtonCell")
@@ -59,9 +66,12 @@ extension MonthViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let _: CGFloat = 1
-//        let cellWidth = UIScreen.main.bounds.size.width
         return CGSizeMake(80, 36)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.returnMonth(month: viewModel.getAllMonth()[indexPath.row])
+        self.dismiss(animated: true)
     }
     
 }

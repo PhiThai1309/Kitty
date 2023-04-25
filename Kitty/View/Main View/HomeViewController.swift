@@ -20,7 +20,7 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     
     let dtFormatter = DateFormatter()
     
-    let filteredMonth = Date()
+    var filteredMonth = Date()
     
     var viewModel: HomeViewModel?
     
@@ -59,8 +59,8 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     
     @IBAction func showCalendar(_ sender: Any) {
         let datePicker = MonthViewController()
+        datePicker.delegate = self
         self.present(datePicker, animated: true)
-//        datePicker.addTarget(self, action: #selector(handleDateSelection), for: .valueChanged)
     }
 }
 
@@ -93,9 +93,22 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension HomeViewController: AddNewDelegate {
     func addNewItem() {
-//        expenseLabel.text = "- " + String(viewModel!.getExpense())
-//        incomeLabel.text = String(viewModel!.getIncome())
-//        balanceLabel.text = String(viewModel!.getBalance())
+        tableView.reloadData()
+    }
+}
+
+extension HomeViewController: MonthViewDelegate {
+    func returnMonth(month: String) {
+        let df = DateFormatter()
+        df.locale = Locale(identifier: "en_US_POSIX")
+        df.dateFormat = "LLLL"  // if you need 3 letter month just use "LLL"
+        if let date = df.date(from: month) {
+            let monthInt = Calendar.current.component(.month, from: date)
+            let components = DateComponents (calendar: Calendar.current, year: 2023, month: monthInt, day: 14)
+            let date = NSCalendar.current.date(from: components)
+            filteredMonth = date!
+            monthBtn.setTitle(filteredMonth.month + ", " + String(components.year!), for: .normal)
+        }
         tableView.reloadData()
     }
 }

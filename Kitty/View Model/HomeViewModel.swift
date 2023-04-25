@@ -51,13 +51,13 @@ class HomeViewModel {
         items.append(item3)
         items.append(item4)
         
-        let components = DateComponents (calendar: Calendar.current, year: 2023, month: 4, day: 1)
+        let components = DateComponents (calendar: Calendar.current, year: 2023, month: 3, day: 1)
         let date = NSCalendar.current.date(from: components)
         
-        let components2 = DateComponents (calendar: Calendar.current, year: 2023, month: 3, day: 1)
+        let components2 = DateComponents (calendar: Calendar.current, year: 2023, month: 2, day: 1)
         let date2 = NSCalendar.current.date(from: components2)
         
-        let components3 = DateComponents (calendar: Calendar.current, year: 2023, month: 2, day: 1)
+        let components3 = DateComponents (calendar: Calendar.current, year: 2023, month: 1, day: 1)
         let date3 = NSCalendar.current.date(from: components3)
         
         let hisroty1 = History(date: date!, amount: 20.0, items: [item1, item3])
