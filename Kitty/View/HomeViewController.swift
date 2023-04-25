@@ -44,6 +44,11 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
         tabBarController!.selectedIndex = 2
     }
     
+    @IBAction func showCalendar(_ sender: Any) {
+        var datePicker = MonthViewController()
+        self.present(datePicker, animated: true)
+//        datePicker.addTarget(self, action: #selector(handleDateSelection), for: .valueChanged)
+    }
 }
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {

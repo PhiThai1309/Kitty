@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F0DCE4029F78D7A00C47FC6 /* MonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0DCE3E29F78D7A00C47FC6 /* MonthViewController.swift */; };
+		3F0DCE4129F78D7A00C47FC6 /* MonthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F0DCE3F29F78D7A00C47FC6 /* MonthViewController.xib */; };
 		3F0E3CB129F0E880009BF311 /* SheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E3CAF29F0E880009BF311 /* SheetViewController.swift */; };
 		3F0E3CB229F0E880009BF311 /* SheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F0E3CB029F0E880009BF311 /* SheetViewController.xib */; };
 		3F0E3CB529F0EC29009BF311 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E3CB329F0EC29009BF311 /* CategoryCollectionViewCell.swift */; };
@@ -42,6 +44,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F0DCE3E29F78D7A00C47FC6 /* MonthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthViewController.swift; sourceTree = "<group>"; };
+		3F0DCE3F29F78D7A00C47FC6 /* MonthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthViewController.xib; sourceTree = "<group>"; };
 		3F0E3CAF29F0E880009BF311 /* SheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewController.swift; sourceTree = "<group>"; };
 		3F0E3CB029F0E880009BF311 /* SheetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SheetViewController.xib; sourceTree = "<group>"; };
 		3F0E3CB329F0EC29009BF311 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -193,6 +197,8 @@
 				3FB6CCDB29F6705000C3CBE2 /* AddNewCategoryViewController.xib */,
 				3F770BF929F68220009FDA26 /* CategorySheetViewController.swift */,
 				3F770BFA29F68220009FDA26 /* CategorySheetViewController.xib */,
+				3F0DCE3E29F78D7A00C47FC6 /* MonthViewController.swift */,
+				3F0DCE3F29F78D7A00C47FC6 /* MonthViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -270,6 +276,7 @@
 				3F0E3CB629F0EC29009BF311 /* CategoryCollectionViewCell.xib in Resources */,
 				3FEFBAA329ECF4B50085641B /* CardTableViewCell.xib in Resources */,
 				3F770BFC29F68220009FDA26 /* CategorySheetViewController.xib in Resources */,
+				3F0DCE4129F78D7A00C47FC6 /* MonthViewController.xib in Resources */,
 				3F0E3CB229F0E880009BF311 /* SheetViewController.xib in Resources */,
 				3F16DE1429F0DC1500AE7C83 /* AddNewViewController.xib in Resources */,
 				3FB6CCDD29F6705000C3CBE2 /* AddNewCategoryViewController.xib in Resources */,
@@ -339,6 +346,7 @@
 				3F0E3CB829F0EF39009BF311 /* Category.swift in Sources */,
 				3FA9E65C29E93F6200D8D7C1 /* HomeViewController.swift in Sources */,
 				3FEFBAA629ECF6210085641B /* ItemCollectionViewCell.swift in Sources */,
+				3F0DCE4029F78D7A00C47FC6 /* MonthViewController.swift in Sources */,
 				3FA9E64929E9346E00D8D7C1 /* ViewController.swift in Sources */,
 				3FEFBAAE29ECFD410085641B /* HomeViewModel.swift in Sources */,
 				3FA9E64529E9346E00D8D7C1 /* AppDelegate.swift in Sources */,

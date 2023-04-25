@@ -197,6 +197,9 @@
                                             <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
                                             <directionalEdgeInsets key="contentInsets" top="8.6699999999999999" leading="13.33" bottom="8.6699999999999999" trailing="13"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="showCalendar:" destination="18S-Id-kgb" eventType="touchUpInside" id="2wA-mk-Kky"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
