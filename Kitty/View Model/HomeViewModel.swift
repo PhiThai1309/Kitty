@@ -15,6 +15,7 @@ class HomeViewModel {
     private var income: Double = 500
     private var iconArray: [String] = []
     private var remainIconArray: [String] = []
+    private var month: [String] = []
     
     private var categoryWithAmount: OrderedDictionary<String, Double> = [:]
     
@@ -25,6 +26,8 @@ class HomeViewModel {
     
     init() {
         iconArray = ["Grocery","Gifts","Cafe","Health","Electronics", "Commute", "Donate", "Education", "Self development", "Fuel", "Institute", "Laundry", "Liquor", "Maintenance", "Cash", "Party", "Restaurant", "Savings", "Sport"]
+        
+        month = ["January", "February", "March", "April", "May", "Jun", "July", "August", "September", "October", "November", "December"]
         
         let category1  = Category(name: "Grocery")
         let category2 = Category(name: "Gifts")
@@ -105,6 +108,10 @@ class HomeViewModel {
     
     
     //MARK: Getter, Setter
+    func getAllMonth() -> [String] {
+        return month
+    }
+    
     func getAllIcon() -> [String] {
         return remainIconArray
     }

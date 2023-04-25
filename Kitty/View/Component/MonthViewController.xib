@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MonthViewController" customModule="Kitty" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="XlL-ER-Q3r" id="E7Q-4J-1Cw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -27,19 +28,20 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iQl-rx-ZHb">
-                    <rect key="frame" x="32.666666666666657" y="167" width="328" height="262"/>
+                    <rect key="frame" x="16" y="167" width="361" height="262"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick a month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddW-Tw-JD9">
-                            <rect key="frame" x="127.33333333333334" y="16" width="73.333333333333343" height="13.333333333333336"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <rect key="frame" x="138.66666666666666" y="16" width="83.666666666666657" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="XlL-ER-Q3r">
-                            <rect key="frame" x="22" y="45.333333333333357" width="284" height="200.66666666666663"/>
+                            <rect key="frame" x="22" y="49" width="317" height="197"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="j49-n3-TsR">
-                                <size key="itemSize" width="128" height="128"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="16" minimumInteritemSpacing="22" id="j49-n3-TsR">
+                                <size key="itemSize" width="80" height="36"/>
+                                <size key="estimatedItemSize" width="80" height="36"/>
                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -48,7 +50,6 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="328" id="IzT-l9-UQ7"/>
                         <constraint firstItem="XlL-ER-Q3r" firstAttribute="top" secondItem="ddW-Tw-JD9" secondAttribute="bottom" constant="16" id="Jbr-fW-SRT"/>
                         <constraint firstAttribute="height" constant="262" id="Kg0-DV-a21"/>
                         <constraint firstItem="XlL-ER-Q3r" firstAttribute="leading" secondItem="iQl-rx-ZHb" secondAttribute="leading" constant="22" id="guJ-dM-mbP"/>
@@ -83,6 +84,7 @@
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="nbG-3V-JQd" secondAttribute="bottom" id="7P6-ZH-iH4"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nbG-3V-JQd" secondAttribute="trailing" id="Aix-p6-oJh"/>
+                <constraint firstItem="iQl-rx-ZHb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="J74-xn-dUD"/>
                 <constraint firstItem="nbG-3V-JQd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="XpS-MX-OHl"/>
                 <constraint firstItem="nbG-3V-JQd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ZLE-XO-FNg"/>
                 <constraint firstItem="iQl-rx-ZHb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="108" id="hRf-Nm-1Aa"/>
