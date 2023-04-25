@@ -177,6 +177,9 @@
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.54000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="chevron.left" catalog="system"/>
+                                        <connections>
+                                            <action selector="leftDateOnClickhandler:" destination="18S-Id-kgb" eventType="touchUpInside" id="iGQ-tx-4fD"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0R6-Fv-mGY">
                                         <rect key="frame" x="351.33333333333331" y="14" width="11.666666666666686" height="20"/>
@@ -187,6 +190,9 @@
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.54000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="chevron.right" catalog="system"/>
+                                        <connections>
+                                            <action selector="rightDateOnClickHandler:" destination="18S-Id-kgb" eventType="touchUpInside" id="kfr-7z-egl"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIc-Hh-Wj1">
                                         <rect key="frame" x="111.66666666666669" y="5.6666666666666714" width="170" height="37"/>

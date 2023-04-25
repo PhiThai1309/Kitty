@@ -19,7 +19,6 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     @IBOutlet weak var monthBtn: UIButton!
     
     let dtFormatter = DateFormatter()
-    
     var filteredMonth = Date()
     
     var viewModel: HomeViewModel?
@@ -62,6 +61,26 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
         datePicker.delegate = self
         self.present(datePicker, animated: true)
     }
+    
+    @IBAction func rightDateOnClickHandler(_ sender: Any) {
+        let monthInt = Calendar.current.component(.month, from: filteredMonth)
+        let components = DateComponents (calendar: Calendar.current, year: 2023, month: monthInt + 1, day: 14)
+        let date = NSCalendar.current.date(from: components)
+        filteredMonth = date!
+        monthBtn.setTitle(filteredMonth.month + ", " + String(components.year!), for: .normal)
+        tableView.reloadData()
+    }
+    
+    @IBAction func leftDateOnClickhandler(_ sender: Any) {
+        let monthInt = Calendar.current.component(.month, from: filteredMonth)
+        let components = DateComponents (calendar: Calendar.current, year: 2023, month: monthInt - 1, day: 14)
+        let date = NSCalendar.current.date(from: components)
+        filteredMonth = date!
+        monthBtn.setTitle(filteredMonth.month + ", " + String(components.year!), for: .normal)
+        tableView.reloadData()
+    }
+    
+    
 }
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
