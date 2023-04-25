@@ -16,10 +16,22 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     @IBOutlet weak var incomeLabel: UILabel!
     @IBOutlet weak var expenseLabel: UILabel!
     
+    @IBOutlet weak var monthBtn: UIButton!
+    
+    let dtFormatter = DateFormatter()
+    
     var viewModel: HomeViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dtFormatter.dateStyle = .short
+        dtFormatter.timeStyle = .none
+        
+        
+        let calendarDate = Calendar.current.dateComponents([.day, .year, .month], from: Date())
+        
+        monthBtn.setTitle(Date().month + ", " + String(calendarDate.year!), for: .normal)
         
         // Do any additional setup after loading the view.
         let cellNib = UINib(nibName: "CardTableViewCell", bundle: nil)
@@ -45,7 +57,7 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     }
     
     @IBAction func showCalendar(_ sender: Any) {
-        var datePicker = MonthViewController()
+        let datePicker = MonthViewController()
         self.present(datePicker, animated: true)
 //        datePicker.addTarget(self, action: #selector(handleDateSelection), for: .valueChanged)
     }
@@ -61,12 +73,6 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         let cell =  tableView.dequeueReusableCell(withIdentifier: "CardViewCell", for: indexPath) as! CardTableViewCell
         
         // Configure the cell’s contents.
-        
-        let dtFormatter = DateFormatter()
-        dtFormatter.dateStyle = .short
-        dtFormatter.timeStyle = .none
-        
-        print(dtFormatter.string(from: history.date))
         cell.cardLabel.text = dtFormatter.string(from: history.date)
         cell.set(value: history.items)
 

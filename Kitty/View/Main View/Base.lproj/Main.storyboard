@@ -189,14 +189,25 @@
                                         <buttonConfiguration key="configuration" style="plain" image="chevron.right" catalog="system"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIc-Hh-Wj1">
-                                        <rect key="frame" x="135.66666666666666" y="5.3333333333333286" width="121.66666666666666" height="37.666666666666664"/>
+                                        <rect key="frame" x="131.66666666666666" y="5.6666666666666714" width="129.99999999999997" height="37"/>
+                                        <color key="backgroundColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="37" id="Maf-pR-Bcz"/>
+                                            <constraint firstAttribute="width" constant="130" id="pGN-2Y-TOd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="tintColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="gray" title="May, 2021" imagePadding="9.3300000000000001" cornerStyle="capsule">
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="8"/>
+                                        <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="4" maxY="0.0"/>
+                                        <state key="normal" title="May, 2021">
                                             <imageReference key="image" image="calendar" catalog="system" symbolScale="medium"/>
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
-                                            <directionalEdgeInsets key="contentInsets" top="8.6699999999999999" leading="13.33" bottom="8.6699999999999999" trailing="13"/>
-                                        </buttonConfiguration>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="18"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="showCalendar:" destination="18S-Id-kgb" eventType="touchUpInside" id="2wA-mk-Kky"/>
                                         </connections>
@@ -442,6 +453,7 @@
                         <outlet property="balanceLabel" destination="vjJ-R2-4Ty" id="SIl-zV-d4w"/>
                         <outlet property="expenseLabel" destination="D4U-r1-ovb" id="rQo-f6-PUi"/>
                         <outlet property="incomeLabel" destination="nW7-Ny-i1Y" id="efJ-LX-IF9"/>
+                        <outlet property="monthBtn" destination="IIc-Hh-Wj1" id="Eym-Rt-Sfo"/>
                         <outlet property="tableView" destination="ins-fp-NLU" id="jtv-on-6o4"/>
                     </connections>
                 </viewController>
