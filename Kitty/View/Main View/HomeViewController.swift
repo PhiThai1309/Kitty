@@ -121,10 +121,10 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension HomeViewController: AddNewDelegate {
     func addNewItem() {
-        viewModel!.setCurrentMonth(month: Date())
-        let calendarDate = Calendar.current.dateComponents([.day, .year, .month], from: viewModel!.getCurrentMonth())
-        monthBtn.setTitle(viewModel!.getCurrentMonth().month + ", " + String(calendarDate.year!), for: .normal)
-        tableView.reloadData()
+//        viewModel!.setCurrentMonth(month: Date())
+//        let calendarDate = Calendar.current.dateComponents([.day, .year, .month], from: viewModel!.getCurrentMonth())
+//        monthBtn.setTitle(viewModel!.getCurrentMonth().month + ", " + String(calendarDate.year!), for: .normal)
+//        tableView.reloadData()
     }
 }
 

@@ -121,9 +121,9 @@ extension ReportViewController: UICollectionViewDataSource, UICollectionViewDele
         // Fetch a cell of the appropriate type.
         if let cell = reportCollectionView.dequeueReusableCell(withReuseIdentifier: "ItemCellView", for: indexPath) as? ItemCollectionViewCell {
 
-            cell.typeLabel.text = amount[0].category.name
+            cell.typeLabel.text = amount[0].category?.name
             cell.amountLabel.text = String(Array(categoryWithAmount!)[indexPath.row].value)
-            cell.iconImg.image = UIImage(named: amount[0].category.name)
+            cell.iconImg.image = UIImage(named: amount[0].category!.name)
             let categories = viewModel?.getArrayOfEachCategory()
 
             cell.descLabel.text = String(categories![indexPath.row].count) + " transactions"

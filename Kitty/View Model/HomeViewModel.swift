@@ -33,24 +33,22 @@ class HomeViewModel {
         month = ["January", "February", "March", "April", "May", "Jun", "July", "August", "September", "October", "November", "December"]
         
         let category1 = Category(name: "Grocery")
-//        let category2 = Category(name: "Gifts")
-//        let category3 = Category(name: "Cafe")
-//        let category4 = Category(name: "Health")
-//        let category5 = Category(name: "Commute")
-//        let category6 = Category(name: "Electronics")
-//        categories.append(category3)
-//        categories.append(category2)
-//        categories.append(category1)
-//        categories.append(category4)
-//        categories.append(category5)
-//        categories.append(category6)
-//
-        
+        let category2 = Category(name: "Gifts")
+        let category3 = Category(name: "Cafe")
+        let category4 = Category(name: "Health")
+        let category5 = Category(name: "Commute")
+        let category6 = Category(name: "Electronics")
+        categories.append(category3)
+        categories.append(category2)
+        categories.append(category1)
+        categories.append(category4)
+        categories.append(category5)
+        categories.append(category6)
         
         let item1 = Item(category: category1, amount: 120.0, description: "Example description", categoryType: Option.Expenses)
-//        let item2 = Item(category: Category(name: "Grocery"), amount: 22.0, description: "Example description2", categoryType: Option.Expenses)
-//        let item3 = Item(category: Category(name: "Grocery"), amount: 32.0, description: "Example description3", categoryType: Option.Expenses)
-//        let item4 = Item(category: Category(name: "Grocery"), amount: 32.0, description: "Example description3", categoryType: Option.Expenses)
+        let item2 = Item(category: category3, amount: 22.0, description: "Example description2", categoryType: Option.Expenses)
+        let item3 = Item(category: category3, amount: 32.0, description: "Example description3", categoryType: Option.Expenses)
+        let item4 = Item(category: category4, amount: 32.0, description: "Example description3", categoryType: Option.Expenses)
         
 //        let item1 = Item()
 //        item1.category = Category(name: "Grocery")
@@ -58,10 +56,10 @@ class HomeViewModel {
 //        item1.desc = "adasd"
 //        item1.categoryType = Option.Expenses
         
-//        items.append(item1)
-//        items.append(item2)
-//        items.append(item3)
-//        items.append(item4)
+        items.append(item1)
+        items.append(item2)
+        items.append(item3)
+        items.append(item4)
         
         let components = DateComponents (calendar: Calendar.current, year: 2023, month: 3, day: 4)
         let date = NSCalendar.current.date(from: components)
@@ -72,9 +70,9 @@ class HomeViewModel {
         let components3 = DateComponents (calendar: Calendar.current, year: 2023, month: 3, day: 1)
         let date3 = NSCalendar.current.date(from: components3)
         
-        let history1 = History(date: date!, items: [item1])
-//        let history2 = History(date: date2!, items: [item2])
-//        let history3 = History(date: date3!, items: [item4])
+        let history1 = History(date: date!, items: [item1, item3])
+        let history2 = History(date: date2!, items: [item2])
+        let history3 = History(date: date3!, items: [item4])
         
 //        let history1 = History()
 //        history1.date = date!
@@ -92,8 +90,8 @@ class HomeViewModel {
 //        history1.items = [item4]
         
         history.append(history1)
-//        history.append(history2)
-//        history.append(history3)
+        history.append(history2)
+        history.append(history3)
         
         filterIcon()
         
@@ -177,8 +175,8 @@ class HomeViewModel {
     func getCategoryWithAmount() -> [Category] {
         var amountCategory: [Category] = []
         for item in items {
-            if !amountCategory.contains(where: {$0.name == item.category.name}) {
-                amountCategory.append(item.category)
+            if !amountCategory.contains(where: {$0.name == item.category!.name}) {
+                amountCategory.append(item.category!)
             }
         }
         return amountCategory
@@ -234,7 +232,7 @@ class HomeViewModel {
             for item in category {
                 if item.categoryType == Option.Expenses {
                     sum += item.amount
-                    categoryWithAmount[item.category.name] = sum
+                    categoryWithAmount[item.category!.name] = sum
                 }
             }
         }
@@ -247,8 +245,8 @@ class HomeViewModel {
             if item.categoryType == Option.Income {
                 continue
             }
-            if (result.contains(where: {$0.contains(where: {$0.category.name == item.category.name})})) {
-                let index = result.firstIndex(where: {$0.contains(where: {$0.category.name == item.category.name})})!
+            if (result.contains(where: {$0.contains(where: {$0.category!.name == item.category!.name})})) {
+                let index = result.firstIndex(where: {$0.contains(where: {$0.category!.name == item.category!.name})})!
                 result[index].append(item)
             } else {
                 let index = result.count
