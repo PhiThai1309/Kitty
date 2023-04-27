@@ -9,7 +9,7 @@ import Foundation
 import OrderedCollections
 import RealmSwift
 
-class HomeViewModel {
+class MainViewModel {
     private var items: [Item] = []
     private var history: [History] = []
     private var categories: [Category] = []
@@ -19,13 +19,6 @@ class HomeViewModel {
     private var month: [String] = []
     
     private var filteredMonth = Date()
-    
-    private var categoryWithAmount: OrderedDictionary<String, Double> = [:]
-    
-//    init(items: [Item], history: [History]) {
-//        self.items = items
-//        self.history = history
-//    }
     
     init() {
         iconArray = ["Grocery","Gifts","Cafe","Health","Electronics", "Commute", "Donate", "Education", "Self development", "Fuel", "Institute", "Laundry", "Liquor", "Maintenance", "Cash", "Party", "Restaurant", "Savings", "Sport"]
@@ -50,12 +43,6 @@ class HomeViewModel {
         let item3 = Item(category: category3, amount: 32.0, description: "Example description3", categoryType: Option.Expenses)
         let item4 = Item(category: category4, amount: 32.0, description: "Example description3", categoryType: Option.Expenses)
         
-//        let item1 = Item()
-//        item1.category = Category(name: "Grocery")
-//        item1.amount = 120.0
-//        item1.desc = "adasd"
-//        item1.categoryType = Option.Expenses
-        
         items.append(item1)
         items.append(item2)
         items.append(item3)
@@ -74,26 +61,19 @@ class HomeViewModel {
         let history2 = History(date: date2!, items: [item2])
         let history3 = History(date: date3!, items: [item4])
         
-//        let history1 = History()
-//        history1.date = date!
-//        history1.amount = 20.0
-//        history1.items = [item1, item3]
-//
-//        let history2 = History()
-//        history1.date = date2!
-//        history1.amount = 20.0
-//        history1.items = [item2]
-//
-//        let history3 = History()
-//        history1.date = date3!
-//        history1.amount = 20.0
-//        history1.items = [item4]
-        
         history.append(history1)
         history.append(history2)
         history.append(history3)
         
-        filterIcon()
+//        filterIcon()
+        
+        // Open the local-only default realm
+        let realm = try! Realm()
+        
+        try! realm.write {
+            print("can write")
+            realm.add(history1)
+        }
         
     }
     
@@ -108,35 +88,17 @@ class HomeViewModel {
         return result
     }
     
-    func filterIcon() {
-        remainIconArray = iconArray.filter { icon in
-            return !categories.contains { category in
-                return category.name == icon
-            }
-        }
-    }
+
     
-    func addHistory(newItem: Item, historyName: Date) -> Bool {
-        if let found = history.firstIndex(where: {$0.date.month == historyName.month}) {
-            history[found].items.append(newItem)
-        } else {
-            let newHistory = History(date: historyName, items: [newItem])
-            self.history.append(newHistory)
-        }
-        
-        items.append(newItem)
-        return true
-    }
+
     
-    func findCategory(name: String) -> Category {
-        return categories.first(where: {$0.name == name})!
-    }
+
     
     
     //MARK: Getter, Setter
-    func getCurrentMonth() -> Date {
-        return filteredMonth
-    }
+//    func getCurrentMonth() -> Date {
+//        return filteredMonth
+//    }
     
     func setCurrentMonth(month: Date) {
         filteredMonth = month
@@ -158,15 +120,7 @@ class HomeViewModel {
         return self.history
     }
     
-    func getFilteredHistory(date: Date) -> [History] {
-        var result: [History] = []
-        for item in history {
-            if item.date.month == date.month {
-                result.append(item)
-            }
-        }
-        return result
-    }
+
 
     func getAllCategory() -> [Category] {
         return categories
@@ -196,62 +150,13 @@ class HomeViewModel {
 
     
     //MARK: Money manage logic
-    func getExpense() -> Double {
-        var sum: Double = 0
-        for item in items {
-            if item.categoryType == Option.Expenses{
-                sum += item.amount
-            }
-        }
-        return sum
-    }
+
     
     func getIncome() -> Double {
         var result = income
         for item in items {
             if item.categoryType == Option.Income {
                 result += item.amount
-            }
-        }
-        return result
-    }
-    
-    func getBalance() -> Double {
-        return getIncome() - getExpense()
-    }
-    
-    func addNewCategory(new: Category) {
-        categories.append(new)
-    }
-    
-    //MARK: Other
-    func countExpenseAmountInCategories() -> OrderedDictionary<String, Double>{
-        let array = getArrayOfEachCategory()
-        for category in array {
-            var sum: Double = 0
-            for item in category {
-                if item.categoryType == Option.Expenses {
-                    sum += item.amount
-                    categoryWithAmount[item.category!.name] = sum
-                }
-            }
-        }
-        return categoryWithAmount
-    }
-    
-    func getArrayOfEachCategory() -> [[Item]] {
-        var result: [[Item]] = []
-        for item in items {
-            if item.categoryType == Option.Income {
-                continue
-            }
-            if (result.contains(where: {$0.contains(where: {$0.category!.name == item.category!.name})})) {
-                let index = result.firstIndex(where: {$0.contains(where: {$0.category!.name == item.category!.name})})!
-                result[index].append(item)
-            } else {
-                let index = result.count
-                result.append([])
-                result[index].append(item)
             }
         }
         return result

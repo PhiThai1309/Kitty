@@ -66,6 +66,7 @@ extension CardTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
                 cell.amountLabel.textColor = .label
             }
             
+            print(item)
             cell.iconImg.image = UIImage(named: item.category!.name)
             return cell
         }

@@ -19,12 +19,33 @@ class AddNewViewController: UIViewController {
     @IBOutlet weak var descInput: UITextField!
     @IBOutlet weak var amountInput: UITextField!
     
-    var viewModel: HomeViewModel?
+    var items: [Item]
+    var history: [History]
+    var iconArray: [String]
+    var remainIconArray: [String]
+    var categories: [Category]
+    
     var delegate: AddNewDelegate?
     
     var option: String = "Expenses"
-    
     var choosenCategory: Category = Category(name: "")
+    
+    init(items: [Item], history : [History], iconArray: [String], remainIconArray: [String], categories: [Category]) {
+        self.items = items
+        self.history = history
+        self.iconArray = iconArray
+        self.remainIconArray = remainIconArray
+        self.categories = categories
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    lazy var viewModel: AddNewViewModel = {
+        return AddNewViewModel(items: items, history: history, iconArray: iconArray, remainIconArray: remainIconArray, categories: categories)
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,8 +60,7 @@ class AddNewViewController: UIViewController {
     }
     
     @IBAction func categoryClickHandler(_ sender: Any) {
-        let detailViewController = SheetViewController()
-        detailViewController.viewModel = viewModel
+        let detailViewController = SheetViewController(iconArray: iconArray, remainIconArray: remainIconArray, categories: categories)
         detailViewController.delegate = self
         let nav = UINavigationController(rootViewController: detailViewController)
         // 1
@@ -71,8 +91,8 @@ class AddNewViewController: UIViewController {
     
     @IBAction func addIncomeOnClickHandler(_ sender: Any) {
         if let inputAmount = amountInput.text , !inputAmount.isEmpty, !choosenCategory.name.isEmpty{
-            let newItem = Item(category: (viewModel?.findCategory(name: choosenCategory.name))!, amount: Double(inputAmount)!, description: descInput.text!, categoryType: Option(rawValue: option)!)
-            if (viewModel?.addHistory(newItem: newItem, historyName: Date())) == true {
+            let newItem = Item(category: (viewModel.findCategory(name: choosenCategory.name)), amount: Double(inputAmount)!, description: descInput.text!, categoryType: Option(rawValue: option)!)
+            if (viewModel.addHistory(newItem: newItem, historyName: Date())) == true {
                 delegate?.addNewItem()
                 self.navigationController?.popViewController(animated: true)
             }

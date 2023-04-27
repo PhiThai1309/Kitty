@@ -10,7 +10,7 @@ import Realm
 import RealmSwift
 
 @objcMembers class Category: Object  {
-    var name: String = "Expenses"
+    var name: String = ""
     
     init(name: String) {
         self.name = name

@@ -16,7 +16,7 @@ enum Option: String, PersistableEnum {
 
 @objcMembers class Item: Object {
     @Persisted(primaryKey: true) var id = "h1"
-    @Persisted var category: Category? = Category(name: "Expenses")
+    @Persisted var category: Category? = Category(name: "")
     @Persisted var amount: Double = 0.0
     @Persisted var desc: String?
     @Persisted var categoryType: Option = Option.Expenses
