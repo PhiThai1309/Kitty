@@ -28,7 +28,7 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iQl-rx-ZHb">
-                    <rect key="frame" x="16" y="167" width="361" height="262"/>
+                    <rect key="frame" x="16" y="163" width="361" height="262"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick a month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddW-Tw-JD9">
                             <rect key="frame" x="138.66666666666666" y="16" width="83.666666666666657" height="17"/>
@@ -91,7 +91,7 @@
                 <constraint firstItem="iQl-rx-ZHb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="J74-xn-dUD"/>
                 <constraint firstItem="nbG-3V-JQd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="XpS-MX-OHl"/>
                 <constraint firstItem="nbG-3V-JQd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ZLE-XO-FNg"/>
-                <constraint firstItem="iQl-rx-ZHb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="108" id="hRf-Nm-1Aa"/>
+                <constraint firstItem="iQl-rx-ZHb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="104" id="hRf-Nm-1Aa"/>
                 <constraint firstItem="iQl-rx-ZHb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="oUx-U8-eMD"/>
             </constraints>
             <point key="canvasLocation" x="35.877862595419849" y="-11.267605633802818"/>

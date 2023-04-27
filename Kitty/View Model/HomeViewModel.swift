@@ -7,6 +7,7 @@
 
 import Foundation
 import OrderedCollections
+import RealmSwift
 
 class HomeViewModel {
     private var items: [Item] = []
@@ -62,12 +63,28 @@ class HomeViewModel {
         let components3 = DateComponents (calendar: Calendar.current, year: 2023, month: 3, day: 1)
         let date3 = NSCalendar.current.date(from: components3)
         
-        let hisroty1 = History(date: date!, amount: 20.0, items: [item1, item3])
-        let hisroty2 = History(date: date2!, amount: 20.0, items: [item2])
-        let hisroty3 = History(date: date3!, amount: 20.0, items: [item4])
-        history.append(hisroty1)
-        history.append(hisroty2)
-        history.append(hisroty3)
+        let history1 = History(date: date!, items: [item1, item3])
+        let history2 = History(date: date2!, items: [item2])
+        let history3 = History(date: date3!, items: [item4])
+        
+//        let history1 = History()
+//        history1.date = date!
+//        history1.amount = 20.0
+//        history1.items = [item1, item3]
+//
+//        let history2 = History()
+//        history1.date = date2!
+//        history1.amount = 20.0
+//        history1.items = [item2]
+//
+//        let history3 = History()
+//        history1.date = date3!
+//        history1.amount = 20.0
+//        history1.items = [item4]
+        
+        history.append(history1)
+        history.append(history2)
+        history.append(history3)
         
         filterIcon()
         
@@ -96,7 +113,7 @@ class HomeViewModel {
         if let found = history.firstIndex(where: {$0.date.month == historyName.month}) {
             history[found].items.append(newItem)
         } else {
-            let newHistory = History(date: historyName, amount: 0, items: [newItem])
+            let newHistory = History(date: historyName, items: [newItem])
             self.history.append(newHistory)
         }
         

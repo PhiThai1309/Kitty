@@ -6,9 +6,22 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct History  {
-    var date: Date
-    var amount: Double
-    var items: [Item]
+@objcMembers class History: Object  {
+    var date: Date = Date()
+    var items: [Item] = []
+    
+    init(items: [Item]) {
+        self.items = items
+    }
+    
+    init(date: Date, items: [Item]) {
+        self.date = date
+        self.items = items
+    }
+    
+    override init() {
+        super.init()
+    }
 }
