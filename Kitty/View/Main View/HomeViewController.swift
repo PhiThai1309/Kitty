@@ -94,7 +94,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         
         // Configure the cell’s contents.
         cell.cardLabel.text = dtFormatter.string(from: history.date)
-        cell.set(value: history.items)
+        cell.set(value: Array(history.items))
         
         print(history.items)
 

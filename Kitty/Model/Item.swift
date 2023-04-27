@@ -9,32 +9,38 @@ import Foundation
 import RealmSwift
 import Realm
 
-enum Option: String {
+enum Option: String, PersistableEnum {
     case Expenses
     case Income
 }
 
 @objcMembers class Item: Object {
-    var category: Category = Category(name: "")
-    var amount: Double = 0.0
-    var desc: String?
-    var categoryType: Option = Option.Expenses
-    
-    init(amount: Double, description: String? = nil) {
-        self.amount = amount
-        self.desc = description
-    }
+    @Persisted(primaryKey: true) var id = "h1"
+    @Persisted var category: Category = Category(name: "Expenses")
+    @Persisted var amount: Double = 0.0
+    @Persisted var desc: String?
+    @Persisted var categoryType: Option = Option.Expenses
     
     init(category: Category, amount: Double, categoryType: Option) {
+        self.id = "i" + String(Int.random(in: 1..<500))
         self.category = category
         self.amount = amount
         self.categoryType = categoryType
     }
     
     init(category: Category, amount: Double, description: String, categoryType: Option) {
+        self.id = "i" + String(Int.random(in: 1..<500))
         self.category = category
         self.amount = amount
         self.desc = description
         self.categoryType = categoryType
+    }
+    override init() {
+        super.init()
+//        self.id = "i" + String(Int.random(in: 1..<500))
+//        self.category = category
+//        self.amount = 0.0
+//        self.desc = "description"
+//        self.categoryType = Option.Expenses
     }
 }

@@ -6,7 +6,18 @@
 //
 
 import Foundation
+import Realm
+import RealmSwift
 
-struct Category  {
-    var name: String
+@objcMembers class Category: Object  {
+    var name: String = "Expenses"
+    
+    init(name: String) {
+        self.name = name
+    }
+    
+    override init() {
+        super.init()
+    }
+
 }
