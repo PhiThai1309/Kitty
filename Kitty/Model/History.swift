@@ -9,16 +9,21 @@ import Foundation
 import RealmSwift
 
 @objcMembers class History: Object  {
-    var date: Date = Date()
-    var items: [Item] = []
+    @Persisted(primaryKey: true) var id = 0
+    @Persisted var date: Date = Date()
+    @Persisted var items: List<Item> = List<Item>()
     
-    init(items: [Item]) {
+    init(items: List<Item>) {
         self.items = items
     }
     
     init(date: Date, items: [Item]) {
         self.date = date
-        self.items = items
+        let newList = List<Item>()
+        for item in items {
+            newList.append(item)
+        }
+        self.items = newList
     }
     
     override init() {
