@@ -19,26 +19,40 @@ class ReportViewController: UIViewController, ChartViewDelegate {
     var items: [Item]
     var history: [History]
     var filteredMonth: Date
-    var categories: [[Item]]
+    var categories: [[Item]] = [[]]
     
 //    var categoryArray: [Category] = []
     
     var categoryWithAmount: OrderedDictionary<String, Double> = [:]
     
-    init(items: [Item], history : [History], filteredMonth: Date, categories: [[Item]]) {
+    init(items: [Item], history : [History], filteredMonth: Date) {
         self.items = items
         self.history = history
         self.filteredMonth = filteredMonth
-        self.categories = categories
+//        self.categories = categories
         super.init(nibName: nil, bundle: nil)
     }
     
+    func set(items: [Item], history : [History], filteredMonth: Date) {
+        self.items = items
+        self.history = history
+        self.filteredMonth = filteredMonth
+//        self.categories = categories
+    }
+    
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+//        super.init(coder: aDecoder)
+//        fatalError("init(coder:) has not been implemented")
+        
+        self.items = []
+        self.history = []
+        self.filteredMonth = Date()
+        self.categories = [[]]
+        super.init(coder: coder)
     }
     
     lazy var viewModel: ReportViewModel = {
-        return ReportViewModel(items: items, history: history, filteredMonth: filteredMonth, categories: categories)
+        return ReportViewModel(items: items, history: history, filteredMonth: filteredMonth)
     }()
     var sum: Double = 0
     
@@ -168,9 +182,9 @@ extension ReportViewController: MonthViewDelegate {
             let monthInt = Calendar.current.component(.month, from: date)
             let components = DateComponents (calendar: Calendar.current, year: 2023, month: monthInt, day: 14)
             let date = NSCalendar.current.date(from: components)
-            viewModel.setCurrentMonth(month: date!)
-            monthBtn.setTitle(viewModel.getCurrentMonth().month + ", " + String(components.year!), for: .normal)
+            filteredMonth = date!
+            monthBtn.setTitle(filteredMonth.month + ", " + String(components.year!), for: .normal)
         }
         reportCollectionView.reloadData()
-    }
+    } 
 }

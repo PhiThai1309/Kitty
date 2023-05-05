@@ -34,6 +34,21 @@ class HomeViewModel {
         return sum
     }
     
+    func getFilteredMonth() -> Date {
+        return filteredMonth
+    }
+    
+    func setCurrentMonth() {
+        filteredMonth = Date()
+    }
+    
+    func setMonth(month: Date) {
+        filteredMonth = month
+    }
+    
+    func getIncome() -> Double {
+        return income
+    }
     
     func getBalance() -> Double {
         return income - getExpense()

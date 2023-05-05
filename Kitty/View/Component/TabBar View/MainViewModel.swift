@@ -68,12 +68,12 @@ class MainViewModel {
 //        filterIcon()
         
         // Open the local-only default realm
-        let realm = try! Realm()
-        
-        try! realm.write {
-            print("can write")
-            realm.add(history1)
-        }
+//        let realm = try! Realm()
+//        
+//        try! realm.write {
+//            print("can write")
+//            realm.add(history1)
+//        }
         
     }
     
@@ -96,9 +96,9 @@ class MainViewModel {
     
     
     //MARK: Getter, Setter
-//    func getCurrentMonth() -> Date {
-//        return filteredMonth
-//    }
+    func getCurrentMonth() -> Date {
+        return filteredMonth
+    }
     
     func setCurrentMonth(month: Date) {
         filteredMonth = month
@@ -120,7 +120,9 @@ class MainViewModel {
         return self.history
     }
     
-
+    func getRemainIconArray() -> [String] {
+        return self.remainIconArray
+    }
 
     func getAllCategory() -> [Category] {
         return categories
