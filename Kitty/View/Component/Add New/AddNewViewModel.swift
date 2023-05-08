@@ -8,18 +8,23 @@
 import Foundation
 
 class AddNewViewModel {
+    let userDefaults = UserDefaults.standard
+    
     var items: [Item]
     var history: [History]
     var iconArray: [String]
-    var remainIconArray: [String]
-    var categories: [Category]
+    var categories: [Category] = []
     
-    init(items: [Item], history : [History], iconArray: [String], remainIconArray: [String], categories: [Category]) {
+    init(items: [Item], history : [History], iconArray: [String]) {
         self.items = items
         self.history = history
         self.iconArray = iconArray
-        self.remainIconArray = remainIconArray
-        self.categories = categories
+        if let savedCategories = userDefaults.object(forKey: "categories") as? Data {
+            let decoder = JSONDecoder()
+            if let saved = try? decoder.decode([Category].self, from: savedCategories) {
+                self.categories = saved
+            }
+        }
     }
     
     func findCategory(name: String) -> Category {

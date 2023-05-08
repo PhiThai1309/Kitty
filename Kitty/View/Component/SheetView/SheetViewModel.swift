@@ -8,17 +8,26 @@
 import Foundation
 
 class SheetViewModel {
+    let userDefaults = UserDefaults.standard
+    
+    
     lazy var iconArray: [String] = {
         return Icon().iconArray
     }()
     
-    @Published var categories: [Category]
+    var categories: [Category] = []
     
-    init(categories: [Category]) {
-        self.categories = categories
+    init(){
+        refreshData()
     }
     
-    func addNewCategory(new: Category) {
-        categories.append(new)
+    func refreshData() {
+        if let savedCategories = userDefaults.object(forKey: "categories") as? Data {
+            let decoder = JSONDecoder()
+            if let saved = try? decoder.decode([Category].self, from: savedCategories) {
+                categories = saved
+            }
+        }
+        categories = categories.reversed()
     }
 }

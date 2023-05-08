@@ -24,13 +24,8 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     var history: [History]
     var income: Double
     var iconArray: [String]
-    var remainIconArray: [String]
     var month: [String]
     var filteredMonth: Date
-    
-    var categories: [Category] = {
-        return DummyData().initCategory
-    }()
     
     required init?(coder: NSCoder) {
 //        fatalError("init(coder:) has not been implemented")
@@ -38,35 +33,32 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
         self.history = []
         self.income = 0.0
         self.iconArray = []
-        self.remainIconArray = []
         self.month = []
         self.filteredMonth = Date()
         super.init(coder: coder)
     }
     
-    init(items: [Item], history : [History], income: Double, iconArray: [String], remainIconArray: [String], month: [String], filteredMonth: Date) {
+    init(items: [Item], history : [History], income: Double, iconArray: [String], month: [String], filteredMonth: Date) {
         self.items = items
         self.history = history
         self.income = income
         self.iconArray = iconArray
-        self.remainIconArray = remainIconArray
         self.month = month
         self.filteredMonth = filteredMonth
         super.init(nibName: nil, bundle: Bundle.main)
     }
     
-    func set(items: [Item], history : [History], income: Double, iconArray: [String], remainIconArray: [String], month: [String], filteredMonth: Date) {
+    func set(items: [Item], history : [History], income: Double, iconArray: [String], month: [String], filteredMonth: Date) {
         self.items = items
         self.history = history
         self.income = income
         self.iconArray = iconArray
-        self.remainIconArray = remainIconArray
         self.month = month
         self.filteredMonth = filteredMonth
     }
     
     lazy var viewModel: HomeViewModel = {
-        return HomeViewModel(items: items, history: history, income: income, remainIconArray: remainIconArray, month: month, filteredMonth: filteredMonth)
+        return HomeViewModel(items: items, history: history, income: income, month: month, filteredMonth: filteredMonth)
     }()
     
     override func viewDidLoad() {
@@ -82,7 +74,7 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     
     
     @IBAction func addNewButtonClickHandler(_ sender: Any) {
-        let newViewController = AddNewViewController(items: viewModel.items!, history: viewModel.history!, iconArray: iconArray, remainIconArray: remainIconArray, categories: categories)
+        let newViewController = AddNewViewController(items: viewModel.items!, history: viewModel.history!, iconArray: iconArray)
 
         newViewController.delegate = self
         self.navigationController?.pushViewController(newViewController, animated: true)

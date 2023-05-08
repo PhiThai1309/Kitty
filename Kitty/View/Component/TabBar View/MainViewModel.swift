@@ -21,8 +21,17 @@ class MainViewModel {
     private var filteredMonth = Date()
     private var dummyData = DummyData()
     
+    let userDefaults = UserDefaults.standard
+    
     init() {
         month = ["January", "February", "March", "April", "May", "Jun", "July", "August", "September", "October", "November", "December"]
+        categories = DummyData().initCategory
+        
+        let encoder = JSONEncoder()
+        if let encodedAray = try? encoder.encode(categories) {
+            userDefaults.set(encodedAray, forKey: "categories")
+        }
+        
         
         let item1 = Item(category: dummyData.initCategory[1], amount: 120.0, description: "Example description", categoryType: Option.Expenses)
         let item2 = Item(category: dummyData.initCategory[3], amount: 22.0, description: "Example description2", categoryType: Option.Expenses)

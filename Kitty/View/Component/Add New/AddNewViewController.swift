@@ -22,20 +22,16 @@ class AddNewViewController: UIViewController {
     var items: [Item]
     var history: [History]
     var iconArray: [String]
-    var remainIconArray: [String]
-    var categories: [Category]
 
     var delegate: AddNewDelegate?
     
     var option: String = "Expenses"
     var choosenCategory: Category = Category(name: "")
     
-    init(items: [Item], history : [History], iconArray: [String], remainIconArray: [String], categories: [Category]) {
+    init(items: [Item], history : [History], iconArray: [String]) {
         self.items = items
         self.history = history
         self.iconArray = iconArray
-        self.remainIconArray = remainIconArray
-        self.categories = categories
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -44,7 +40,7 @@ class AddNewViewController: UIViewController {
     }
     
     lazy var viewModel: AddNewViewModel = {
-        return AddNewViewModel(items: items, history: history, iconArray: iconArray, remainIconArray: remainIconArray, categories: categories)
+        return AddNewViewModel(items: items, history: history, iconArray: iconArray)
     }()
     
     override func viewDidLoad() {
@@ -60,8 +56,8 @@ class AddNewViewController: UIViewController {
     }
     
     @IBAction func categoryClickHandler(_ sender: Any) {
-        print(categories)
-        let detailViewController = SheetViewController(categories: categories)
+//        print(categories)
+        let detailViewController = SheetViewController()
         detailViewController.delegate = self
         let nav = UINavigationController(rootViewController: detailViewController)
         // 1
@@ -112,7 +108,6 @@ class AddNewViewController: UIViewController {
 extension AddNewViewController: sheetViewDelegate {
     func categoryOnClick(category: Category) {
         choosenCategory = category
-        categories.append(category)
         categorySheet.setTitle(category.name, for: .normal)
         categorySheet.setTitleColor(.label, for: .normal)
     }

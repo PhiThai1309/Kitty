@@ -13,7 +13,7 @@ import RealmSwift
 //    var categoryDatabase: [Category]
 //}
 
-@objcMembers class Category: Object  {
+@objcMembers class Category: Object, Codable  {
     var name: String = ""
     
     init(name: String) {

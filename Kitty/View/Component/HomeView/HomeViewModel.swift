@@ -11,15 +11,13 @@ class HomeViewModel {
     var items: [Item]?
     var history: [History]?
     var income: Double?
-    var remainIconArray: [String]?
     var month: [String]?
     var filteredMonth: Date?
     
-    init(items: [Item], history: [History], income: Double, remainIconArray: [String], month: [String], filteredMonth: Date) {
+    init(items: [Item], history: [History], income: Double, month: [String], filteredMonth: Date) {
         self.items = items
         self.history = history
         self.income = income
-        self.remainIconArray = remainIconArray
         self.month = month
         self.filteredMonth = filteredMonth
     }

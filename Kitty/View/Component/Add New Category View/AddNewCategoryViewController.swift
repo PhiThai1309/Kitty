@@ -8,7 +8,7 @@
 import UIKit
 
 protocol AddNewCategoryDelegate {
-    func newCategory(newCategory: Category)
+    func newCategory()
 }
 
 class AddNewCategoryViewController: UIViewController {
@@ -16,16 +16,6 @@ class AddNewCategoryViewController: UIViewController {
     @IBOutlet weak var categoryLabel: UITextField!
     @IBOutlet weak var iconImg: UIButton!
     
-    var categories: [Category]
-    
-    init(categories: [Category]) {
-        self.categories = categories
-        super.init(nibName: nil, bundle: Bundle.main)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     lazy var viewModel: AddNewCategoryViewModel = {
         return AddNewCategoryViewModel()
@@ -46,12 +36,13 @@ class AddNewCategoryViewController: UIViewController {
     
     @IBAction func addNewCategoryOnClickHandler(_ sender: Any) {
         let newCategory = Category(name: categoryLabel.text!)
-        delegate?.newCategory(newCategory: newCategory)
+        viewModel.addNewCategory(category: newCategory)
+        delegate?.newCategory()
         self.dismiss(animated: true)
     }
     
     @IBAction func addIconOnClickHandler(_ sender: Any) {
-        let categorySheetViewController = CategorySheetViewController(categories: categories)
+        let categorySheetViewController = CategorySheetViewController(categories: viewModel.categories)
         categorySheetViewController.delegate = self
         let nav = UINavigationController(rootViewController: categorySheetViewController)
         // 1

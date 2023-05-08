@@ -16,19 +16,8 @@ class SheetViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var addNewCategoryButton: UIButton!
     
-    var categories: [Category]
-    
-    init(categories: [Category]) {
-        self.categories = categories
-        super.init(nibName: nil, bundle: Bundle.main)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     lazy var viewModel: SheetViewModel = {
-        return SheetViewModel(categories: categories)
+        return SheetViewModel()
     }()
     
     var delegate: sheetViewDelegate?
@@ -40,19 +29,19 @@ class SheetViewController: UIViewController {
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         
-        print(categories)
+//        print(viewModel.categories)
         
         let cellNib = UINib(nibName: "CategoryCollectionViewCell", bundle: nil)
         self.collectionView.register(cellNib, forCellWithReuseIdentifier: "CategoryCellView")
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print(categories)
+//        print(viewModel.categories)
     }
     
     
     @IBAction func addNewOnClickHanlder(_ sender: Any) {
-        let vc = AddNewCategoryViewController(categories: categories)
+        let vc = AddNewCategoryViewController()
         vc.delegate = self
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
@@ -94,10 +83,8 @@ extension SheetViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
 }
 extension SheetViewController: AddNewCategoryDelegate {
-    func newCategory(newCategory: Category) {
-        print(newCategory)
-        print(viewModel.categories)
-        viewModel.addNewCategory(new: newCategory)
+    func newCategory() {
+        viewModel.refreshData()
         collectionView.reloadData()
     }
 }
