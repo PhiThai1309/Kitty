@@ -8,15 +8,17 @@
 import Foundation
 
 class SheetViewModel {
-//    var iconArray: [String]
-//    var remainIconArray: [String]
-//    var categories: [Category]
-//    
-//    init(iconArray: [String], remainIconArray: [String], categories: [Category]) {
-//        self.iconArray = iconArray
-//        self.remainIconArray = remainIconArray
-//        self.categories = categories
-//    }
+    lazy var iconArray: [String] = {
+        return Icon().iconArray
+    }()
     
+    @Published var categories: [Category]
     
+    init(categories: [Category]) {
+        self.categories = categories
+    }
+    
+    func addNewCategory(new: Category) {
+        categories.append(new)
+    }
 }
