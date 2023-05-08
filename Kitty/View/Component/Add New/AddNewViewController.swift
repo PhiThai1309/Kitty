@@ -8,7 +8,7 @@
 import UIKit
 
 protocol AddNewDelegate {
-    func addNewItem()
+    func addNewItem(newItem: Item)
 }
 
 class AddNewViewController: UIViewController {
@@ -89,10 +89,8 @@ class AddNewViewController: UIViewController {
     @IBAction func addIncomeOnClickHandler(_ sender: Any) {
         if let inputAmount = amountInput.text , !inputAmount.isEmpty, !choosenCategory.name.isEmpty{
             let newItem = Item(category: (viewModel.findCategory(name: choosenCategory.name)), amount: Double(inputAmount)!, description: descInput.text!, categoryType: Option(rawValue: option)!)
-            if (viewModel.addHistory(newItem: newItem, historyName: Date())) == true {
-                delegate?.addNewItem()
-                self.navigationController?.popViewController(animated: true)
-            }
+            delegate?.addNewItem(newItem: newItem)
+            self.navigationController?.popViewController(animated: true)
         } else {
             let alert = UIAlertController(title: "Please check your input",
                                           message: "The inputed amount have to be in Integer format and have selected a category",

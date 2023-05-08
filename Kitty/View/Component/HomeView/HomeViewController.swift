@@ -74,7 +74,7 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     
     
     @IBAction func addNewButtonClickHandler(_ sender: Any) {
-        let newViewController = AddNewViewController(items: viewModel.items!, history: viewModel.history!, iconArray: iconArray)
+        let newViewController = AddNewViewController(items: viewModel.items, history: viewModel.history, iconArray: iconArray)
 
         newViewController.delegate = self
         self.navigationController?.pushViewController(newViewController, animated: true)
@@ -100,25 +100,23 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     
     @IBAction func rightDateOnClickHandler(_ sender: Any) {
         let year = viewModel.addAMonth()
-        monthBtn.setTitle(viewModel.filteredMonth!.month + ", " + String(year), for: .normal)
-        print(viewModel.filteredMonth)
-        print(filteredMonth)
+        monthBtn.setTitle(viewModel.filteredMonth.month + ", " + String(year), for: .normal)
         tableView.reloadData()
     }
     
     @IBAction func leftDateOnClickhandler(_ sender: Any) {
         let year = viewModel.backAMonth()
-        monthBtn.setTitle(viewModel.filteredMonth!.month + ", " + String(year), for: .normal)
+        monthBtn.setTitle(viewModel.filteredMonth.month + ", " + String(year), for: .normal)
         tableView.reloadData()
     }
 }
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.getFilteredHistory(date: viewModel.filteredMonth!).reversed().count
+        return viewModel.getFilteredHistory(date: viewModel.filteredMonth).reversed().count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let history = viewModel.getFilteredHistory(date: viewModel.filteredMonth!).reversed()[indexPath.row]
+        let history = viewModel.getFilteredHistory(date: viewModel.filteredMonth).reversed()[indexPath.row]
         // Fetch a cell of the appropriate type.
         let cell =  tableView.dequeueReusableCell(withIdentifier: "CardViewCell", for: indexPath) as! CardTableViewCell
         
@@ -130,7 +128,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let array = viewModel.getFilteredHistory(date: viewModel.filteredMonth!)
+        let array = viewModel.getFilteredHistory(date: viewModel.filteredMonth)
         if CGFloat(array.reversed()[indexPath.row].items.count * 56) > 0 {
             return CGFloat(array.reversed()[indexPath.row].items.count * 50 + 70 + 10*array.reversed()[indexPath.row].items.count)
         }
@@ -148,10 +146,22 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension HomeViewController: AddNewDelegate {
-    func addNewItem() {
+    func addNewItem(newItem: Item) {
         viewModel.setCurrentMonth()
-        let calendarDate = Calendar.current.dateComponents([.day, .year, .month], from: viewModel.filteredMonth!)
-        monthBtn.setTitle(viewModel.filteredMonth!.month + ", " + String(calendarDate.year!), for: .normal)
+        let calendarDate = Calendar.current.dateComponents([.day, .year, .month], from: viewModel.filteredMonth)
+        monthBtn.setTitle(viewModel.filteredMonth.month + ", " + String(calendarDate.year!), for: .normal)
+        if viewModel.addHistory(newItem: newItem, historyName: Date()) == true {
+            if viewModel.addItem(newItem: newItem) != true {
+                let alert = UIAlertController(title: "Please check your input",
+                                              message: "The inputed amount have to be in Integer format and have selected a category",
+                                              preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                    return
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+        
         tableView.reloadData()
     }
 }
@@ -166,7 +176,7 @@ extension HomeViewController: MonthViewDelegate {
             let components = DateComponents (calendar: Calendar.current, year: 2023, month: monthInt, day: 14)
             let date = NSCalendar.current.date(from: components)
             viewModel.setMonth(month: date!)
-            monthBtn.setTitle(viewModel.filteredMonth!.month + ", " + String(components.year!), for: .normal)
+            monthBtn.setTitle(viewModel.filteredMonth.month + ", " + String(components.year!), for: .normal)
         }
         tableView.reloadData()
     }

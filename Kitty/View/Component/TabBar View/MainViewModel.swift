@@ -83,13 +83,6 @@ class MainViewModel {
         return result
     }
     
-
-    
-
-    
-
-    
-    
     //MARK: Getter, Setter
     func getCurrentMonth() -> Date {
         return filteredMonth
@@ -144,11 +137,7 @@ class MainViewModel {
         return sum
     }
     
-
-    
     //MARK: Money manage logic
-
-    
     func getIncome() -> Double {
         var result = income
         for item in items {
