@@ -8,7 +8,7 @@
 import UIKit
 
 protocol AddNewCategoryDelegate {
-    func newCategory()
+    func newCategory(newCategory: Category)
 }
 
 class AddNewCategoryViewController: UIViewController {
@@ -16,16 +16,11 @@ class AddNewCategoryViewController: UIViewController {
     @IBOutlet weak var categoryLabel: UITextField!
     @IBOutlet weak var iconImg: UIButton!
     
-    
-    var iconArray: [String]
-    var remainIconArray: [String]
     var categories: [Category]
     
-    init(iconArray: [String], remainIconArray: [String], categories: [Category]) {
-        self.iconArray = iconArray
-        self.remainIconArray = remainIconArray
+    init(categories: [Category]) {
         self.categories = categories
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: nil, bundle: Bundle.main)
     }
     
     required init?(coder: NSCoder) {
@@ -33,7 +28,7 @@ class AddNewCategoryViewController: UIViewController {
     }
     
     lazy var viewModel: AddNewCategoryViewModel = {
-        return AddNewCategoryViewModel(iconArray: iconArray, remainIconArray: remainIconArray, categories: categories)
+        return AddNewCategoryViewModel()
     }()
     
     var delegate: AddNewCategoryDelegate?
@@ -51,15 +46,12 @@ class AddNewCategoryViewController: UIViewController {
     
     @IBAction func addNewCategoryOnClickHandler(_ sender: Any) {
         let newCategory = Category(name: categoryLabel.text!)
-        viewModel.addNewCategory(new: newCategory)
-        viewModel.filterIcon()
-        delegate?.newCategory()
+        delegate?.newCategory(newCategory: newCategory)
         self.dismiss(animated: true)
     }
     
     @IBAction func addIconOnClickHandler(_ sender: Any) {
-        let categorySheetViewController = CategorySheetViewController(remainIconArray: remainIconArray)
-//        categorySheetViewController.viewModel = viewModel
+        let categorySheetViewController = CategorySheetViewController(categories: categories)
         categorySheetViewController.delegate = self
         let nav = UINavigationController(rootViewController: categorySheetViewController)
         // 1

@@ -15,29 +15,29 @@ class CategorySheetViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-//    var iconArray: [String]
-    var remainIconArray: [String]
-//    var categories: [Category]
+    var iconArray: [String] = {
+        return Icon().iconArray
+    }()
     
-    init(remainIconArray: [String]) {
-//        self.iconArray = iconArray
-        self.remainIconArray = remainIconArray
-//        self.categories = categories
-        super.init(nibName: "CategorySheetViewController", bundle: Bundle(for: CategorySheetViewController.self))
+    var categories: [Category]
+    
+    init(categories: [Category]) {
+        self.categories = categories
+        super.init(nibName: nil, bundle: Bundle.main)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-//    lazy var viewModel: CategorySheetViewModel = {
-//        return CategorySheetViewModel(iconArray: iconArray, remainIconArray: remainIconArray, categories: categories)
-//    }()
+    var remainIconArray: [String] = []
     
     var delegate: CategorySheetDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        filterIcon()
 
         // Do any additional setup after loading the view.
         self.collectionView.dataSource = self
@@ -45,6 +45,14 @@ class CategorySheetViewController: UIViewController {
         
         let cellNib = UINib(nibName: "CategoryCollectionViewCell", bundle: nil)
         self.collectionView.register(cellNib, forCellWithReuseIdentifier: "CategoryCellView")
+    }
+    
+    func filterIcon() {
+        remainIconArray = iconArray.filter { icon in
+            return !categories.contains { category in
+                return category.name == icon
+            }
+        }
     }
 }
 

@@ -37,4 +37,6 @@ class AddNewViewModel {
         items.append(newItem)
         return true
     }
+    
+    
 }

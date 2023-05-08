@@ -9,6 +9,10 @@ import Foundation
 import Realm
 import RealmSwift
 
+//struct CategoryDatabase {
+//    var categoryDatabase: [Category]
+//}
+
 @objcMembers class Category: Object  {
     var name: String = ""
     
@@ -20,4 +24,8 @@ import RealmSwift
         super.init()
     }
 
+}
+
+struct DummyData {
+    let initCategory = [Category(name: "Grocery"), Category(name: "Gifts"), Category(name: "Cafe"), Category(name: "Health"), Category(name: "Commute"), Category(name: "Electronics")]
 }

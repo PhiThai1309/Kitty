@@ -24,7 +24,7 @@ class AddNewViewController: UIViewController {
     var iconArray: [String]
     var remainIconArray: [String]
     var categories: [Category]
-    
+
     var delegate: AddNewDelegate?
     
     var option: String = "Expenses"
@@ -60,7 +60,8 @@ class AddNewViewController: UIViewController {
     }
     
     @IBAction func categoryClickHandler(_ sender: Any) {
-        let detailViewController = SheetViewController(iconArray: iconArray, remainIconArray: remainIconArray, categories: categories)
+        print(categories)
+        let detailViewController = SheetViewController(categories: categories)
         detailViewController.delegate = self
         let nav = UINavigationController(rootViewController: detailViewController)
         // 1
@@ -111,6 +112,7 @@ class AddNewViewController: UIViewController {
 extension AddNewViewController: sheetViewDelegate {
     func categoryOnClick(category: Category) {
         choosenCategory = category
+        categories.append(category)
         categorySheet.setTitle(category.name, for: .normal)
         categorySheet.setTitleColor(.label, for: .normal)
     }

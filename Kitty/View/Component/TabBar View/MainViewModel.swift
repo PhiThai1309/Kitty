@@ -19,29 +19,15 @@ class MainViewModel {
     private var month: [String] = []
     
     private var filteredMonth = Date()
+    private var dummyData = DummyData()
     
     init() {
-        iconArray = ["Grocery","Gifts","Cafe","Health","Electronics", "Commute", "Donate", "Education", "Self development", "Fuel", "Institute", "Laundry", "Liquor", "Maintenance", "Cash", "Party", "Restaurant", "Savings", "Sport"]
-        
         month = ["January", "February", "March", "April", "May", "Jun", "July", "August", "September", "October", "November", "December"]
         
-        let category1 = Category(name: "Grocery")
-        let category2 = Category(name: "Gifts")
-        let category3 = Category(name: "Cafe")
-        let category4 = Category(name: "Health")
-        let category5 = Category(name: "Commute")
-        let category6 = Category(name: "Electronics")
-        categories.append(category3)
-        categories.append(category2)
-        categories.append(category1)
-        categories.append(category4)
-        categories.append(category5)
-        categories.append(category6)
-        
-        let item1 = Item(category: category1, amount: 120.0, description: "Example description", categoryType: Option.Expenses)
-        let item2 = Item(category: category3, amount: 22.0, description: "Example description2", categoryType: Option.Expenses)
-        let item3 = Item(category: category3, amount: 32.0, description: "Example description3", categoryType: Option.Expenses)
-        let item4 = Item(category: category4, amount: 32.0, description: "Example description3", categoryType: Option.Expenses)
+        let item1 = Item(category: dummyData.initCategory[1], amount: 120.0, description: "Example description", categoryType: Option.Expenses)
+        let item2 = Item(category: dummyData.initCategory[3], amount: 22.0, description: "Example description2", categoryType: Option.Expenses)
+        let item3 = Item(category: dummyData.initCategory[3], amount: 32.0, description: "Example description3", categoryType: Option.Expenses)
+        let item4 = Item(category: dummyData.initCategory[4], amount: 32.0, description: "Example description3", categoryType: Option.Expenses)
         
         items.append(item1)
         items.append(item2)

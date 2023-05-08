@@ -8,15 +8,5 @@
 import Foundation
 
 class CategorySheetViewModel {
-//    var iconArray: [String]
-//    var remainIconArray: [String]
-//    var categories: [Category]
-//    
-//    init(iconArray: [String], remainIconArray: [String], categories: [Category]) {
-//        self.iconArray = iconArray
-//        self.remainIconArray = remainIconArray
-//        self.categories = categories
-//    }
-    
-    
+
 }
