@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddNewCategoryViewController" customModule="Kitty" customModuleProvider="target">
+            <connections>
+                <outlet property="categoryLabel" destination="kM9-kT-p2g" id="6vv-DE-pOH"/>
+                <outlet property="iconImg" destination="rMI-cP-8fd" id="x8f-jQ-5CO"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" restorationIdentifier="AddNewCategoryView" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0fa-ST-PSZ">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="107"/>
+                    <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <view autoresizesSubviews="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SNE-Kj-g4z">
+                    <rect key="frame" x="0.0" y="59" width="393" height="48"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJz-qI-bHl">
+                            <rect key="frame" x="4" y="16" width="207.66666666666666" height="16"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="16" id="mdT-33-fWo"/>
+                            </constraints>
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="arrow.left" catalog="system" title="Add new category" imagePadding="20"/>
+                            <connections>
+                                <action selector="dismissOnClickHandler:" destination="-1" eventType="touchUpInside" id="dYu-WU-GRw"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="hJz-qI-bHl" firstAttribute="leading" secondItem="SNE-Kj-g4z" secondAttribute="leading" constant="4" id="Tfh-OP-zMM"/>
+                        <constraint firstAttribute="height" constant="48" id="h3E-ba-oj0"/>
+                        <constraint firstItem="hJz-qI-bHl" firstAttribute="centerY" secondItem="SNE-Kj-g4z" secondAttribute="centerY" id="vnh-LL-NM9"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rMI-cP-8fd">
+                    <rect key="frame" x="16" y="135" width="48" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="rMI-cP-8fd" secondAttribute="height" multiplier="1:1" id="Gb4-Sm-41K"/>
+                        <constraint firstAttribute="height" constant="48" id="vzV-Al-td3"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain">
+                        <backgroundConfiguration key="background" image="Place-holder"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="addIconOnClickHandler:" destination="-1" eventType="touchUpInside" id="NxG-wz-PMb"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kM9-kT-p2g">
+                    <rect key="frame" x="82" y="135" width="295" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="BC8-8B-xaJ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RI4-gP-7ja">
+                    <rect key="frame" x="16" y="211" width="361" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="qYT-qf-GHR"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Add new category" cornerStyle="capsule">
+                        <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="addNewCategoryOnClickHandler:" destination="-1" eventType="touchUpInside" id="XwB-Ik-4Ab"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="SNE-Kj-g4z" secondAttribute="trailing" id="19N-sq-ieP"/>
+                <constraint firstItem="0fa-ST-PSZ" firstAttribute="bottom" secondItem="SNE-Kj-g4z" secondAttribute="bottom" id="3nw-Sf-hTY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0fa-ST-PSZ" secondAttribute="trailing" id="7Fh-K4-cFL"/>
+                <constraint firstItem="RI4-gP-7ja" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="QZH-eB-map"/>
+                <constraint firstItem="rMI-cP-8fd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="R3V-Fi-z9W"/>
+                <constraint firstItem="0fa-ST-PSZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Svq-rn-vkd"/>
+                <constraint firstItem="SNE-Kj-g4z" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="UoW-na-ifC"/>
+                <constraint firstItem="RI4-gP-7ja" firstAttribute="top" secondItem="rMI-cP-8fd" secondAttribute="bottom" constant="28" id="Vzd-CY-JxW"/>
+                <constraint firstAttribute="trailing" secondItem="RI4-gP-7ja" secondAttribute="trailing" constant="16" id="gtk-rW-ta1"/>
+                <constraint firstItem="kM9-kT-p2g" firstAttribute="leading" secondItem="rMI-cP-8fd" secondAttribute="trailing" constant="18" id="iK7-Ef-Jtv"/>
+                <constraint firstItem="rMI-cP-8fd" firstAttribute="top" secondItem="0fa-ST-PSZ" secondAttribute="bottom" constant="28" id="l0M-Gt-8Jw"/>
+                <constraint firstItem="kM9-kT-p2g" firstAttribute="centerY" secondItem="rMI-cP-8fd" secondAttribute="centerY" id="mFt-St-tbq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kM9-kT-p2g" secondAttribute="trailing" constant="16" id="nKB-RM-cQj"/>
+                <constraint firstItem="0fa-ST-PSZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="owa-0a-g0t"/>
+                <constraint firstItem="SNE-Kj-g4z" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="rFa-5r-2lk"/>
+            </constraints>
+            <point key="canvasLocation" x="35.877862595419849" y="-11.267605633802818"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Place-holder" width="50" height="50"/>
+        <image name="arrow.left" catalog="system" width="128" height="95"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

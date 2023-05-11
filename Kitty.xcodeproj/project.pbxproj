@@ -7,15 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F0DCE4029F78D7A00C47FC6 /* MonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0DCE3E29F78D7A00C47FC6 /* MonthViewController.swift */; };
+		3F0DCE4129F78D7A00C47FC6 /* MonthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F0DCE3F29F78D7A00C47FC6 /* MonthViewController.xib */; };
 		3F0E3CB129F0E880009BF311 /* SheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E3CAF29F0E880009BF311 /* SheetViewController.swift */; };
 		3F0E3CB229F0E880009BF311 /* SheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F0E3CB029F0E880009BF311 /* SheetViewController.xib */; };
 		3F0E3CB529F0EC29009BF311 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E3CB329F0EC29009BF311 /* CategoryCollectionViewCell.swift */; };
 		3F0E3CB629F0EC29009BF311 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F0E3CB429F0EC29009BF311 /* CategoryCollectionViewCell.xib */; };
 		3F0E3CB829F0EF39009BF311 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E3CB729F0EF39009BF311 /* Category.swift */; };
+		3F131FBC29FA0EDE00123E02 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 3F131FBB29FA0EDE00123E02 /* Realm */; };
+		3F131FBE29FA0EDE00123E02 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3F131FBD29FA0EDE00123E02 /* RealmSwift */; };
+		3F15B78929FA5B0000616FB5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F15B78829FA5B0000616FB5 /* HomeViewModel.swift */; };
+		3F15B78F29FA6E6000616FB5 /* AddNewCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F15B78E29FA6E6000616FB5 /* AddNewCategoryViewModel.swift */; };
+		3F15B79229FA74BF00616FB5 /* AddNewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F15B79129FA74BF00616FB5 /* AddNewViewModel.swift */; };
+		3F15B79529FA789400616FB5 /* SheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F15B79429FA789400616FB5 /* SheetViewModel.swift */; };
+		3F15B79829FA7C6B00616FB5 /* CategorySheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F15B79729FA7C6B00616FB5 /* CategorySheetViewModel.swift */; };
 		3F16DE1329F0DC1500AE7C83 /* AddNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16DE1129F0DC1500AE7C83 /* AddNewViewController.swift */; };
 		3F16DE1429F0DC1500AE7C83 /* AddNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F16DE1229F0DC1500AE7C83 /* AddNewViewController.xib */; };
+		3F1D5BD729F65E5600618D7A /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 3F1D5BD629F65E5600618D7A /* OrderedCollections */; };
 		3F3064CD29ECE6C100EF5485 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3064CC29ECE6C100EF5485 /* UIViewExtension.swift */; };
-		3F3064CF29ECE6F900EF5485 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3064CE29ECE6F900EF5485 /* UIColorExtension.swift */; };
+		3F34672C2A0891DB005DA94F /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F34672B2A0891DB005DA94F /* Icon.swift */; };
+		3F3FDB4529FA83CA0052BE93 /* ButtonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F3FDB4429FA83CA0052BE93 /* ButtonCollectionViewCell.xib */; };
+		3F3FDB4829FA84120052BE93 /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3FDB4729FA84120052BE93 /* ReportViewModel.swift */; };
+		3F438C2B29F7A8E9002BE0B5 /* ButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F438C2929F7A8E9002BE0B5 /* ButtonCollectionViewCell.swift */; };
+		3F438C2E29F7B669002BE0B5 /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F438C2D29F7B669002BE0B5 /* Month.swift */; };
+		3F438C3029F7BA98002BE0B5 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F438C2F29F7BA98002BE0B5 /* DateExtension.swift */; };
+		3F64B3B429F23E190008A4D9 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F64B3B329F23E180008A4D9 /* TabBarViewController.swift */; };
+		3F770BFB29F68220009FDA26 /* CategorySheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F770BF929F68220009FDA26 /* CategorySheetViewController.swift */; };
+		3F770BFC29F68220009FDA26 /* CategorySheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F770BFA29F68220009FDA26 /* CategorySheetViewController.xib */; };
 		3FA9E64529E9346E00D8D7C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9E64429E9346E00D8D7C1 /* AppDelegate.swift */; };
 		3FA9E64729E9346E00D8D7C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9E64629E9346E00D8D7C1 /* SceneDelegate.swift */; };
 		3FA9E64929E9346E00D8D7C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9E64829E9346E00D8D7C1 /* ViewController.swift */; };
@@ -24,27 +42,45 @@
 		3FA9E65129E9347200D8D7C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FA9E65029E9347200D8D7C1 /* Assets.xcassets */; };
 		3FA9E65429E9347200D8D7C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FA9E65229E9347200D8D7C1 /* LaunchScreen.storyboard */; };
 		3FA9E65C29E93F6200D8D7C1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9E65B29E93F6100D8D7C1 /* HomeViewController.swift */; };
+		3FB6CCDC29F6705000C3CBE2 /* AddNewCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB6CCDA29F6705000C3CBE2 /* AddNewCategoryViewController.swift */; };
+		3FB6CCDD29F6705000C3CBE2 /* AddNewCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB6CCDB29F6705000C3CBE2 /* AddNewCategoryViewController.xib */; };
+		3FE3848129F62BF4007884A8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE3848029F62BF4007884A8 /* SettingsViewController.swift */; };
 		3FEFBAA229ECF4B50085641B /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEFBAA029ECF4B50085641B /* CardTableViewCell.swift */; };
 		3FEFBAA329ECF4B50085641B /* CardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FEFBAA129ECF4B50085641B /* CardTableViewCell.xib */; };
 		3FEFBAA629ECF6210085641B /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEFBAA429ECF6210085641B /* ItemCollectionViewCell.swift */; };
 		3FEFBAA729ECF6210085641B /* ItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FEFBAA529ECF6210085641B /* ItemCollectionViewCell.xib */; };
 		3FEFBAA929ECF8040085641B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEFBAA829ECF8040085641B /* Item.swift */; };
 		3FEFBAAB29ECFBE40085641B /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEFBAAA29ECFBE40085641B /* History.swift */; };
-		3FEFBAAE29ECFD410085641B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEFBAAD29ECFD410085641B /* HomeViewModel.swift */; };
+		3FEFBAAE29ECFD410085641B /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEFBAAD29ECFD410085641B /* MainViewModel.swift */; };
 		3FF9E16C29F11CBE00FFDDE9 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF9E16B29F11CBE00FFDDE9 /* ReportViewController.swift */; };
 		81F3DE7A7E4BF91F6F29295D /* Pods_Kitty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 932AB51646B8E5E529DBB01E /* Pods_Kitty.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F0DCE3E29F78D7A00C47FC6 /* MonthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthViewController.swift; sourceTree = "<group>"; };
+		3F0DCE3F29F78D7A00C47FC6 /* MonthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthViewController.xib; sourceTree = "<group>"; };
 		3F0E3CAF29F0E880009BF311 /* SheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewController.swift; sourceTree = "<group>"; };
 		3F0E3CB029F0E880009BF311 /* SheetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SheetViewController.xib; sourceTree = "<group>"; };
 		3F0E3CB329F0EC29009BF311 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		3F0E3CB429F0EC29009BF311 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		3F0E3CB729F0EF39009BF311 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		3F15B78829FA5B0000616FB5 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		3F15B78E29FA6E6000616FB5 /* AddNewCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCategoryViewModel.swift; sourceTree = "<group>"; };
+		3F15B79129FA74BF00616FB5 /* AddNewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewViewModel.swift; sourceTree = "<group>"; };
+		3F15B79429FA789400616FB5 /* SheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewModel.swift; sourceTree = "<group>"; };
+		3F15B79729FA7C6B00616FB5 /* CategorySheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySheetViewModel.swift; sourceTree = "<group>"; };
 		3F16DE1129F0DC1500AE7C83 /* AddNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewViewController.swift; sourceTree = "<group>"; };
 		3F16DE1229F0DC1500AE7C83 /* AddNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewViewController.xib; sourceTree = "<group>"; };
 		3F3064CC29ECE6C100EF5485 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
-		3F3064CE29ECE6F900EF5485 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		3F34672B2A0891DB005DA94F /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
+		3F3FDB4429FA83CA0052BE93 /* ButtonCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonCollectionViewCell.xib; sourceTree = "<group>"; };
+		3F3FDB4729FA84120052BE93 /* ReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
+		3F438C2929F7A8E9002BE0B5 /* ButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCollectionViewCell.swift; sourceTree = "<group>"; };
+		3F438C2D29F7B669002BE0B5 /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
+		3F438C2F29F7BA98002BE0B5 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		3F64B3B329F23E180008A4D9 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		3F770BF929F68220009FDA26 /* CategorySheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySheetViewController.swift; sourceTree = "<group>"; };
+		3F770BFA29F68220009FDA26 /* CategorySheetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategorySheetViewController.xib; sourceTree = "<group>"; };
 		3FA9E64129E9346E00D8D7C1 /* Kitty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kitty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FA9E64429E9346E00D8D7C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FA9E64629E9346E00D8D7C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,13 +91,16 @@
 		3FA9E65329E9347200D8D7C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FA9E65529E9347200D8D7C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FA9E65B29E93F6100D8D7C1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3FB6CCDA29F6705000C3CBE2 /* AddNewCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCategoryViewController.swift; sourceTree = "<group>"; };
+		3FB6CCDB29F6705000C3CBE2 /* AddNewCategoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewCategoryViewController.xib; sourceTree = "<group>"; };
+		3FE3848029F62BF4007884A8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3FEFBAA029ECF4B50085641B /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
 		3FEFBAA129ECF4B50085641B /* CardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardTableViewCell.xib; sourceTree = "<group>"; };
 		3FEFBAA429ECF6210085641B /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		3FEFBAA529ECF6210085641B /* ItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		3FEFBAA829ECF8040085641B /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		3FEFBAAA29ECFBE40085641B /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
-		3FEFBAAD29ECFD410085641B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		3FEFBAAD29ECFD410085641B /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		3FF9E16B29F11CBE00FFDDE9 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		7E3FD0B8C8890138E1290C7E /* Pods-Kitty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kitty.release.xcconfig"; path = "Target Support Files/Pods-Kitty/Pods-Kitty.release.xcconfig"; sourceTree = "<group>"; };
 		932AB51646B8E5E529DBB01E /* Pods_Kitty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kitty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +112,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F131FBE29FA0EDE00123E02 /* RealmSwift in Frameworks */,
+				3F131FBC29FA0EDE00123E02 /* Realm in Frameworks */,
+				3F1D5BD729F65E5600618D7A /* OrderedCollections in Frameworks */,
 				81F3DE7A7E4BF91F6F29295D /* Pods_Kitty.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -97,13 +139,113 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3F15B78729FA5A7600616FB5 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				3FA9E65B29E93F6100D8D7C1 /* HomeViewController.swift */,
+				3F15B78829FA5B0000616FB5 /* HomeViewModel.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		3F15B78D29FA6E4C00616FB5 /* Add New Category View */ = {
+			isa = PBXGroup;
+			children = (
+				3FB6CCDA29F6705000C3CBE2 /* AddNewCategoryViewController.swift */,
+				3FB6CCDB29F6705000C3CBE2 /* AddNewCategoryViewController.xib */,
+				3F15B78E29FA6E6000616FB5 /* AddNewCategoryViewModel.swift */,
+			);
+			path = "Add New Category View";
+			sourceTree = "<group>";
+		};
+		3F15B79029FA749B00616FB5 /* Add New */ = {
+			isa = PBXGroup;
+			children = (
+				3F16DE1129F0DC1500AE7C83 /* AddNewViewController.swift */,
+				3F16DE1229F0DC1500AE7C83 /* AddNewViewController.xib */,
+				3F15B79129FA74BF00616FB5 /* AddNewViewModel.swift */,
+			);
+			path = "Add New";
+			sourceTree = "<group>";
+		};
+		3F15B79329FA787100616FB5 /* SheetView */ = {
+			isa = PBXGroup;
+			children = (
+				3F0E3CAF29F0E880009BF311 /* SheetViewController.swift */,
+				3F0E3CB029F0E880009BF311 /* SheetViewController.xib */,
+				3F15B79429FA789400616FB5 /* SheetViewModel.swift */,
+			);
+			path = SheetView;
+			sourceTree = "<group>";
+		};
+		3F15B79629FA7C4E00616FB5 /* Category Sheet View */ = {
+			isa = PBXGroup;
+			children = (
+				3F770BF929F68220009FDA26 /* CategorySheetViewController.swift */,
+				3F770BFA29F68220009FDA26 /* CategorySheetViewController.xib */,
+				3F15B79729FA7C6B00616FB5 /* CategorySheetViewModel.swift */,
+			);
+			path = "Category Sheet View";
+			sourceTree = "<group>";
+		};
 		3F3064CB29ECE6AD00EF5485 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				3F3064CC29ECE6C100EF5485 /* UIViewExtension.swift */,
-				3F3064CE29ECE6F900EF5485 /* UIColorExtension.swift */,
+				3F438C2F29F7BA98002BE0B5 /* DateExtension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		3F3FDB4629FA83FE0052BE93 /* Report View */ = {
+			isa = PBXGroup;
+			children = (
+				3FF9E16B29F11CBE00FFDDE9 /* ReportViewController.swift */,
+				3F3FDB4729FA84120052BE93 /* ReportViewModel.swift */,
+			);
+			path = "Report View";
+			sourceTree = "<group>";
+		};
+		3F438C2629F7A7C3002BE0B5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3F438C2929F7A8E9002BE0B5 /* ButtonCollectionViewCell.swift */,
+				3F3FDB4429FA83CA0052BE93 /* ButtonCollectionViewCell.xib */,
+				3FEFBAA029ECF4B50085641B /* CardTableViewCell.swift */,
+				3FEFBAA129ECF4B50085641B /* CardTableViewCell.xib */,
+				3FEFBAA429ECF6210085641B /* ItemCollectionViewCell.swift */,
+				3FEFBAA529ECF6210085641B /* ItemCollectionViewCell.xib */,
+				3F0E3CB329F0EC29009BF311 /* CategoryCollectionViewCell.swift */,
+				3F0E3CB429F0EC29009BF311 /* CategoryCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		3F438C2729F7A7E5002BE0B5 /* TabBar View */ = {
+			isa = PBXGroup;
+			children = (
+				3F64B3B329F23E180008A4D9 /* TabBarViewController.swift */,
+				3FEFBAAD29ECFD410085641B /* MainViewModel.swift */,
+				3FE3848029F62BF4007884A8 /* SettingsViewController.swift */,
+			);
+			path = "TabBar View";
+			sourceTree = "<group>";
+		};
+		3F438C2829F7A821002BE0B5 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				3F3FDB4629FA83FE0052BE93 /* Report View */,
+				3FA9E64A29E9346E00D8D7C1 /* Main.storyboard */,
+				3F15B78729FA5A7600616FB5 /* HomeView */,
+				3F15B79029FA749B00616FB5 /* Add New */,
+				3F15B79329FA787100616FB5 /* SheetView */,
+				3F438C2729F7A7E5002BE0B5 /* TabBar View */,
+				3F15B78D29FA6E4C00616FB5 /* Add New Category View */,
+				3F15B79629FA7C4E00616FB5 /* Category Sheet View */,
+				3F0DCE3E29F78D7A00C47FC6 /* MonthViewController.swift */,
+				3F0DCE3F29F78D7A00C47FC6 /* MonthViewController.xib */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 		3FA9E63829E9346D00D8D7C1 = {
@@ -128,7 +270,6 @@
 			isa = PBXGroup;
 			children = (
 				3FEFBAAF29ECFF9A0085641B /* View */,
-				3FEFBAAC29ECFD320085641B /* View Model */,
 				3FEFBA9D29ECF4990085641B /* Model */,
 				3F3064CB29ECE6AD00EF5485 /* Extension */,
 				3FA9E64429E9346E00D8D7C1 /* AppDelegate.swift */,
@@ -148,34 +289,17 @@
 				3FEFBAA829ECF8040085641B /* Item.swift */,
 				3FEFBAAA29ECFBE40085641B /* History.swift */,
 				3F0E3CB729F0EF39009BF311 /* Category.swift */,
+				3F438C2D29F7B669002BE0B5 /* Month.swift */,
+				3F34672B2A0891DB005DA94F /* Icon.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		3FEFBAAC29ECFD320085641B /* View Model */ = {
-			isa = PBXGroup;
-			children = (
-				3FEFBAAD29ECFD410085641B /* HomeViewModel.swift */,
-			);
-			path = "View Model";
 			sourceTree = "<group>";
 		};
 		3FEFBAAF29ECFF9A0085641B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3FEFBAA029ECF4B50085641B /* CardTableViewCell.swift */,
-				3FEFBAA129ECF4B50085641B /* CardTableViewCell.xib */,
-				3FEFBAA429ECF6210085641B /* ItemCollectionViewCell.swift */,
-				3FEFBAA529ECF6210085641B /* ItemCollectionViewCell.xib */,
-				3FA9E65B29E93F6100D8D7C1 /* HomeViewController.swift */,
-				3FA9E64A29E9346E00D8D7C1 /* Main.storyboard */,
-				3F16DE1129F0DC1500AE7C83 /* AddNewViewController.swift */,
-				3F16DE1229F0DC1500AE7C83 /* AddNewViewController.xib */,
-				3F0E3CAF29F0E880009BF311 /* SheetViewController.swift */,
-				3F0E3CB029F0E880009BF311 /* SheetViewController.xib */,
-				3F0E3CB329F0EC29009BF311 /* CategoryCollectionViewCell.swift */,
-				3F0E3CB429F0EC29009BF311 /* CategoryCollectionViewCell.xib */,
-				3FF9E16B29F11CBE00FFDDE9 /* ReportViewController.swift */,
+				3F438C2829F7A821002BE0B5 /* Component */,
+				3F438C2629F7A7C3002BE0B5 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -198,6 +322,11 @@
 			dependencies = (
 			);
 			name = Kitty;
+			packageProductDependencies = (
+				3F1D5BD629F65E5600618D7A /* OrderedCollections */,
+				3F131FBB29FA0EDE00123E02 /* Realm */,
+				3F131FBD29FA0EDE00123E02 /* RealmSwift */,
+			);
 			productName = Kitty;
 			productReference = 3FA9E64129E9346E00D8D7C1 /* Kitty.app */;
 			productType = "com.apple.product-type.application";
@@ -226,6 +355,10 @@
 				Base,
 			);
 			mainGroup = 3FA9E63829E9346D00D8D7C1;
+			packageReferences = (
+				3F1D5BD529F65E5600618D7A /* XCRemoteSwiftPackageReference "swift-collections" */,
+				3F131FBA29FA0EDE00123E02 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 3FA9E64229E9346E00D8D7C1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -246,8 +379,12 @@
 				3FA9E64C29E9346E00D8D7C1 /* Main.storyboard in Resources */,
 				3F0E3CB629F0EC29009BF311 /* CategoryCollectionViewCell.xib in Resources */,
 				3FEFBAA329ECF4B50085641B /* CardTableViewCell.xib in Resources */,
+				3F770BFC29F68220009FDA26 /* CategorySheetViewController.xib in Resources */,
+				3F0DCE4129F78D7A00C47FC6 /* MonthViewController.xib in Resources */,
+				3F3FDB4529FA83CA0052BE93 /* ButtonCollectionViewCell.xib in Resources */,
 				3F0E3CB229F0E880009BF311 /* SheetViewController.xib in Resources */,
 				3F16DE1429F0DC1500AE7C83 /* AddNewViewController.xib in Resources */,
+				3FB6CCDD29F6705000C3CBE2 /* AddNewCategoryViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,21 +437,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F770BFB29F68220009FDA26 /* CategorySheetViewController.swift in Sources */,
+				3F438C3029F7BA98002BE0B5 /* DateExtension.swift in Sources */,
 				3FEFBAA929ECF8040085641B /* Item.swift in Sources */,
+				3F15B78929FA5B0000616FB5 /* HomeViewModel.swift in Sources */,
+				3F15B79229FA74BF00616FB5 /* AddNewViewModel.swift in Sources */,
 				3F0E3CB529F0EC29009BF311 /* CategoryCollectionViewCell.swift in Sources */,
+				3F15B79529FA789400616FB5 /* SheetViewModel.swift in Sources */,
 				3F3064CD29ECE6C100EF5485 /* UIViewExtension.swift in Sources */,
-				3F3064CF29ECE6F900EF5485 /* UIColorExtension.swift in Sources */,
+				3F64B3B429F23E190008A4D9 /* TabBarViewController.swift in Sources */,
+				3F15B79829FA7C6B00616FB5 /* CategorySheetViewModel.swift in Sources */,
+				3FB6CCDC29F6705000C3CBE2 /* AddNewCategoryViewController.swift in Sources */,
+				3FE3848129F62BF4007884A8 /* SettingsViewController.swift in Sources */,
 				3F16DE1329F0DC1500AE7C83 /* AddNewViewController.swift in Sources */,
 				3F0E3CB129F0E880009BF311 /* SheetViewController.swift in Sources */,
 				3FEFBAAB29ECFBE40085641B /* History.swift in Sources */,
+				3F34672C2A0891DB005DA94F /* Icon.swift in Sources */,
+				3F438C2B29F7A8E9002BE0B5 /* ButtonCollectionViewCell.swift in Sources */,
 				3FF9E16C29F11CBE00FFDDE9 /* ReportViewController.swift in Sources */,
 				3F0E3CB829F0EF39009BF311 /* Category.swift in Sources */,
+				3F438C2E29F7B669002BE0B5 /* Month.swift in Sources */,
 				3FA9E65C29E93F6200D8D7C1 /* HomeViewController.swift in Sources */,
 				3FEFBAA629ECF6210085641B /* ItemCollectionViewCell.swift in Sources */,
+				3F0DCE4029F78D7A00C47FC6 /* MonthViewController.swift in Sources */,
 				3FA9E64929E9346E00D8D7C1 /* ViewController.swift in Sources */,
-				3FEFBAAE29ECFD410085641B /* HomeViewModel.swift in Sources */,
+				3FEFBAAE29ECFD410085641B /* MainViewModel.swift in Sources */,
+				3F3FDB4829FA84120052BE93 /* ReportViewModel.swift in Sources */,
 				3FA9E64529E9346E00D8D7C1 /* AppDelegate.swift in Sources */,
 				3FA9E64729E9346E00D8D7C1 /* SceneDelegate.swift in Sources */,
+				3F15B78F29FA6E6000616FB5 /* AddNewCategoryViewModel.swift in Sources */,
 				3FA9E64F29E9346E00D8D7C1 /* Kitty.xcdatamodeld in Sources */,
 				3FEFBAA229ECF4B50085641B /* CardTableViewCell.swift in Sources */,
 			);
@@ -536,6 +687,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3F131FBA29FA0EDE00123E02 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.38.2;
+			};
+		};
+		3F1D5BD529F65E5600618D7A /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3F131FBB29FA0EDE00123E02 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3F131FBA29FA0EDE00123E02 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		3F131FBD29FA0EDE00123E02 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3F131FBA29FA0EDE00123E02 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		3F1D5BD629F65E5600618D7A /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3F1D5BD529F65E5600618D7A /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		3FA9E64D29E9346E00D8D7C1 /* Kitty.xcdatamodeld */ = {
