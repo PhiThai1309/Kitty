@@ -21,7 +21,7 @@ class MonthViewController: UIViewController {
     
     init() {
         super.init(nibName: "MonthViewController", bundle: Bundle(for: MonthViewController.self))
-        self.modalPresentationStyle = .overCurrentContext //To present over current view in full screen
+        self.modalPresentationStyle = .overCurrentContext  //To present over current view in full screen
         self.modalTransitionStyle = .crossDissolve //transition effect
     }
     
