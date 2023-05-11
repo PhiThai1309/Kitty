@@ -9,35 +9,27 @@ import Foundation
 import RealmSwift
 import Realm
 
-class History: Object  {
+@objcMembers class History: Object  {
     @Persisted(primaryKey: true) var id = "h1"
     @Persisted var date: Date = Date()
-    
-    var items: RealmSwift.List<Item> = RealmSwift.List<Item>()
+    @Persisted var items: RealmSwift.List<Item> = RealmSwift.List<Item>()
     
     init(items: RealmSwift.List<Item>) {
         self.id = "h" + String(Int.random(in: 1..<500))
         self.items = items
     }
     
-    convenience init(date: Date, items: Item) {
-        self.init()
+    init(date: Date, items: [Item]) {
         self.id = "h" + String(Int.random(in: 1..<500))
         self.date = date
-//        addRealm(items: items)
-        self.items.append(items)
-        
+        let newList = RealmSwift.List<Item>()
+        for item in items {
+            newList.append(item)
+        }
+        self.items = newList
     }
     
     override init() {
         super.init()
-    }
-    
-    func addRealm(items: Item) {
-        let realm = try! Realm()
-        try! realm.write {
-            realm.add(items)
-            
-        }
     }
 }

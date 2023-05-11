@@ -33,10 +33,10 @@ class MainViewModel {
         }
         
         
-        let item1 = Item(category: dummyData.initCategory[1], amount: 120.0, desc: "Example description", categoryType: Option.Expenses)
-        let item2 = Item(category: dummyData.initCategory[3], amount: 22.0, desc: "Example description2", categoryType: Option.Expenses)
-        let item3 = Item(category: dummyData.initCategory[3], amount: 32.0, desc: "Example description3", categoryType: Option.Expenses)
-        let item4 = Item(category: dummyData.initCategory[4], amount: 32.0, desc: "Example description3", categoryType: Option.Expenses)
+        let item1 = Item(category: dummyData.initCategory[1], amount: 120.0, description: "Example description", categoryType: Option.Expenses)
+        let item2 = Item(category: dummyData.initCategory[3], amount: 22.0, description: "Example description2", categoryType: Option.Expenses)
+        let item3 = Item(category: dummyData.initCategory[3], amount: 32.0, description: "Example description3", categoryType: Option.Expenses)
+        let item4 = Item(category: dummyData.initCategory[4], amount: 32.0, description: "Example description3", categoryType: Option.Expenses)
         
         items.append(item1)
         items.append(item2)
@@ -52,9 +52,9 @@ class MainViewModel {
         let components3 = DateComponents (calendar: Calendar.current, year: 2023, month: 3, day: 1)
         let date3 = NSCalendar.current.date(from: components3)
         
-        let history1 = History(date: date!, items: item1)
-        let history2 = History(date: date2!, items: item2)
-        let history3 = History(date: date3!, items: item4)
+        let history1 = History(date: date!, items: [item1, item3])
+        let history2 = History(date: date2!, items: [item2])
+        let history3 = History(date: date3!, items: [item4])
         
         history.append(history1)
         history.append(history2)
@@ -63,12 +63,12 @@ class MainViewModel {
 //        filterIcon()
         
         // Open the local-only default realm
-        let realm = try! Realm()
-        
-        try! realm.write {
-            print("can write")
-            realm.add(history1)
-        }
+//        let realm = try! Realm()
+//        
+//        try! realm.write {
+//            print("can write")
+//            realm.add(history1)
+//        }
         
     }
     
