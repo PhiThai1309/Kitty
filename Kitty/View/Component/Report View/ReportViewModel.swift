@@ -12,14 +12,12 @@ class ReportViewModel {
     var items: [Item]
     var history: [History]
     var filteredMonth: Date
-//    var categories: [[Item]]
     var categoryWithAmount: OrderedDictionary<String, Double> = [:]
     
     init(items: [Item], history : [History], filteredMonth: Date) {
         self.items = items
         self.history = history
         self.filteredMonth = filteredMonth
-//        self.categories = categories
     }
     
     func getArrayOfEachCategory() -> [[Item]] {

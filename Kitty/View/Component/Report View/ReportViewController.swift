@@ -37,13 +37,9 @@ class ReportViewController: UIViewController, ChartViewDelegate {
         self.items = items
         self.history = history
         self.filteredMonth = filteredMonth
-//        self.categories = categories
     }
     
     required init?(coder: NSCoder) {
-//        super.init(coder: aDecoder)
-//        fatalError("init(coder:) has not been implemented")
-        
         self.items = []
         self.history = []
         self.filteredMonth = Date()

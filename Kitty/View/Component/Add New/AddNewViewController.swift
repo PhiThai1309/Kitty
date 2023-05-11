@@ -56,7 +56,6 @@ class AddNewViewController: UIViewController {
     }
     
     @IBAction func categoryClickHandler(_ sender: Any) {
-//        print(categories)
         let detailViewController = SheetViewController()
         detailViewController.delegate = self
         let nav = UINavigationController(rootViewController: detailViewController)

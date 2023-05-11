@@ -29,23 +29,16 @@ class SheetViewController: UIViewController {
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         
-//        print(viewModel.categories)
         
         let cellNib = UINib(nibName: "CategoryCollectionViewCell", bundle: nil)
         self.collectionView.register(cellNib, forCellWithReuseIdentifier: "CategoryCellView")
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-//        print(viewModel.categories)
-    }
-    
     
     @IBAction func addNewOnClickHanlder(_ sender: Any) {
         let vc = AddNewCategoryViewController()
         vc.delegate = self
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
-//        self.navigationController?.pushViewController(nav, animated: true)
         self.present(nav, animated: true)
     }
     

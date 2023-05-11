@@ -148,13 +148,6 @@
 			path = HomeView;
 			sourceTree = "<group>";
 		};
-		3F15B78A29FA651900616FB5 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		3F15B78D29FA6E4C00616FB5 /* Add New Category View */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,9 +269,7 @@
 		3FA9E64329E9346E00D8D7C1 /* Kitty */ = {
 			isa = PBXGroup;
 			children = (
-				3F15B78A29FA651900616FB5 /* Utils */,
 				3FEFBAAF29ECFF9A0085641B /* View */,
-				3FEFBAAC29ECFD320085641B /* View Model */,
 				3FEFBA9D29ECF4990085641B /* Model */,
 				3F3064CB29ECE6AD00EF5485 /* Extension */,
 				3FA9E64429E9346E00D8D7C1 /* AppDelegate.swift */,
@@ -302,13 +293,6 @@
 				3F34672B2A0891DB005DA94F /* Icon.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		3FEFBAAC29ECFD320085641B /* View Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "View Model";
 			sourceTree = "<group>";
 		};
 		3FEFBAAF29ECFF9A0085641B /* View */ = {
