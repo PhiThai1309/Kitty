@@ -12,7 +12,8 @@ import Realm
 class History: Object  {
     @Persisted(primaryKey: true) var id = "h1"
     @Persisted var date: Date = Date()
-    @Persisted var items: RealmSwift.List<Item> = RealmSwift.List<Item>()
+    
+    var items: RealmSwift.List<Item> = RealmSwift.List<Item>()
     
     init(items: RealmSwift.List<Item>) {
         self.id = "h" + String(Int.random(in: 1..<500))
