@@ -13,11 +13,14 @@ import RealmSwift
 //    var categoryDatabase: [Category]
 //}
 
-@objcMembers class Category: Object, Codable  {
-    var name: String = ""
+class Category: Object, Codable  {
+    @Persisted(primaryKey: true) var id = "c1"
+    @Persisted var name: String = ""
     
-    init(name: String) {
+    convenience init(name: String) {
+        self.init()
         self.name = name
+        
     }
     
     override init() {

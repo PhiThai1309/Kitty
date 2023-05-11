@@ -14,8 +14,8 @@ enum Option: String, PersistableEnum {
     case Income
 }
 
-@objcMembers class Item: Object {
-    @Persisted(primaryKey: true) var id = "h1"
+class Item: Object {
+    @Persisted(primaryKey: true) var id = "i1"
     @Persisted var category: Category? = Category(name: "")
     @Persisted var amount: Double = 0.0
     @Persisted var desc: String?
@@ -28,11 +28,11 @@ enum Option: String, PersistableEnum {
         self.categoryType = categoryType
     }
     
-    init(category: Category, amount: Double, description: String, categoryType: Option) {
+    init(category: Category, amount: Double, desc: String, categoryType: Option) {
         self.id = "i" + String(Int.random(in: 1..<500))
         self.category = category
         self.amount = amount
-        self.desc = description
+        self.desc = desc
         self.categoryType = categoryType
     }
     override init() {

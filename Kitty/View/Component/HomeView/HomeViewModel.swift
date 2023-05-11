@@ -90,7 +90,7 @@ class HomeViewModel {
         if let found = history.firstIndex(where: {$0.date.month == historyName.month}) {
             history[found].items.append(newItem)
         } else {
-            let newHistory = History(date: historyName, items: [newItem])
+            let newHistory = History(date: historyName, items: newItem)
             self.history.append(newHistory)
         }
         return true

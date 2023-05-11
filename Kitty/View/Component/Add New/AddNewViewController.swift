@@ -88,7 +88,7 @@ class AddNewViewController: UIViewController {
     
     @IBAction func addIncomeOnClickHandler(_ sender: Any) {
         if let inputAmount = amountInput.text , !inputAmount.isEmpty, !choosenCategory.name.isEmpty{
-            let newItem = Item(category: (viewModel.findCategory(name: choosenCategory.name)), amount: Double(inputAmount)!, description: descInput.text!, categoryType: Option(rawValue: option)!)
+            let newItem = Item(category: (viewModel.findCategory(name: choosenCategory.name)), amount: Double(inputAmount)!, desc: descInput.text!, categoryType: Option(rawValue: option)!)
             delegate?.addNewItem(newItem: newItem)
             self.navigationController?.popViewController(animated: true)
         } else {
