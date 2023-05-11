@@ -13,8 +13,8 @@ import RealmSwift
 //    var categoryDatabase: [Category]
 //}
 
-@objcMembers class Category: Object, Codable  {
-    var name: String = ""
+class Category: Object, Codable  {
+    @Persisted var name: String = ""
     
     init(name: String) {
         self.name = name

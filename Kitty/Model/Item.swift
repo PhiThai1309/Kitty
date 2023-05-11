@@ -14,7 +14,7 @@ enum Option: String, PersistableEnum {
     case Income
 }
 
-@objcMembers class Item: Object {
+class Item: Object {
     @Persisted(primaryKey: true) var id = "h1"
     @Persisted var category: Category? = Category(name: "")
     @Persisted var amount: Double = 0.0

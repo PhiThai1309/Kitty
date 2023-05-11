@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 import Realm
 
-@objcMembers class History: Object  {
+class History: Object  {
     @Persisted(primaryKey: true) var id = "h1"
     @Persisted var date: Date = Date()
     @Persisted var items: RealmSwift.List<Item> = RealmSwift.List<Item>()

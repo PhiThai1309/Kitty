@@ -7,5 +7,6 @@ target 'Kitty' do
 
   # Pods for Kitty
 pod 'Charts'
+pod 'RealmSwift'
 
 end
