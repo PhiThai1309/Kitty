@@ -987,9 +987,9 @@
                         <tabBarAppearance key="standardAppearance"/>
                     </tabBar>
                     <connections>
-                        <segue destination="sEI-rx-lwd" kind="relationship" relationship="viewControllers" id="yb8-Uv-BBA"/>
-                        <segue destination="18S-Id-kgb" kind="relationship" relationship="viewControllers" id="SHo-Rh-YMJ"/>
-                        <segue destination="phL-Gk-1xp" kind="relationship" relationship="viewControllers" id="QoS-Oh-d2B"/>
+                        <segue destination="sEI-rx-lwd" kind="relationship" relationship="viewControllers" id="2vi-Z2-ZzU"/>
+                        <segue destination="18S-Id-kgb" kind="relationship" relationship="viewControllers" id="H6y-YT-FuL"/>
+                        <segue destination="phL-Gk-1xp" kind="relationship" relationship="viewControllers" id="frH-AO-BKU"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dKv-lT-hyX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

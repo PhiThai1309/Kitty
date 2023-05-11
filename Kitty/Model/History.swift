@@ -7,19 +7,22 @@
 
 import Foundation
 import RealmSwift
+import Realm
 
 @objcMembers class History: Object  {
-    @Persisted(primaryKey: true) var id = 0
+    @Persisted(primaryKey: true) var id = "h1"
     @Persisted var date: Date = Date()
-    @Persisted var items: List<Item> = List<Item>()
+    @Persisted var items: RealmSwift.List<Item> = RealmSwift.List<Item>()
     
-    init(items: List<Item>) {
+    init(items: RealmSwift.List<Item>) {
+        self.id = "h" + String(Int.random(in: 1..<500))
         self.items = items
     }
     
     init(date: Date, items: [Item]) {
+        self.id = "h" + String(Int.random(in: 1..<500))
         self.date = date
-        let newList = List<Item>()
+        let newList = RealmSwift.List<Item>()
         for item in items {
             newList.append(item)
         }

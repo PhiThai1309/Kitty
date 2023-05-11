@@ -16,7 +16,11 @@ class AddNewCategoryViewController: UIViewController {
     @IBOutlet weak var categoryLabel: UITextField!
     @IBOutlet weak var iconImg: UIButton!
     
-    var viewModel: HomeViewModel?
+    
+    lazy var viewModel: AddNewCategoryViewModel = {
+        return AddNewCategoryViewModel()
+    }()
+    
     var delegate: AddNewCategoryDelegate?
     
     override func viewDidLoad() {
@@ -32,15 +36,13 @@ class AddNewCategoryViewController: UIViewController {
     
     @IBAction func addNewCategoryOnClickHandler(_ sender: Any) {
         let newCategory = Category(name: categoryLabel.text!)
-        viewModel?.addNewCategory(new: newCategory)
-        viewModel?.filterIcon()
+        viewModel.addNewCategory(category: newCategory)
         delegate?.newCategory()
         self.dismiss(animated: true)
     }
     
     @IBAction func addIconOnClickHandler(_ sender: Any) {
-        let categorySheetViewController = CategorySheetViewController()
-        categorySheetViewController.viewModel = viewModel
+        let categorySheetViewController = CategorySheetViewController(categories: viewModel.categories)
         categorySheetViewController.delegate = self
         let nav = UINavigationController(rootViewController: categorySheetViewController)
         // 1

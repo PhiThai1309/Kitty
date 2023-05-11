@@ -56,8 +56,8 @@ extension CardTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let item = items![indexPath.row]
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCellView", for: indexPath) as? ItemCollectionViewCell {
-            cell.typeLabel.text = item.description
-            cell.descLabel.text = item.category.name
+            cell.typeLabel.text = item.desc
+            cell.descLabel.text = item.category?.name
             if item.categoryType == Option.Expenses {
                 cell.amountLabel.text = "- " + String(item.amount)
                 cell.amountLabel.textColor = .red
@@ -66,7 +66,8 @@ extension CardTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
                 cell.amountLabel.textColor = .label
             }
             
-            cell.iconImg.image = UIImage(named: item.category.name)
+            print(item)
+            cell.iconImg.image = UIImage(named: item.category!.name)
             return cell
         }
         return UICollectionViewCell()

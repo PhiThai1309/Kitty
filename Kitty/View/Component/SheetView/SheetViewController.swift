@@ -16,16 +16,11 @@ class SheetViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var addNewCategoryButton: UIButton!
     
-    var viewModel: HomeViewModel?
+    lazy var viewModel: SheetViewModel = {
+        return SheetViewModel()
+    }()
+    
     var delegate: sheetViewDelegate?
-    
-    init() {
-        super.init(nibName: "SheetViewController", bundle: Bundle(for: SheetViewController.self))
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,18 +29,16 @@ class SheetViewController: UIViewController {
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         
+        
         let cellNib = UINib(nibName: "CategoryCollectionViewCell", bundle: nil)
         self.collectionView.register(cellNib, forCellWithReuseIdentifier: "CategoryCellView")
     }
     
-    
     @IBAction func addNewOnClickHanlder(_ sender: Any) {
         let vc = AddNewCategoryViewController()
-        vc.viewModel = viewModel
         vc.delegate = self
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
-//        self.navigationController?.pushViewController(nav, animated: true)
         self.present(nav, animated: true)
     }
     
@@ -57,14 +50,14 @@ class SheetViewController: UIViewController {
 extension SheetViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (viewModel!.getAllCategory().count)
+        return (viewModel.categories.count)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let category = viewModel?.getAllCategory()[indexPath.row]
+        let category = viewModel.categories[indexPath.row]
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCellView", for: indexPath) as? CategoryCollectionViewCell {
-            cell.categoryLabel.text = category?.name
-            cell.categoryImg.image = UIImage(named: category!.name)
+            cell.categoryLabel.text = category.name
+            cell.categoryImg.image = UIImage(named: category.name)
             return cell
         }
         return UICollectionViewCell()
@@ -78,12 +71,13 @@ extension SheetViewController: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        delegate?.categoryOnClick(category: (viewModel?.getAllCategory()[indexPath.row])!)
+        delegate?.categoryOnClick(category: (viewModel.categories[indexPath.row]))
         self.dismiss(animated: true)
     }
 }
 extension SheetViewController: AddNewCategoryDelegate {
     func newCategory() {
+        viewModel.refreshData()
         collectionView.reloadData()
     }
 }

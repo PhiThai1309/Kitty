@@ -14,7 +14,7 @@ protocol MonthViewDelegate {
 class MonthViewController: UIViewController {
     
     lazy var viewModel = {
-        return HomeViewModel()
+        return MainViewModel()
     }()
     
     var delegate: MonthViewDelegate?

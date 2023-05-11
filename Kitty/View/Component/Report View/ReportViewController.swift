@@ -16,23 +16,49 @@ class ReportViewController: UIViewController, ChartViewDelegate {
     @IBOutlet weak var monthBtn: UIButton!
     @IBOutlet weak var reportCollectionView: UICollectionView!
     
-    var viewModel: HomeViewModel?
-    var sum: Double = 0
-
-    lazy var categories = {
-        return viewModel?.getArrayOfEachCategory()
-    }()
+    var items: [Item]
+    var history: [History]
+    var filteredMonth: Date
+    var categories: [[Item]] = [[]]
     
-    lazy var categoryWithAmount = {
-        return viewModel?.countExpenseAmountInCategories()
+//    var categoryArray: [Category] = []
+    
+    var categoryWithAmount: OrderedDictionary<String, Double> = [:]
+    
+    init(items: [Item], history : [History], filteredMonth: Date) {
+        self.items = items
+        self.history = history
+        self.filteredMonth = filteredMonth
+//        self.categories = categories
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    func set(items: [Item], history : [History], filteredMonth: Date) {
+        self.items = items
+        self.history = history
+        self.filteredMonth = filteredMonth
+    }
+    
+    required init?(coder: NSCoder) {
+        self.items = []
+        self.history = []
+        self.filteredMonth = Date()
+        self.categories = [[]]
+        super.init(coder: coder)
+    }
+    
+    lazy var viewModel: ReportViewModel = {
+        return ReportViewModel(items: items, history: history, filteredMonth: filteredMonth)
     }()
+    var sum: Double = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         chartView.delegate = self
         var entries = [BarChartDataEntry]()
-        let value = Array(categoryWithAmount!.values)
+        categoryWithAmount = viewModel.countExpenseAmountInCategories()
+        let value = Array(categoryWithAmount.values)
         entries.append (BarChartDataEntry (x: Double(0.1),
                                            yValues: value))
         let set = BarChartDataSet (entries: entries)
@@ -47,14 +73,14 @@ class ReportViewController: UIViewController, ChartViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let calendarDate = Calendar.current.dateComponents([.day, .year, .month], from: viewModel!.getCurrentMonth())
+        let calendarDate = Calendar.current.dateComponents([.day, .year, .month], from: filteredMonth)
         
-        monthBtn.setTitle(viewModel!.getCurrentMonth().month + ", " + String(calendarDate.year!), for: .normal)
+        monthBtn.setTitle(filteredMonth.month + ", " + String(calendarDate.year!), for: .normal)
         
-        categories = (viewModel?.getArrayOfEachCategory())!
-        categoryWithAmount = viewModel?.countExpenseAmountInCategories()
+        categories = viewModel.getArrayOfEachCategory()
+        categoryWithAmount = viewModel.countExpenseAmountInCategories()
         var entries = [BarChartDataEntry]()
-        let value = Array(categoryWithAmount!.values)
+        let value = Array(categoryWithAmount.values)
         entries.append (BarChartDataEntry (x: Double(0.1),
                                            yValues: value))
         let set = BarChartDataSet (entries: entries)
@@ -92,41 +118,35 @@ class ReportViewController: UIViewController, ChartViewDelegate {
     }
     
     @IBAction func rightOnClickHandler(_ sender: Any) {
-        let monthInt = Calendar.current.component(.month, from: viewModel!.getCurrentMonth())
-        let components = DateComponents (calendar: Calendar.current, year: 2023, month: monthInt + 1, day: 14)
-        let date = NSCalendar.current.date(from: components)
-        viewModel!.setCurrentMonth(month: date!)
-        monthBtn.setTitle(viewModel!.getCurrentMonth().month + ", " + String(components.year!), for: .normal)
+        let year = viewModel.addAMonth()
+        monthBtn.setTitle(filteredMonth.month + ", " + String(year), for: .normal)
         reportCollectionView.reloadData()
     }
     
     @IBAction func leftOnClickHandler(_ sender: Any) {
-        let monthInt = Calendar.current.component(.month, from: viewModel!.getCurrentMonth())
-        let components = DateComponents (calendar: Calendar.current, year: 2023, month: monthInt - 1, day: 14)
-        let date = NSCalendar.current.date(from: components)
-        viewModel!.setCurrentMonth(month: date!)
-        monthBtn.setTitle(viewModel!.getCurrentMonth().month + ", " + String(components.year!), for: .normal)
+        let year = viewModel.backAMonth()
+        monthBtn.setTitle(filteredMonth.month + ", " + String(year), for: .normal)
         reportCollectionView.reloadData()
     }
 }
 
 extension ReportViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categories!.count
+        return categories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let amount = categories![indexPath.row]
+        let amount = categories[indexPath.row]
 
         // Fetch a cell of the appropriate type.
         if let cell = reportCollectionView.dequeueReusableCell(withReuseIdentifier: "ItemCellView", for: indexPath) as? ItemCollectionViewCell {
 
-            cell.typeLabel.text = amount[0].category.name
-            cell.amountLabel.text = String(Array(categoryWithAmount!)[indexPath.row].value)
-            cell.iconImg.image = UIImage(named: amount[0].category.name)
-            let categories = viewModel?.getArrayOfEachCategory()
+            cell.typeLabel.text = amount[0].category?.name
+            cell.amountLabel.text = String(Array(categoryWithAmount)[indexPath.row].value)
+            cell.iconImg.image = UIImage(named: amount[0].category!.name)
+            let categories = viewModel.getArrayOfEachCategory()
 
-            cell.descLabel.text = String(categories![indexPath.row].count) + " transactions"
+            cell.descLabel.text = String(categories[indexPath.row].count) + " transactions"
             return cell
         }
         return UICollectionViewCell()
@@ -158,9 +178,9 @@ extension ReportViewController: MonthViewDelegate {
             let monthInt = Calendar.current.component(.month, from: date)
             let components = DateComponents (calendar: Calendar.current, year: 2023, month: monthInt, day: 14)
             let date = NSCalendar.current.date(from: components)
-            viewModel!.setCurrentMonth(month: date!)
-            monthBtn.setTitle(viewModel!.getCurrentMonth().month + ", " + String(components.year!), for: .normal)
+            filteredMonth = date!
+            monthBtn.setTitle(filteredMonth.month + ", " + String(components.year!), for: .normal)
         }
         reportCollectionView.reloadData()
-    }
+    } 
 }
