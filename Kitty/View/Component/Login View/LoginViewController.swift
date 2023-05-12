@@ -18,6 +18,15 @@ class LoginViewController: UIViewController {
         let tabBarAppearance = UITabBarAppearance()
         tabBarAppearance.backgroundColor = .systemBackground
         UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+        
+        if Auth.auth().currentUser != nil {
+            // User is signed in.
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+            self.navigationController?.interactivePopGestureRecognizer!.delegate = nil
+        }
     }
     
     @IBAction func signUpOnClickHandler(_ sender: Any) {
@@ -40,6 +49,7 @@ class LoginViewController: UIViewController {
             let credential = GoogleAuthProvider.credential(withIDToken: idToken,
                                                            accessToken: user.accessToken.tokenString)
             
+            // No user is signed in.
             Auth.auth().signIn(with: credential) { result, error in
                 // At this point, our user is signed in
                 // If sign in succeeded, display the app's main content View.
@@ -54,3 +64,4 @@ class LoginViewController: UIViewController {
     }
     
 }
+

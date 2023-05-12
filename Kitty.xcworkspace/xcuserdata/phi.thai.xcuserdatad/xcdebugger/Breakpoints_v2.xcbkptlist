@@ -52,5 +52,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D3445B28-246A-4BEF-A7BF-7F2B6E54CF01"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Kitty/View/Component/TabBar View/MainViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "init()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D3445B28-246A-4BEF-A7BF-7F2B6E54CF01 - a3adf3fb0a6abe2f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Kitty.MainViewModel.init() -&gt; Kitty.MainViewModel"
+                  moduleName = "Kitty"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/phi.thai/Documents/Kitty/Kitty/View/Component/TabBar%20View/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "7082">
+               </Location>
+               <Location
+                  uuid = "D3445B28-246A-4BEF-A7BF-7F2B6E54CF01 - a3adf3fb0a6abed3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Kitty.MainViewModel.init() -&gt; Kitty.MainViewModel"
+                  moduleName = "Kitty"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/phi.thai/Documents/Kitty/Kitty/View/Component/TabBar%20View/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "6879">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

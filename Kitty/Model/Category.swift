@@ -9,20 +9,16 @@ import Foundation
 import Realm
 import RealmSwift
 
-//struct CategoryDatabase {
-//    var categoryDatabase: [Category]
-//}
-
-class Category: Object, Codable  {
-    @Persisted var name: String = ""
+class Category: Codable  {
+    var name: String = ""
     
     init(name: String) {
         self.name = name
     }
     
-    override init() {
-        super.init()
-    }
+//    override init() {
+//        super.init()
+//    }
 
 }
 

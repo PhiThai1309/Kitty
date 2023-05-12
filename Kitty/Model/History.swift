@@ -9,28 +9,31 @@ import Foundation
 import RealmSwift
 import Realm
 
-class History: Object  {
-    @Persisted(primaryKey: true) var id = "h1"
-    @Persisted var date: Date = Date()
+class History:  Codable  {
+//    @Persisted(primaryKey: true) var id = "h1"
+    var date: Date
     
-    var items: RealmSwift.List<Item> = RealmSwift.List<Item>()
+    var items: [Item] = [Item]()
     
-    init(items: RealmSwift.List<Item>) {
-        self.id = "h" + String(Int.random(in: 1..<500))
+    init(items: [Item]) {
+//        self.id = "h" + String(Int.random(in: 1..<500))
+        self.date = Date()
         self.items = items
     }
     
     init(date: Date, items: [Item]) {
-        self.id = "h" + String(Int.random(in: 1..<500))
+//        self.id = "h" + String(Int.random(in: 1..<500))
         self.date = date
-        let newList = RealmSwift.List<Item>()
-        for item in items {
-//            newList.append(item)
-        }
-        self.items = newList
+//        let newList = RealmSwift.List<Item>()
+        self.items = items
     }
     
-    override init() {
-        super.init()
+//    override init() {
+//        super.init()
+//    }
+    enum CodingKeys: String, CodingKey {
+        case date
+        case items
     }
 }
+

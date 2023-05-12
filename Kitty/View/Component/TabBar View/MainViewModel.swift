@@ -8,6 +8,10 @@
 import Foundation
 import OrderedCollections
 import RealmSwift
+import FirebaseCore
+import FirebaseFirestore
+import FirebaseAuth
+import FirebaseFirestoreSwift
 
 class MainViewModel {
     private var items: [Item] = []
@@ -69,7 +73,25 @@ class MainViewModel {
 //            print("can write")
 //            realm.add(history1)
 //        }
+
+        let db = Firestore.firestore()
         
+        let userInfo = Auth.auth().currentUser
+        // Provider-specific UID
+        let userID = userInfo!.uid
+        
+        do {
+            let dtFormatter = DateFormatter()
+            dtFormatter.dateFormat = "d MMMM YYYY"
+            dtFormatter.locale = Locale(identifier: "en_US")
+            print(dtFormatter.string(from: history1.date))
+            try db.collection(userID).document(dtFormatter.string(from: history1.date)).setData(from: history1)
+            try db.collection(userID).document(dtFormatter.string(from: history2.date)).setData(from: history2)
+            try db.collection(userID).document(dtFormatter.string(from: history3.date)).setData(from: history3)
+        } catch let error {
+            print("Error writing city to Firestore: \(error)")
+        }
+
     }
     
     //MARK: Filter
