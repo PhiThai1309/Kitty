@@ -11,7 +11,7 @@ import FirebaseAuth
 import GoogleSignIn
 
 class LoginViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,22 +22,35 @@ class LoginViewController: UIViewController {
     
     @IBAction func signUpOnClickHandler(_ sender: Any) {
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
-                
+        
         // Create Google Sign In configuration object.
         let config = GIDConfiguration(clientID: clientID)
-                
+        
         GIDSignIn.sharedInstance.configuration = config
         
         GIDSignIn.sharedInstance.signIn(withPresenting: self) { signInResult, error in
             guard error == nil else { return }
-
-            // If sign in succeeded, display the app's main content View.
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
-            self.navigationController?.pushViewController(vc, animated: true)
-
-            self.navigationController?.interactivePopGestureRecognizer!.delegate = nil
-          }
+            
+            guard let user = signInResult?.user,
+                  let idToken = user.idToken?.tokenString
+            else {
+                return
+            }
+            
+            let credential = GoogleAuthProvider.credential(withIDToken: idToken,
+                                                           accessToken: user.accessToken.tokenString)
+            
+            Auth.auth().signIn(with: credential) { result, error in
+                // At this point, our user is signed in
+                // If sign in succeeded, display the app's main content View.
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
+                self.navigationController?.pushViewController(vc, animated: true)
+                
+                self.navigationController?.interactivePopGestureRecognizer!.delegate = nil
+            }
+            
+        }
     }
-
+    
 }

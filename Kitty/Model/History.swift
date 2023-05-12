@@ -25,7 +25,7 @@ class History: Object  {
         self.date = date
         let newList = RealmSwift.List<Item>()
         for item in items {
-            newList.append(item)
+//            newList.append(item)
         }
         self.items = newList
     }
