@@ -14,8 +14,6 @@
 		3F0E3CB529F0EC29009BF311 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E3CB329F0EC29009BF311 /* CategoryCollectionViewCell.swift */; };
 		3F0E3CB629F0EC29009BF311 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F0E3CB429F0EC29009BF311 /* CategoryCollectionViewCell.xib */; };
 		3F0E3CB829F0EF39009BF311 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E3CB729F0EF39009BF311 /* Category.swift */; };
-		3F131FBC29FA0EDE00123E02 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 3F131FBB29FA0EDE00123E02 /* Realm */; };
-		3F131FBE29FA0EDE00123E02 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3F131FBD29FA0EDE00123E02 /* RealmSwift */; };
 		3F15B78929FA5B0000616FB5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F15B78829FA5B0000616FB5 /* HomeViewModel.swift */; };
 		3F15B78F29FA6E6000616FB5 /* AddNewCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F15B78E29FA6E6000616FB5 /* AddNewCategoryViewModel.swift */; };
 		3F15B79229FA74BF00616FB5 /* AddNewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F15B79129FA74BF00616FB5 /* AddNewViewModel.swift */; };
@@ -123,8 +121,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FE869572A121DC800744473 /* FirebaseDatabaseSwift in Frameworks */,
-				3F131FBE29FA0EDE00123E02 /* RealmSwift in Frameworks */,
-				3F131FBC29FA0EDE00123E02 /* Realm in Frameworks */,
 				3F1D5BD729F65E5600618D7A /* OrderedCollections in Frameworks */,
 				3FE8694C2A121C9A00744473 /* GoogleSignInSwift in Frameworks */,
 				81F3DE7A7E4BF91F6F29295D /* Pods_Kitty.framework in Frameworks */,
@@ -343,8 +339,6 @@
 			name = Kitty;
 			packageProductDependencies = (
 				3F1D5BD629F65E5600618D7A /* OrderedCollections */,
-				3F131FBB29FA0EDE00123E02 /* Realm */,
-				3F131FBD29FA0EDE00123E02 /* RealmSwift */,
 				3FE869492A121C9A00744473 /* GoogleSignIn */,
 				3FE8694B2A121C9A00744473 /* GoogleSignInSwift */,
 				3FE869502A121DC800744473 /* FirebaseAuth */,
@@ -384,7 +378,6 @@
 			mainGroup = 3FA9E63829E9346D00D8D7C1;
 			packageReferences = (
 				3F1D5BD529F65E5600618D7A /* XCRemoteSwiftPackageReference "swift-collections" */,
-				3F131FBA29FA0EDE00123E02 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				3FE869482A121C9A00744473 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				3FE8694F2A121DC800744473 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
@@ -658,7 +651,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.s3.Kitty;
+				PRODUCT_BUNDLE_IDENTIFIER = com.phithai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -687,7 +680,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.s3.Kitty;
+				PRODUCT_BUNDLE_IDENTIFIER = com.phithai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -719,14 +712,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3F131FBA29FA0EDE00123E02 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.38.2;
-			};
-		};
 		3F1D5BD529F65E5600618D7A /* XCRemoteSwiftPackageReference "swift-collections" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-collections.git";
@@ -754,16 +739,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3F131FBB29FA0EDE00123E02 /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3F131FBA29FA0EDE00123E02 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
-		3F131FBD29FA0EDE00123E02 /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3F131FBA29FA0EDE00123E02 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
-		};
 		3F1D5BD629F65E5600618D7A /* OrderedCollections */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3F1D5BD529F65E5600618D7A /* XCRemoteSwiftPackageReference "swift-collections" */;

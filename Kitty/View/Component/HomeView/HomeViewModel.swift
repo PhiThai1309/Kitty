@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 class HomeViewModel {
     var items: [Item]
@@ -41,6 +42,13 @@ class HomeViewModel {
 //        history.append(history3)
 //
 //    }
+    
+    func loadItem() {
+        let realm = try! Realm()
+        // Access all dogs in the realm
+        let dogs = realm.objects(Item.self)
+        print(dogs)
+    }
     
     func loadHistory(){
         var result = [History]()

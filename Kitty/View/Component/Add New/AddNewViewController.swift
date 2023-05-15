@@ -76,6 +76,7 @@ class AddNewViewController: UIViewController {
         if let inputAmount = amountInput.text , !inputAmount.isEmpty, !choosenCategory.isEmpty{
             let newItem = Item(category: (viewModel.findCategory(name: choosenCategory)), amount: Double(inputAmount)!, description: descInput.text!, categoryType: Option(rawValue: option)!)
             delegate?.addNewItem(newItem: newItem)
+            viewModel.addNew(item: newItem)
             self.navigationController?.popViewController(animated: true)
         } else {
             let alert = UIAlertController(title: "Please check your input",

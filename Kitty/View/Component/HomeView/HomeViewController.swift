@@ -125,7 +125,7 @@ extension HomeViewController: AddNewDelegate {
                 self.present(alert, animated: true, completion: nil)
             }
         }
-        
+        viewModel.loadItem()
         tableView.reloadData()
     }
 }
