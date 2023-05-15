@@ -13,9 +13,9 @@ class History: Object  {
     @Persisted(primaryKey: true) var id = "h1"
     @Persisted var date: Date = Date()
     
-    var items: RealmSwift.List<Item> = RealmSwift.List<Item>()
+    var items: [Item] = [Item]()
     
-    init(items: RealmSwift.List<Item>) {
+    init(items: [Item]) {
         self.id = "h" + String(Int.random(in: 1..<500))
         self.items = items
     }
@@ -23,11 +23,7 @@ class History: Object  {
     init(date: Date, items: [Item]) {
         self.id = "h" + String(Int.random(in: 1..<500))
         self.date = date
-        let newList = RealmSwift.List<Item>()
-        for item in items {
-            newList.append(item)
-        }
-        self.items = newList
+        self.items = items
     }
     
     override init() {

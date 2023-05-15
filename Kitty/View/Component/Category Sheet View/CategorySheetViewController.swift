@@ -19,9 +19,9 @@ class CategorySheetViewController: UIViewController {
         return Icon().iconArray
     }()
     
-    var categories: [Category]
+    var categories: [String]
     
-    init(categories: [Category]) {
+    init(categories: [String]) {
         self.categories = categories
         super.init(nibName: nil, bundle: Bundle.main)
     }
@@ -49,8 +49,8 @@ class CategorySheetViewController: UIViewController {
     
     func filterIcon() {
         remainIconArray = iconArray.filter { icon in
-            return !categories.contains { category in
-                return category.name == icon
+            return categories.contains { category in
+                return category == icon
             }
         }
     }

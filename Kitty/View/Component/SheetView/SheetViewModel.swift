@@ -15,7 +15,7 @@ class SheetViewModel {
         return Icon().iconArray
     }()
     
-    var categories: [Category] = []
+    var categories: [String] = []
     
     init(){
         refreshData()
@@ -24,7 +24,7 @@ class SheetViewModel {
     func refreshData() {
         if let savedCategories = userDefaults.object(forKey: "categories") as? Data {
             let decoder = JSONDecoder()
-            if let saved = try? decoder.decode([Category].self, from: savedCategories) {
+            if let saved = try? decoder.decode([String].self, from: savedCategories) {
                 categories = saved
             }
         }

@@ -19,45 +19,9 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     @IBOutlet weak var monthBtn: UIButton!
     
     let dtFormatter = DateFormatter()
-
-    var items: [Item]
-    var history: [History]
-    var income: Double
-    var iconArray: [String]
-    var month: [String]
-    var filteredMonth: Date
-    
-    required init?(coder: NSCoder) {
-        self.items = []
-        self.history = []
-        self.income = 0.0
-        self.iconArray = []
-        self.month = []
-        self.filteredMonth = Date()
-        super.init(coder: coder)
-    }
-    
-    init(items: [Item], history : [History], income: Double, iconArray: [String], month: [String], filteredMonth: Date) {
-        self.items = items
-        self.history = history
-        self.income = income
-        self.iconArray = iconArray
-        self.month = month
-        self.filteredMonth = filteredMonth
-        super.init(nibName: nil, bundle: Bundle.main)
-    }
-    
-    func set(items: [Item], history : [History], income: Double, iconArray: [String], month: [String], filteredMonth: Date) {
-        self.items = items
-        self.history = history
-        self.income = income
-        self.iconArray = iconArray
-        self.month = month
-        self.filteredMonth = filteredMonth
-    }
     
     lazy var viewModel: HomeViewModel = {
-        return HomeViewModel(items: items, history: history, income: income, month: month, filteredMonth: filteredMonth)
+        return HomeViewModel()
     }()
     
     override func viewDidLoad() {
@@ -73,13 +37,14 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     
     
     @IBAction func addNewButtonClickHandler(_ sender: Any) {
-        let newViewController = AddNewViewController(items: viewModel.items, history: viewModel.history, iconArray: iconArray)
+        let newViewController = AddNewViewController()
 
         newViewController.delegate = self
         self.navigationController?.pushViewController(newViewController, animated: true)
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        viewModel.loadHistory()
         monthBtn.setTitle(viewModel.convertToNormalDate(), for: .normal)
         expenseLabel.text = "- " + String(viewModel.getExpense())
         incomeLabel.text = String(viewModel.getIncome())

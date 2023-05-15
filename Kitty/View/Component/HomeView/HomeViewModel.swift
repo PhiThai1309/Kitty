@@ -14,12 +14,47 @@ class HomeViewModel {
     var month: [String]
     var filteredMonth: Date
     
-    init(items: [Item], history: [History], income: Double, month: [String], filteredMonth: Date) {
-        self.items = items
-        self.history = history
-        self.income = income
-        self.month = month
-        self.filteredMonth = filteredMonth
+    init() {
+        self.items = DummyItem().items
+        self.history = []
+        self.income = 500
+        self.month = ["January", "February", "March", "April", "May", "Jun", "July", "August", "September", "October", "November", "December"]
+        self.filteredMonth = Date()
+    }
+    
+//    init() {
+//        let components = DateComponents (calendar: Calendar.current, year: 2023, month: 3, day: 4)
+//        let date = NSCalendar.current.date(from: components)
+//
+//        let components2 = DateComponents (calendar: Calendar.current, year: 2023, month: 3, day: 6)
+//        let date2 = NSCalendar.current.date(from: components2)
+//
+//        let components3 = DateComponents (calendar: Calendar.current, year: 2023, month: 3, day: 1)
+//        let date3 = NSCalendar.current.date(from: components3)
+//
+//        let history1 = History(date: date!, items: [item1, item3])
+//        let history2 = History(date: date2!, items: [item2])
+//        let history3 = History(date: date3!, items: [item4])
+//
+//        history.append(history1)
+//        history.append(history2)
+//        history.append(history3)
+//
+//    }
+    
+    func loadHistory(){
+        var result = [History]()
+        for item in items {
+            if result.firstIndex(where: {$0.date == item.date}) != nil {
+                let i = result.firstIndex(where: {$0.date == item.date})!
+                result[i].items.append(item)
+            } else {
+                let newItem: [Item] = [item]
+                let newHistory = History(date: item.date, items: newItem)
+                result.append(newHistory)
+            }
+        }
+        history = result
     }
     
     func getExpense() -> Double {

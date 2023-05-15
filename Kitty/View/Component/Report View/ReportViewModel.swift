@@ -26,8 +26,8 @@ class ReportViewModel {
             if item.categoryType == Option.Income {
                 continue
             }
-            if (result.contains(where: {$0.contains(where: {$0.category!.name == item.category!.name})})) {
-                let index = result.firstIndex(where: {$0.contains(where: {$0.category!.name == item.category!.name})})!
+            if (result.contains(where: {$0.contains(where: {$0.category == item.category})})) {
+                let index = result.firstIndex(where: {$0.contains(where: {$0.category == item.category})})!
                 result[index].append(item)
             } else {
                 let index = result.count
@@ -45,7 +45,7 @@ class ReportViewModel {
             for item in category {
                 if item.categoryType == Option.Expenses {
                     sum += item.amount
-                    categoryWithAmount[item.category!.name] = sum
+                    categoryWithAmount[item.category] = sum
                 }
             }
         }

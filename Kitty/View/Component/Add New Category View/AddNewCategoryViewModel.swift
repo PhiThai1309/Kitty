@@ -10,18 +10,18 @@ import Foundation
 class AddNewCategoryViewModel {
     let userDefaults = UserDefaults.standard
     
-    var categories: [Category] = []
+    var categories: [String] = []
     
     init(){
         if let savedCategories = userDefaults.object(forKey: "categories") as? Data {
             let decoder = JSONDecoder()
-            if let saved = try? decoder.decode([Category].self, from: savedCategories) {
+            if let saved = try? decoder.decode([String].self, from: savedCategories) {
                 categories = saved
             }
         }
     }
     
-    func addNewCategory(category: Category) {
+    func addNewCategory(category: String) {
         categories.append(category)
         
         let encoder = JSONEncoder()
