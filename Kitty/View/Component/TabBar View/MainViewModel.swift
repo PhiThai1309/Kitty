@@ -23,7 +23,7 @@ class MainViewModel {
     private var month: [String] = []
     
     private var filteredMonth = Date()
-    private var dummyData = DummyData()
+    
     
     let userDefaults = UserDefaults.standard
     
@@ -37,61 +37,6 @@ class MainViewModel {
         }
         
         
-        let item1 = Item(category: dummyData.initCategory[1], amount: 120.0, description: "Example description", categoryType: Option.Expenses)
-        let item2 = Item(category: dummyData.initCategory[3], amount: 22.0, description: "Example description2", categoryType: Option.Expenses)
-        let item3 = Item(category: dummyData.initCategory[3], amount: 32.0, description: "Example description3", categoryType: Option.Expenses)
-        let item4 = Item(category: dummyData.initCategory[4], amount: 32.0, description: "Example description3", categoryType: Option.Expenses)
-        
-        items.append(item1)
-        items.append(item2)
-        items.append(item3)
-        items.append(item4)
-        
-        let components = DateComponents (calendar: Calendar.current, year: 2023, month: 3, day: 4)
-        let date = NSCalendar.current.date(from: components)
-        
-        let components2 = DateComponents (calendar: Calendar.current, year: 2023, month: 3, day: 6)
-        let date2 = NSCalendar.current.date(from: components2)
-        
-        let components3 = DateComponents (calendar: Calendar.current, year: 2023, month: 3, day: 1)
-        let date3 = NSCalendar.current.date(from: components3)
-        
-        let history1 = History(date: date!, items: [item1, item3])
-        let history2 = History(date: date2!, items: [item2])
-        let history3 = History(date: date3!, items: [item4])
-        
-        history.append(history1)
-        history.append(history2)
-        history.append(history3)
-        
-//        filterIcon()
-        
-        // Open the local-only default realm
-//        let realm = try! Realm()
-//        
-//        try! realm.write {
-//            print("can write")
-//            realm.add(history1)
-//        }
-
-        let db = Firestore.firestore()
-        
-        let userInfo = Auth.auth().currentUser
-        // Provider-specific UID
-        let userID = userInfo!.uid
-        
-        do {
-            let dtFormatter = DateFormatter()
-            dtFormatter.dateFormat = "d MMMM YYYY"
-            dtFormatter.locale = Locale(identifier: "en_US")
-            print(dtFormatter.string(from: history1.date))
-            try db.collection(userID).document(dtFormatter.string(from: history1.date)).setData(from: history1)
-            try db.collection(userID).document(dtFormatter.string(from: history2.date)).setData(from: history2)
-            try db.collection(userID).document(dtFormatter.string(from: history3.date)).setData(from: history3)
-        } catch let error {
-            print("Error writing city to Firestore: \(error)")
-        }
-
     }
     
     //MARK: Filter

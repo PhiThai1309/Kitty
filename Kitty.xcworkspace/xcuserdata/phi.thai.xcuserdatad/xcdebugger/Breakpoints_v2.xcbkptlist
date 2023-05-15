@@ -55,47 +55,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D3445B28-246A-4BEF-A7BF-7F2B6E54CF01"
-            shouldBeEnabled = "Yes"
+            uuid = "D1DAF05C-B1A7-4381-932E-72C10F1276A2"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Kitty/View/Component/TabBar View/MainViewModel.swift"
+            filePath = "Kitty/View/Component/Database/FireStoreDatabase.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "init()"
-            landmarkType = "7">
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "FireStoreDatabase"
+            landmarkType = "3">
             <Locations>
                <Location
-                  uuid = "D3445B28-246A-4BEF-A7BF-7F2B6E54CF01 - a3adf3fb0a6abe2f"
+                  uuid = "D1DAF05C-B1A7-4381-932E-72C10F1276A2 - 8159ab2e69ab6748"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Kitty.MainViewModel.init() -&gt; Kitty.MainViewModel"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Kitty.FireStoreDatabase.loadHistoryData() -&gt; Swift.Array&lt;Kitty.History&gt;"
                   moduleName = "Kitty"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/phi.thai/Documents/Kitty/Kitty/View/Component/TabBar%20View/MainViewModel.swift"
+                  urlString = "file:///Users/phi.thai/Documents/Kitty/Kitty/View/Component/Database/FireStoreDatabase.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "91"
-                  endingLineNumber = "91"
-                  offsetFromSymbolStart = "7082">
+                  startingLineNumber = "137"
+                  endingLineNumber = "137"
+                  offsetFromSymbolStart = "1127">
                </Location>
                <Location
-                  uuid = "D3445B28-246A-4BEF-A7BF-7F2B6E54CF01 - a3adf3fb0a6abed3"
+                  uuid = "D1DAF05C-B1A7-4381-932E-72C10F1276A2 - 8159ab2e69ab67f7"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Kitty.MainViewModel.init() -&gt; Kitty.MainViewModel"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Kitty.FireStoreDatabase.loadHistoryData() -&gt; Swift.Array&lt;Kitty.History&gt;"
                   moduleName = "Kitty"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/phi.thai/Documents/Kitty/Kitty/View/Component/TabBar%20View/MainViewModel.swift"
+                  urlString = "file:///Users/phi.thai/Documents/Kitty/Kitty/View/Component/Database/FireStoreDatabase.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "87"
-                  endingLineNumber = "87"
-                  offsetFromSymbolStart = "6879">
+                  startingLineNumber = "142"
+                  endingLineNumber = "142"
+                  offsetFromSymbolStart = "1582">
                </Location>
             </Locations>
          </BreakpointContent>

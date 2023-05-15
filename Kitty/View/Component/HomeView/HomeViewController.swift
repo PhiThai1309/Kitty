@@ -20,7 +20,7 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     
     let dtFormatter = DateFormatter()
 
-    var items: [Item]
+    @Published var items: [Item]
     var history: [History]
     var income: Double
     var iconArray: [String]
@@ -69,6 +69,15 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
         // Do any additional setup after loading the view.
         let cellNib = UINib(nibName: "CardTableViewCell", bundle: nil)
         self.tableView.register(cellNib, forCellReuseIdentifier: "CardViewCell")
+        viewModel.database.saveDummyDatabase()
+//        viewModel.database.loadHistoryData()
+        self.viewModel.database.loadItemsData(completed: {
+            item, error in
+            self.items = item!
+            print("after")
+            self.tableView.reloadData()
+        })
+        
     }
     
     
@@ -120,7 +129,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         let cell =  tableView.dequeueReusableCell(withIdentifier: "CardViewCell", for: indexPath) as! CardTableViewCell
         
         // Configure the cell’s contents.
-        cell.cardLabel.text = dtFormatter.string(from: history.date)
+//        cell.cardLabel.text = dtFormatter.string(from: history.date)
         cell.set(value: Array(history.items))
 
         return cell

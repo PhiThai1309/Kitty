@@ -13,6 +13,7 @@ class HomeViewModel {
     var income: Double
     var month: [String]
     var filteredMonth: Date
+    var database: FireStoreDatabase
     
     init(items: [Item], history: [History], income: Double, month: [String], filteredMonth: Date) {
         self.items = items
@@ -20,6 +21,7 @@ class HomeViewModel {
         self.income = income
         self.month = month
         self.filteredMonth = filteredMonth
+        self.database = FireStoreDatabase()
     }
     
     func getExpense() -> Double {
@@ -78,21 +80,21 @@ class HomeViewModel {
     
     func getFilteredHistory(date: Date) -> [History] {
         var result: [History] = []
-        for item in history {
-            if item.date.month == date.month {
-                result.append(item)
-            }
-        }
+//        for item in history {
+//            if item.date.month == date.month {
+//                result.append(item)
+//            }
+//        }
         return result
     }
     
     func addHistory(newItem: Item, historyName: Date) -> Bool {
-        if let found = history.firstIndex(where: {$0.date.month == historyName.month}) {
-            history[found].items.append(newItem)
-        } else {
-            let newHistory = History(date: historyName, items: [newItem])
-            self.history.append(newHistory)
-        }
+//        if let found = history.firstIndex(where: {$0.date.month == historyName.month}) {
+//            history[found].items.append(newItem)
+//        } else {
+//            let newHistory = History(date: historyName, items: [newItem])
+//            self.history.append(newHistory)
+//        }
         return true
     }
     

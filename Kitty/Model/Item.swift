@@ -16,6 +16,7 @@ enum Option: String, PersistableEnum, Codable {
 
 class Item:Codable {
 //    @Persisted(primaryKey: true) var id = "h1"
+    var date: Date
     var category: Category? = Category(name: "")
     var amount: Double = 0.0
     var desc: String?
@@ -23,6 +24,7 @@ class Item:Codable {
     
     init(category: Category, amount: Double, categoryType: Option) {
 //        self.id = "i" + String(Int.random(in: 1..<500))
+        self.date = Date()
         self.category = category
         self.amount = amount
         self.categoryType = categoryType
@@ -30,6 +32,7 @@ class Item:Codable {
     
     init(category: Category, amount: Double, description: String, categoryType: Option) {
 //        self.id = "i" + String(Int.random(in: 1..<500))
+        self.date = Date()
         self.category = category
         self.amount = amount
         self.desc = description

@@ -48,6 +48,7 @@
 		3FB6CCDC29F6705000C3CBE2 /* AddNewCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB6CCDA29F6705000C3CBE2 /* AddNewCategoryViewController.swift */; };
 		3FB6CCDD29F6705000C3CBE2 /* AddNewCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB6CCDB29F6705000C3CBE2 /* AddNewCategoryViewController.xib */; };
 		3FE3848129F62BF4007884A8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE3848029F62BF4007884A8 /* SettingsViewController.swift */; };
+		3FE869422A11E4D800744473 /* Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE869412A11E4D800744473 /* Decodable.swift */; };
 		3FEFBAA229ECF4B50085641B /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEFBAA029ECF4B50085641B /* CardTableViewCell.swift */; };
 		3FEFBAA329ECF4B50085641B /* CardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FEFBAA129ECF4B50085641B /* CardTableViewCell.xib */; };
 		3FEFBAA629ECF6210085641B /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEFBAA429ECF6210085641B /* ItemCollectionViewCell.swift */; };
@@ -56,6 +57,7 @@
 		3FEFBAAB29ECFBE40085641B /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEFBAAA29ECFBE40085641B /* History.swift */; };
 		3FEFBAAE29ECFD410085641B /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEFBAAD29ECFD410085641B /* MainViewModel.swift */; };
 		3FF9E16C29F11CBE00FFDDE9 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF9E16B29F11CBE00FFDDE9 /* ReportViewController.swift */; };
+		3FFE1F702A0E48E9005B70E8 /* FireStoreDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE1F6F2A0E48E9005B70E8 /* FireStoreDatabase.swift */; };
 		C9A08677035BA67A214CBCF5 /* Pods_Kitty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC75247EC596BAA1112D0BF /* Pods_Kitty.framework */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +100,7 @@
 		3FB6CCDA29F6705000C3CBE2 /* AddNewCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCategoryViewController.swift; sourceTree = "<group>"; };
 		3FB6CCDB29F6705000C3CBE2 /* AddNewCategoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewCategoryViewController.xib; sourceTree = "<group>"; };
 		3FE3848029F62BF4007884A8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		3FE869412A11E4D800744473 /* Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decodable.swift; sourceTree = "<group>"; };
 		3FEFBAA029ECF4B50085641B /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
 		3FEFBAA129ECF4B50085641B /* CardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardTableViewCell.xib; sourceTree = "<group>"; };
 		3FEFBAA429ECF6210085641B /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -106,6 +109,7 @@
 		3FEFBAAA29ECFBE40085641B /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		3FEFBAAD29ECFD410085641B /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		3FF9E16B29F11CBE00FFDDE9 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		3FFE1F6F2A0E48E9005B70E8 /* FireStoreDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreDatabase.swift; sourceTree = "<group>"; };
 		774DE6D0B877F97E81DD5A3F /* Pods-Kitty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kitty.debug.xcconfig"; path = "Target Support Files/Pods-Kitty/Pods-Kitty.debug.xcconfig"; sourceTree = "<group>"; };
 		AF50C15B7CDE545A7505484D /* Pods-Kitty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kitty.release.xcconfig"; path = "Target Support Files/Pods-Kitty/Pods-Kitty.release.xcconfig"; sourceTree = "<group>"; };
 		CFC75247EC596BAA1112D0BF /* Pods_Kitty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kitty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,6 +195,7 @@
 			children = (
 				3F3064CC29ECE6C100EF5485 /* UIViewExtension.swift */,
 				3F438C2F29F7BA98002BE0B5 /* DateExtension.swift */,
+				3FE869412A11E4D800744473 /* Decodable.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -232,6 +237,7 @@
 		3F438C2829F7A821002BE0B5 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				3FFE1F6E2A0E48D6005B70E8 /* Database */,
 				3F6A55422A0DE0B90034B70D /* Login View */,
 				3F3FDB4629FA83FE0052BE93 /* Report View */,
 				3FA9E64A29E9346E00D8D7C1 /* Main.storyboard */,
@@ -311,6 +317,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		3FFE1F6E2A0E48D6005B70E8 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				3FFE1F6F2A0E48E9005B70E8 /* FireStoreDatabase.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		E12E42CE201FC90BECB45163 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -373,8 +387,8 @@
 			);
 			mainGroup = 3FA9E63829E9346D00D8D7C1;
 			packageReferences = (
-				3F1D5BD529F65E5600618D7A /* XCRemoteSwiftPackageReference "swift-collections.git" */,
-				3F131FBA29FA0EDE00123E02 /* XCRemoteSwiftPackageReference "realm-swift.git" */,
+				3F1D5BD529F65E5600618D7A /* XCRemoteSwiftPackageReference "swift-collections" */,
+				3F131FBA29FA0EDE00123E02 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				3F6A553D2A0DE0870034B70D /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			productRefGroup = 3FA9E64229E9346E00D8D7C1 /* Products */;
@@ -474,6 +488,7 @@
 				3FEFBAAB29ECFBE40085641B /* History.swift in Sources */,
 				3F34672C2A0891DB005DA94F /* Icon.swift in Sources */,
 				3F438C2B29F7A8E9002BE0B5 /* ButtonCollectionViewCell.swift in Sources */,
+				3FE869422A11E4D800744473 /* Decodable.swift in Sources */,
 				3FF9E16C29F11CBE00FFDDE9 /* ReportViewController.swift in Sources */,
 				3F0E3CB829F0EF39009BF311 /* Category.swift in Sources */,
 				3F438C2E29F7B669002BE0B5 /* Month.swift in Sources */,
@@ -482,6 +497,7 @@
 				3F0DCE4029F78D7A00C47FC6 /* MonthViewController.swift in Sources */,
 				3FEFBAAE29ECFD410085641B /* MainViewModel.swift in Sources */,
 				3F3FDB4829FA84120052BE93 /* ReportViewModel.swift in Sources */,
+				3FFE1F702A0E48E9005B70E8 /* FireStoreDatabase.swift in Sources */,
 				3FA9E64529E9346E00D8D7C1 /* AppDelegate.swift in Sources */,
 				3FA9E64729E9346E00D8D7C1 /* SceneDelegate.swift in Sources */,
 				3F15B78F29FA6E6000616FB5 /* AddNewCategoryViewModel.swift in Sources */,
@@ -708,7 +724,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3F131FBA29FA0EDE00123E02 /* XCRemoteSwiftPackageReference "realm-swift.git" */ = {
+		3F131FBA29FA0EDE00123E02 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
@@ -716,7 +732,7 @@
 				minimumVersion = 10.38.2;
 			};
 		};
-		3F1D5BD529F65E5600618D7A /* XCRemoteSwiftPackageReference "swift-collections.git" */ = {
+		3F1D5BD529F65E5600618D7A /* XCRemoteSwiftPackageReference "swift-collections" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-collections.git";
 			requirement = {
@@ -737,17 +753,17 @@
 /* Begin XCSwiftPackageProductDependency section */
 		3F131FBB29FA0EDE00123E02 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3F131FBA29FA0EDE00123E02 /* XCRemoteSwiftPackageReference "realm-swift.git" */;
+			package = 3F131FBA29FA0EDE00123E02 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = Realm;
 		};
 		3F131FBD29FA0EDE00123E02 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3F131FBA29FA0EDE00123E02 /* XCRemoteSwiftPackageReference "realm-swift.git" */;
+			package = 3F131FBA29FA0EDE00123E02 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
 		3F1D5BD629F65E5600618D7A /* OrderedCollections */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3F1D5BD529F65E5600618D7A /* XCRemoteSwiftPackageReference "swift-collections.git" */;
+			package = 3F1D5BD529F65E5600618D7A /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = OrderedCollections;
 		};
 		3F6A553E2A0DE0870034B70D /* GoogleSignIn */ = {
