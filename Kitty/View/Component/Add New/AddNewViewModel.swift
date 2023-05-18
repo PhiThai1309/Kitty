@@ -36,6 +36,6 @@ class AddNewViewModel {
             realm.add(item)
             print("success")
             print(Realm.Configuration.defaultConfiguration.fileURL!)
-        }
+        } 
     }
 }

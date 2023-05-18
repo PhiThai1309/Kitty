@@ -52,53 +52,5 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B616D786-47BF-4662-863E-A1420094E55F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Kitty/View/Component/HomeView/HomeViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "loadHistory()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "B616D786-47BF-4662-863E-A1420094E55F - 286d56c1ac59e7dc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Kitty.HomeViewModel.loadHistory() -&gt; ()"
-                  moduleName = "Kitty"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/phi.thai/Documents/Kitty/Kitty/View/Component/HomeView/HomeViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46"
-                  offsetFromSymbolStart = "174">
-               </Location>
-               <Location
-                  uuid = "B616D786-47BF-4662-863E-A1420094E55F - 286d56c1ac59e7dc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Kitty.HomeViewModel.loadHistory() -&gt; ()"
-                  moduleName = "Kitty"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/phi.thai/Documents/Kitty/Kitty/View/Component/HomeView/HomeViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46"
-                  offsetFromSymbolStart = "124">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

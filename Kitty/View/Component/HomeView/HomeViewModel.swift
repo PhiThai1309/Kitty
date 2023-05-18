@@ -45,16 +45,17 @@ class HomeViewModel {
     
     func loadItem() {
         let realm = try! Realm()
+        realm.refresh()
         // Access all dogs in the realm
-        let dogs = realm.objects(Item.self)
-        print(dogs)
+        items = Array(realm.objects(Item.self))
+        print(items)
     }
     
     func loadHistory(){
         var result = [History]()
         for item in items {
-            if result.firstIndex(where: {$0.date == item.date}) != nil {
-                let i = result.firstIndex(where: {$0.date == item.date})!
+            if result.firstIndex(where: {$0.date.day == item.date.day}) != nil {
+                let i = result.firstIndex(where: {$0.date.day == item.date.day})!
                 result[i].items.append(item)
             } else {
                 let newItem: [Item] = [item]

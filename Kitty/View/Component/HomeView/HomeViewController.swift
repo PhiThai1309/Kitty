@@ -30,6 +30,8 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
         dtFormatter.dateStyle = .short
         dtFormatter.timeStyle = .none
         
+        
+        
         // Do any additional setup after loading the view.
         let cellNib = UINib(nibName: "CardTableViewCell", bundle: nil)
         self.tableView.register(cellNib, forCellReuseIdentifier: "CardViewCell")
@@ -44,6 +46,7 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        viewModel.loadItem()
         viewModel.loadHistory()
         monthBtn.setTitle(viewModel.convertToNormalDate(), for: .normal)
         expenseLabel.text = "- " + String(viewModel.getExpense())
@@ -114,19 +117,6 @@ extension HomeViewController: AddNewDelegate {
         viewModel.setCurrentMonth()
         let calendarDate = Calendar.current.dateComponents([.day, .year, .month], from: viewModel.filteredMonth)
         monthBtn.setTitle(viewModel.filteredMonth.month + ", " + String(calendarDate.year!), for: .normal)
-        if viewModel.addHistory(newItem: newItem, historyName: Date()) == true {
-            if viewModel.addItem(newItem: newItem) != true {
-                let alert = UIAlertController(title: "Please check your input",
-                                              message: "The inputed amount have to be in Integer format and have selected a category",
-                                              preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-                    return
-                }))
-                self.present(alert, animated: true, completion: nil)
-            }
-        }
-        viewModel.loadItem()
-        tableView.reloadData()
     }
 }
 

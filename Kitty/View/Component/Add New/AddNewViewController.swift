@@ -78,6 +78,7 @@ class AddNewViewController: UIViewController {
             delegate?.addNewItem(newItem: newItem)
             viewModel.addNew(item: newItem)
             self.navigationController?.popViewController(animated: true)
+            
         } else {
             let alert = UIAlertController(title: "Please check your input",
                                           message: "The inputed amount have to be in Integer format and have selected a category",
