@@ -91,7 +91,7 @@ class HomeViewModel {
                 }
             }
         }
-        print(result)
+//        print(result)
         return result
     }
     

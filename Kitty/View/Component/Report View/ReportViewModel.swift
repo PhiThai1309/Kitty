@@ -12,12 +12,22 @@ class ReportViewModel {
     var items: [Item]
     var history: [History]
     var filteredMonth: Date
+    var categoryReport: [[Item]] = [[]]
     var categoryWithAmount: OrderedDictionary<String, Double> = [:]
+    var database: RealmDatabase = RealmDatabase()
     
-    init(items: [Item], history : [History], filteredMonth: Date) {
-        self.items = items
-        self.history = history
-        self.filteredMonth = filteredMonth
+    init() {
+        items = database.loadItem()
+        history = database.loadHistoryWithMonth(items: items)
+        self.filteredMonth = Date()
+    }
+    
+    func fetchData() {
+        categoryReport = getArrayOfEachCategory()
+        categoryWithAmount = countExpenseAmountInCategories()
+        
+        items = database.loadItem()
+        history = database.loadHistoryWithMonth(items: items)
     }
     
     func getArrayOfEachCategory() -> [[Item]] {
