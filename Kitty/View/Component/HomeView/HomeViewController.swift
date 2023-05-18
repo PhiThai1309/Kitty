@@ -46,8 +46,8 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        viewModel.loadItem()
-        viewModel.loadHistory()
+        viewModel.items = viewModel.database.loadItem()
+        viewModel.history = viewModel.database.loadHistoryWithMonth(items: viewModel.items)
         monthBtn.setTitle(viewModel.convertToNormalDate(), for: .normal)
         expenseLabel.text = "- " + String(viewModel.getExpense())
         incomeLabel.text = String(viewModel.getIncome())
@@ -80,10 +80,10 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.getFilteredHistory(date: viewModel.filteredMonth).reversed().count
+        return viewModel.getFilteredHistoryDate(date: viewModel.filteredMonth).reversed().count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let history = viewModel.getFilteredHistory(date: viewModel.filteredMonth).reversed()[indexPath.row]
+        let history = viewModel.getFilteredHistoryDate(date: viewModel.filteredMonth).reversed()[indexPath.row]
         // Fetch a cell of the appropriate type.
         let cell =  tableView.dequeueReusableCell(withIdentifier: "CardViewCell", for: indexPath) as! CardTableViewCell
         
@@ -95,7 +95,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let array = viewModel.getFilteredHistory(date: viewModel.filteredMonth)
+        let array = viewModel.getFilteredHistoryDate(date: viewModel.filteredMonth)
         if CGFloat(array.reversed()[indexPath.row].items.count * 56) > 0 {
             return CGFloat(array.reversed()[indexPath.row].items.count * 50 + 70 + 10*array.reversed()[indexPath.row].items.count)
         }

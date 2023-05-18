@@ -9,62 +9,16 @@ import Foundation
 import RealmSwift
 
 class HomeViewModel {
-    var items: [Item] = []
-    var history: [History] = []
+    var items: [Item]
+    var history: [History]
     var income: Double = 500
     var month: [String] = ["January", "February", "March", "April", "May", "Jun", "July", "August", "September", "October", "November", "December"]
     var filteredMonth: Date = Date()
+    var database: RealmDatabase = RealmDatabase()
     
-//    init() {
-//        self.items = DummyItem().items
-//        self.history = []
-//        self.income = 500
-//        self.month
-//        self.filteredMonth = Date()
-//    }
-    
-//    init() {
-//        let components = DateComponents (calendar: Calendar.current, year: 2023, month: 3, day: 4)
-//        let date = NSCalendar.current.date(from: components)
-//
-//        let components2 = DateComponents (calendar: Calendar.current, year: 2023, month: 3, day: 6)
-//        let date2 = NSCalendar.current.date(from: components2)
-//
-//        let components3 = DateComponents (calendar: Calendar.current, year: 2023, month: 3, day: 1)
-//        let date3 = NSCalendar.current.date(from: components3)
-//
-//        let history1 = History(date: date!, items: [item1, item3])
-//        let history2 = History(date: date2!, items: [item2])
-//        let history3 = History(date: date3!, items: [item4])
-//
-//        history.append(history1)
-//        history.append(history2)
-//        history.append(history3)
-//
-//    }
-    
-    func loadItem() {
-        let realm = try! Realm()
-        realm.refresh()
-        // Access all dogs in the realm
-        items = Array(realm.objects(Item.self))
-//        print(items)
-    }
-    
-    func loadHistory(){
-        var result : [History] = []
-        for item in items {
-            if result.firstIndex(where: {$0.date.month == item.date.month}) != nil {
-                let i = result.firstIndex(where: {$0.date.month == item.date.month})!
-                result[i].items.append(item)
-            } else {
-                let newItem: [Item] = [item]
-                let newHistory = History(date: item.date, items: newItem)
-                result.append(newHistory)
-            }
-        }
-        history = result
-//        print(history)
+    init() {
+        items = database.loadItem()
+        history = database.loadHistoryWithMonth(items: items)
     }
     
     func getExpense() -> Double {
@@ -121,7 +75,7 @@ class HomeViewModel {
     }
     
     
-    func getFilteredHistory(date: Date) -> [History] {
+    func getFilteredHistoryDate(date: Date) -> [History] {
         var result: [History] = []
         for history in history {
             if history.date.month == date.month {
