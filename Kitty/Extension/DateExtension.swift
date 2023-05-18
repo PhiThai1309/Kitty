@@ -14,4 +14,11 @@ extension Date {
         dateFormatter.locale = Locale(identifier: "us")
         return dateFormatter.string(from: self)
     }
+    
+    var day: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "d"
+        dateFormatter.locale = Locale(identifier: "us")
+        return dateFormatter.string(from: self)
+    }
 }

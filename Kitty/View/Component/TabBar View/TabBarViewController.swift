@@ -21,10 +21,10 @@ class TabBarViewController: UITabBarController {
         
         
         let firstVC = self.viewControllers![0] as! ReportViewController //first view controller in the tabbar
-        firstVC.set(items: viewModel.getAllItems(), history: viewModel.getAllHistory(), filteredMonth: viewModel.getCurrentMonth())
+//        firstVC.set(items: viewModel.getAllItems(), history: viewModel.getAllHistory(), filteredMonth: viewModel.getCurrentMonth())
 
         let secondVC = self.viewControllers![1] as! HomeViewController //first view controller in the tabbar
-        secondVC.set(items: viewModel.getAllItems(), history: viewModel.getAllHistory(), income: viewModel.getIncome(), iconArray: viewModel.getAllIcon(), month: viewModel.getAllMonth(), filteredMonth: viewModel.getCurrentMonth())
+//        secondVC.set(items: viewModel.getAllItems(), history: viewModel.getAllHistory(), income: viewModel.getIncome(), iconArray: viewModel.getAllIcon(), month: viewModel.getAllMonth(), filteredMonth: viewModel.getCurrentMonth())
 //        
         _ = self.viewControllers![2] as! SettingsViewController //first view controller in the tabbar
 

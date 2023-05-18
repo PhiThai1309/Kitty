@@ -14,14 +14,16 @@ protocol CategorySheetDelegate {
 class CategorySheetViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+
+    var categories: [String]
     
-    var iconArray: [String] = {
-        return Icon().iconArray
+    lazy var viewModel: CategorySheetViewModel = {
+        return CategorySheetViewModel(categories: categories)
     }()
     
-    var categories: [Category]
+    var delegate: CategorySheetDelegate?
     
-    init(categories: [Category]) {
+    init(categories: [String]) {
         self.categories = categories
         super.init(nibName: nil, bundle: Bundle.main)
     }
@@ -30,14 +32,10 @@ class CategorySheetViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    var remainIconArray: [String] = []
-    
-    var delegate: CategorySheetDelegate?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        filterIcon()
+        viewModel.filterIcon()
 
         // Do any additional setup after loading the view.
         self.collectionView.dataSource = self
@@ -46,24 +44,16 @@ class CategorySheetViewController: UIViewController {
         let cellNib = UINib(nibName: "CategoryCollectionViewCell", bundle: nil)
         self.collectionView.register(cellNib, forCellWithReuseIdentifier: "CategoryCellView")
     }
-    
-    func filterIcon() {
-        remainIconArray = iconArray.filter { icon in
-            return !categories.contains { category in
-                return category.name == icon
-            }
-        }
-    }
 }
 
 extension CategorySheetViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (remainIconArray.count)
+        return (viewModel.remainIconArray.count)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let icon = remainIconArray[indexPath.row]
+        let icon = viewModel.remainIconArray[indexPath.row]
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCellView", for: indexPath) as? CategoryCollectionViewCell {
             cell.categoryLabel.text = ""
             cell.categoryImg.image = UIImage(named: icon)
@@ -80,7 +70,7 @@ extension CategorySheetViewController: UICollectionViewDelegate, UICollectionVie
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-        delegate?.chooseIcon(category: (remainIconArray[indexPath.row]))
+        delegate?.chooseIcon(category: (viewModel.remainIconArray[indexPath.row]))
         self.dismiss(animated: true)
     }
     

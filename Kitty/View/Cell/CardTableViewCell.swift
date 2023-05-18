@@ -36,7 +36,8 @@ class CardTableViewCell: UITableViewCell {
 extension CardTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func set(value: [Item]){
-        self.items = value
+        
+        self.items = value.reversed()
         self.cardCollectionView.reloadData()
         var sum: Double = 0
         
@@ -45,7 +46,6 @@ extension CardTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
                 sum += item.amount
             }
         }
-        
         totalLabel.text = "- " + String(sum)
     }
     
@@ -57,7 +57,7 @@ extension CardTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
         let item = items![indexPath.row]
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCellView", for: indexPath) as? ItemCollectionViewCell {
             cell.typeLabel.text = item.desc
-            cell.descLabel.text = item.category?.name
+            cell.descLabel.text = item.category
             if item.categoryType == Option.Expenses {
                 cell.amountLabel.text = "- " + String(item.amount)
                 cell.amountLabel.textColor = .red
@@ -65,9 +65,7 @@ extension CardTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
                 cell.amountLabel.text = String(item.amount)
                 cell.amountLabel.textColor = .label
             }
-            
-            print(item)
-            cell.iconImg.image = UIImage(named: item.category!.name)
+            cell.iconImg.image = UIImage(named: item.category)
             return cell
         }
         return UICollectionViewCell()

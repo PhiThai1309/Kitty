@@ -6,20 +6,26 @@
 //
 
 import Foundation
+import RealmSwift
 
 class HomeViewModel {
     var items: [Item]
     var history: [History]
-    var income: Double
-    var month: [String]
-    var filteredMonth: Date
+    var income: Double = 0
+    var month: [String] = ["January", "February", "March", "April", "May", "Jun", "July", "August", "September", "October", "November", "December"]
+    var filteredMonth: Date = Date()
+    var database: RealmDatabase = RealmDatabase()
+    let userDefaults = UserDefaults.standard
     
-    init(items: [Item], history: [History], income: Double, month: [String], filteredMonth: Date) {
-        self.items = items
-        self.history = history
-        self.income = income
-        self.month = month
-        self.filteredMonth = filteredMonth
+    init() {
+        items = database.loadItem()
+        history = database.loadHistoryWithMonth(items: items)
+        
+        var categories = ["Grocery", "Gifts", "Cafe", "Health", "Commute", "Electronics"]
+        let encoder = JSONEncoder()
+        if let encodedAray = try? encoder.encode(categories) {
+            userDefaults.set(encodedAray, forKey: "categories")
+        }
     }
     
     func getExpense() -> Double {
@@ -76,13 +82,23 @@ class HomeViewModel {
     }
     
     
-    func getFilteredHistory(date: Date) -> [History] {
+    func getFilteredHistoryDate(date: Date) -> [History] {
         var result: [History] = []
-        for item in history {
-            if item.date.month == date.month {
-                result.append(item)
+        for history in history {
+            if history.date.month == date.month {
+                for item in history.items {
+                    if result.firstIndex(where: {$0.date.day == item.date.day}) != nil {
+                        let i = result.firstIndex(where: {$0.date.day == item.date.day})!
+                        result[i].items.append(item)
+                    } else {
+                        let newItem: [Item] = [item]
+                        let newHistory = History(date: item.date, items: newItem)
+                        result.append(newHistory)
+                    }
+                }
             }
         }
+//        print(result)
         return result
     }
     

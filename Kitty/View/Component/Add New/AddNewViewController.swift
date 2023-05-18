@@ -19,28 +19,15 @@ class AddNewViewController: UIViewController {
     @IBOutlet weak var descInput: UITextField!
     @IBOutlet weak var amountInput: UITextField!
     
-    var items: [Item]
-    var history: [History]
-    var iconArray: [String]
+    var iconArray: [String] = []
 
     var delegate: AddNewDelegate?
     
     var option: String = "Expenses"
-    var choosenCategory: Category = Category(name: "")
-    
-    init(items: [Item], history : [History], iconArray: [String]) {
-        self.items = items
-        self.history = history
-        self.iconArray = iconArray
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    var choosenCategory: String = ""
     
     lazy var viewModel: AddNewViewModel = {
-        return AddNewViewModel(items: items, history: history, iconArray: iconArray)
+        return AddNewViewModel(iconArray: iconArray)
     }()
     
     override func viewDidLoad() {
@@ -86,10 +73,12 @@ class AddNewViewController: UIViewController {
     }
     
     @IBAction func addIncomeOnClickHandler(_ sender: Any) {
-        if let inputAmount = amountInput.text , !inputAmount.isEmpty, !choosenCategory.name.isEmpty{
-            let newItem = Item(category: (viewModel.findCategory(name: choosenCategory.name)), amount: Double(inputAmount)!, description: descInput.text!, categoryType: Option(rawValue: option)!)
+        if let inputAmount = amountInput.text , !inputAmount.isEmpty, !choosenCategory.isEmpty{
+            let newItem = Item(category: (viewModel.findCategory(name: choosenCategory)), amount: Double(inputAmount)!, description: descInput.text!, categoryType: Option(rawValue: option)!)
             delegate?.addNewItem(newItem: newItem)
+            viewModel.addNew(item: newItem)
             self.navigationController?.popViewController(animated: true)
+            
         } else {
             let alert = UIAlertController(title: "Please check your input",
                                           message: "The inputed amount have to be in Integer format and have selected a category",
@@ -103,9 +92,9 @@ class AddNewViewController: UIViewController {
 }
 
 extension AddNewViewController: sheetViewDelegate {
-    func categoryOnClick(category: Category) {
+    func categoryOnClick(category: String) {
         choosenCategory = category
-        categorySheet.setTitle(category.name, for: .normal)
+        categorySheet.setTitle(category, for: .normal)
         categorySheet.setTitleColor(.label, for: .normal)
     }
 }

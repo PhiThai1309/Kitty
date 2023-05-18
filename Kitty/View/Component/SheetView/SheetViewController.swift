@@ -8,7 +8,7 @@
 import UIKit
 
 protocol sheetViewDelegate {
-    func categoryOnClick(category: Category)
+    func categoryOnClick(category: String)
 }
 
 class SheetViewController: UIViewController {
@@ -56,8 +56,8 @@ extension SheetViewController: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let category = viewModel.categories[indexPath.row]
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCellView", for: indexPath) as? CategoryCollectionViewCell {
-            cell.categoryLabel.text = category.name
-            cell.categoryImg.image = UIImage(named: category.name)
+            cell.categoryLabel.text = category
+            cell.categoryImg.image = UIImage(named: category)
             return cell
         }
         return UICollectionViewCell()

@@ -35,7 +35,7 @@ class AddNewCategoryViewController: UIViewController {
     }
     
     @IBAction func addNewCategoryOnClickHandler(_ sender: Any) {
-        let newCategory = Category(name: categoryLabel.text!)
+        let newCategory = categoryLabel.text!
         viewModel.addNewCategory(category: newCategory)
         delegate?.newCategory()
         self.dismiss(animated: true)
