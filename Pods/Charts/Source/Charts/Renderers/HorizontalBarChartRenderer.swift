@@ -265,7 +265,19 @@ open class HorizontalBarChartRenderer: BarChartRenderer
                 context.setFillColor(dataSet.color(atIndex: j).cgColor)
             }
 
-            context.fill(barRect)
+//            context.fill(barRect)
+            if (j == 0) {
+                let bezierPath = UIBezierPath(roundedRect: barRect, byRoundingCorners: [.topLeft,.bottomLeft], cornerRadii:CGSizeMake(8.0, 8.0))
+                context.addPath(bezierPath.cgPath)
+                context.drawPath(using: .fill)
+            } else if (j == buffer.rects.count - 1) {
+                let bezierPath = UIBezierPath(roundedRect: barRect, byRoundingCorners: [.topRight, .bottomRight], cornerRadii:CGSizeMake(8.0, 8.0))
+                context.addPath(bezierPath.cgPath)
+                context.drawPath(using: .fill)
+            } else {
+                context.fill(barRect)
+            }
+            
 
             if drawBorder
             {
