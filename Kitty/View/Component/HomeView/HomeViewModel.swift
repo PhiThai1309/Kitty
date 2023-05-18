@@ -9,19 +9,19 @@ import Foundation
 import RealmSwift
 
 class HomeViewModel {
-    var items: [Item]
-    var history: [History]
-    var income: Double
-    var month: [String]
-    var filteredMonth: Date
+    var items: [Item] = []
+    var history: [History] = []
+    var income: Double = 500
+    var month: [String] = ["January", "February", "March", "April", "May", "Jun", "July", "August", "September", "October", "November", "December"]
+    var filteredMonth: Date = Date()
     
-    init() {
-        self.items = DummyItem().items
-        self.history = []
-        self.income = 500
-        self.month = ["January", "February", "March", "April", "May", "Jun", "July", "August", "September", "October", "November", "December"]
-        self.filteredMonth = Date()
-    }
+//    init() {
+//        self.items = DummyItem().items
+//        self.history = []
+//        self.income = 500
+//        self.month
+//        self.filteredMonth = Date()
+//    }
     
 //    init() {
 //        let components = DateComponents (calendar: Calendar.current, year: 2023, month: 3, day: 4)
@@ -48,14 +48,14 @@ class HomeViewModel {
         realm.refresh()
         // Access all dogs in the realm
         items = Array(realm.objects(Item.self))
-        print(items)
+//        print(items)
     }
     
     func loadHistory(){
-        var result = [History]()
+        var result : [History] = []
         for item in items {
-            if result.firstIndex(where: {$0.date.day == item.date.day}) != nil {
-                let i = result.firstIndex(where: {$0.date.day == item.date.day})!
+            if result.firstIndex(where: {$0.date.month == item.date.month}) != nil {
+                let i = result.firstIndex(where: {$0.date.month == item.date.month})!
                 result[i].items.append(item)
             } else {
                 let newItem: [Item] = [item]
@@ -64,6 +64,7 @@ class HomeViewModel {
             }
         }
         history = result
+//        print(history)
     }
     
     func getExpense() -> Double {
@@ -122,11 +123,21 @@ class HomeViewModel {
     
     func getFilteredHistory(date: Date) -> [History] {
         var result: [History] = []
-        for item in history {
-            if item.date.month == date.month {
-                result.append(item)
+        for history in history {
+            if history.date.month == date.month {
+                for item in history.items {
+                    if result.firstIndex(where: {$0.date.day == item.date.day}) != nil {
+                        let i = result.firstIndex(where: {$0.date.day == item.date.day})!
+                        result[i].items.append(item)
+                    } else {
+                        let newItem: [Item] = [item]
+                        let newHistory = History(date: item.date, items: newItem)
+                        result.append(newHistory)
+                    }
+                }
             }
         }
+        print(result)
         return result
     }
     

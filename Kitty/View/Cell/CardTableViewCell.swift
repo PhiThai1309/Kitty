@@ -46,7 +46,6 @@ extension CardTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
                 sum += item.amount
             }
         }
-        print(value)
         totalLabel.text = "- " + String(sum)
     }
     
