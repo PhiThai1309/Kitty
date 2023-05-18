@@ -11,7 +11,7 @@ import RealmSwift
 class HomeViewModel {
     var items: [Item]
     var history: [History]
-    var income: Double = 500
+    var income: Double = 0
     var month: [String] = ["January", "February", "March", "April", "May", "Jun", "July", "August", "September", "October", "November", "December"]
     var filteredMonth: Date = Date()
     var database: RealmDatabase = RealmDatabase()

@@ -67,53 +67,5 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8B299185-AA13-406A-8059-02BDF590295F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Kitty/View/Component/Category Sheet View/CategorySheetViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "filterIcon()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "8B299185-AA13-406A-8059-02BDF590295F - 96eb97e3c6c474c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Kitty.CategorySheetViewController.filterIcon() -&gt; ()"
-                  moduleName = "Kitty"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/phi.thai/Documents/Kitty/Kitty/View/Component/Category%20Sheet%20View/CategorySheetViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "33">
-               </Location>
-               <Location
-                  uuid = "8B299185-AA13-406A-8059-02BDF590295F - 96eb97e3c6c474c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Kitty.CategorySheetViewController.filterIcon() -&gt; ()"
-                  moduleName = "Kitty"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/phi.thai/Documents/Kitty/Kitty/View/Component/Category%20Sheet%20View/CategorySheetViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "40">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
