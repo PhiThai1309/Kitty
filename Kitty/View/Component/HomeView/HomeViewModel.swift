@@ -15,10 +15,17 @@ class HomeViewModel {
     var month: [String] = ["January", "February", "March", "April", "May", "Jun", "July", "August", "September", "October", "November", "December"]
     var filteredMonth: Date = Date()
     var database: RealmDatabase = RealmDatabase()
+    let userDefaults = UserDefaults.standard
     
     init() {
         items = database.loadItem()
         history = database.loadHistoryWithMonth(items: items)
+        
+        var categories = ["Grocery", "Gifts", "Cafe", "Health", "Commute", "Electronics"]
+        let encoder = JSONEncoder()
+        if let encodedAray = try? encoder.encode(categories) {
+            userDefaults.set(encodedAray, forKey: "categories")
+        }
     }
     
     func getExpense() -> Double {

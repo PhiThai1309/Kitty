@@ -19,22 +19,14 @@ class ReportViewController: UIViewController, ChartViewDelegate {
     lazy var viewModel: ReportViewModel = {
         return ReportViewModel()
     }()
-    var sum: Double = 0
+//    var sum: Double = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         chartView.delegate = self
-        var entries = [BarChartDataEntry]()
-        let value = Array(viewModel.categoryWithAmount.values)
-        entries.append (BarChartDataEntry (x: Double(0.1),
-                                           yValues: value))
-        let set = BarChartDataSet (entries: entries)
-        set.colors = [UIColor.red,UIColor.orange,UIColor.green,UIColor.black,UIColor.blue]
-        chartView.animate(yAxisDuration: 0.5)
-        let data = BarChartData (dataSet: set)
-        chartView.data = data
-        chartTheme()
+        
+        setupChart()
         
         let cellNib = UINib(nibName: "ItemCollectionViewCell", bundle: nil)
         self.reportCollectionView.register(cellNib, forCellWithReuseIdentifier: "ItemCellView")
@@ -46,6 +38,16 @@ class ReportViewController: UIViewController, ChartViewDelegate {
         let calendarDate = Calendar.current.dateComponents([.day, .year, .month], from: viewModel.filteredMonth)
         
         monthBtn.setTitle(viewModel.filteredMonth.month + ", " + String(calendarDate.year!), for: .normal)
+        
+        setupChart()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.fetchData()
+    }
+    
+    func setupChart() {
         var entries = [BarChartDataEntry]()
         let value = Array(viewModel.categoryWithAmount.values)
         entries.append (BarChartDataEntry (x: Double(0.1),
@@ -57,16 +59,11 @@ class ReportViewController: UIViewController, ChartViewDelegate {
                       UIColor(red: 0.7686, green: 0.4471, blue: 0, alpha: 1.0),
                       UIColor(red: 0.6667, green: 0, blue: 0.2667, alpha: 1.0),
                       UIColor(red: 0, green: 0.8, blue: 0.6392, alpha: 1.0)]
-        chartView.animate(yAxisDuration: 0.5)
+        
         let data = BarChartData (dataSet: set)
         chartView.data = data
         chartView.animate(yAxisDuration: 0.5)
-        reportCollectionView.reloadData()
         chartTheme()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        viewModel.fetchData()
     }
     
     func chartTheme() {
@@ -92,12 +89,16 @@ class ReportViewController: UIViewController, ChartViewDelegate {
         let year = viewModel.addAMonth()
         monthBtn.setTitle(viewModel.filteredMonth.month + ", " + String(year), for: .normal)
         reportCollectionView.reloadData()
+        viewModel.reloadData()
+        setupChart()
     }
     
     @IBAction func leftOnClickHandler(_ sender: Any) {
         let year = viewModel.backAMonth()
         monthBtn.setTitle(viewModel.filteredMonth.month + ", " + String(year), for: .normal)
         reportCollectionView.reloadData()
+        viewModel.reloadData()
+        setupChart()
     }
 }
 
@@ -115,9 +116,9 @@ extension ReportViewController: UICollectionViewDataSource, UICollectionViewDele
              cell.typeLabel.text = amount[0].category
             cell.amountLabel.text = String(Array(viewModel.categoryWithAmount)[indexPath.row].value)
             cell.iconImg.image = UIImage(named: amount[0].category)
-            let categories = viewModel.getArrayOfEachCategory()
+//            let categories = viewModel.getArrayOfEachCategory(month: viewModel.filteredMonth)
 
-            cell.descLabel.text = String(categories[indexPath.row].count) + " transactions"
+            cell.descLabel.text = String(viewModel.categoryReport[indexPath.row].count) + " transactions"
             return cell
         }
         return UICollectionViewCell()
@@ -152,6 +153,8 @@ extension ReportViewController: MonthViewDelegate {
             viewModel.filteredMonth = date!
             monthBtn.setTitle(viewModel.filteredMonth.month + ", " + String(components.year!), for: .normal)
         }
+        viewModel.reloadData()
+        setupChart()
         reportCollectionView.reloadData()
     } 
 }

@@ -24,12 +24,9 @@ class MainViewModel {
     
     init() {
         month = ["January", "February", "March", "April", "May", "Jun", "July", "August", "September", "October", "November", "December"]
-        categories = ["Grocery", "Gifts", "Cafe", "Health", "Commute", "Electronics"]
         
-        let encoder = JSONEncoder()
-        if let encodedAray = try? encoder.encode(categories) {
-            userDefaults.set(encodedAray, forKey: "categories")
-        }
+        
+        
         
         
         

@@ -24,16 +24,21 @@ class ReportViewModel {
     
     func fetchData() {
         categoryReport = getArrayOfEachCategory()
-        categoryWithAmount = countExpenseAmountInCategories()
+        countExpenseAmountInCategories()
         
         items = database.loadItem()
         history = database.loadHistoryWithMonth(items: items)
     }
     
+    func reloadData() {
+        categoryReport = getArrayOfEachCategory()
+        countExpenseAmountInCategories()
+    }
+    
     func getArrayOfEachCategory() -> [[Item]] {
         var result: [[Item]] = []
         for item in items {
-            if item.categoryType == Option.Income {
+            if item.categoryType == Option.Income || item.date.month != filteredMonth.month{
                 continue
             }
             if (result.contains(where: {$0.contains(where: {$0.category == item.category})})) {
@@ -48,8 +53,9 @@ class ReportViewModel {
         return result
     }
     
-    func countExpenseAmountInCategories() -> OrderedDictionary<String, Double>{
+    func countExpenseAmountInCategories(){
         let array = getArrayOfEachCategory()
+        categoryWithAmount = [:]
         for category in array {
             var sum: Double = 0
             for item in category {
@@ -59,7 +65,6 @@ class ReportViewModel {
                 }
             }
         }
-        return categoryWithAmount
     }
     
     func addAMonth() -> Int{

@@ -49,7 +49,7 @@ class CategorySheetViewController: UIViewController {
     
     func filterIcon() {
         remainIconArray = iconArray.filter { icon in
-            return categories.contains { category in
+            return !categories.contains { category in
                 return category == icon
             }
         }
