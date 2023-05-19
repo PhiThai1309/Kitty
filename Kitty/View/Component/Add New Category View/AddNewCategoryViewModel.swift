@@ -28,5 +28,7 @@ class AddNewCategoryViewModel {
         if let encodedAray = try? encoder.encode(categories) {
             userDefaults.set(encodedAray, forKey: "categories")
         }
+        
+        print(categories)
     }
 }

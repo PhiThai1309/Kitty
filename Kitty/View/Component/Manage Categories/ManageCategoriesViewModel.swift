@@ -47,4 +47,14 @@ class ManageCategoriesViewModel {
         }
         print(categories.reversed())
     }
+    
+    func refreshData() {
+        if let savedCategories = userDefaults.object(forKey: "categories") as? Data {
+            let decoder = JSONDecoder()
+            if let saved = try? decoder.decode([String].self, from: savedCategories) {
+                categories = saved
+            }
+        }
+        categories = categories.reversed()
+    }
 }

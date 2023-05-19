@@ -25,7 +25,6 @@
 		3F3064CD29ECE6C100EF5485 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3064CC29ECE6C100EF5485 /* UIViewExtension.swift */; };
 		3F34672C2A0891DB005DA94F /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F34672B2A0891DB005DA94F /* Icon.swift */; };
 		3F3B5E702A15D741003C1AF9 /* RealmDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3B5E6F2A15D741003C1AF9 /* RealmDatabase.swift */; };
-		3F3B5E732A162C73003C1AF9 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3B5E722A162C73003C1AF9 /* SettingViewController.swift */; };
 		3F3B5E752A1713E9003C1AF9 /* ManageCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3B5E742A1713E8003C1AF9 /* ManageCategoriesViewController.swift */; };
 		3F3B5E782A171630003C1AF9 /* ManageCategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3B5E772A171630003C1AF9 /* ManageCategoriesViewModel.swift */; };
 		3F3B5E7A2A171F03003C1AF9 /* ManageCategoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3B5E792A171F03003C1AF9 /* ManageCategoriesTableViewCell.swift */; };
@@ -86,7 +85,6 @@
 		3F3064CC29ECE6C100EF5485 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		3F34672B2A0891DB005DA94F /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
 		3F3B5E6F2A15D741003C1AF9 /* RealmDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabase.swift; sourceTree = "<group>"; };
-		3F3B5E722A162C73003C1AF9 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		3F3B5E742A1713E8003C1AF9 /* ManageCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageCategoriesViewController.swift; sourceTree = "<group>"; };
 		3F3B5E772A171630003C1AF9 /* ManageCategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageCategoriesViewModel.swift; sourceTree = "<group>"; };
 		3F3B5E792A171F03003C1AF9 /* ManageCategoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageCategoriesTableViewCell.swift; sourceTree = "<group>"; };
@@ -295,7 +293,6 @@
 				3F438C2729F7A7E5002BE0B5 /* TabBar View */,
 				3F15B78D29FA6E4C00616FB5 /* Add New Category View */,
 				3F15B79629FA7C4E00616FB5 /* Category Sheet View */,
-				3F3B5E722A162C73003C1AF9 /* SettingViewController.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -525,7 +522,6 @@
 				3F3B5E702A15D741003C1AF9 /* RealmDatabase.swift in Sources */,
 				3FA9E65C29E93F6200D8D7C1 /* HomeViewController.swift in Sources */,
 				3FEFBAA629ECF6210085641B /* ItemCollectionViewCell.swift in Sources */,
-				3F3B5E732A162C73003C1AF9 /* SettingViewController.swift in Sources */,
 				3F0DCE4029F78D7A00C47FC6 /* MonthViewController.swift in Sources */,
 				3FA9E64929E9346E00D8D7C1 /* ViewController.swift in Sources */,
 				3FEFBAAE29ECFD410085641B /* MainViewModel.swift in Sources */,

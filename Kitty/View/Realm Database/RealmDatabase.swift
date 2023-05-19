@@ -7,6 +7,7 @@
 
 import Foundation
 import RealmSwift
+import FirebaseAuth
 
 class RealmDatabase {
     let realm: Realm
@@ -18,7 +19,23 @@ class RealmDatabase {
     func loadItem() -> [Item] {
         realm.refresh()
         // Access all dogs in the realm
-        return Array(realm.objects(Item.self))
+        let array = Array(realm.objects(Item.self))
+        var result: [Item] = []
+        
+        let user = Auth.auth().currentUser
+        
+        for item in array {
+            if let user = user {
+                // The user's ID, unique to the Firebase project.
+                // Do NOT use this value to authenticate with your backend server,
+                // if you have one. Use getTokenWithCompletion:completion: instead.
+                let uid = user.uid
+                if item.user == uid {
+                    result.append(item)
+                }
+            }
+        }
+        return result
     }
     
     func loadHistoryWithMonth(items: [Item]) -> [History]{

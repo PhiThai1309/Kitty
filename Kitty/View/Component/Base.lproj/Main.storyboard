@@ -507,26 +507,19 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACa-lG-zCQ">
-                                                    <rect key="frame" x="56" y="19.666666666666668" width="35.333333333333343" height="17.000000000000004"/>
+                                                    <rect key="frame" x="56" y="19.666666666666668" width="337" height="17.000000000000004"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45B-lt-ARB">
-                                                    <rect key="frame" x="348" y="19.666666666666668" width="25" height="17.000000000000004"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" systemColor="linkColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ACa-lG-zCQ" firstAttribute="centerY" secondItem="00e-Of-x7A" secondAttribute="centerY" id="3EB-oJ-3QK"/>
-                                                <constraint firstItem="ACa-lG-zCQ" firstAttribute="leading" secondItem="UXc-kt-Kn8" secondAttribute="trailing" constant="8" id="Gn7-w7-37c"/>
-                                                <constraint firstItem="45B-lt-ARB" firstAttribute="centerY" secondItem="00e-Of-x7A" secondAttribute="centerY" id="J5M-P0-Rjh"/>
+                                                <constraint firstItem="ACa-lG-zCQ" firstAttribute="leading" secondItem="UXc-kt-Kn8" secondAttribute="trailing" constant="8" symbolic="YES" id="Gn7-w7-37c"/>
                                                 <constraint firstItem="UXc-kt-Kn8" firstAttribute="leading" secondItem="00e-Of-x7A" secondAttribute="leading" constant="16" id="JQz-Cs-Fg0"/>
                                                 <constraint firstItem="UXc-kt-Kn8" firstAttribute="top" secondItem="00e-Of-x7A" secondAttribute="top" constant="12" id="N6v-10-Aem"/>
+                                                <constraint firstAttribute="trailing" secondItem="ACa-lG-zCQ" secondAttribute="trailing" id="P05-xX-On2"/>
                                                 <constraint firstAttribute="bottom" secondItem="UXc-kt-Kn8" secondAttribute="bottom" constant="12" id="PSk-kc-MTr"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="45B-lt-ARB" secondAttribute="trailing" id="YpW-Tf-43B"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -540,6 +533,35 @@
                                     <outlet property="delegate" destination="wWU-q3-SYE" id="5a1-WT-ph4"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JC7-RE-lCu">
+                                <rect key="frame" x="105.66666666666669" y="762" width="182" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="182" id="6wb-4v-hT9"/>
+                                    <constraint firstAttribute="height" constant="48" id="g9H-Vj-Pei"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Add new category" cornerStyle="capsule">
+                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="14"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.12079609650000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addNewButtonClickHandler:" destination="18S-Id-kgb" eventType="touchUpInside" id="XQG-Fy-Sog"/>
+                                    <action selector="addNewOnClickHandler:" destination="wWU-q3-SYE" eventType="touchUpInside" id="csI-0w-BFP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uA8-b0-Nt3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -549,11 +571,13 @@
                             <constraint firstAttribute="trailing" secondItem="TIC-rX-Srv" secondAttribute="trailing" id="Kfr-jU-DlA"/>
                             <constraint firstItem="TIC-rX-Srv" firstAttribute="top" secondItem="TnN-2s-AnZ" secondAttribute="top" id="O5M-9U-upz"/>
                             <constraint firstAttribute="trailing" secondItem="60k-nd-0jJ" secondAttribute="trailing" id="QXg-Vl-Y15"/>
+                            <constraint firstItem="uA8-b0-Nt3" firstAttribute="bottom" secondItem="JC7-RE-lCu" secondAttribute="bottom" constant="32" id="RWf-Iw-CCA"/>
                             <constraint firstItem="60k-nd-0jJ" firstAttribute="top" secondItem="TIC-rX-Srv" secondAttribute="bottom" constant="8" id="XHt-gW-7Jr"/>
                             <constraint firstItem="uA8-b0-Nt3" firstAttribute="trailing" secondItem="3Cx-7y-SW9" secondAttribute="trailing" id="onC-DQ-Vnq"/>
                             <constraint firstItem="60k-nd-0jJ" firstAttribute="leading" secondItem="TnN-2s-AnZ" secondAttribute="leading" id="r36-Ms-M7d"/>
                             <constraint firstItem="3Cx-7y-SW9" firstAttribute="leading" secondItem="uA8-b0-Nt3" secondAttribute="leading" id="stg-Vm-G0g"/>
                             <constraint firstItem="TIC-rX-Srv" firstAttribute="leading" secondItem="TnN-2s-AnZ" secondAttribute="leading" id="vVK-6U-83F"/>
+                            <constraint firstItem="JC7-RE-lCu" firstAttribute="centerX" secondItem="TnN-2s-AnZ" secondAttribute="centerX" id="wHo-Cl-jKD"/>
                             <constraint firstItem="3Cx-7y-SW9" firstAttribute="top" secondItem="uA8-b0-Nt3" secondAttribute="top" id="wlx-zH-IZJ"/>
                         </constraints>
                     </view>
@@ -1134,9 +1158,6 @@
         <image name="plus.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

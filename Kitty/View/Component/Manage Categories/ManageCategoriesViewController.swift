@@ -35,7 +35,14 @@ class ManageCategoriesViewController: UIViewController {
 
     }
     
-
+    @IBAction func addNewOnClickHandler(_ sender: Any) {
+        let vc = AddNewCategoryViewController()
+        vc.delegate = self
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen
+        self.present(nav, animated: true)
+    }
+    
 }
 
 extension ManageCategoriesViewController: UITableViewDataSource, UITableViewDelegate {
@@ -71,13 +78,14 @@ extension ManageCategoriesViewController: UITableViewDataSource, UITableViewDele
     }
 }
 
-//extension ManageCategoriesViewController: UITableViewDragDelegate {
-//    func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
-//        <#code#>
-//    }
-//
-//
-//}
+extension ManageCategoriesViewController: AddNewCategoryDelegate {
+    func newCategory() {
+        viewModel.refreshData()
+        tableView.reloadData()
+    }
+    
+    
+}
 
 
 
