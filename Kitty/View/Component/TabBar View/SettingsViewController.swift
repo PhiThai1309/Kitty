@@ -31,4 +31,23 @@ class SettingsViewController: UIViewController {
         }
         
     }
+    
+    @IBAction func logOutOnClickHandler(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do {
+          try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+          print("Error signing out: %@", signOutError)
+        }
+        
+        if Auth.auth().currentUser == nil {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "loginViewController") as! ViewController
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+
+
+        }
+    }
+    
 }
