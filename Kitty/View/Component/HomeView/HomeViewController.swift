@@ -110,6 +110,18 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             cell.layer.transform = CATransform3DScale(CATransform3DIdentity, 1, 1, 1)
         })
     }
+    
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//      let isReachingEnd = scrollView.contentOffset.y >= 0
+//          && scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height)
+//        if isReachingEnd {
+//            print("ok")
+//            addNewBtn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0 ).isActive = true
+//        } else {
+//            addNewBtn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0 ).isActive = false
+//            addNewBtn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -32 ).isActive = true
+//        }
+//    }
 }
 
 extension HomeViewController: AddNewDelegate {
