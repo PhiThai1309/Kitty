@@ -1146,7 +1146,7 @@
                                                     <action selector="backOnClickHandler:" destination="vwj-2A-5JP" eventType="touchUpInside" id="jgC-vR-1Ps"/>
                                                 </connections>
                                             </button>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search for notes, categories or labels" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="WyS-3s-wNy">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search for notes, categories or labels" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="WyS-3s-wNy">
                                                 <rect key="frame" x="57.333333333333343" y="0.0" width="313.66666666666663" height="56"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
