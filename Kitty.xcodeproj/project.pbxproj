@@ -25,12 +25,19 @@
 		3F3064CD29ECE6C100EF5485 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3064CC29ECE6C100EF5485 /* UIViewExtension.swift */; };
 		3F34672C2A0891DB005DA94F /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F34672B2A0891DB005DA94F /* Icon.swift */; };
 		3F3B5E702A15D741003C1AF9 /* RealmDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3B5E6F2A15D741003C1AF9 /* RealmDatabase.swift */; };
+		3F3B5E752A1713E9003C1AF9 /* ManageCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3B5E742A1713E8003C1AF9 /* ManageCategoriesViewController.swift */; };
+		3F3B5E782A171630003C1AF9 /* ManageCategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3B5E772A171630003C1AF9 /* ManageCategoriesViewModel.swift */; };
+		3F3B5E7A2A171F03003C1AF9 /* ManageCategoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3B5E792A171F03003C1AF9 /* ManageCategoriesTableViewCell.swift */; };
 		3F3FDB4529FA83CA0052BE93 /* ButtonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F3FDB4429FA83CA0052BE93 /* ButtonCollectionViewCell.xib */; };
 		3F3FDB4829FA84120052BE93 /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3FDB4729FA84120052BE93 /* ReportViewModel.swift */; };
 		3F438C2B29F7A8E9002BE0B5 /* ButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F438C2929F7A8E9002BE0B5 /* ButtonCollectionViewCell.swift */; };
 		3F438C2E29F7B669002BE0B5 /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F438C2D29F7B669002BE0B5 /* Month.swift */; };
 		3F438C3029F7BA98002BE0B5 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F438C2F29F7BA98002BE0B5 /* DateExtension.swift */; };
 		3F64B3B429F23E190008A4D9 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F64B3B329F23E180008A4D9 /* TabBarViewController.swift */; };
+		3F6BDFF02A1755240095800B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BDFEF2A1755240095800B /* SearchViewController.swift */; };
+		3F6BDFF22A1755300095800B /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BDFF12A1755300095800B /* SearchViewModel.swift */; };
+		3F6BDFF52A1759590095800B /* CategorySearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BDFF32A1759590095800B /* CategorySearchCollectionViewCell.swift */; };
+		3F6BDFF62A1759590095800B /* CategorySearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F6BDFF42A1759590095800B /* CategorySearchCollectionViewCell.xib */; };
 		3F770BFB29F68220009FDA26 /* CategorySheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F770BF929F68220009FDA26 /* CategorySheetViewController.swift */; };
 		3F770BFC29F68220009FDA26 /* CategorySheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F770BFA29F68220009FDA26 /* CategorySheetViewController.xib */; };
 		3FA9E64529E9346E00D8D7C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9E64429E9346E00D8D7C1 /* AppDelegate.swift */; };
@@ -43,6 +50,9 @@
 		3FA9E65C29E93F6200D8D7C1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9E65B29E93F6100D8D7C1 /* HomeViewController.swift */; };
 		3FB6CCDC29F6705000C3CBE2 /* AddNewCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB6CCDA29F6705000C3CBE2 /* AddNewCategoryViewController.swift */; };
 		3FB6CCDD29F6705000C3CBE2 /* AddNewCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB6CCDB29F6705000C3CBE2 /* AddNewCategoryViewController.xib */; };
+		3FD4EEAF2A25E62D00CADB0E /* ChipsControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4EEAE2A25E62D00CADB0E /* ChipsControl.swift */; };
+		3FD4EEB12A25F28D00CADB0E /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4EEB02A25F28D00CADB0E /* UIColorExtension.swift */; };
+		3FD4EEB32A26F36600CADB0E /* SelectedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4EEB22A26F36500CADB0E /* SelectedButton.swift */; };
 		3FE3848129F62BF4007884A8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE3848029F62BF4007884A8 /* SettingsViewController.swift */; };
 		3FE8694A2A121C9A00744473 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 3FE869492A121C9A00744473 /* GoogleSignIn */; };
 		3FE8694C2A121C9A00744473 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3FE8694B2A121C9A00744473 /* GoogleSignInSwift */; };
@@ -82,12 +92,19 @@
 		3F3064CC29ECE6C100EF5485 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		3F34672B2A0891DB005DA94F /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
 		3F3B5E6F2A15D741003C1AF9 /* RealmDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabase.swift; sourceTree = "<group>"; };
+		3F3B5E742A1713E8003C1AF9 /* ManageCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageCategoriesViewController.swift; sourceTree = "<group>"; };
+		3F3B5E772A171630003C1AF9 /* ManageCategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageCategoriesViewModel.swift; sourceTree = "<group>"; };
+		3F3B5E792A171F03003C1AF9 /* ManageCategoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageCategoriesTableViewCell.swift; sourceTree = "<group>"; };
 		3F3FDB4429FA83CA0052BE93 /* ButtonCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonCollectionViewCell.xib; sourceTree = "<group>"; };
 		3F3FDB4729FA84120052BE93 /* ReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
 		3F438C2929F7A8E9002BE0B5 /* ButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCollectionViewCell.swift; sourceTree = "<group>"; };
 		3F438C2D29F7B669002BE0B5 /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
 		3F438C2F29F7BA98002BE0B5 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		3F64B3B329F23E180008A4D9 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		3F6BDFEF2A1755240095800B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		3F6BDFF12A1755300095800B /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		3F6BDFF32A1759590095800B /* CategorySearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		3F6BDFF42A1759590095800B /* CategorySearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategorySearchCollectionViewCell.xib; sourceTree = "<group>"; };
 		3F770BF929F68220009FDA26 /* CategorySheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySheetViewController.swift; sourceTree = "<group>"; };
 		3F770BFA29F68220009FDA26 /* CategorySheetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategorySheetViewController.xib; sourceTree = "<group>"; };
 		3FA9E64129E9346E00D8D7C1 /* Kitty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kitty.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +119,9 @@
 		3FA9E65B29E93F6100D8D7C1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3FB6CCDA29F6705000C3CBE2 /* AddNewCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCategoryViewController.swift; sourceTree = "<group>"; };
 		3FB6CCDB29F6705000C3CBE2 /* AddNewCategoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewCategoryViewController.xib; sourceTree = "<group>"; };
+		3FD4EEAE2A25E62D00CADB0E /* ChipsControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsControl.swift; sourceTree = "<group>"; };
+		3FD4EEB02A25F28D00CADB0E /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		3FD4EEB22A26F36500CADB0E /* SelectedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedButton.swift; sourceTree = "<group>"; };
 		3FE3848029F62BF4007884A8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3FE8694D2A121CF600744473 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3FEFBAA029ECF4B50085641B /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
@@ -209,6 +229,7 @@
 			children = (
 				3F3064CC29ECE6C100EF5485 /* UIViewExtension.swift */,
 				3F438C2F29F7BA98002BE0B5 /* DateExtension.swift */,
+				3FD4EEB02A25F28D00CADB0E /* UIColorExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -219,6 +240,25 @@
 				3F3B5E6F2A15D741003C1AF9 /* RealmDatabase.swift */,
 			);
 			path = "Realm Database";
+			sourceTree = "<group>";
+		};
+		3F3B5E712A162C50003C1AF9 /* Month View */ = {
+			isa = PBXGroup;
+			children = (
+				3F0DCE3E29F78D7A00C47FC6 /* MonthViewController.swift */,
+				3F0DCE3F29F78D7A00C47FC6 /* MonthViewController.xib */,
+			);
+			path = "Month View";
+			sourceTree = "<group>";
+		};
+		3F3B5E762A17149E003C1AF9 /* Manage Categories */ = {
+			isa = PBXGroup;
+			children = (
+				3F3B5E742A1713E8003C1AF9 /* ManageCategoriesViewController.swift */,
+				3F3B5E772A171630003C1AF9 /* ManageCategoriesViewModel.swift */,
+				3F3B5E792A171F03003C1AF9 /* ManageCategoriesTableViewCell.swift */,
+			);
+			path = "Manage Categories";
 			sourceTree = "<group>";
 		};
 		3F3FDB4629FA83FE0052BE93 /* Report View */ = {
@@ -258,6 +298,9 @@
 		3F438C2829F7A821002BE0B5 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				3F6BDFEE2A17550E0095800B /* Search View */,
+				3F3B5E762A17149E003C1AF9 /* Manage Categories */,
+				3F3B5E712A162C50003C1AF9 /* Month View */,
 				3F3FDB4629FA83FE0052BE93 /* Report View */,
 				3FA9E64A29E9346E00D8D7C1 /* Main.storyboard */,
 				3F15B78729FA5A7600616FB5 /* HomeView */,
@@ -266,10 +309,21 @@
 				3F438C2729F7A7E5002BE0B5 /* TabBar View */,
 				3F15B78D29FA6E4C00616FB5 /* Add New Category View */,
 				3F15B79629FA7C4E00616FB5 /* Category Sheet View */,
-				3F0DCE3E29F78D7A00C47FC6 /* MonthViewController.swift */,
-				3F0DCE3F29F78D7A00C47FC6 /* MonthViewController.xib */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		3F6BDFEE2A17550E0095800B /* Search View */ = {
+			isa = PBXGroup;
+			children = (
+				3F6BDFEF2A1755240095800B /* SearchViewController.swift */,
+				3F6BDFF12A1755300095800B /* SearchViewModel.swift */,
+				3F6BDFF32A1759590095800B /* CategorySearchCollectionViewCell.swift */,
+				3F6BDFF42A1759590095800B /* CategorySearchCollectionViewCell.xib */,
+				3FD4EEAE2A25E62D00CADB0E /* ChipsControl.swift */,
+				3FD4EEB22A26F36500CADB0E /* SelectedButton.swift */,
+			);
+			path = "Search View";
 			sourceTree = "<group>";
 		};
 		3FA9E63829E9346D00D8D7C1 = {
@@ -410,6 +464,7 @@
 				3FA9E65429E9347200D8D7C1 /* LaunchScreen.storyboard in Resources */,
 				3FA9E65129E9347200D8D7C1 /* Assets.xcassets in Resources */,
 				3FEFBAA729ECF6210085641B /* ItemCollectionViewCell.xib in Resources */,
+				3F6BDFF62A1759590095800B /* CategorySearchCollectionViewCell.xib in Resources */,
 				3FA9E64C29E9346E00D8D7C1 /* Main.storyboard in Resources */,
 				3F0E3CB629F0EC29009BF311 /* CategoryCollectionViewCell.xib in Resources */,
 				3FEFBAA329ECF4B50085641B /* CardTableViewCell.xib in Resources */,
@@ -475,29 +530,38 @@
 				3F438C3029F7BA98002BE0B5 /* DateExtension.swift in Sources */,
 				3FEFBAA929ECF8040085641B /* Item.swift in Sources */,
 				3F15B78929FA5B0000616FB5 /* HomeViewModel.swift in Sources */,
+				3F6BDFF22A1755300095800B /* SearchViewModel.swift in Sources */,
 				3F15B79229FA74BF00616FB5 /* AddNewViewModel.swift in Sources */,
 				3F0E3CB529F0EC29009BF311 /* CategoryCollectionViewCell.swift in Sources */,
+				3FD4EEAF2A25E62D00CADB0E /* ChipsControl.swift in Sources */,
 				3F15B79529FA789400616FB5 /* SheetViewModel.swift in Sources */,
 				3F3064CD29ECE6C100EF5485 /* UIViewExtension.swift in Sources */,
 				3F64B3B429F23E190008A4D9 /* TabBarViewController.swift in Sources */,
 				3F15B79829FA7C6B00616FB5 /* CategorySheetViewModel.swift in Sources */,
 				3FB6CCDC29F6705000C3CBE2 /* AddNewCategoryViewController.swift in Sources */,
 				3FE3848129F62BF4007884A8 /* SettingsViewController.swift in Sources */,
+				3F3B5E7A2A171F03003C1AF9 /* ManageCategoriesTableViewCell.swift in Sources */,
+				3F6BDFF52A1759590095800B /* CategorySearchCollectionViewCell.swift in Sources */,
 				3F16DE1329F0DC1500AE7C83 /* AddNewViewController.swift in Sources */,
 				3F0E3CB129F0E880009BF311 /* SheetViewController.swift in Sources */,
 				3FEFBAAB29ECFBE40085641B /* History.swift in Sources */,
+				3FD4EEB32A26F36600CADB0E /* SelectedButton.swift in Sources */,
 				3F34672C2A0891DB005DA94F /* Icon.swift in Sources */,
 				3F438C2B29F7A8E9002BE0B5 /* ButtonCollectionViewCell.swift in Sources */,
 				3FF9E16C29F11CBE00FFDDE9 /* ReportViewController.swift in Sources */,
+				3F3B5E782A171630003C1AF9 /* ManageCategoriesViewModel.swift in Sources */,
 				3F0E3CB829F0EF39009BF311 /* Category.swift in Sources */,
+				3F3B5E752A1713E9003C1AF9 /* ManageCategoriesViewController.swift in Sources */,
 				3F438C2E29F7B669002BE0B5 /* Month.swift in Sources */,
 				3F3B5E702A15D741003C1AF9 /* RealmDatabase.swift in Sources */,
+				3FD4EEB12A25F28D00CADB0E /* UIColorExtension.swift in Sources */,
 				3FA9E65C29E93F6200D8D7C1 /* HomeViewController.swift in Sources */,
 				3FEFBAA629ECF6210085641B /* ItemCollectionViewCell.swift in Sources */,
 				3F0DCE4029F78D7A00C47FC6 /* MonthViewController.swift in Sources */,
 				3FA9E64929E9346E00D8D7C1 /* ViewController.swift in Sources */,
 				3FEFBAAE29ECFD410085641B /* MainViewModel.swift in Sources */,
 				3F3FDB4829FA84120052BE93 /* ReportViewModel.swift in Sources */,
+				3F6BDFF02A1755240095800B /* SearchViewController.swift in Sources */,
 				3FA9E64529E9346E00D8D7C1 /* AppDelegate.swift in Sources */,
 				3FA9E64729E9346E00D8D7C1 /* SceneDelegate.swift in Sources */,
 				3F15B78F29FA6E6000616FB5 /* AddNewCategoryViewModel.swift in Sources */,

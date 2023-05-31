@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 protocol AddNewDelegate {
     func addNewItem(newItem: Item)
@@ -74,9 +75,19 @@ class AddNewViewController: UIViewController {
     
     @IBAction func addIncomeOnClickHandler(_ sender: Any) {
         if let inputAmount = amountInput.text , !inputAmount.isEmpty, !choosenCategory.isEmpty{
-            let newItem = Item(category: (viewModel.findCategory(name: choosenCategory)), amount: Double(inputAmount)!, description: descInput.text!, categoryType: Option(rawValue: option)!)
-            delegate?.addNewItem(newItem: newItem)
-            viewModel.addNew(item: newItem)
+            let user = Auth.auth().currentUser
+            if let user = user {
+                // The user's ID, unique to the Firebase project.
+                // Do NOT use this value to authenticate with your backend server,
+                // if you have one. Use getTokenWithCompletion:completion: instead.
+                let uid = user.uid
+                
+                let newItem = Item(user: uid, category: (viewModel.findCategory(name: choosenCategory)), amount: Double(inputAmount)!, description: descInput.text!, categoryType: Option(rawValue: option)!)
+                
+                delegate?.addNewItem(newItem: newItem)
+                viewModel.addNew(item: newItem)
+            }
+            
             self.navigationController?.popViewController(animated: true)
             
         } else {

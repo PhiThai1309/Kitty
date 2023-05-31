@@ -40,11 +40,11 @@ class ReportViewController: UIViewController, ChartViewDelegate {
         monthBtn.setTitle(viewModel.filteredMonth.month + ", " + String(calendarDate.year!), for: .normal)
         
         setupChart()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         viewModel.fetchData()
+        reportCollectionView.reloadData()
     }
     
     func setupChart() {
@@ -64,6 +64,7 @@ class ReportViewController: UIViewController, ChartViewDelegate {
         chartView.data = data
         chartView.animate(yAxisDuration: 0.5)
         chartTheme()
+        reportCollectionView.reloadData()
     }
     
     func chartTheme() {
@@ -88,7 +89,6 @@ class ReportViewController: UIViewController, ChartViewDelegate {
     @IBAction func rightOnClickHandler(_ sender: Any) {
         let year = viewModel.addAMonth()
         monthBtn.setTitle(viewModel.filteredMonth.month + ", " + String(year), for: .normal)
-        reportCollectionView.reloadData()
         viewModel.reloadData()
         setupChart()
     }
@@ -96,7 +96,6 @@ class ReportViewController: UIViewController, ChartViewDelegate {
     @IBAction func leftOnClickHandler(_ sender: Any) {
         let year = viewModel.backAMonth()
         monthBtn.setTitle(viewModel.filteredMonth.month + ", " + String(year), for: .normal)
-        reportCollectionView.reloadData()
         viewModel.reloadData()
         setupChart()
     }
@@ -128,16 +127,6 @@ extension ReportViewController: UICollectionViewDataSource, UICollectionViewDele
         let _: CGFloat = 1
         let cellWidth = UIScreen.main.bounds.size.width
         return CGSizeMake(cellWidth, 50)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-
-        cell.alpha = 0
-        UIView.animate(withDuration: 0.2, delay: 0.2*Double(indexPath.row),animations: { () -> Void in
-        cell.alpha = 1
-
-            cell.layer.transform = CATransform3DScale(CATransform3DIdentity, 1, 1, 1)
-        })
     }
 }
 
