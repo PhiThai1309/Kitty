@@ -11,3 +11,5 @@ A money expense tracking application
 ![image](https://github.com/PhiThai1309/Kitty/assets/71892904/361880b8-c1e1-4e8d-b342-49f1f3e00595)
 ![image](https://github.com/PhiThai1309/Kitty/assets/71892904/6f00b44a-b61c-4a5c-b312-9402c038c8ff)
 ![image](https://github.com/PhiThai1309/Kitty/assets/71892904/bee7d5f1-41d7-42b2-8e7c-32d81ed56e32)
+![image](https://github.com/PhiThai1309/Kitty/assets/71892904/cb93b49f-81dc-4c4f-a129-57e0d5d08e5f)
+![image](https://github.com/PhiThai1309/Kitty/assets/71892904/6c119d36-0685-4b69-8d73-7d26f61ed352)
