@@ -42,10 +42,9 @@ class SearchViewModel {
         print(filterArray)
         if query != "" {
             for item in filterArray {
-                if !item.category.localizedStandardContains(query) || !((item.desc?.localizedStandardContains(query)) != nil) {
+                print(item.desc!)
+                if (!item.category.localizedStandardContains(query) && !(item.desc!.localizedStandardContains(query) && item.desc != nil)){
                     filterArray.remove(at: filterArray.firstIndex(of: item)!)
-                } else {
-
                 }
             }
         }
@@ -53,6 +52,10 @@ class SearchViewModel {
     
     func clearData() {
         filterArray.removeAll()
-        filterArray = database.loadItem()
+        if !filterCat.isEmpty {
+            filterArray = database.filterData(categories: filterCat)
+        } else {
+            filterArray = database.loadItem()
+        }
     }
 }

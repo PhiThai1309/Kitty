@@ -1151,6 +1151,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
+                                                    <action selector="actionButtonTapped:" destination="9aF-Jv-46V" eventType="editingDidEnd" id="dZt-5N-RML"/>
                                                     <action selector="searchQuery:" destination="vwj-2A-5JP" eventType="editingDidEnd" id="6Y2-iT-9Fk"/>
                                                     <action selector="searchQuery:" destination="vwj-2A-5JP" eventType="editingChanged" id="EMS-NT-7N3"/>
                                                     <action selector="searchQuery:" destination="vwj-2A-5JP" eventType="valueChanged" id="Onk-8G-E4o"/>
