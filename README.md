@@ -5,7 +5,6 @@ A money expense tracking application
   <img width="250" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/891fa834-b172-432e-8b42-0d21a2dddb6f">
   <img width="250" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/6f9cec53-1076-47f1-b714-0158aed34f1d">
   <img width="250" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/361880b8-c1e1-4e8d-b342-49f1f3e00595">
-  <img width="250" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/cb93b49f-81dc-4c4f-a129-57e0d5d08e5f">
 </p>
 
 ## Table of contents
@@ -54,6 +53,10 @@ The small application is designed to help users track their expenses and income 
   <img width="300" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/bee7d5f1-41d7-42b2-8e7c-32d81ed56e32">
 </p>
 
+- Setting page: To be develope
+<p align="center">
+  <img width="250" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/cb93b49f-81dc-4c4f-a129-57e0d5d08e5f">
+</p>
 
 ## Limitations
 - The application currently store the database locally. Despite the user have to sign in with Google in order to use the application, the database will not carried out if the user use the same account on another device.
