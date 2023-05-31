@@ -17,32 +17,42 @@ class SearchViewModel {
     var filterArray: [Item]
     
     init() {
-//        if let savedCategories = userDefaults.object(forKey: "categories") as? Data {
-//            let decoder = JSONDecoder()
-//            if let saved = try? decoder.decode([String].self, from: savedCategories) {
-//                self.categories = saved
-//            }
-//        }
         filterCat = []
-        filterArray = []
-    }
-    func search(data: String) -> Bool {
-        if !filterCat.contains(data) {
-            filterCat.append(data)
-            filter(array: filterCat)
-            return true
-        } else {return false}
+        filterArray = database.loadItem()
     }
     
-    func remove(data: String) -> Bool {
+    func remove(data: String, query: String) {
         if filterCat.contains(data) {
             filterCat.remove(at: filterCat.firstIndex(of: data)!)
-            filter(array: filterCat)
-            return true
-        } else {return false}
+            searchAdvance(query: query, data: "")
+        }
     }
     
-    func filter(array: [String]) {
-        filterArray = database.filterData(categories: array)
+    func searchAdvance(query: String, data: String) {
+        if !filterCat.contains(data) && data != ""{
+            filterCat.append(data)
+        }
+        
+        if !filterCat.isEmpty {
+            filterArray = database.filterData(categories: filterCat)
+        } else {
+            filterArray = database.loadItem()
+        }
+        
+        print(filterArray)
+        if query != "" {
+            for item in filterArray {
+                if !item.category.localizedStandardContains(query) || !((item.desc?.localizedStandardContains(query)) != nil) {
+                    filterArray.remove(at: filterArray.firstIndex(of: item)!)
+                } else {
+
+                }
+            }
+        }
+    }
+    
+    func clearData() {
+        filterArray.removeAll()
+        filterArray = database.loadItem()
     }
 }

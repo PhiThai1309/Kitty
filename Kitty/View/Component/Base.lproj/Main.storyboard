@@ -1150,6 +1150,12 @@
                                                 <rect key="frame" x="57.333333333333343" y="0.0" width="313.66666666666663" height="56"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="searchQuery:" destination="vwj-2A-5JP" eventType="editingDidEnd" id="6Y2-iT-9Fk"/>
+                                                    <action selector="searchQuery:" destination="vwj-2A-5JP" eventType="editingChanged" id="EMS-NT-7N3"/>
+                                                    <action selector="searchQuery:" destination="vwj-2A-5JP" eventType="valueChanged" id="Onk-8G-E4o"/>
+                                                    <action selector="searchQuery:" destination="vwj-2A-5JP" eventType="editingDidBegin" id="nHe-T4-g1k"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -1256,6 +1262,7 @@
                     <connections>
                         <outlet property="collectionView" destination="vos-SH-ujg" id="JPk-I8-Gk6"/>
                         <outlet property="tableView" destination="7wY-VD-61y" id="bCH-oU-ciO"/>
+                        <outlet property="textField" destination="WyS-3s-wNy" id="dJe-qv-t8w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9aF-Jv-46V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

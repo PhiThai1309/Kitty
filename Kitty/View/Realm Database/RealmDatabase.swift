@@ -68,4 +68,18 @@ class RealmDatabase {
         
         return result
     }
+    
+    func search(query: String) -> [Item] {
+        var result:[Item] = []
+        
+        let array = Array(realm.objects(Item.self))
+        
+        for item in array {
+            if ((item.desc?.contains(query)) != nil){
+                result.append(item)
+            }
+        }
+        
+        return result
+    }
 }
