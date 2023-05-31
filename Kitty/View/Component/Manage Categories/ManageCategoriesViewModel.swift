@@ -45,7 +45,7 @@ class ManageCategoriesViewModel {
         if let encodedAray = try? encoder.encode(categories.reversed()) {
             userDefaults.set(encodedAray, forKey: "categories")
         }
-        print(categories.reversed())
+//        print(categories.reversed())
     }
     
     func refreshData() {

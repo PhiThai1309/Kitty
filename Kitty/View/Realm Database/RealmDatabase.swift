@@ -18,7 +18,7 @@ class RealmDatabase {
     
     func loadItem() -> [Item] {
         realm.refresh()
-        // Access all dogs in the realm
+        
         let array = Array(realm.objects(Item.self))
         var result: [Item] = []
         
@@ -50,6 +50,22 @@ class RealmDatabase {
                 result.append(newHistory)
             }
         }
+        return result
+    }
+    
+    func filterData(categories: [String]) -> [Item] {
+        var result:[Item] = []
+        
+        let array = Array(realm.objects(Item.self))
+        
+        for category in categories {
+            for item in array {
+                if item.category == category {
+                    result.append(item)
+                }
+            }
+        }
+        
         return result
     }
 }
