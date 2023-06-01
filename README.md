@@ -27,6 +27,11 @@ The small application is designed to help users track their expenses and income 
   <img width="300" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/6f00b44a-b61c-4a5c-b312-9402c038c8ff">
 </p>
 
+- The report page in the application includes a bar graph that represents all the expenses logged by the user within a specific month. This visual representation allows users to get a clear overview of their spending patterns and see the distribution of expenses across different categories or time periods. Additionally, users have the flexibility to choose a specific month and view their past or current expenses, providing a comprehensive picture of their financial history and enabling them to track their expenses over time. 
+<p align="center">
+  <img width="250" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/361880b8-c1e1-4e8d-b342-49f1f3e00595">
+</p>
+
 - One of the key features of the application is the ability for users to add new expenses or income entries. This functionality enables individuals to accurately track and record their financial transactions, providing a comprehensive overview of their spending and earning activities.
 <p align="center">
   <img width="300" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/b194c430-b3d4-49ff-ba7f-fce64c01e874">
@@ -38,12 +43,12 @@ The small application is designed to help users track their expenses and income 
   <img width="300" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/46e2c237-819d-4b4a-9d2e-1682c8626cbd">
 </p>
 
-- User also have the option to add their own categories with predefined icons provided by the application. This feature further enhances the customization capabilities, allowing individuals to tailor the Settings panel to their specific needs and preferences.
+- User also have the option to add their own categories with predefined icons provided by the application. T
 <p align="center">
   <img width="300" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/bf066768-ed2b-4dcc-a28b-e501739a39f2">
 </p>
 
-- In addition to the various features and customization options available, users also have the ability to arrange the order of categories within the Settings panel. This additional flexibility allows individuals to personalize their user experience and optimize their workflow based on their specific preferences.
+- In addition to the various features and customization options available, users also have the ability to arrange the order of categories within the Settings panel.
 <p align="center">
   <img width="300" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/6c119d36-0685-4b69-8d73-7d26f61ed352">
 </p>
