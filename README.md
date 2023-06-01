@@ -30,6 +30,7 @@ The small application is designed to help users track their expenses and income 
 - The report page in the application includes a bar graph that represents all the expenses logged by the user within a specific month. This visual representation allows users to get a clear overview of their spending patterns and see the distribution of expenses across different categories or time periods. Additionally, users have the flexibility to choose a specific month and view their past or current expenses, providing a comprehensive picture of their financial history and enabling them to track their expenses over time. 
 <p align="center">
   <img width="250" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/361880b8-c1e1-4e8d-b342-49f1f3e00595">
+  <img width="250" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/b90fc95c-430f-49d3-a71c-225d11fa9f53">
 </p>
 
 - One of the key features of the application is the ability for users to add new expenses or income entries. This functionality enables individuals to accurately track and record their financial transactions, providing a comprehensive overview of their spending and earning activities.
