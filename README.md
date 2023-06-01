@@ -53,7 +53,7 @@ The small application is designed to help users track their expenses and income 
   <img width="300" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/bee7d5f1-41d7-42b2-8e7c-32d81ed56e32">
 </p>
 
-- Setting page: To be develope
+- Setting page: To be developed
 <p align="center">
   <img width="250" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/cb93b49f-81dc-4c4f-a129-57e0d5d08e5f">
 </p>
