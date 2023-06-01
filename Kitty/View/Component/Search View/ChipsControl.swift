@@ -18,7 +18,6 @@ class ChipsControl: UIControl {
     @IBInspectable private weak var textLabel: UILabel!
     @IBInspectable private weak var imageView: UIImageView!
     
-    var categories: [String] = ["Grocery", "Cafe", "Health", "Commute", "Shopping"]
 //    var labelText: String
     
     var delegate: ChipsControlDelegate?

@@ -13,7 +13,6 @@
 		3F0E3CB229F0E880009BF311 /* SheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F0E3CB029F0E880009BF311 /* SheetViewController.xib */; };
 		3F0E3CB529F0EC29009BF311 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E3CB329F0EC29009BF311 /* CategoryCollectionViewCell.swift */; };
 		3F0E3CB629F0EC29009BF311 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F0E3CB429F0EC29009BF311 /* CategoryCollectionViewCell.xib */; };
-		3F0E3CB829F0EF39009BF311 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E3CB729F0EF39009BF311 /* Category.swift */; };
 		3F15B78929FA5B0000616FB5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F15B78829FA5B0000616FB5 /* HomeViewModel.swift */; };
 		3F15B78F29FA6E6000616FB5 /* AddNewCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F15B78E29FA6E6000616FB5 /* AddNewCategoryViewModel.swift */; };
 		3F15B79229FA74BF00616FB5 /* AddNewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F15B79129FA74BF00616FB5 /* AddNewViewModel.swift */; };
@@ -52,7 +51,6 @@
 		3FB6CCDD29F6705000C3CBE2 /* AddNewCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB6CCDB29F6705000C3CBE2 /* AddNewCategoryViewController.xib */; };
 		3FD4EEAF2A25E62D00CADB0E /* ChipsControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4EEAE2A25E62D00CADB0E /* ChipsControl.swift */; };
 		3FD4EEB12A25F28D00CADB0E /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4EEB02A25F28D00CADB0E /* UIColorExtension.swift */; };
-		3FD4EEB32A26F36600CADB0E /* SelectedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4EEB22A26F36500CADB0E /* SelectedButton.swift */; };
 		3FE3848129F62BF4007884A8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE3848029F62BF4007884A8 /* SettingsViewController.swift */; };
 		3FE8694A2A121C9A00744473 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 3FE869492A121C9A00744473 /* GoogleSignIn */; };
 		3FE8694C2A121C9A00744473 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3FE8694B2A121C9A00744473 /* GoogleSignInSwift */; };
@@ -81,7 +79,6 @@
 		3F0E3CB029F0E880009BF311 /* SheetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SheetViewController.xib; sourceTree = "<group>"; };
 		3F0E3CB329F0EC29009BF311 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		3F0E3CB429F0EC29009BF311 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
-		3F0E3CB729F0EF39009BF311 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		3F15B78829FA5B0000616FB5 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		3F15B78E29FA6E6000616FB5 /* AddNewCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCategoryViewModel.swift; sourceTree = "<group>"; };
 		3F15B79129FA74BF00616FB5 /* AddNewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewViewModel.swift; sourceTree = "<group>"; };
@@ -121,7 +118,6 @@
 		3FB6CCDB29F6705000C3CBE2 /* AddNewCategoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewCategoryViewController.xib; sourceTree = "<group>"; };
 		3FD4EEAE2A25E62D00CADB0E /* ChipsControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsControl.swift; sourceTree = "<group>"; };
 		3FD4EEB02A25F28D00CADB0E /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
-		3FD4EEB22A26F36500CADB0E /* SelectedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedButton.swift; sourceTree = "<group>"; };
 		3FE3848029F62BF4007884A8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3FE8694D2A121CF600744473 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3FEFBAA029ECF4B50085641B /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
@@ -247,6 +243,8 @@
 			children = (
 				3F0DCE3E29F78D7A00C47FC6 /* MonthViewController.swift */,
 				3F0DCE3F29F78D7A00C47FC6 /* MonthViewController.xib */,
+				3F438C2929F7A8E9002BE0B5 /* ButtonCollectionViewCell.swift */,
+				3F3FDB4429FA83CA0052BE93 /* ButtonCollectionViewCell.xib */,
 			);
 			path = "Month View";
 			sourceTree = "<group>";
@@ -273,8 +271,6 @@
 		3F438C2629F7A7C3002BE0B5 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				3F438C2929F7A8E9002BE0B5 /* ButtonCollectionViewCell.swift */,
-				3F3FDB4429FA83CA0052BE93 /* ButtonCollectionViewCell.xib */,
 				3FEFBAA029ECF4B50085641B /* CardTableViewCell.swift */,
 				3FEFBAA129ECF4B50085641B /* CardTableViewCell.xib */,
 				3FEFBAA429ECF6210085641B /* ItemCollectionViewCell.swift */,
@@ -321,7 +317,6 @@
 				3F6BDFF32A1759590095800B /* CategorySearchCollectionViewCell.swift */,
 				3F6BDFF42A1759590095800B /* CategorySearchCollectionViewCell.xib */,
 				3FD4EEAE2A25E62D00CADB0E /* ChipsControl.swift */,
-				3FD4EEB22A26F36500CADB0E /* SelectedButton.swift */,
 			);
 			path = "Search View";
 			sourceTree = "<group>";
@@ -367,7 +362,6 @@
 			children = (
 				3FEFBAA829ECF8040085641B /* Item.swift */,
 				3FEFBAAA29ECFBE40085641B /* History.swift */,
-				3F0E3CB729F0EF39009BF311 /* Category.swift */,
 				3F438C2D29F7B669002BE0B5 /* Month.swift */,
 				3F34672B2A0891DB005DA94F /* Icon.swift */,
 			);
@@ -482,7 +476,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		4702CAC9D08BEAC8905175E7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -545,12 +539,10 @@
 				3F16DE1329F0DC1500AE7C83 /* AddNewViewController.swift in Sources */,
 				3F0E3CB129F0E880009BF311 /* SheetViewController.swift in Sources */,
 				3FEFBAAB29ECFBE40085641B /* History.swift in Sources */,
-				3FD4EEB32A26F36600CADB0E /* SelectedButton.swift in Sources */,
 				3F34672C2A0891DB005DA94F /* Icon.swift in Sources */,
 				3F438C2B29F7A8E9002BE0B5 /* ButtonCollectionViewCell.swift in Sources */,
 				3FF9E16C29F11CBE00FFDDE9 /* ReportViewController.swift in Sources */,
 				3F3B5E782A171630003C1AF9 /* ManageCategoriesViewModel.swift in Sources */,
-				3F0E3CB829F0EF39009BF311 /* Category.swift in Sources */,
 				3F3B5E752A1713E9003C1AF9 /* ManageCategoriesViewController.swift in Sources */,
 				3F438C2E29F7B669002BE0B5 /* Month.swift in Sources */,
 				3F3B5E702A15D741003C1AF9 /* RealmDatabase.swift in Sources */,
@@ -715,6 +707,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4AQLK4VT6N;
+				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Kitty/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -727,6 +720,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.phithai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -744,6 +738,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4AQLK4VT6N;
+				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Kitty/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -756,6 +751,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.phithai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

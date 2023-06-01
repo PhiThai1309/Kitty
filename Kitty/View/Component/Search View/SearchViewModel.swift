@@ -9,7 +9,8 @@ import Foundation
 
 class SearchViewModel {
     let userDefaults = UserDefaults.standard
-    var categories: [String] = ["Grocery", "Cafe", "Health", "Commute", "Shopping"]
+    var availableCategories: [String]
+    var categories: [String] = ["Grocery", "Cafe", "Health", "Commute", "Gifts"]
     var filterCat: [String]
     
     var database: RealmDatabase = RealmDatabase()
@@ -19,6 +20,23 @@ class SearchViewModel {
     init() {
         filterCat = []
         filterArray = database.loadItem()
+        availableCategories = []
+        checkCategories(data: filterArray)
+    }
+    
+    func checkCategories(data: [Item]) {
+        var result = [String]()
+        for category in data {
+            if !result.contains(category.category) {
+                result.append(category.category)
+            }
+        }
+        if result.isEmpty {
+            categories = ["Grocery", "Cafe", "Health", "Commute", "Gifts"]
+        } else {
+            categories = result
+        }
+        print(categories)
     }
     
     func remove(data: String, query: String) {
