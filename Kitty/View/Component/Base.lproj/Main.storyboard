@@ -1169,13 +1169,13 @@
                                         <inset key="scrollIndicatorInsets" minX="58" minY="0.0" maxX="0.0" maxY="-3"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Hnf-qL-Gmk">
                                             <size key="itemSize" width="128" height="48"/>
-                                            <size key="headerReferenceSize" width="58" height="1"/>
-                                            <size key="footerReferenceSize" width="8" height="1"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="58" minY="0.0" maxX="8" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" id="qdT-tZ-Gx1" customClass="CategorySearchCollectionViewCell" customModule="Kitty" customModuleProvider="target">
-                                                <rect key="frame" x="116" y="0.0" width="128" height="48"/>
+                                                <rect key="frame" x="58" y="0.0" width="128" height="48"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fEm-wW-mdG">
                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="48"/>
@@ -1183,7 +1183,7 @@
                                                 </collectionViewCellContentView>
                                             </collectionViewCell>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="K92-t0-2rk">
-                                                <rect key="frame" x="254" y="0.0" width="128" height="48"/>
+                                                <rect key="frame" x="196" y="0.0" width="128" height="48"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="1RL-qy-Ukn">
                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="48"/>
@@ -1191,14 +1191,6 @@
                                                 </collectionViewCellContentView>
                                             </collectionViewCell>
                                         </cells>
-                                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="cNt-rS-T1q">
-                                            <rect key="frame" x="0.0" y="0.0" width="58" height="48"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionReusableView>
-                                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ENr-4h-RK8">
-                                            <rect key="frame" x="390" y="0.0" width="8" height="48"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionReusableView>
                                         <connections>
                                             <outlet property="dataSource" destination="vwj-2A-5JP" id="myO-z4-SDb"/>
                                             <outlet property="delegate" destination="vwj-2A-5JP" id="Qtp-fp-cEw"/>
@@ -1248,7 +1240,7 @@
                         <constraints>
                             <constraint firstItem="7wY-VD-61y" firstAttribute="trailing" secondItem="O1T-8P-3PT" secondAttribute="trailing" id="0a5-vU-H6R"/>
                             <constraint firstItem="O1T-8P-3PT" firstAttribute="trailing" secondItem="ddO-nV-JOu" secondAttribute="trailing" id="0z4-I8-uGV"/>
-                            <constraint firstItem="O1T-8P-3PT" firstAttribute="bottom" secondItem="7wY-VD-61y" secondAttribute="bottom" id="7tU-TG-B7g"/>
+                            <constraint firstAttribute="bottom" secondItem="7wY-VD-61y" secondAttribute="bottom" id="7tU-TG-B7g"/>
                             <constraint firstItem="ByN-JV-vdx" firstAttribute="top" secondItem="ddO-nV-JOu" secondAttribute="bottom" id="A2i-yY-ech"/>
                             <constraint firstItem="ByN-JV-vdx" firstAttribute="leading" secondItem="O1T-8P-3PT" secondAttribute="leading" id="BSJ-9s-Ucp"/>
                             <constraint firstItem="ddO-nV-JOu" firstAttribute="top" secondItem="O1T-8P-3PT" secondAttribute="top" id="Q9V-aV-B0y"/>
