@@ -38,6 +38,15 @@ class RealmDatabase {
         return result
     }
     
+    func addItem(data: Item) {
+        try! realm.write {
+            // Add the instance to the realm.
+            realm.add(data)
+            print("success")
+            print(Realm.Configuration.defaultConfiguration.fileURL!)
+        }
+    }
+    
     func loadHistoryWithMonth(items: [Item]) -> [History]{
         var result : [History] = []
         for item in items {

@@ -14,6 +14,8 @@ class AddNewViewModel {
     var iconArray: [String]
     var categories: [String] = []
     
+    var database = RealmDatabase()
+    
     init( iconArray: [String]) {
         self.iconArray = iconArray
         if let savedCategories = userDefaults.object(forKey: "categories") as? Data {
@@ -29,13 +31,6 @@ class AddNewViewModel {
     }
     
     func addNew(item: Item) {
-        let realm = try! Realm()
-        // Open a thread-safe transaction.
-        try! realm.write {
-            // Add the instance to the realm.
-            realm.add(item)
-            print("success")
-            print(Realm.Configuration.defaultConfiguration.fileURL!)
-        } 
+        database.addItem(data: item)
     }
 }
