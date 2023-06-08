@@ -8,6 +8,10 @@
 import Foundation
 import RealmSwift
 
+protocol HomeViewModelDelegate {
+    func loadData()
+}
+
 class HomeViewModel {
     var items: [Item]
     var history: [History]
@@ -17,10 +21,10 @@ class HomeViewModel {
     var database: RealmDatabase = RealmDatabase()
     let userDefaults = UserDefaults.standard
     
+    var delegate: HomeViewModelDelegate?
     init() {
         self.items = []
         
-//        print(items)
         history = database.loadHistoryWithMonth(items: items)
         
         var categories = ["Grocery", "Gifts", "Cafe", "Health", "Commute", "Electronics"]
@@ -28,12 +32,17 @@ class HomeViewModel {
         if let encodedAray = try? encoder.encode(categories) {
             userDefaults.set(encodedAray, forKey: "categories")
         }
-        
-//        database.loadItemFireStore(completionHandler: {
-//            item in
-//            self.items = item
-//        })
     }
+    
+    func loadData() {
+        database.loadItemFireStore(completionHandler: {
+            item in
+            self.items = item
+            DispatchQueue.main.async {
+                self.delegate?.loadData()
+            }
+        })
+     }
     
     func getExpense() -> Double {
         var sum: Double = 0

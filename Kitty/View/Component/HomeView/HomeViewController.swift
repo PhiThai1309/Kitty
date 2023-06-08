@@ -30,7 +30,8 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
         dtFormatter.dateStyle = .short
         dtFormatter.timeStyle = .none
         
-        loadData()
+        viewModel.delegate = self
+        viewModel.loadData()
         
         // Do any additional setup after loading the view.
         let cellNib = UINib(nibName: "CardTableViewCell", bundle: nil)
@@ -47,7 +48,7 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
 //        viewModel.items = viewModel.database.loadItemFireStore()
-        loadData()
+        viewModel.loadData()
     }
     
     @IBAction func settingOnClickButton(_ sender: Any) {
@@ -72,22 +73,14 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
         tableView.reloadData()
     }
     
-    func loadData() {
-        viewModel.database.loadItemFireStore(completionHandler: {
-            item in
-            self.viewModel.items = item
-//            print(item)
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-            
-            self.viewModel.history = self.viewModel.database.loadHistoryWithMonth(items: self.viewModel.items)
-            self.monthBtn.setTitle(self.viewModel.convertToNormalDate(), for: .normal)
-            self.expenseLabel.text = "- " + String(self.viewModel.getExpense())
-            self.incomeLabel.text = String(self.viewModel.getIncome())
-            self.balanceLabel.text = String(self.viewModel.getBalance())
-        })
-    }
+//    func loadData() {
+//        viewModel.database.loadItemFireStore(completionHandler: {
+//            item in
+//            self.viewModel.items = item
+////            print(item)
+//            
+//        })
+//    }
 }
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
@@ -122,18 +115,6 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             cell.layer.transform = CATransform3DScale(CATransform3DIdentity, 1, 1, 1)
         })
     }
-    
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//      let isReachingEnd = scrollView.contentOffset.y >= 0
-//          && scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height)
-//        if isReachingEnd {
-//            print("ok")
-//            addNewBtn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0 ).isActive = true
-//        } else {
-//            addNewBtn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0 ).isActive = false
-//            addNewBtn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -32 ).isActive = true
-//        }
-//    }
 }
 
 extension HomeViewController: AddNewDelegate {
@@ -157,5 +138,17 @@ extension HomeViewController: MonthViewDelegate {
             monthBtn.setTitle(viewModel.filteredMonth.month + ", " + String(components.year!), for: .normal)
         }
         tableView.reloadData()
+    }
+}
+
+extension HomeViewController: HomeViewModelDelegate {
+    func loadData() {
+        self.tableView.reloadData()
+        
+        self.viewModel.history = self.viewModel.database.loadHistoryWithMonth(items: self.viewModel.items)
+        self.monthBtn.setTitle(self.viewModel.convertToNormalDate(), for: .normal)
+        self.expenseLabel.text = "- " + String(self.viewModel.getExpense())
+        self.incomeLabel.text = String(self.viewModel.getIncome())
+        self.balanceLabel.text = String(self.viewModel.getBalance())
     }
 }
