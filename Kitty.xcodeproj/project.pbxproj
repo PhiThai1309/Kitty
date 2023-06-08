@@ -32,6 +32,7 @@
 		3F438C2B29F7A8E9002BE0B5 /* ButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F438C2929F7A8E9002BE0B5 /* ButtonCollectionViewCell.swift */; };
 		3F438C2E29F7B669002BE0B5 /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F438C2D29F7B669002BE0B5 /* Month.swift */; };
 		3F438C3029F7BA98002BE0B5 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F438C2F29F7BA98002BE0B5 /* DateExtension.swift */; };
+		3F56E30E2A31ACA3005E31E5 /* DecodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F56E30D2A31ACA3005E31E5 /* DecodableExtension.swift */; };
 		3F64B3B429F23E190008A4D9 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F64B3B329F23E180008A4D9 /* TabBarViewController.swift */; };
 		3F6BDFF02A1755240095800B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BDFEF2A1755240095800B /* SearchViewController.swift */; };
 		3F6BDFF22A1755300095800B /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BDFF12A1755300095800B /* SearchViewModel.swift */; };
@@ -97,6 +98,7 @@
 		3F438C2929F7A8E9002BE0B5 /* ButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCollectionViewCell.swift; sourceTree = "<group>"; };
 		3F438C2D29F7B669002BE0B5 /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
 		3F438C2F29F7BA98002BE0B5 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		3F56E30D2A31ACA3005E31E5 /* DecodableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableExtension.swift; sourceTree = "<group>"; };
 		3F64B3B329F23E180008A4D9 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		3F6BDFEF2A1755240095800B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		3F6BDFF12A1755300095800B /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				3F3064CC29ECE6C100EF5485 /* UIViewExtension.swift */,
 				3F438C2F29F7BA98002BE0B5 /* DateExtension.swift */,
 				3FD4EEB02A25F28D00CADB0E /* UIColorExtension.swift */,
+				3F56E30D2A31ACA3005E31E5 /* DecodableExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -532,6 +535,7 @@
 				3F3064CD29ECE6C100EF5485 /* UIViewExtension.swift in Sources */,
 				3F64B3B429F23E190008A4D9 /* TabBarViewController.swift in Sources */,
 				3F15B79829FA7C6B00616FB5 /* CategorySheetViewModel.swift in Sources */,
+				3F56E30E2A31ACA3005E31E5 /* DecodableExtension.swift in Sources */,
 				3FB6CCDC29F6705000C3CBE2 /* AddNewCategoryViewController.swift in Sources */,
 				3FE3848129F62BF4007884A8 /* SettingsViewController.swift in Sources */,
 				3F3B5E7A2A171F03003C1AF9 /* ManageCategoriesTableViewCell.swift in Sources */,

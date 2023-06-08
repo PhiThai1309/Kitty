@@ -30,7 +30,7 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
         dtFormatter.dateStyle = .short
         dtFormatter.timeStyle = .none
         
-        
+        loadData()
         
         // Do any additional setup after loading the view.
         let cellNib = UINib(nibName: "CardTableViewCell", bundle: nil)
@@ -46,13 +46,8 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        viewModel.items = viewModel.database.loadItemFireStore()
-        viewModel.history = viewModel.database.loadHistoryWithMonth(items: viewModel.items)
-        monthBtn.setTitle(viewModel.convertToNormalDate(), for: .normal)
-        expenseLabel.text = "- " + String(viewModel.getExpense())
-        incomeLabel.text = String(viewModel.getIncome())
-        balanceLabel.text = String(viewModel.getBalance())
-        tableView.reloadData()
+//        viewModel.items = viewModel.database.loadItemFireStore()
+        loadData()
     }
     
     @IBAction func settingOnClickButton(_ sender: Any) {
@@ -75,6 +70,23 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
         let year = viewModel.backAMonth()
         monthBtn.setTitle(viewModel.filteredMonth.month + ", " + String(year), for: .normal)
         tableView.reloadData()
+    }
+    
+    func loadData() {
+        viewModel.database.loadItemFireStore(completionHandler: {
+            item in
+            self.viewModel.items = item
+            print(item)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+            
+            self.viewModel.history = self.viewModel.database.loadHistoryWithMonth(items: self.viewModel.items)
+            self.monthBtn.setTitle(self.viewModel.convertToNormalDate(), for: .normal)
+            self.expenseLabel.text = "- " + String(self.viewModel.getExpense())
+            self.incomeLabel.text = String(self.viewModel.getIncome())
+            self.balanceLabel.text = String(self.viewModel.getBalance())
+        })
     }
 }
 

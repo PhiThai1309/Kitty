@@ -42,26 +42,37 @@ class RealmDatabase {
         return result
     }
     
-    func loadItemFireStore() -> [Item] {
+    func loadItemFireStore(completionHandler: @escaping ([Item]) -> Void){
         var result: [Item] = []
         db.collection(user!.uid).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
-//                    do {
-//                        var doc = try document.data(as: Item.self)
-//
-//                        print(doc)
-//                    } catch {
-//                        print(document.data())
-//                        print("error")
-//                    }
-                    print(document.data())
+                    
+                    let data = document.data()
+                    let user = data["user"] as? String ?? ""
+                    let amount = data["amount"] as? Double ?? 0.0
+                    let category = data["category"] as? String ?? "Commute"
+                    let date = data["date"] as? Date ?? Date.now
+                    var categoryType = data["categoryType"]
+                    if categoryType as! String == "Expenses" {
+                        categoryType = Option.Expenses
+                    } else {
+                        categoryType = Option.Income
+                    }
+                    let desc = data["desc"] as? String ?? ""
+                    let id = data["id"] as? String ?? ""
+                    
+                    let newItem = Item(id: id, user: user, category: category, amount: amount, categoryType: categoryType as! Option, desc: desc)
+                    result.append(newItem)
+                    
                 }
             }
+            completionHandler(result)
         }
-        return result
+//        completionHandler(result)
+//        return result
     }
     
     func addItem(data: Item) {

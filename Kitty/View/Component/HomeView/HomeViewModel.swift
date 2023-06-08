@@ -18,7 +18,9 @@ class HomeViewModel {
     let userDefaults = UserDefaults.standard
     
     init() {
-        items = database.loadItem()
+        self.items = []
+        
+//        print(items)
         history = database.loadHistoryWithMonth(items: items)
         
         var categories = ["Grocery", "Gifts", "Cafe", "Health", "Commute", "Electronics"]
@@ -26,6 +28,11 @@ class HomeViewModel {
         if let encodedAray = try? encoder.encode(categories) {
             userDefaults.set(encodedAray, forKey: "categories")
         }
+        
+//        database.loadItemFireStore(completionHandler: {
+//            item in
+//            self.items = item
+//        })
     }
     
     func getExpense() -> Double {

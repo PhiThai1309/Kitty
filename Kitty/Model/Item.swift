@@ -25,6 +25,16 @@ class Item: Object, Codable {
     @Persisted var desc: String?
     @Persisted var categoryType: Option
     
+    init(id: String, user: String, category: String, amount: Double, categoryType: Option, desc: String) {
+        self.id = id
+        self.user = user
+        self.date = Date()
+        self.category = category
+        self.amount = amount
+        self.categoryType = categoryType
+        self.desc = desc
+    }
+    
     init(user: String, category: String, amount: Double, categoryType: Option) {
         self.id = "i" + String(Int.random(in: 1..<500))
         self.user = user
