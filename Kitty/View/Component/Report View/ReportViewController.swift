@@ -26,25 +26,16 @@ class ReportViewController: UIViewController, ChartViewDelegate {
 
         chartView.delegate = self
         
-        setupChart()
+        loadData()
         
+//        setupChart()
+
         let cellNib = UINib(nibName: "ItemCollectionViewCell", bundle: nil)
         self.reportCollectionView.register(cellNib, forCellWithReuseIdentifier: "ItemCellView")
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        viewModel.fetchData()
-        
-        let calendarDate = Calendar.current.dateComponents([.day, .year, .month], from: viewModel.filteredMonth)
-        
-        monthBtn.setTitle(viewModel.filteredMonth.month + ", " + String(calendarDate.year!), for: .normal)
-        
-        setupChart()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        viewModel.fetchData()
-        reportCollectionView.reloadData()
+        loadData()
     }
     
     func setupChart() {
@@ -80,6 +71,22 @@ class ReportViewController: UIViewController, ChartViewDelegate {
         chartView.barData?.setValueTextColor(.clear)
     }
     
+    func loadData() {
+        viewModel.database.loadItemFireStore(completionHandler: {
+            item in
+            self.viewModel.items = item
+            print(item)
+            
+            let calendarDate = Calendar.current.dateComponents([.day, .year, .month], from: self.viewModel.filteredMonth)
+            
+            self.monthBtn.setTitle(self.viewModel.filteredMonth.month + ", " + String(calendarDate.year!), for: .normal)
+            
+            self.reportCollectionView.reloadData()
+            self.setupChart()
+            self.viewModel.fetchData()
+        })
+    }
+    
     @IBAction func showCalendar(_ sender: Any) {
         let datePicker = MonthViewController()
         datePicker.delegate = self
@@ -112,7 +119,7 @@ extension ReportViewController: UICollectionViewDataSource, UICollectionViewDele
         // Fetch a cell of the appropriate type.
         if let cell = reportCollectionView.dequeueReusableCell(withReuseIdentifier: "ItemCellView", for: indexPath) as? ItemCollectionViewCell {
 
-             cell.typeLabel.text = amount[0].category
+            cell.typeLabel.text = amount[0].category
             cell.amountLabel.text = String(Array(viewModel.categoryWithAmount)[indexPath.row].value)
             cell.iconImg.image = UIImage(named: amount[0].category)
 //            let categories = viewModel.getArrayOfEachCategory(month: viewModel.filteredMonth)
