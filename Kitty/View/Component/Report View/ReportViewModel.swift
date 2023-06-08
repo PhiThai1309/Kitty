@@ -8,6 +8,10 @@
 import Foundation
 import OrderedCollections
 
+protocol ReportViewModelDelegate {
+    func reloadTable()
+}
+
 class ReportViewModel {
     var items: [Item]
     var history: [History]
@@ -15,7 +19,7 @@ class ReportViewModel {
     var categoryReport: [[Item]]
     var categoryWithAmount: OrderedDictionary<String, Double> = [:]
     var database: RealmDatabase = RealmDatabase()
-    
+    var delegate: ReportViewModelDelegate?
     init() {
         items = []
         categoryReport = []
@@ -24,11 +28,19 @@ class ReportViewModel {
     }
     
     func fetchData() {
-        categoryReport = getArrayOfEachCategory()
-        countExpenseAmountInCategories()
+        database.loadItemFireStore(completionHandler: {
+            item in
+            self.items = item
+            
+            self.categoryReport = self.getArrayOfEachCategory()
+            self.countExpenseAmountInCategories()
+            self.history = self.database.loadHistoryWithMonth(items: self.items)
+            
+            DispatchQueue.main.async {
+                self.delegate?.reloadTable()
+            }
+        })
         
-//        items = database.loadItem()
-        history = database.loadHistoryWithMonth(items: items)
     }
     
     func reloadData() {

@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AAA82400-C689-4BB4-8E01-2C81DACC92C4"
+            uuid = "B1F03A68-5830-41EC-83E4-740178A1C478"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Kitty/View/Component/Report View/ReportViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "loadData()"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "reloadTable()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

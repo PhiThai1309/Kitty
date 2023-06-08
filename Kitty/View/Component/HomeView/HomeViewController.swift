@@ -76,7 +76,7 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
         viewModel.database.loadItemFireStore(completionHandler: {
             item in
             self.viewModel.items = item
-            print(item)
+//            print(item)
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }

@@ -19,23 +19,21 @@ class ReportViewController: UIViewController, ChartViewDelegate {
     lazy var viewModel: ReportViewModel = {
         return ReportViewModel()
     }()
-//    var sum: Double = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         chartView.delegate = self
         
-        loadData()
-        
-//        setupChart()
+        viewModel.fetchData()
+        viewModel.delegate = self
 
         let cellNib = UINib(nibName: "ItemCollectionViewCell", bundle: nil)
         self.reportCollectionView.register(cellNib, forCellWithReuseIdentifier: "ItemCellView")
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        loadData()
+        viewModel.fetchData()
     }
     
     func setupChart() {
@@ -71,21 +69,6 @@ class ReportViewController: UIViewController, ChartViewDelegate {
         chartView.barData?.setValueTextColor(.clear)
     }
     
-    func loadData() {
-        viewModel.database.loadItemFireStore(completionHandler: {
-            item in
-            self.viewModel.items = item
-            print(item)
-            
-            let calendarDate = Calendar.current.dateComponents([.day, .year, .month], from: self.viewModel.filteredMonth)
-            
-            self.monthBtn.setTitle(self.viewModel.filteredMonth.month + ", " + String(calendarDate.year!), for: .normal)
-            
-            self.reportCollectionView.reloadData()
-            self.setupChart()
-            self.viewModel.fetchData()
-        })
-    }
     
     @IBAction func showCalendar(_ sender: Any) {
         let datePicker = MonthViewController()
@@ -153,4 +136,15 @@ extension ReportViewController: MonthViewDelegate {
         setupChart()
         reportCollectionView.reloadData()
     } 
+}
+
+extension ReportViewController: ReportViewModelDelegate {
+    func reloadTable() {
+        let calendarDate = Calendar.current.dateComponents([.day, .year, .month], from: self.viewModel.filteredMonth)
+
+        self.monthBtn.setTitle(self.viewModel.filteredMonth.month + ", " + String(calendarDate.year!), for: .normal)
+
+        self.reportCollectionView.reloadData()
+        self.setupChart()
+    }
 }
