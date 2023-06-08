@@ -8,14 +8,16 @@
 import Foundation
 import RealmSwift
 import Realm
+import FirebaseFirestoreSwift
 
-enum Option: String, PersistableEnum {
+enum Option: String, PersistableEnum, Codable {
     case Expenses
     case Income
 }
 
-class Item: Object {
+class Item: Object, Codable {
     @Persisted(primaryKey: true) var id = "h1"
+//    @DocumentID var id = "h1"
     @Persisted var user: String
     @Persisted var date: Date
     @Persisted var category: String
@@ -45,6 +47,17 @@ class Item: Object {
         super.init()
     }
 }
+
+enum CodingKeys: String, CodingKey  {
+    case id
+    case user
+    case date
+    case category
+    case amount
+    case desc
+    case categoryType
+}
+
 
 //struct DummyItem {
 //    var items = [Item]()

@@ -46,7 +46,7 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        viewModel.items = viewModel.database.loadItem()
+        viewModel.items = viewModel.database.loadItemFireStore()
         viewModel.history = viewModel.database.loadHistoryWithMonth(items: viewModel.items)
         monthBtn.setTitle(viewModel.convertToNormalDate(), for: .normal)
         expenseLabel.text = "- " + String(viewModel.getExpense())

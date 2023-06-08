@@ -9,8 +9,14 @@ import Foundation
 import RealmSwift
 import FirebaseAuth
 
+import FirebaseCore
+import FirebaseFirestore
+import FirebaseFirestoreSwift
+
 class RealmDatabase {
     let realm: Realm
+    let db = Firestore.firestore()
+    let user = Auth.auth().currentUser
     
     init() {
         self.realm = try! Realm()
@@ -21,8 +27,6 @@ class RealmDatabase {
         
         let array = Array(realm.objects(Item.self))
         var result: [Item] = []
-        
-        let user = Auth.auth().currentUser
         
         for item in array {
             if let user = user {
@@ -38,12 +42,42 @@ class RealmDatabase {
         return result
     }
     
+    func loadItemFireStore() -> [Item] {
+        var result: [Item] = []
+        db.collection(user!.uid).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+//                    do {
+//                        var doc = try document.data(as: Item.self)
+//
+//                        print(doc)
+//                    } catch {
+//                        print(document.data())
+//                        print("error")
+//                    }
+                    print(document.data())
+                }
+            }
+        }
+        return result
+    }
+    
     func addItem(data: Item) {
         try! realm.write {
             // Add the instance to the realm.
             realm.add(data)
             print("success")
             print(Realm.Configuration.defaultConfiguration.fileURL!)
+        }
+    }
+    
+    func addItemFireStore(data: Item) {
+        do {
+            try db.collection(user!.uid).document().setData(from: data)
+        } catch let error {
+            print("Error writing city to Firestore: \(error)")
         }
     }
     

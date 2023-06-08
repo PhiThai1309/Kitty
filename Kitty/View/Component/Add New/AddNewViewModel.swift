@@ -31,6 +31,7 @@ class AddNewViewModel {
     }
     
     func addNew(item: Item) {
-        database.addItem(data: item)
+//        database.addItem(data: item)
+        database.addItemFireStore(data: item)
     }
 }
