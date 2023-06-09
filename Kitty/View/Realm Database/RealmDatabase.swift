@@ -22,25 +22,25 @@ class RealmDatabase {
         self.realm = try! Realm()
     }
     
-    func loadItem() -> [Item] {
-        realm.refresh()
-        
-        let array = Array(realm.objects(Item.self))
-        var result: [Item] = []
-        
-        for item in array {
-            if let user = user {
-                // The user's ID, unique to the Firebase project.
-                // Do NOT use this value to authenticate with your backend server,
-                // if you have one. Use getTokenWithCompletion:completion: instead.
-                let uid = user.uid
-                if item.user == uid {
-                    result.append(item)
-                }
-            }
-        }
-        return result
-    }
+//    func loadItem() -> [Item] {
+//        realm.refresh()
+//        
+//        let array = Array(realm.objects(Item.self))
+//        var result: [Item] = []
+//        
+//        for item in array {
+//            if let user = user {
+//                // The user's ID, unique to the Firebase project.
+//                // Do NOT use this value to authenticate with your backend server,
+//                // if you have one. Use getTokenWithCompletion:completion: instead.
+//                let uid = user.uid
+//                if item.user == uid {
+//                    result.append(item)
+//                }
+//            }
+//        }
+//        return result
+//    }
     
     func loadItemFireStore(completionHandler: @escaping ([Item]) -> Void){
         var result: [Item] = []
@@ -110,10 +110,8 @@ class RealmDatabase {
         return result
     }
     
-    func filterData(categories: [String]) -> [Item] {
+    func filterData(categories: [String], array: [Item]) -> [Item] {
         var result:[Item] = []
-        
-        let array = Array(realm.objects(Item.self))
         
         for category in categories {
             for item in array {

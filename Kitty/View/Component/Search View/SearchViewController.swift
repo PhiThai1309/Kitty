@@ -27,6 +27,9 @@ class SearchViewController: UIViewController {
         dtFormatter.dateStyle = .short
         dtFormatter.timeStyle = .none
         
+        viewModel.delegate = self
+        viewModel.loadData()
+        
         // Do any additional setup after loading the view.
         let cellNib = UINib(nibName: "CategorySearchCollectionViewCell", bundle: nil)
         self.collectionView.register(cellNib, forCellWithReuseIdentifier: "searchCell")
@@ -46,8 +49,6 @@ class SearchViewController: UIViewController {
         } else {
             viewModel.clearData()
         }
-        
-        
         tableView.reloadData()
     }
     
@@ -101,6 +102,12 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
+    }
+}
+extension SearchViewController: SearchViewModelDelegate {
+    func loadData() {
+        collectionView.reloadData()
+        tableView.reloadData()
     }
 }
 

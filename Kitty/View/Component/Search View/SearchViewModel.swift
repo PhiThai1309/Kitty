@@ -7,22 +7,39 @@
 
 import Foundation
 
+protocol SearchViewModelDelegate {
+    func loadData()
+}
+
 class SearchViewModel {
     let userDefaults = UserDefaults.standard
-    var availableCategories: [String]
     var categories: [String] = ["Grocery", "Cafe", "Health", "Commute", "Gifts"]
     var filterCat: [String]
     
     var database: RealmDatabase = RealmDatabase()
     
     var filterArray: [Item]
+    var originalArray: [Item]
+    
+    var delegate: SearchViewModelDelegate?
     
     init() {
         filterCat = []
-        filterArray = database.loadItem()
-        availableCategories = []
-        checkCategories(data: filterArray)
+        filterArray = []
+        originalArray = []
     }
+    
+    func loadData() {
+        database.loadItemFireStore(completionHandler: {
+            item in
+            self.filterArray = item.reversed()
+            self.originalArray = item.reversed()
+            self.checkCategories(data: self.filterArray)
+            DispatchQueue.main.async {
+                self.delegate?.loadData()
+            }
+        })
+     }
     
     func checkCategories(data: [Item]) {
         var result = [String]()
@@ -36,7 +53,6 @@ class SearchViewModel {
         } else {
             categories = result
         }
-        print(categories)
     }
     
     func remove(data: String, query: String) {
@@ -50,17 +66,15 @@ class SearchViewModel {
         if !filterCat.contains(data) && data != ""{
             filterCat.append(data)
         }
-        
+        print(filterCat)
         if !filterCat.isEmpty {
-            filterArray = database.filterData(categories: filterCat)
+            filterArray = database.filterData(categories: filterCat, array: originalArray)
         } else {
-            filterArray = database.loadItem()
+            filterArray = originalArray
         }
         
-        print(filterArray)
         if query != "" {
             for item in filterArray {
-                print(item.desc!)
                 if (!item.category.localizedStandardContains(query) && !(item.desc!.localizedStandardContains(query) && item.desc != nil)){
                     filterArray.remove(at: filterArray.firstIndex(of: item)!)
                 }
@@ -71,9 +85,9 @@ class SearchViewModel {
     func clearData() {
         filterArray.removeAll()
         if !filterCat.isEmpty {
-            filterArray = database.filterData(categories: filterCat)
+            filterArray = database.filterData(categories: filterCat, array: originalArray)
         } else {
-            filterArray = database.loadItem()
+            filterArray = originalArray
         }
     }
 }
