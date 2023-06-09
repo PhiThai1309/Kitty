@@ -44,7 +44,7 @@ class RealmDatabase {
     
     func loadItemFireStore(completionHandler: @escaping ([Item]) -> Void){
         var result: [Item] = []
-        db.collection(user!.uid).getDocuments() { (querySnapshot, err) in
+        db.collection(user!.uid).order(by: "timeStamp").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
@@ -54,7 +54,8 @@ class RealmDatabase {
                     let user = data["user"] as? String ?? ""
                     let amount = data["amount"] as? Double ?? 0.0
                     let category = data["category"] as? String ?? "Commute"
-                    let date = data["date"] as? Date ?? Date.now
+                    
+                    
                     var categoryType = data["categoryType"]
                     if categoryType as! String == "Expenses" {
                         categoryType = Option.Expenses
@@ -64,15 +65,16 @@ class RealmDatabase {
                     let desc = data["desc"] as? String ?? ""
                     let id = data["id"] as? String ?? ""
                     
-                    let newItem = Item(id: id, user: user, category: category, amount: amount, categoryType: categoryType as! Option, desc: desc)
-                    result.append(newItem)
-                    
+                    if let timestamp = data["timeStamp"] as? Timestamp {
+                        let date = timestamp.dateValue()
+                        let newItem = Item(id: id, user: user, category: category, amount: amount, categoryType: categoryType as! Option, desc: desc, date: date)
+                        result.append(newItem)
+                    }
                 }
             }
+            print(result)
             completionHandler(result)
         }
-//        completionHandler(result)
-//        return result
     }
     
     func addItem(data: Item) {
@@ -86,7 +88,8 @@ class RealmDatabase {
     
     func addItemFireStore(data: Item) {
         do {
-            try db.collection(user!.uid).document().setData(from: data)
+            let item = Item(id: data.id, user: data.user, category: data.category, amount: data.amount, categoryType: data.categoryType, desc: data.desc ?? "", date: Timestamp(date: data.date))
+            try db.collection(user!.uid).document().setData(from: item)
         } catch let error {
             print("Error writing city to Firestore: \(error)")
         }

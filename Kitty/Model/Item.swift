@@ -9,6 +9,8 @@ import Foundation
 import RealmSwift
 import Realm
 import FirebaseFirestoreSwift
+import FirebaseCore
+import Firebase
 
 enum Option: String, PersistableEnum, Codable {
     case Expenses
@@ -20,12 +22,13 @@ class Item: Object, Codable {
 //    @DocumentID var id = "h1"
     @Persisted var user: String
     @Persisted var date: Date
+    var timeStamp: Timestamp?
     @Persisted var category: String
     @Persisted var amount: Double
     @Persisted var desc: String?
     @Persisted var categoryType: Option
     
-    init(id: String, user: String, category: String, amount: Double, categoryType: Option, desc: String) {
+    init(id: String, user: String, category: String, amount: Double, categoryType: Option, desc: String, date: Date) {
         self.id = id
         self.user = user
         self.date = Date()
@@ -33,6 +36,18 @@ class Item: Object, Codable {
         self.amount = amount
         self.categoryType = categoryType
         self.desc = desc
+        self.date = date
+    }
+    
+    init(id: String, user: String, category: String, amount: Double, categoryType: Option, desc: String, date: Timestamp) {
+        self.id = id
+        self.user = user
+        self.date = Date()
+        self.category = category
+        self.amount = amount
+        self.categoryType = categoryType
+        self.desc = desc
+        self.timeStamp = date
     }
     
     init(user: String, category: String, amount: Double, categoryType: Option) {
@@ -66,6 +81,7 @@ enum CodingKeys: String, CodingKey  {
     case amount
     case desc
     case categoryType
+    case timeStamp
 }
 
 
