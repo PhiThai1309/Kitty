@@ -47,7 +47,6 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-//        viewModel.items = viewModel.database.loadItemFireStore()
         viewModel.loadData()
     }
     
@@ -72,15 +71,6 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
         monthBtn.setTitle(viewModel.filteredMonth.month + ", " + String(year), for: .normal)
         tableView.reloadData()
     }
-    
-//    func loadData() {
-//        viewModel.database.loadItemFireStore(completionHandler: {
-//            item in
-//            self.viewModel.items = item
-////            print(item)
-//            
-//        })
-//    }
 }
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {

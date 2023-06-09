@@ -19,7 +19,6 @@ enum Option: String, PersistableEnum, Codable {
 
 class Item: Object, Codable {
     @Persisted(primaryKey: true) var id = "h1"
-//    @DocumentID var id = "h1"
     @Persisted var user: String
     @Persisted var date: Date
     var timeStamp: Timestamp?
@@ -83,19 +82,3 @@ enum CodingKeys: String, CodingKey  {
     case categoryType
     case timeStamp
 }
-
-
-//struct DummyItem {
-//    var items = [Item]()
-//    
-//    init() {
-//        let item1 = Item(category: "Grocery", amount: 120.0, description: "Example description", categoryType: Option.Expenses)
-//        let item2 = Item(category: "Gifts", amount: 22.0, description: "Example description2", categoryType: Option.Expenses)
-//        let item3 = Item(category: "Gifts", amount: 32.0, description: "Example description3", categoryType: Option.Expenses)
-//        let item4 = Item(category: "Electronics", amount: 32.0, description: "Example description3", categoryType: Option.Expenses)
-//        items.append(item1)
-//        items.append(item2)
-//        items.append(item3)
-//        items.append(item4)
-//    }
-//}

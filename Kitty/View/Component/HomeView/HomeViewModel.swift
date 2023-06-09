@@ -27,7 +27,7 @@ class HomeViewModel {
         
         history = database.loadHistoryWithMonth(items: items)
         
-        var categories = ["Grocery", "Gifts", "Cafe", "Health", "Commute", "Electronics"]
+        let categories = ["Grocery", "Gifts", "Cafe", "Health", "Commute", "Electronics"]
         let encoder = JSONEncoder()
         if let encodedAray = try? encoder.encode(categories) {
             userDefaults.set(encodedAray, forKey: "categories")
@@ -114,7 +114,6 @@ class HomeViewModel {
                 }
             }
         }
-//        print(result)
         return result
     }
     
