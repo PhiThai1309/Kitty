@@ -96,15 +96,6 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         }
         return 60
     }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.alpha = 0
-        UIView.animate(withDuration: 0.2, delay: 0.2*Double(indexPath.row),animations: { () -> Void in
-        cell.alpha = 1
-
-            cell.layer.transform = CATransform3DScale(CATransform3DIdentity, 1, 1, 1)
-        })
-    }
 }
 
 extension HomeViewController: AddNewDelegate {
