@@ -22,12 +22,12 @@ class ReportViewController: UIViewController, ChartViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         chartView.delegate = self
         
         viewModel.fetchData()
         viewModel.delegate = self
-
+        
         let cellNib = UINib(nibName: "ItemCollectionViewCell", bundle: nil)
         self.reportCollectionView.register(cellNib, forCellWithReuseIdentifier: "ItemCellView")
     }
@@ -98,15 +98,14 @@ extension ReportViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let amount = viewModel.categoryReport[indexPath.row]
-
+        
         // Fetch a cell of the appropriate type.
         if let cell = reportCollectionView.dequeueReusableCell(withReuseIdentifier: "ItemCellView", for: indexPath) as? ItemCollectionViewCell {
-
+            
             cell.typeLabel.text = amount[0].category
             cell.amountLabel.text = String(Array(viewModel.categoryWithAmount)[indexPath.row].value)
             cell.iconImg.image = UIImage(named: amount[0].category)
-//            let categories = viewModel.getArrayOfEachCategory(month: viewModel.filteredMonth)
-
+            
             cell.descLabel.text = String(viewModel.categoryReport[indexPath.row].count) + " transactions"
             return cell
         }
@@ -117,6 +116,17 @@ extension ReportViewController: UICollectionViewDataSource, UICollectionViewDele
         let _: CGFloat = 1
         let cellWidth = UIScreen.main.bounds.size.width
         return CGSizeMake(cellWidth, 50)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //        print(viewModel.categoryReport[indexPath.row])s
+        let storyboard = UIStoryboard(name: "ReportDetailsView", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ReportDetailsView") as! ReportDetailsView
+        
+        vc.items = viewModel.categoryReport[indexPath.row].reversed()
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
 }
 
@@ -135,15 +145,15 @@ extension ReportViewController: MonthViewDelegate {
         viewModel.reloadData()
         setupChart()
         reportCollectionView.reloadData()
-    } 
+    }
 }
 
 extension ReportViewController: ReportViewModelDelegate {
     func reloadTable() {
         let calendarDate = Calendar.current.dateComponents([.day, .year, .month], from: self.viewModel.filteredMonth)
-
+        
         self.monthBtn.setTitle(self.viewModel.filteredMonth.month + ", " + String(calendarDate.year!), for: .normal)
-
+        
         self.reportCollectionView.reloadData()
         self.setupChart()
     }

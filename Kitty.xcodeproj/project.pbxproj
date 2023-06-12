@@ -33,6 +33,8 @@
 		3F438C2E29F7B669002BE0B5 /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F438C2D29F7B669002BE0B5 /* Month.swift */; };
 		3F438C3029F7BA98002BE0B5 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F438C2F29F7BA98002BE0B5 /* DateExtension.swift */; };
 		3F64B3B429F23E190008A4D9 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F64B3B329F23E180008A4D9 /* TabBarViewController.swift */; };
+		3F6621E32A36CCD000869818 /* ReportDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6621E22A36CCD000869818 /* ReportDetailsView.swift */; };
+		3F6621E52A36CCE400869818 /* ReportDetailsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F6621E42A36CCE400869818 /* ReportDetailsView.storyboard */; };
 		3F6BDFF02A1755240095800B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BDFEF2A1755240095800B /* SearchViewController.swift */; };
 		3F6BDFF22A1755300095800B /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BDFF12A1755300095800B /* SearchViewModel.swift */; };
 		3F6BDFF52A1759590095800B /* CategorySearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BDFF32A1759590095800B /* CategorySearchCollectionViewCell.swift */; };
@@ -98,6 +100,8 @@
 		3F438C2D29F7B669002BE0B5 /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
 		3F438C2F29F7BA98002BE0B5 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		3F64B3B329F23E180008A4D9 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		3F6621E22A36CCD000869818 /* ReportDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailsView.swift; sourceTree = "<group>"; };
+		3F6621E42A36CCE400869818 /* ReportDetailsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReportDetailsView.storyboard; sourceTree = "<group>"; };
 		3F6BDFEF2A1755240095800B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		3F6BDFF12A1755300095800B /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		3F6BDFF32A1759590095800B /* CategorySearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySearchCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -294,6 +298,7 @@
 		3F438C2829F7A821002BE0B5 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				3F6621E12A36CCAB00869818 /* Report Details View */,
 				3F6BDFEE2A17550E0095800B /* Search View */,
 				3F3B5E762A17149E003C1AF9 /* Manage Categories */,
 				3F3B5E712A162C50003C1AF9 /* Month View */,
@@ -307,6 +312,15 @@
 				3F15B79629FA7C4E00616FB5 /* Category Sheet View */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		3F6621E12A36CCAB00869818 /* Report Details View */ = {
+			isa = PBXGroup;
+			children = (
+				3F6621E22A36CCD000869818 /* ReportDetailsView.swift */,
+				3F6621E42A36CCE400869818 /* ReportDetailsView.storyboard */,
+			);
+			path = "Report Details View";
 			sourceTree = "<group>";
 		};
 		3F6BDFEE2A17550E0095800B /* Search View */ = {
@@ -460,6 +474,7 @@
 				3FEFBAA729ECF6210085641B /* ItemCollectionViewCell.xib in Resources */,
 				3F6BDFF62A1759590095800B /* CategorySearchCollectionViewCell.xib in Resources */,
 				3FA9E64C29E9346E00D8D7C1 /* Main.storyboard in Resources */,
+				3F6621E52A36CCE400869818 /* ReportDetailsView.storyboard in Resources */,
 				3F0E3CB629F0EC29009BF311 /* CategoryCollectionViewCell.xib in Resources */,
 				3FEFBAA329ECF4B50085641B /* CardTableViewCell.xib in Resources */,
 				3F770BFC29F68220009FDA26 /* CategorySheetViewController.xib in Resources */,
@@ -543,6 +558,7 @@
 				3F438C2B29F7A8E9002BE0B5 /* ButtonCollectionViewCell.swift in Sources */,
 				3FF9E16C29F11CBE00FFDDE9 /* ReportViewController.swift in Sources */,
 				3F3B5E782A171630003C1AF9 /* ManageCategoriesViewModel.swift in Sources */,
+				3F6621E32A36CCD000869818 /* ReportDetailsView.swift in Sources */,
 				3F3B5E752A1713E9003C1AF9 /* ManageCategoriesViewController.swift in Sources */,
 				3F438C2E29F7B669002BE0B5 /* Month.swift in Sources */,
 				3F3B5E702A15D741003C1AF9 /* RealmDatabase.swift in Sources */,
