@@ -27,10 +27,11 @@ The small application is designed to help users track their expenses and income 
   <img width="300" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/6f00b44a-b61c-4a5c-b312-9402c038c8ff">
 </p>
 
-- The report page in the application includes a bar graph that represents all the expenses logged by the user within a specific month. This visual representation allows users to get a clear overview of their spending patterns and see the distribution of expenses across different categories or time periods. Additionally, users have the flexibility to choose a specific month and view their past or current expenses, providing a comprehensive picture of their financial history and enabling them to track their expenses over time. 
+- The report page in the application includes a bar graph that represents all the expenses logged by the user within a specific month. This visual representation allows users to get a clear overview of their spending patterns and see the distribution of expenses across different categories or time periods. Additionally, users have the flexibility to choose a specific month and view their past or current expenses. 
 <p align="center">
   <img width="250" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/361880b8-c1e1-4e8d-b342-49f1f3e00595">
   <img width="250" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/b90fc95c-430f-49d3-a71c-225d11fa9f53">
+  <img width="250" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/e79b0dd0-1673-4100-901f-1b57165bef32">
 </p>
 
 - One of the key features of the application is the ability for users to add new expenses or income entries. This functionality enables individuals to accurately track and record their financial transactions, providing a comprehensive overview of their spending and earning activities.
@@ -65,7 +66,6 @@ The small application is designed to help users track their expenses and income 
 </p>
 
 ## Limitations
-- The application currently store the database locally. Despite the user have to sign in with Google in order to use the application, the database will not carried out if the user use the same account on another device.
 
 ### Built with
 
