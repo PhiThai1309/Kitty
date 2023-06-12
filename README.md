@@ -31,7 +31,7 @@ The small application is designed to help users track their expenses and income 
 <p align="center">
   <img width="250" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/361880b8-c1e1-4e8d-b342-49f1f3e00595">
   <img width="250" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/b90fc95c-430f-49d3-a71c-225d11fa9f53">
-  <img width="250" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/e79b0dd0-1673-4100-901f-1b57165bef32">
+  <img width="250" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/037c757c-71db-4791-bd21-94cf91cab702">
 </p>
 
 - One of the key features of the application is the ability for users to add new expenses or income entries. This functionality enables individuals to accurately track and record their financial transactions, providing a comprehensive overview of their spending and earning activities.
