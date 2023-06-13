@@ -21,6 +21,11 @@ A money expense tracking application
 The small application is designed to help users track their expenses and income effectively. It offers a range of features, including a report page that visually summarizes expense data, a search function for quick retrieval of specific transactions, and a categorization feature to organize and filter data. Together, these features empower users to gain insights into their financial habits, make informed decisions, and efficiently manage their finances.
 
 ### Functionalities
+- Sign up or log in with Google with real time database to help you to log your expenses on any phone with the same account
+<p align="center">
+  <img width="300" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/891fa834-b172-432e-8b42-0d21a2dddb6f">
+</p>
+
 - The main screen of the application provides a comprehensive view of the user's expenses and income history, with dynamically updated values in the expense, balance, and income sections. Users can navigate through months by clicking on left or right arrows and choose a specific month from a popup or dropdown menu. This allows for easy analysis of financial trends and helps users make informed decisions based on their spending and earning patterns. The main screen serves as a powerful dashboard, empowering users to track their financial transactions and manage their overall financial health effectively.
 <p align="center">
   <img width="300" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/6f9cec53-1076-47f1-b714-0158aed34f1d">
