@@ -12,6 +12,7 @@ A money expense tracking application
 - [Overview](#overview)
 - [Functionalities](#Functionalities)
 - [Limitations](#Limitations)
+- [How to run](#How-to-run)
 - [Built with](#built-with)
 - [Author](#author)
 - [References](#References)
@@ -71,8 +72,23 @@ The small application is designed to help users track their expenses and income 
 </p>
 
 ## Limitations
+N/A
 
-### Built with
+## How to run
+- Clone this repo with XCode
+- Open terminal and navigate to the project folder
+- Install pod with this command line:
+```
+pod install
+```
+- Run the project on simulation iOS devices or connect your iPhone to run the app
+
+- If there are any issue for running the project, please update the pod file: 
+```
+pod update
+```
+
+## Built with
 
 <p align="center">
   <img src="https://skillicons.dev/icons?i=swift" />
