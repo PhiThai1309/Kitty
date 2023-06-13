@@ -113,9 +113,8 @@ extension ReportViewController: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let _: CGFloat = 1
-        let cellWidth = UIScreen.main.bounds.size.width
-        return CGSizeMake(cellWidth, 50)
+        let width = reportCollectionView.frame.width
+        return CGSizeMake(width, 50)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
