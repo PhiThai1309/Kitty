@@ -9,6 +9,7 @@
 import Foundation
 import Charts
 import OrderedCollections
+import PDFKit
 
 class ReportViewController: UIViewController, ChartViewDelegate {
     
@@ -89,6 +90,14 @@ class ReportViewController: UIViewController, ChartViewDelegate {
         viewModel.reloadData()
         setupChart()
     }
+    
+    @IBAction func generateReport(_ sender: Any) {
+        let pdfData = viewModel.generatePdfData(items: viewModel.categoryReport)
+        let newViewController = PDFViewController()
+        newViewController.documentData = pdfData
+        self.present(newViewController, animated: true)
+    }
+    
 }
 
 extension ReportViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -114,7 +123,7 @@ extension ReportViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = reportCollectionView.frame.width
-        return CGSizeMake(width, 50)
+        return CGSizeMake(width - 4, 50)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

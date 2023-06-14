@@ -49,6 +49,9 @@
 		3FA9E65129E9347200D8D7C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FA9E65029E9347200D8D7C1 /* Assets.xcassets */; };
 		3FA9E65429E9347200D8D7C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FA9E65229E9347200D8D7C1 /* LaunchScreen.storyboard */; };
 		3FA9E65C29E93F6200D8D7C1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9E65B29E93F6100D8D7C1 /* HomeViewController.swift */; };
+		3FB6AC422A39955400B72E31 /* PDFExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB6AC412A39955400B72E31 /* PDFExtension.swift */; };
+		3FB6AC482A39A45300B72E31 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB6AC462A39A45300B72E31 /* PDFViewController.swift */; };
+		3FB6AC492A39A45300B72E31 /* PDFViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB6AC472A39A45300B72E31 /* PDFViewController.xib */; };
 		3FB6CCDC29F6705000C3CBE2 /* AddNewCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB6CCDA29F6705000C3CBE2 /* AddNewCategoryViewController.swift */; };
 		3FB6CCDD29F6705000C3CBE2 /* AddNewCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB6CCDB29F6705000C3CBE2 /* AddNewCategoryViewController.xib */; };
 		3FD4EEAF2A25E62D00CADB0E /* ChipsControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4EEAE2A25E62D00CADB0E /* ChipsControl.swift */; };
@@ -118,6 +121,9 @@
 		3FA9E65329E9347200D8D7C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FA9E65529E9347200D8D7C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FA9E65B29E93F6100D8D7C1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3FB6AC412A39955400B72E31 /* PDFExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFExtension.swift; sourceTree = "<group>"; };
+		3FB6AC462A39A45300B72E31 /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
+		3FB6AC472A39A45300B72E31 /* PDFViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDFViewController.xib; sourceTree = "<group>"; };
 		3FB6CCDA29F6705000C3CBE2 /* AddNewCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCategoryViewController.swift; sourceTree = "<group>"; };
 		3FB6CCDB29F6705000C3CBE2 /* AddNewCategoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewCategoryViewController.xib; sourceTree = "<group>"; };
 		3FD4EEAE2A25E62D00CADB0E /* ChipsControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsControl.swift; sourceTree = "<group>"; };
@@ -230,6 +236,7 @@
 				3F3064CC29ECE6C100EF5485 /* UIViewExtension.swift */,
 				3F438C2F29F7BA98002BE0B5 /* DateExtension.swift */,
 				3FD4EEB02A25F28D00CADB0E /* UIColorExtension.swift */,
+				3FB6AC412A39955400B72E31 /* PDFExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -298,6 +305,7 @@
 		3F438C2829F7A821002BE0B5 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				3FB6AC432A39A42C00B72E31 /* PDF View */,
 				3F6621E12A36CCAB00869818 /* Report Details View */,
 				3F6BDFEE2A17550E0095800B /* Search View */,
 				3F3B5E762A17149E003C1AF9 /* Manage Categories */,
@@ -369,6 +377,15 @@
 				3FA9E64D29E9346E00D8D7C1 /* Kitty.xcdatamodeld */,
 			);
 			path = Kitty;
+			sourceTree = "<group>";
+		};
+		3FB6AC432A39A42C00B72E31 /* PDF View */ = {
+			isa = PBXGroup;
+			children = (
+				3FB6AC462A39A45300B72E31 /* PDFViewController.swift */,
+				3FB6AC472A39A45300B72E31 /* PDFViewController.xib */,
+			);
+			path = "PDF View";
 			sourceTree = "<group>";
 		};
 		3FEFBA9D29ECF4990085641B /* Model */ = {
@@ -483,6 +500,7 @@
 				3F0E3CB229F0E880009BF311 /* SheetViewController.xib in Resources */,
 				3F16DE1429F0DC1500AE7C83 /* AddNewViewController.xib in Resources */,
 				3FB6CCDD29F6705000C3CBE2 /* AddNewCategoryViewController.xib in Resources */,
+				3FB6AC492A39A45300B72E31 /* PDFViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,6 +564,7 @@
 				3F15B79529FA789400616FB5 /* SheetViewModel.swift in Sources */,
 				3F3064CD29ECE6C100EF5485 /* UIViewExtension.swift in Sources */,
 				3F64B3B429F23E190008A4D9 /* TabBarViewController.swift in Sources */,
+				3FB6AC422A39955400B72E31 /* PDFExtension.swift in Sources */,
 				3F15B79829FA7C6B00616FB5 /* CategorySheetViewModel.swift in Sources */,
 				3FB6CCDC29F6705000C3CBE2 /* AddNewCategoryViewController.swift in Sources */,
 				3FE3848129F62BF4007884A8 /* SettingsViewController.swift in Sources */,
@@ -567,6 +586,7 @@
 				3FEFBAA629ECF6210085641B /* ItemCollectionViewCell.swift in Sources */,
 				3F0DCE4029F78D7A00C47FC6 /* MonthViewController.swift in Sources */,
 				3FA9E64929E9346E00D8D7C1 /* ViewController.swift in Sources */,
+				3FB6AC482A39A45300B72E31 /* PDFViewController.swift in Sources */,
 				3FEFBAAE29ECFD410085641B /* MainViewModel.swift in Sources */,
 				3F3FDB4829FA84120052BE93 /* ReportViewModel.swift in Sources */,
 				3F6BDFF02A1755240095800B /* SearchViewController.swift in Sources */,

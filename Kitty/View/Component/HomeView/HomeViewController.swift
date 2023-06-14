@@ -85,6 +85,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         // Configure the cell’s contents.
         cell.cardLabel.text = dtFormatter.string(from: history.date)
         cell.set(value: Array(history.items))
+        cell.isUserInteractionEnabled = false
 
         return cell
     }

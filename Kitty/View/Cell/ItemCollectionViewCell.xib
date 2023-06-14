@@ -55,7 +55,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="nOv-xa-JdC" secondAttribute="trailing" constant="16" id="5nR-B0-ktp"/>
                                     <constraint firstItem="9XJ-Uf-FnB" firstAttribute="centerY" secondItem="08f-Oc-ucY" secondAttribute="centerY" id="bvp-e4-DzO"/>
@@ -67,7 +67,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBrownColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="08f-Oc-ucY" secondAttribute="trailing" id="6Tj-BN-jv0"/>
                             <constraint firstAttribute="bottom" secondItem="08f-Oc-ucY" secondAttribute="bottom" id="BMW-G5-BX5"/>
@@ -78,6 +78,7 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="tb9-eX-WIv" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="50k-lh-Uhh"/>
                 <constraint firstAttribute="trailing" secondItem="tb9-eX-WIv" secondAttribute="trailing" id="9m4-VZ-fq9"/>
@@ -96,12 +97,6 @@
     </objects>
     <resources>
         <image name="Cafe" width="40" height="40"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

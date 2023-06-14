@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import PDFKit
 
 class SettingsViewController: UIViewController {
 
@@ -50,5 +51,4 @@ class SettingsViewController: UIViewController {
 
         }
     }
-    
 }

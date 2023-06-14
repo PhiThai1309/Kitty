@@ -43,6 +43,7 @@ extension ReportDetailsView: UITableViewDataSource, UITableViewDelegate {
         // Configure the cell’s contents.
         cell.cardLabel.text = dtFormatter.string(from: item.date)
         cell.set(value: [item])
+        cell.isUserInteractionEnabled = false
         return cell
     }
     
