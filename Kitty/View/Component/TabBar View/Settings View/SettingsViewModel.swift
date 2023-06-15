@@ -69,15 +69,12 @@ class SettingsViewModel {
                 cursor = context.addCenteredText(fontSize: 14, weight: .thin, text: "No expense history tracked", cursor: cursor, pdfSize: pageRect.size)
                     cursor+=6
             } else {
-//                for category in items {
-//                    cursor = context.addSingleLineText(fontSize: 14, weight: .bold, text:  category[0].category, indent: 74, cursor: cursor, pdfSize: pageRect.size, annotation: nil, annotationColor: nil, end: nil, title: "")
-//                        cursor+=6
-                    for data in items {
-                        // wirte in our context the info of each drink
-                        cursor = generateDrinkText(item: data, context: context, cursorY: cursor, pdfSize: pageRect.size)
-                    }
-                    cursor+=10
-//                }
+                
+            for data in items {
+                // wirte in our context the info of each drink
+                cursor = generateDrinkText(item: data, context: context, cursorY: cursor, pdfSize: pageRect.size)
+            }
+            cursor+=10
             }
         }
         return data

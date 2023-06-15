@@ -49,7 +49,7 @@ extension UIGraphicsPDFRendererContext {
                 bounds: CGRect.init(x: indent, y: rect.origin.y + rect.size.height, width: pdfText.size().width, height: 10),
                 forType: annotation,
                 withProperties: nil)
-            annotation.color = annotationColor ?? .black
+            annotation.color = annotationColor ?? .red
             annotation.draw(with: PDFDisplayBox.artBox, in: self.cgContext)
         }
         
