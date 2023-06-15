@@ -17,7 +17,6 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         let user = Auth.auth().currentUser
         if let user = user {
             // The user's ID, unique to the Firebase project.
@@ -42,13 +41,7 @@ class SettingsViewController: UIViewController {
         }
         
         if Auth.auth().currentUser == nil {
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let vc = storyboard.instantiateViewController(withIdentifier: "loginViewController") as! ViewController
-//
-//            self.navigationController?.pushViewController(vc, animated: true)
             self.navigationController?.popViewController(animated: true)
-
-
         }
     }
 }
