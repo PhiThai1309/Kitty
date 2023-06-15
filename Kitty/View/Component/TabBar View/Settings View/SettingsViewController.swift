@@ -14,6 +14,10 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
+    lazy var viewModel: SettingsViewModel = {
+        return SettingsViewModel()
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,11 +30,22 @@ class SettingsViewController: UIViewController {
             let email = user.email
             let photoURL = user.photoURL
             
+            print(photoURL)
+            
             nameLabel.text = uid
             emailLabel.text = email
         }
         
+        viewModel.loadData()
     }
+    
+    @IBAction func exportOnClickHandler(_ sender: Any) {
+        let pdfData = viewModel.generatePdfData(items: viewModel.items)
+        let newViewController = PDFViewController()
+        newViewController.documentData = pdfData
+        self.present(newViewController, animated: true)
+    }
+    
     
     @IBAction func logOutOnClickHandler(_ sender: Any) {
         let firebaseAuth = Auth.auth()

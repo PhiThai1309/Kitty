@@ -73,6 +73,7 @@
 		3FEFBAA929ECF8040085641B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEFBAA829ECF8040085641B /* Item.swift */; };
 		3FEFBAAB29ECFBE40085641B /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEFBAAA29ECFBE40085641B /* History.swift */; };
 		3FEFBAAE29ECFD410085641B /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEFBAAD29ECFD410085641B /* MainViewModel.swift */; };
+		3FF880772A3AB4020006A685 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF880762A3AB4020006A685 /* SettingsViewModel.swift */; };
 		3FF9E16C29F11CBE00FFDDE9 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF9E16B29F11CBE00FFDDE9 /* ReportViewController.swift */; };
 		81F3DE7A7E4BF91F6F29295D /* Pods_Kitty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 932AB51646B8E5E529DBB01E /* Pods_Kitty.framework */; };
 /* End PBXBuildFile section */
@@ -137,6 +138,7 @@
 		3FEFBAA829ECF8040085641B /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		3FEFBAAA29ECFBE40085641B /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		3FEFBAAD29ECFD410085641B /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		3FF880762A3AB4020006A685 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		3FF9E16B29F11CBE00FFDDE9 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		7E3FD0B8C8890138E1290C7E /* Pods-Kitty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kitty.release.xcconfig"; path = "Target Support Files/Pods-Kitty/Pods-Kitty.release.xcconfig"; sourceTree = "<group>"; };
 		932AB51646B8E5E529DBB01E /* Pods_Kitty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kitty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -295,9 +297,9 @@
 		3F438C2729F7A7E5002BE0B5 /* TabBar View */ = {
 			isa = PBXGroup;
 			children = (
+				3FF880752A3AB3E20006A685 /* Settings View */,
 				3F64B3B329F23E180008A4D9 /* TabBarViewController.swift */,
 				3FEFBAAD29ECFD410085641B /* MainViewModel.swift */,
-				3FE3848029F62BF4007884A8 /* SettingsViewController.swift */,
 			);
 			path = "TabBar View";
 			sourceTree = "<group>";
@@ -407,6 +409,15 @@
 				3F438C2629F7A7C3002BE0B5 /* Cell */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		3FF880752A3AB3E20006A685 /* Settings View */ = {
+			isa = PBXGroup;
+			children = (
+				3FE3848029F62BF4007884A8 /* SettingsViewController.swift */,
+				3FF880762A3AB4020006A685 /* SettingsViewModel.swift */,
+			);
+			path = "Settings View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -553,6 +564,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FF880772A3AB4020006A685 /* SettingsViewModel.swift in Sources */,
 				3F770BFB29F68220009FDA26 /* CategorySheetViewController.swift in Sources */,
 				3F438C3029F7BA98002BE0B5 /* DateExtension.swift in Sources */,
 				3FEFBAA929ECF8040085641B /* Item.swift in Sources */,

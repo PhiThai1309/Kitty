@@ -95,6 +95,7 @@ class ReportViewController: UIViewController, ChartViewDelegate {
         let pdfData = viewModel.generatePdfData(items: viewModel.categoryReport)
         let newViewController = PDFViewController()
         newViewController.documentData = pdfData
+        newViewController.header = viewModel.filteredMonth.month
         self.present(newViewController, animated: true)
     }
     

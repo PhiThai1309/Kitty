@@ -72,7 +72,6 @@ class RealmDatabase {
                     }
                 }
             }
-            print(result)
             completionHandler(result)
         }
     }

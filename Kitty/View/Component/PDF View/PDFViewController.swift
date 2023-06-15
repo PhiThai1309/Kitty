@@ -11,6 +11,7 @@ import PDFKit
 class PDFViewController: UIViewController {
 
     public var documentData: Data?
+    public var header: String?
     @IBOutlet weak var pdfView: PDFView!
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var shareButton: UIBarButtonItem!
@@ -18,7 +19,7 @@ class PDFViewController: UIViewController {
         override func viewDidLoad() {
             super.viewDidLoad()
             
-            navigationBar.topItem?.title = "PHIHIIHIH"
+            navigationBar.topItem?.title = "Generated report"
             if let data = documentData {
                 pdfView.translatesAutoresizingMaskIntoConstraints = false
                 pdfView.autoScales = true

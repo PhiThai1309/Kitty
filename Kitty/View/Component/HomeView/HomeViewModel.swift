@@ -24,8 +24,7 @@ class HomeViewModel {
     var delegate: HomeViewModelDelegate?
     init() {
         self.items = []
-        
-        history = database.loadHistoryWithMonth(items: items)
+        history = []
         
         let categories = ["Grocery", "Gifts", "Cafe", "Health", "Commute", "Electronics"]
         let encoder = JSONEncoder()

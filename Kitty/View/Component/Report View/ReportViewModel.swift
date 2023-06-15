@@ -30,6 +30,7 @@ class ReportViewModel {
         arrayForChosenMonth = []
     }
     
+    //MARK: Fetch data
     func fetchData() {
         database.loadItemFireStore(completionHandler: {
             item in
@@ -84,6 +85,7 @@ class ReportViewModel {
         }
     }
     
+    //MARK: Change month
     func addAMonth() -> Int{
         let monthInt = Calendar.current.component(.month, from: filteredMonth)
         let components = DateComponents (calendar: Calendar.current, year: 2023, month: monthInt + 1, day: 14)
@@ -100,6 +102,7 @@ class ReportViewModel {
         return components.year!
     }
     
+    //MARK: PDF secction
     func generateDrinkText(item: Item, context: UIGraphicsPDFRendererContext, cursorY: CGFloat, pdfSize: CGSize) -> CGFloat {
         var cursor = cursorY
         let leftMargin: CGFloat = 74
@@ -135,14 +138,19 @@ class ReportViewModel {
             
             cursor+=42 // Add white space after the Title
             
-            for category in items {
-                cursor = context.addSingleLineText(fontSize: 14, weight: .bold, text:  category[0].category, indent: 74, cursor: cursor, pdfSize: pageRect.size, annotation: nil, annotationColor: nil, end: nil, title: "")
+            if items.isEmpty {
+                cursor = context.addCenteredText(fontSize: 14, weight: .thin, text: "No expense history tracked", cursor: cursor, pdfSize: pageRect.size)
                     cursor+=6
-                for item in category {
-                    // wirte in our context the info of each drink
-                    cursor = generateDrinkText(item: item, context: context, cursorY: cursor, pdfSize: pageRect.size)
+            } else {
+                for category in items {
+                    cursor = context.addSingleLineText(fontSize: 14, weight: .bold, text:  category[0].category, indent: 74, cursor: cursor, pdfSize: pageRect.size, annotation: nil, annotationColor: nil, end: nil, title: "")
+                        cursor+=6
+                    for item in category {
+                        // wirte in our context the info of each drink
+                        cursor = generateDrinkText(item: item, context: context, cursorY: cursor, pdfSize: pageRect.size)
+                    }
+                    cursor+=10
                 }
-                cursor+=10
             }
         }
         return data
