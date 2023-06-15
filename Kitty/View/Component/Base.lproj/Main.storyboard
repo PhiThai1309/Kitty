@@ -148,7 +148,9 @@
                                             <constraint firstAttribute="width" secondItem="TAz-c2-nHg" secondAttribute="height" multiplier="1:1" id="TMp-2o-1V6"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <backgroundConfiguration key="background"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="settingOnClickButton:" destination="18S-Id-kgb" eventType="touchUpInside" id="t1L-iH-2mE"/>
                                         </connections>
@@ -465,6 +467,7 @@
                         <outlet property="addNewBtn" destination="93o-T9-gzd" id="Pjf-1E-Bcy"/>
                         <outlet property="balanceLabel" destination="vjJ-R2-4Ty" id="SIl-zV-d4w"/>
                         <outlet property="expenseLabel" destination="D4U-r1-ovb" id="rQo-f6-PUi"/>
+                        <outlet property="imageView" destination="p8Y-K2-Jq4" id="eDx-6x-m7l"/>
                         <outlet property="incomeLabel" destination="nW7-Ny-i1Y" id="efJ-LX-IF9"/>
                         <outlet property="monthBtn" destination="IIc-Hh-Wj1" id="Eym-Rt-Sfo"/>
                         <outlet property="tableView" destination="ins-fp-NLU" id="jtv-on-6o4"/>
@@ -871,6 +874,7 @@
                     <tabBarItem key="tabBarItem" title="Settings" image="Setting" id="rQg-bX-jzu"/>
                     <connections>
                         <outlet property="emailLabel" destination="Wt7-G4-KF3" id="kes-Wj-wWs"/>
+                        <outlet property="imageView" destination="f7x-p4-4lw" id="fLE-E8-U91"/>
                         <outlet property="nameLabel" destination="WPQ-Lp-4MM" id="brD-cH-Xqw"/>
                     </connections>
                 </viewController>
@@ -1317,7 +1321,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="h5H-D6-bCi"/>
+        <segue reference="NM8-u7-isF"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Avtaar" width="32" height="32"/>

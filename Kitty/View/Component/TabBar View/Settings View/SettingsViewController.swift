@@ -12,6 +12,7 @@ import PDFKit
 class SettingsViewController: UIViewController {
 
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var emailLabel: UILabel!
     
     lazy var viewModel: SettingsViewModel = {
@@ -28,9 +29,15 @@ class SettingsViewController: UIViewController {
             // if you have one. Use getTokenWithCompletion:completion: instead.
             let uid = user.uid
             let email = user.email
-            let photoURL = user.photoURL
+            let photoURL = user.photoURL!
             
-            print(photoURL)
+            DispatchQueue.global().async {
+                let data = try? Data(contentsOf: photoURL) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                DispatchQueue.main.async {
+                    self.imageView.image = UIImage(data: data!)
+                    self.imageView.cornerRadius = 20
+                }
+            }
             
             nameLabel.text = uid
             emailLabel.text = email

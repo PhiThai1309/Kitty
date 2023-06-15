@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class HomeViewController: UIViewController, UITabBarControllerDelegate {
     
@@ -13,6 +14,7 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var balanceLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var incomeLabel: UILabel!
     @IBOutlet weak var expenseLabel: UILabel!
     
@@ -36,6 +38,22 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
         // Do any additional setup after loading the view.
         let cellNib = UINib(nibName: "CardTableViewCell", bundle: nil)
         self.tableView.register(cellNib, forCellReuseIdentifier: "CardViewCell")
+        
+        let user = Auth.auth().currentUser
+        if let user = user {
+            // The user's ID, unique to the Firebase project.
+            // Do NOT use this value to authenticate with your backend server,
+            // if you have one. Use getTokenWithCompletion:completion: instead.
+            let photoURL = user.photoURL!
+            
+            DispatchQueue.global().async {
+                let data = try? Data(contentsOf: photoURL) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                DispatchQueue.main.async {
+                    self.imageView.image = UIImage(data: data!)
+                    self.imageView.cornerRadius = 20
+                }
+            }
+        }
     }
     
     
