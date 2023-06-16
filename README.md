@@ -71,6 +71,11 @@ The small application is designed to help users track their expenses and income 
   <img width="250" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/cb93b49f-81dc-4c4f-a129-57e0d5d08e5f">
 </p>
 
+![image](https://github.com/PhiThai1309/Kitty/assets/71892904/08e03886-f3c7-44fc-b7ba-3a2f74b0a609)
+![image](https://github.com/PhiThai1309/Kitty/assets/71892904/6e675380-cbee-412d-8bce-7eb1c0c7b728)
+![image](https://github.com/PhiThai1309/Kitty/assets/71892904/4968cb54-7f69-4b3e-a772-3adeff16e42f)
+
+
 ## Limitations
 N/A
 
