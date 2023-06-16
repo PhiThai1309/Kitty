@@ -86,7 +86,7 @@ The small application is designed to help users track their expenses and income 
 
   - If there are no expenses to export, the PDF file will export with the message "No expense history tracked"
 <p align="center">
-  <img width="250" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/6e675380-cbee-412d-8bce-7eb1c0c7b728">
+  <img width="250" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/bcbcad4b-e661-4ea8-bb0f-afed75c3cc52">
 </p>
 
   - In addition, user can save or share this file via the share button at the bottom of the screen
