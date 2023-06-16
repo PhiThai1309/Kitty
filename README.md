@@ -71,9 +71,28 @@ The small application is designed to help users track their expenses and income 
   <img width="250" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/cb93b49f-81dc-4c4f-a129-57e0d5d08e5f">
 </p>
 
-![image](https://github.com/PhiThai1309/Kitty/assets/71892904/08e03886-f3c7-44fc-b7ba-3a2f74b0a609)
-![image](https://github.com/PhiThai1309/Kitty/assets/71892904/6e675380-cbee-412d-8bce-7eb1c0c7b728)
-![image](https://github.com/PhiThai1309/Kitty/assets/71892904/4968cb54-7f69-4b3e-a772-3adeff16e42f)
+- Users have the option to export their expense history in PDF format, which can be done in two ways.
+  - Firstly, they can export the expenses for the current month, categorized by their respective categories. This export can be found via the "Download report" button on the report page
+<p align="center">
+  <img width="250" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/361880b8-c1e1-4e8d-b342-49f1f3e00595">
+  <img width="250" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/4968cb54-7f69-4b3e-a772-3adeff16e42f">
+</p>
+
+  - Secondly, users can export their entire expense history, which can be found in settings paage, providing a comprehensive record of their financial activities.
+<p align="center">
+  <img width="250" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/db706020-ab52-496c-81d2-0adba184e1ca">
+  <img width="250" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/6e675380-cbee-412d-8bce-7eb1c0c7b728">
+</p>
+
+  - If there are no expenses to export, the PDF file will export with the message "No expense history tracked"
+<p align="center">
+  <img width="250" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/6e675380-cbee-412d-8bce-7eb1c0c7b728">
+</p>
+
+  - In addition, user can save or share this file via the share button at the bottom of the screen
+<p align="center">
+  <img width="250" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/0279a2a6-3f88-4677-af6b-fb305aca2997">
+</p>
 
 
 ## Limitations
