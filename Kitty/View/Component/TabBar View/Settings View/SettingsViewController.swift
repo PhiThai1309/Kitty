@@ -51,9 +51,10 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func exportOnClickHandler(_ sender: Any) {
-//        let pdfData = viewModel.generatePdfData(items: viewModel.items)
-//        let newViewController = PDFViewController()
-//        self.present(newViewController, animated: true)
+        let newViewController = PDFViewController()
+        newViewController.items = viewModel.items
+        
+        self.present(newViewController, animated: true)
     }
     
     
