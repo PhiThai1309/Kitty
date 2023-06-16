@@ -81,7 +81,7 @@ class PDFViewModel {
         
         cursor = context.addSingleLineText(fontSize: 12, weight: .thin, text: String(item.amount), indent: leftMargin, cursor: cursor, pdfSize: pdfSize, annotation: nil, annotationColor: nil, end: nil, title: "Amount: ")
         
-        cursor = context.addSingleLineText(fontSize: 12, weight: .thin, text: item.categoryType.rawValue, indent: leftMargin, cursor: cursor, pdfSize: pdfSize, annotation: nil, annotationColor: nil, end: true, title: "Categoory Type: ")
+        cursor = context.addSingleLineText(fontSize: 12, weight: .thin, text: item.categoryType.rawValue, indent: leftMargin, cursor: cursor, pdfSize: pdfSize, annotation: nil, annotationColor: nil, end: true, title: "Category Type: ")
 
             cursor+=10
         return cursor

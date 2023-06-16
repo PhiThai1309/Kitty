@@ -38,11 +38,9 @@ class SettingsViewController: UIViewController {
                     self.imageView.cornerRadius = 20
                 }
             }
-            
             nameLabel.text = uid
             emailLabel.text = email
         }
-        
         viewModel.loadData()
     }
     
