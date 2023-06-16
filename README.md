@@ -68,33 +68,33 @@ The small application is designed to help users track their expenses and income 
 
 - Setting page: To be developed
 <p align="center">
-  <img width="250" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/cb93b49f-81dc-4c4f-a129-57e0d5d08e5f">
+  <img width="300" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/cb93b49f-81dc-4c4f-a129-57e0d5d08e5f">
 </p>
 
 - Users have the option to export their expense history in PDF format. They can export the expenses history and categorized by their respective categories, date. This export can be found via the "Download report" button on the report page and in the setting page.
   - By Items
   <p align="center">
-    <img width="250" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/4f89e612-5135-47af-81c9-13bf5492275d">
+    <img width="300" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/4f89e612-5135-47af-81c9-13bf5492275d">
   </p>
   
   - By Category
   <p align="center">
-    <img width="250" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/e4ce26de-5435-4987-a7a7-9c882b688794">
+    <img width="300" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/e4ce26de-5435-4987-a7a7-9c882b688794">
   </p>
   
   - By Date
   <p align="center">
-    <img width="250" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/47534fef-c429-475e-8850-c787b4679a54">
+    <img width="300" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/47534fef-c429-475e-8850-c787b4679a54">
   </p>
 
   - If there are no expenses to export, the PDF file will export with the message "No expense history tracked"
   <p align="center">
-    <img width="250" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/1e68237e-6a85-4bde-a56c-b6cab49e2803">
+    <img width="300" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/1e68237e-6a85-4bde-a56c-b6cab49e2803">
   </p>
 
   - In addition, user can save or share this file via the share button at the bottom of the screen
   <p align="center">
-    <img width="250" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/a381eb99-bf74-47fa-b61e-a041996fa66b">
+    <img width="300" alt="image" src="https://github.com/PhiThai1309/Kitty/assets/71892904/a381eb99-bf74-47fa-b61e-a041996fa66b">
   </p>
 
 
