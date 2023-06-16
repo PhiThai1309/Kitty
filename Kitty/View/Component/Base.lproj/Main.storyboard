@@ -7,6 +7,7 @@
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -939,21 +940,40 @@
                                             <segue destination="vwj-2A-5JP" kind="show" id="h5H-D6-bCi"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ftX-VQ-vcP">
+                                        <rect key="frame" x="345" y="0.0" width="48" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="48" id="pDy-MF-To6"/>
+                                        </constraints>
+                                        <menu key="menu" id="Gw9-ri-hHL">
+                                            <menuOptions key="menuOptions" displayInline="YES"/>
+                                            <children>
+                                                <command title="Item 1" id="T1V-qa-kEI"/>
+                                                <command title="Item 2" id="uvW-xf-pz4"/>
+                                            </children>
+                                        </menu>
+                                        <state key="normal">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="4EH-am-G3q" firstAttribute="leading" secondItem="5WX-v8-6cy" secondAttribute="trailing" constant="19.510000000000002" id="0Br-w9-cgw"/>
                                     <constraint firstItem="7T4-35-Y1J" firstAttribute="top" secondItem="Q9S-jH-QIj" secondAttribute="top" id="3Rg-Jx-ITs"/>
                                     <constraint firstItem="4EH-am-G3q" firstAttribute="centerY" secondItem="Q9S-jH-QIj" secondAttribute="centerY" id="Fak-X6-Tdc"/>
+                                    <constraint firstAttribute="trailing" secondItem="ftX-VQ-vcP" secondAttribute="trailing" id="GxW-Le-ur7"/>
                                     <constraint firstAttribute="bottom" secondItem="7T4-35-Y1J" secondAttribute="bottom" id="ICT-Il-d4I"/>
                                     <constraint firstItem="5WX-v8-6cy" firstAttribute="centerY" secondItem="Q9S-jH-QIj" secondAttribute="centerY" id="KX5-wd-8Qu"/>
                                     <constraint firstItem="7Vt-3Q-ssC" firstAttribute="centerY" secondItem="Q9S-jH-QIj" secondAttribute="centerY" id="Z1H-om-egt"/>
+                                    <constraint firstItem="ftX-VQ-vcP" firstAttribute="top" secondItem="Q9S-jH-QIj" secondAttribute="top" id="aiM-xd-3tb"/>
                                     <constraint firstAttribute="trailing" secondItem="4EH-am-G3q" secondAttribute="trailing" constant="16" id="cmD-vV-x4D"/>
                                     <constraint firstItem="nPJ-gz-wQR" firstAttribute="leading" secondItem="7Vt-3Q-ssC" secondAttribute="trailing" constant="8" id="dVt-az-E4h"/>
                                     <constraint firstItem="nPJ-gz-wQR" firstAttribute="centerY" secondItem="Q9S-jH-QIj" secondAttribute="centerY" id="gyU-00-Bz6"/>
                                     <constraint firstAttribute="height" constant="48" id="h4n-sX-4Op"/>
                                     <constraint firstItem="4EH-am-G3q" firstAttribute="leading" secondItem="7T4-35-Y1J" secondAttribute="trailing" id="lMK-xf-ZZL"/>
                                     <constraint firstItem="7Vt-3Q-ssC" firstAttribute="leading" secondItem="Q9S-jH-QIj" secondAttribute="leading" constant="20" id="mAl-dF-f5R"/>
+                                    <constraint firstAttribute="bottom" secondItem="ftX-VQ-vcP" secondAttribute="bottom" id="nDk-U9-clF"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tcs-Uv-VvI">
@@ -1131,13 +1151,14 @@
                     <tabBarItem key="tabBarItem" title="Report" image="Report" id="fbt-bQ-9cD"/>
                     <connections>
                         <outlet property="chartView" destination="7Iv-vt-cbT" id="caz-AM-Lmd"/>
+                        <outlet property="dropDownMenu" destination="ftX-VQ-vcP" id="9a2-La-lFR"/>
                         <outlet property="monthBtn" destination="oFY-z8-F4H" id="88L-8P-p6X"/>
                         <outlet property="reportCollectionView" destination="NqF-OS-yI7" id="i0m-m3-taH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Av-1R-95i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2719.8473282442746" y="662.67605633802816"/>
+            <point key="canvasLocation" x="2719.8473282442746" y="661.97183098591552"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="Jej-Nz-M4x">
@@ -1321,7 +1342,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NM8-u7-isF"/>
+        <segue reference="h5H-D6-bCi"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Avtaar" width="32" height="32"/>

@@ -15,6 +15,7 @@ class ReportViewController: UIViewController, ChartViewDelegate {
     
     @IBOutlet weak var chartView: BarChartView!
     @IBOutlet weak var monthBtn: UIButton!
+    @IBOutlet weak var dropDownMenu: UIButton!
     @IBOutlet weak var reportCollectionView: UICollectionView!
     
     lazy var viewModel: ReportViewModel = {
@@ -23,6 +24,8 @@ class ReportViewController: UIViewController, ChartViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setCategoryButton()
         
         chartView.delegate = self
         
@@ -92,12 +95,26 @@ class ReportViewController: UIViewController, ChartViewDelegate {
     }
     
     @IBAction func generateReport(_ sender: Any) {
-        let pdfData = viewModel.generatePdfData(items: viewModel.categoryReport)
         let newViewController = PDFViewController()
-        newViewController.documentData = pdfData
-        newViewController.header = viewModel.filteredMonth.month
+        newViewController.items = viewModel.items
+        
         self.present(newViewController, animated: true)
     }
+    
+    func setCategoryButton() {
+            let optionClosure = {(action : UIAction) in
+//                self.category = action.title
+                print(action.title)
+            }
+            dropDownMenu.menu = UIMenu(title: "Export PDF with order of", children :[
+                UIAction(title: "Category", state: .on, handler: optionClosure),
+                UIAction(title: "Date", state: .off, handler: optionClosure)])
+            
+            
+        dropDownMenu.showsMenuAsPrimaryAction = true
+        dropDownMenu.changesSelectionAsPrimaryAction = true
+        }
+
     
 }
 

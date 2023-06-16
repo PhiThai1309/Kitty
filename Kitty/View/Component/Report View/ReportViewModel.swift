@@ -19,7 +19,6 @@ class ReportViewModel {
     var filteredMonth: Date
     var categoryReport: [[Item]]
     var categoryWithAmount: OrderedDictionary<String, Double> = [:]
-    var arrayForChosenMonth: [Item]
     var database: RealmDatabase = RealmDatabase()
     var delegate: ReportViewModelDelegate?
     init() {
@@ -27,7 +26,6 @@ class ReportViewModel {
         categoryReport = []
         history = database.loadHistoryWithMonth(items: items)
         self.filteredMonth = Date()
-        arrayForChosenMonth = []
     }
     
     //MARK: Fetch data
@@ -66,7 +64,6 @@ class ReportViewModel {
                 result.append([])
                 result[index].append(item)
             }
-            arrayForChosenMonth.append(item)
         }
         return result
     }
@@ -110,6 +107,8 @@ class ReportViewModel {
         cursor = context.addSingleLineText(fontSize: 12, weight: .thin, text: item.desc!, indent: leftMargin, cursor: cursor, pdfSize: pdfSize, annotation: nil, annotationColor: nil, end: nil, title: "Description: ")
         
         cursor = context.addSingleLineText(fontSize: 12, weight: .thin, text: String(item.amount), indent: leftMargin, cursor: cursor, pdfSize: pdfSize, annotation: nil, annotationColor: nil, end: true, title: "Amount: ")
+        
+        cursor = context.addSingleLineText(fontSize: 12, weight: .thin, text: item.date.month + ", " + item.date.day, indent: leftMargin, cursor: cursor, pdfSize: pdfSize, annotation: nil, annotationColor: nil, end: true, title: "Date: ")
 
             cursor+=10
         return cursor

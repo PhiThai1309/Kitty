@@ -39,6 +39,7 @@
 		3F6BDFF22A1755300095800B /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BDFF12A1755300095800B /* SearchViewModel.swift */; };
 		3F6BDFF52A1759590095800B /* CategorySearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BDFF32A1759590095800B /* CategorySearchCollectionViewCell.swift */; };
 		3F6BDFF62A1759590095800B /* CategorySearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F6BDFF42A1759590095800B /* CategorySearchCollectionViewCell.xib */; };
+		3F70CE642A3C3EF7008A0E11 /* PDFViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F70CE632A3C3EF7008A0E11 /* PDFViewModel.swift */; };
 		3F770BFB29F68220009FDA26 /* CategorySheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F770BF929F68220009FDA26 /* CategorySheetViewController.swift */; };
 		3F770BFC29F68220009FDA26 /* CategorySheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F770BFA29F68220009FDA26 /* CategorySheetViewController.xib */; };
 		3FA9E64529E9346E00D8D7C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9E64429E9346E00D8D7C1 /* AppDelegate.swift */; };
@@ -110,6 +111,7 @@
 		3F6BDFF12A1755300095800B /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		3F6BDFF32A1759590095800B /* CategorySearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		3F6BDFF42A1759590095800B /* CategorySearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategorySearchCollectionViewCell.xib; sourceTree = "<group>"; };
+		3F70CE632A3C3EF7008A0E11 /* PDFViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewModel.swift; sourceTree = "<group>"; };
 		3F770BF929F68220009FDA26 /* CategorySheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySheetViewController.swift; sourceTree = "<group>"; };
 		3F770BFA29F68220009FDA26 /* CategorySheetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategorySheetViewController.xib; sourceTree = "<group>"; };
 		3FA9E64129E9346E00D8D7C1 /* Kitty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kitty.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -386,6 +388,7 @@
 			children = (
 				3FB6AC462A39A45300B72E31 /* PDFViewController.swift */,
 				3FB6AC472A39A45300B72E31 /* PDFViewController.xib */,
+				3F70CE632A3C3EF7008A0E11 /* PDFViewModel.swift */,
 			);
 			path = "PDF View";
 			sourceTree = "<group>";
@@ -567,6 +570,7 @@
 				3FF880772A3AB4020006A685 /* SettingsViewModel.swift in Sources */,
 				3F770BFB29F68220009FDA26 /* CategorySheetViewController.swift in Sources */,
 				3F438C3029F7BA98002BE0B5 /* DateExtension.swift in Sources */,
+				3F70CE642A3C3EF7008A0E11 /* PDFViewModel.swift in Sources */,
 				3FEFBAA929ECF8040085641B /* Item.swift in Sources */,
 				3F15B78929FA5B0000616FB5 /* HomeViewModel.swift in Sources */,
 				3F6BDFF22A1755300095800B /* SearchViewModel.swift in Sources */,
