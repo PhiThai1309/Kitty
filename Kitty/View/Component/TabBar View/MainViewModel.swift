@@ -24,22 +24,6 @@ class MainViewModel {
     
     init() {
         month = ["January", "February", "March", "April", "May", "Jun", "July", "August", "September", "October", "November", "December"]
-        
-        
-        
-        
-        
-        
-//        filterIcon()
-        
-        // Open the local-only default realm
-//        let realm = try! Realm()
-//        
-//        try! realm.write {
-//            print("can write")
-//            realm.add(history1)
-//        }
-        
     }
     
     //MARK: Filter
@@ -88,11 +72,6 @@ class MainViewModel {
     
     func getCategoryWithAmount() -> [String] {
         var amountCategory: [String] = []
-//        for item in items {
-//            if !amountCategory.contains(where: {$0.name == item.category}) {
-//                amountCategory.append(item.category)
-//            }
-//        }
         return amountCategory
     }
     

@@ -20,12 +20,9 @@ class ManageCategoriesViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-//        tableView.dragInteractionEnabled = true
-//            tableView.dragDelegate = self
         tableView.isEditing = true
 
-            navigationItem.rightBarButtonItem = editButtonItem
+        navigationItem.rightBarButtonItem = editButtonItem
         
     }
     
@@ -59,10 +56,6 @@ extension ManageCategoriesViewController: UITableViewDataSource, UITableViewDele
         cell.categoryLabel.text = category
         return cell
     }
-
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 60
-//    }
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         // Update the model

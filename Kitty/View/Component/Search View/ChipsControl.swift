@@ -18,14 +18,11 @@ class ChipsControl: UIControl {
     @IBInspectable private weak var textLabel: UILabel!
     @IBInspectable private weak var imageView: UIImageView!
     
-//    var labelText: String
-    
     var delegate: ChipsControlDelegate?
     
     @IBInspectable
     public var check: Bool = false {
         didSet{
-//            imageView.image = image
             container.borderColor = borderColors
             container.borderWidth = 1
             container.cornerRadius = 6

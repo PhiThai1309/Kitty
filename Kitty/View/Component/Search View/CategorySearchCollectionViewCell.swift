@@ -23,7 +23,6 @@ class CategorySearchCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-//        wrapperView.labelText = labelText ?? "Hello"
         wrapperView.delegate = self
     }
     
