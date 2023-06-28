@@ -57,10 +57,10 @@ extension UIGraphicsPDFRendererContext {
             let context = UIGraphicsGetCurrentContext()!
             // 2
             context.saveGState()
-              // 3
+            // 3
             context.setLineWidth(0.01)
 
-              // 4
+            // 4
             context.move(to: CGPoint(x: indent, y: rect.origin.y + rect.size.height + 4))
             context.addLine(to: CGPoint(x: indent + rect.size.width, y: rect.origin.y + rect.size.height + 4))
             context.strokePath()

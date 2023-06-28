@@ -29,7 +29,7 @@ class PDFViewModel {
             } else {
                 let index = result.count
                 result.append([])
-                result[index].append(item)
+                result[index].append(item)             
             }
         }
         categoryReport = result
